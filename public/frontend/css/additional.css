@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.signup-form
+h1 {
+    color: #c43029;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.login {
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.login img {
+  width:100%;
+  height:  100%;
+  object-fit:cover;
+}
+
+form {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 9999;
+    box-shadow: 0px 0px 10px #4f4f4f;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #c43029;
+    transition: .3s;
+}
+
+form label {
+    position: relative;
+    height: 100%;
+    display: block;
+}
+
+form input[type="submit"] {
+    border: none;
+    background-color: #c43029;
+    color: #fff;
+}
+
+form label span {
+    font-size: 10px;
+    position: absolute;
+    top: -7px;
+    left: 20px;
+    transition: .3s;
+    background-color: #fff;
+    padding: 2px;
+}
+
+label > input:focus + span {
+    color: #c43029;
+    font-size: 12px;
+    transition: .3s;
+    top: -10px;
+}
+
+.termofuse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.termofuse input[type="checkbox"] {
+    width: 15px;
+height: 15px;
+margin: 0;
+}
+
+.termofuse a {
+    color: #c43029;
+    text-decoration: none;
+}
+
+.submit {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background-color: #c43029;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 0px 0px 5px #c43029;
+  }
+
+.submit span {
+    position: absolute;
+    display: block;
+  }
+  
+  .submit span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .submit span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #fff);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .submit span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #fff);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .submit span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #fff);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  

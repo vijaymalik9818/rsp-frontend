@@ -1,0 +1,299 @@
+.gm-style-iw-d {
+    overflow: hidden !important;
+    max-width: 370px !important;
+    max-height: 210px !important;
+    min-height: 162px !important;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.suggestion {
+    color: gray;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: lightgray;
+}
+.top-sec {
+    margin: 0 -15px;
+    background: #10579f;
+    padding: 13px 26px;
+}
+
+.top-sec p {
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.mid-sec {
+    padding: 13px 10px;
+    background: #efefef;
+}
+
+.mid-sec i {
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.top-sec span {
+    font-weight: 600;
+}
+
+.drp-dwn button {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    background-color: #fff !important;
+}
+
+.drp-dwn button:hover {
+    color: #000;
+}
+
+.accordion-body {
+    border: 1px solid #cccc;
+}
+
+.accordion button {
+    width: 100%;
+}
+
+.dropdown select {
+    outline: none;
+    margin-bottom: 0.5rem;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.sortby select {
+    width: 154px;
+    padding: 3px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.row-2 {
+    display: flex;
+    align-items: center;
+    background: #efefef;
+    padding-bottom: 15px;
+}
+
+.row-2 i {
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 8px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+
+
+
+
+.search {
+    outline: none;
+    margin-bottom: 0.5rem;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.listing-style5 .list-content {
+    height: 184px;
+}
+
+
+.blur {
+    filter: blur(5px);
+}
+
+#loader {
+    position: absolute;
+    top: 125%;
+    left: 46%;
+}
+
+.save-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+
+.savesearch h5 {
+    margin-top: 1rem;
+    color: #000;
+}
+
+.savesearch p {
+    color: #000;
+    margin-bottom: 0;
+}
+
+#suggestion-list {
+    position: absolute; /* Position the suggestion list */
+    z-index: 1000; /* Ensure it appears above other elements */
+    max-height: 200px; /* Limit the height of the suggestion list */
+    overflow-y: auto; /* Add scrollbar when needed */
+    background-color: white; /* Set white background */
+    width: 100%; /* Ensure the suggestion list takes up full width */
+}
+
+.suggestion {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #007bff; /* Primary blue hover effect */
+    color: white;
+}
+
+.category {
+    font-weight: bold;
+    background: #10579f;
+    color: #fff;
+    padding: 4px 12px;
+}
+.markercluster .cluster:hover circle {
+    fill: #000;
+}
+
+.cluster-visible:hover {
+    filter: hue-rotate(600deg);
+}
+
+
+   #map {
+        height: 100%;
+        max-height: calc(100vh - 133px);
+    }
+
+    .accordion-item{
+        border:none !important;
+        background: transparent !important; 
+    }
+
+
+
+    .filertAndResults {
+        height: calc(100vh - 133px);
+        max-height: calc(100vh - 133px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .gridAutoCols {
+        display: grid;
+        gap: 1reml;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .accordion-button {
+        background-color: var(--primary-500) !important;
+        color: #fff !important;
+    }
+
+    .accordion-button::after {
+        filter: invert(1) grayscale(1) brightness(3.5);
+    }
+
+    .accordion-button:focus {
+        box-shadow: none !important;
+    }
+
+    .list-thumb>div {
+        visibility: inherit !important;
+    }
+
+
+    @media (max-width:600px) {
+
+        .right-section{
+            padding-left: 4px;
+            padding-right: 2px;
+        }
+
+        .reset-filter button{
+             width: 100%;
+ 
+           height: 55px !important;
+        }
+
+        .more-btn button{
+            height: 55px !important;
+        }
+    }
+
+    .form-style1{
+        width: 47%;
+    }
+
+    .space-area .form-control{
+        max-width: 100%;
+    }
+
+    .filled {
+
+        display: inline-block;
+    width: 30px;
+    height: 35px;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21.35c-0.16 0-0.32-0.04-0.46-0.12l-1.54-0.77C5.54 15.46 2 12.41 2 8.5c0-2.54 2.46-4.5 5-4.5 1.35 0 2.62 0.66 3.5 1.79C11.38 4.66 12.65 4 14 4c2.54 0 5 1.96 5 4.5 0 3.91-3.54 6.96-8 12.23l-1.54 0.77C12.32 21.31 12.16 21.35 12 21.35z"/></svg>') no-repeat;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21.35c-0.16 0-0.32-0.04-0.46-0.12l-1.54-0.77C5.54 15.46 2 12.41 2 8.5c0-2.54 2.46-4.5 5-4.5 1.35 0 2.62 0.66 3.5 1.79C11.38 4.66 12.65 4 14 4c2.54 0 5 1.96 5 4.5 0 3.91-3.54 6.96-8 12.23l-1.54 0.77C12.32 21.31 12.16 21.35 12 21.35z"/></svg>') no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    }
+    
+    .white-background {
+        background-color: white;
+        /* Set the background color to white */
+    }
+    .highlighted {
+        background-color: #10579f;
+        color: #fff;
+    }
+    @media (max-width:367px) {
+        .mbp_pagination .page-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        height: 28px;
+        text-align: center;
+        width: 28px;
+    }
+
+    .pagination_page_count {
+        font-size: 10px;
+    }
+    }

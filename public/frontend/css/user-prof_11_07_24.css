@@ -1,0 +1,329 @@
+.logo img {
+    width: 100px;
+}
+.header-fixed-top {
+    top: 0 !important;
+}
+
+.profile-section {
+    width: 100%;
+    margin-left: 52px;
+    padding-top: 50px;
+}
+
+.active {
+    background-color: #10579f;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tabs .active {
+    background: #10579f !important;
+    color: #fff !important;
+}
+
+/* #basic-tab, #save-tab{
+    border-radius: 5px 5px 0 0;
+    border: none;
+    padding: 7px;
+    background: #10579f !important;
+    color: #fff !important;
+} */
+
+label {
+    display: block !important;
+}
+
+.tablinks {
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tablinks.active {
+    background-color: #ddd;
+}
+
+.tabcontent,
+.tabcontents {
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    display: none;
+    padding: 15px;
+}
+
+.tabcontent input,
+.input-2 {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+}
+
+.input-2 select {
+    padding: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.sub-btn {
+    margin-top: 33px;
+}
+
+.tabcontent h2 {
+    margin-bottom: 10px;
+}
+
+.left {
+    border-radius: 5px;
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px #0000001e;
+    padding-left: 0 !important;
+}
+
+.left li {
+    cursor: pointer;
+    padding: 3px;
+}
+
+.left li:hover {
+    color: #fff;
+    background-color: #1569be;
+}
+
+.left li:hover a {
+    color: #fff;
+}
+.left a {
+    margin-left: 15px;
+}
+
+.actions h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* General table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Table header */
+thead {
+    background-color: #f2f2f2;
+}
+
+/* Table header cells */
+th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table body rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Table body cells */
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #4caf50;
+
+    border: 1px solid #4caf50;
+}
+
+.listing-style5 .list-thumb {
+    height: 280px !important;
+}
+
+.listing-style5 .list-content {
+    height: 177px;
+}
+.listing-style5 {
+    margin-bottom: 30px;
+    position: relative;
+    background-color: var(--bs-white);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pro-tabs {
+    box-shadow: 0 1px 3px #80808070;
+    width: 300px;
+}
+
+.tab-content .active {
+    background-color: white;
+}
+.tab-content {
+    width: 100%;
+}
+.nav-pills .nav-link {
+    border-radius: 0.25rem;
+    text-align: start;
+    text-wrap: nowrap;
+}
+.nav-link {
+    color: #10579f;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #10579f;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #10579f;
+    border-color: #10579f;
+}
+
+.flaticon-like {
+    display: inline-block;
+    width: 30px;
+    height: 35px;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21.35c-0.16 0-0.32-0.04-0.46-0.12l-1.54-0.77C5.54 15.46 2 12.41 2 8.5c0-2.54 2.46-4.5 5-4.5 1.35 0 2.62 0.66 3.5 1.79C11.38 4.66 12.65 4 14 4c2.54 0 5 1.96 5 4.5 0 3.91-3.54 6.96-8 12.23l-1.54 0.77C12.32 21.31 12.16 21.35 12 21.35z"/></svg>')
+        no-repeat;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21.35c-0.16 0-0.32-0.04-0.46-0.12l-1.54-0.77C5.54 15.46 2 12.41 2 8.5c0-2.54 2.46-4.5 5-4.5 1.35 0 2.62 0.66 3.5 1.79C11.38 4.66 12.65 4 14 4c2.54 0 5 1.96 5 4.5 0 3.91-3.54 6.96-8 12.23l-1.54 0.77C12.32 21.31 12.16 21.35 12 21.35z"/></svg>')
+        no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.swal2-show {
+    margin-bottom: 250px;
+    animation: swal2-show 0.3s;
+}
+.swal2-checkbox input {
+    flex-shrink: 0;
+    margin: 0 0.4em;
+    display: none;
+}
+
+.search-title:hover {
+    color: #10579f;
+}
+
+.profile-div h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .pro-tabs {
+        box-shadow: 0 1px 3px #80808070;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    thead {
+        font-size: 10px;
+        background-color: #f2f2f2;
+    }
+
+
+}
+#pagination-link {
+    max-width: 100%; 
+    overflow-x: auto; 
+}
+
+#pagination-link a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#pagination-link a:hover {
+    background-color: #ddd;
+}
+
+@media (max-width:1025px) {
+    .pagination {
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:600px) {
+    .pagination li{
+        font-size: 10px;
+    }
+
+    td{
+        font-size: 10px;
+    }
+
+    .profile-div h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 325px) {
+    .pagination li {
+        font-size: 9px;
+    }
+}
+
+ .pagination .page-item {
+        margin-right: 5px;
+    }
+    
+    .pagination .page-link {
+        padding: 6px 12px;
+    }
+    
+   

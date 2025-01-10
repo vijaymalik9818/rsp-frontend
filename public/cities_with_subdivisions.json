@@ -1,0 +1,2500 @@
+{
+    "Alberta": {
+        "Acadia Valley": [
+            "NONE"
+        ],
+        "Acme": [
+            "NONE"
+        ],
+        "Airdrie": [
+            "Sierra Springs",
+            "Gateway",
+            "Kingsview Industrial Park",
+            "Coopers Crossing",
+            "Key Ranch",
+            "Bayview",
+            "Jensen",
+            "Lanark",
+            "Wildflower",
+            "East Lake Industrial",
+            "Kings Heights",
+            "Willowbrook",
+            "Chinook Gate",
+            "Ridgegate",
+            "Ravenswood",
+            "Croxford Estates",
+            "Prairie Springs",
+            "Bayside",
+            "Cobblestone Creek",
+            "Big Springs",
+            "Luxstone",
+            "Midtown",
+            "Sagewood",
+            "Canals",
+            "Southwinds",
+            "Buffalo Rub",
+            "Silver Creek",
+            "Windsong",
+            "South Point",
+            "South Windsong",
+            "Woodside",
+            "Downtown",
+            "Edgewater",
+            "Hillcrest",
+            "Thorburn",
+            "Yankee Valley Estates",
+            "Meadowbrook",
+            "Fairways",
+            "Sunridge",
+            "Williamstown",
+            "Airdrie Meadows",
+            "Stonegate",
+            "Reunion",
+            "Baysprings",
+            "Old Town",
+            "Morningside",
+            "Summerhill"
+        ],
+        "Aldersyde": [
+            "NONE"
+        ],
+        "Alix": [
+            "NONE"
+        ],
+        "Alliance": [
+            "Alliance"
+        ],
+        "Amisk": [
+            "Amisk"
+        ],
+        "Anzac": [
+            "Anzac Business Park"
+        ],
+        "Ardley": [
+            "NONE"
+        ],
+        "Ardmore": [
+            "NONE"
+        ],
+        "Argentia Beach": [
+            "NONE"
+        ],
+        "Athabasca": [
+            "Athabasca Town"
+        ],
+        "Atmore": [
+            "Atmore"
+        ],
+        "Balzac": [
+            "NONE"
+        ],
+        "Banff": [
+            "NONE"
+        ],
+        "Barnwell": [
+            "NONE"
+        ],
+        "Barons": [
+            "NONE"
+        ],
+        "Bashaw": [
+            "Bashaw"
+        ],
+        "Bassano": [
+            "NONE"
+        ],
+        "Bawlf": [
+            "Bawlf"
+        ],
+        "Beaumont": [
+            "Centre-Ville"
+        ],
+        "Beaver Lake": [
+            "Beaver Lake"
+        ],
+        "Beaverlodge": [
+            "NONE"
+        ],
+        "Beazer": [
+            "NONE"
+        ],
+        "Beiseker": [
+            "NONE"
+        ],
+        "Bellevue": [
+            "NONE"
+        ],
+        "Benalto": [
+            "NONE"
+        ],
+        "Bentley": [
+            "NONE"
+        ],
+        "Berwyn": [
+            "NONE"
+        ],
+        "Bezanson": [
+            "NONE"
+        ],
+        "Big Valley": [
+            "NONE"
+        ],
+        "Bindloss": [
+            "NONE"
+        ],
+        "Birchcliff": [
+            "NONE"
+        ],
+        "Blackfalds": [
+            "Industrial Light",
+            "Pinnacle",
+            "Downtown",
+            "Aurora",
+            "Blackfalds - Other",
+            "Mckay Ranch",
+            "Valley Ridge",
+            "Cottonwood Meadows",
+            "Aspen Lakes West",
+            "Cottonwood Estates",
+            "Aspen Lake",
+            "Harvest Meadows",
+            "Panorama Estates",
+            "Laurel",
+            "Blackfalds Industrial Park",
+            "Rolling Hills"
+        ],
+        "Blackfoot": [
+            "Blackfoot"
+        ],
+        "Blackie": [
+            "NONE"
+        ],
+        "Blairmore": [
+            "NONE"
+        ],
+        "Bluesky": [
+            "NONE"
+        ],
+        "Bonnyville": [
+            "Bonnyville"
+        ],
+        "Bow Island": [
+            "NONE"
+        ],
+        "Bowden": [
+            "NONE"
+        ],
+        "Boyle": [
+            "Boyle"
+        ],
+        "Bragg Creek": [
+            "West Bragg Creek",
+            "Wintergreen_BC"
+        ],
+        "Breton": [
+            "Breton"
+        ],
+        "Breynat": [
+            "NONE"
+        ],
+        "Brooks": [
+            "Uplands",
+            "West End",
+            "Meadowbrook",
+            "South Industrial",
+            "Downtown",
+            "East End",
+            "North End",
+            "Sunnylea",
+            "Fairview",
+            "Greenbrook",
+            "South Industrial_BROO",
+            "Central",
+            "Lakewood",
+            "Pleasant Park",
+            "Ingram Park",
+            "Southshore"
+        ],
+        "Brule": [
+            "Brule"
+        ],
+        "Buck Lake": [
+            "NONE"
+        ],
+        "Buford": [
+            "NONE"
+        ],
+        "Burdett": [
+            "NONE"
+        ],
+        "Burnstick Lake": [
+            "NONE"
+        ],
+        "Cadogan": [
+            "Cadogan"
+        ],
+        "Calahoo": [
+            "Calahoo"
+        ],
+        "Calgary": [
+            "Chinatown",
+            "Beltline",
+            "Forest Lawn",
+            "Inglewood",
+            "Fairview Industrial",
+            "Downtown Commercial Core",
+            "Downtown West End",
+            "Rosscarrock",
+            "Christie Park",
+            "Stoney 1",
+            "Richmond",
+            "Bowness",
+            "Kingsland",
+            "Sage Hill",
+            "Franklin",
+            "Bridgeland\/Riverside",
+            "Ramsay",
+            "Crescent Heights",
+            "Forest Lawn Industrial",
+            "Manchester",
+            "Highfield",
+            "Manchester Industrial",
+            "South Airways",
+            "Killarney\/Glengarry",
+            "Varsity",
+            "Hounsfield Heights\/Briar Hill",
+            "Eagle Ridge",
+            "Midnapore",
+            "Belvedere",
+            "Nolan Hill",
+            "Haysboro",
+            "Shepard Industrial",
+            "Hillhurst",
+            "Renfrew",
+            "Saddleridge Industrial",
+            "Bankview",
+            "Downtown East Village",
+            "Saddle Ridge",
+            "McCall",
+            "Douglasdale\/Glen",
+            "Silver Springs",
+            "Starfield",
+            "Point McKay",
+            "Highland Park",
+            "Royal Oak",
+            "Mount Pleasant",
+            "Lower Mount Royal",
+            "Marlborough",
+            "Eau Claire",
+            "Highwood",
+            "Glacier Ridge",
+            "Shawnee Slopes",
+            "Livingston",
+            "Taradale",
+            "Mahogany",
+            "Legacy",
+            "Homestead",
+            "Willow Park",
+            "Whitehorn",
+            "Altadore",
+            "West Hillhurst",
+            "Rideau Park",
+            "Redstone",
+            "Cliff Bungalow",
+            "Tuxedo Park",
+            "Canyon Meadows",
+            "St Andrews Heights",
+            "Royal Vista",
+            "Cranston",
+            "South Calgary",
+            "Signal Hill",
+            "Capitol Hill",
+            "Mission",
+            "Sundance",
+            "Arbour Lake",
+            "Panorama Hills",
+            "Hawkwood",
+            "Marlborough Park",
+            "Spruce Cliff",
+            "Currie Barracks",
+            "Carrington",
+            "Elbow Park",
+            "Ranchlands",
+            "Springbank Hill",
+            "Rosedale",
+            "Horizon",
+            "Calgary International Airport",
+            "Banff Trail",
+            "Edgemont",
+            "Aspen Woods",
+            "Stoney 3",
+            "Sunridge",
+            "Greenview Industrial Park",
+            "Hamptons",
+            "Lakeview",
+            "Mayland Heights",
+            "Country Hills",
+            "Wildwood",
+            "Walden",
+            "McKenzie Towne",
+            "North Glenmore Park",
+            "Evergreen",
+            "Southwood",
+            "Shaganappi",
+            "West Springs",
+            "Meridian",
+            "Wolf Willow",
+            "Parkdale",
+            "Elboya",
+            "Valley Ridge",
+            "Cityscape",
+            "Acadia",
+            "Winston Heights\/Mountview",
+            "Collingwood",
+            "Riverbend",
+            "McKenzie Lake",
+            "Southview",
+            "Cornerstone",
+            "Brentwood",
+            "Cedarbrae",
+            "Sherwood",
+            "Oakridge",
+            "Belmont",
+            "Sunnyside",
+            "Westwinds",
+            "Skyview Ranch",
+            "Seton",
+            "Braeside",
+            "Pineridge",
+            "Vista Heights",
+            "Britannia",
+            "Dalhousie",
+            "Strathcona Park",
+            "New Brighton",
+            "Maple Ridge",
+            "Martindale",
+            "Discovery Ridge",
+            "Evanston",
+            "Lincoln Park",
+            "Hotchkiss",
+            "Pump Hill",
+            "Coventry Hills",
+            "Temple",
+            "Montgomery",
+            "Sunalta",
+            "North Haven",
+            "Copperfield",
+            "Monterey Park",
+            "Erlton",
+            "Bel-Aire",
+            "East Shepard Industrial",
+            "Stoney 4",
+            "Cougar Ridge",
+            "Abbeydale",
+            "Deerfoot Business Centre",
+            "North Airways",
+            "Falconridge",
+            "Penbrooke Meadows",
+            "Castleridge",
+            "Mayfair",
+            "Beddington Heights",
+            "Upper Mount Royal",
+            "Scenic Acres",
+            "Somerset",
+            "Erin Woods",
+            "Parkhill",
+            "Greenview",
+            "Alpine Park",
+            "Pine Creek",
+            "Red Carpet",
+            "Glenbrook",
+            "Thorncliffe",
+            "Meadowlark Park",
+            "Yorkville",
+            "Golden Triangle",
+            "Lake Bonavista",
+            "Glendale",
+            "Cambrian Heights",
+            "Auburn Bay",
+            "Woodlands",
+            "Glamorgan",
+            "Harvest Hills",
+            "South Foothills",
+            "University District",
+            "Hidden Valley",
+            "Applewood Park",
+            "Deer Run",
+            "Millrise",
+            "Foothills",
+            "Chaparral",
+            "Stoney 2",
+            "Rangeview",
+            "Alyth\/Bonnybrook",
+            "Tuscany",
+            "Rocky Ridge",
+            "Greenwood\/Greenbriar",
+            "Citadel",
+            "Great Plains",
+            "Albert Park\/Radisson Heights",
+            "Huntington Hills",
+            "Patterson",
+            "Ogden",
+            "Moraine",
+            "Woodbine",
+            "Dover",
+            "MacEwan Glen",
+            "Chinook Park",
+            "Silverado",
+            "Shawnessy",
+            "Burns Industrial",
+            "Kelvin Grove",
+            "Kincora",
+            "Forest Heights",
+            "Charleswood",
+            "Country Hills Village",
+            "Rundle",
+            "Crestmont",
+            "East Fairview Industrial",
+            "Rutland Park",
+            "Rosemont",
+            "Eastfield",
+            "Coral Springs",
+            "University Heights",
+            "Bayview",
+            "Windsor Park",
+            "Bridlewood",
+            "Sandstone Valley",
+            "Coach Hill",
+            "Parkland",
+            "Garrison Green",
+            "Bonavista Downs",
+            "Queensland",
+            "Fairview",
+            "Medicine Hill",
+            "Haskayne",
+            "Diamond Cove",
+            "Garrison Woods",
+            "Westgate",
+            "Roxboro",
+            "Deer Ridge",
+            "Scarboro",
+            "Palliser",
+            "North Haven Upper"
+        ],
+        "Calling Lake": [
+            "NONE"
+        ],
+        "Calmar": [
+            "NONE"
+        ],
+        "Camrose": [
+            "Creekview",
+            "Downtown Camrose",
+            "West Park",
+            "Sparling",
+            "East End",
+            "Victoria Park",
+            "Augustana",
+            "Camrose East",
+            "Valleyview",
+            "Southwest Meadows",
+            "Mount Pleasant",
+            "Marler",
+            "Mohler Industrial",
+            "Cascades",
+            "Grandview",
+            "Rosebud",
+            "Duggan Park",
+            "Prospect",
+            "West End",
+            "Parkridge",
+            "Westmount",
+            "Century Meadows",
+            "South Side MHP",
+            "Fairview",
+            "Parkview"
+        ],
+        "Canmore": [
+            "Eagle Terrace",
+            "Town Centre_Canmore",
+            "Larch",
+            "Three Sisters",
+            "Teepee Town",
+            "Bow Valley Trail",
+            "Lions Park",
+            "Benchlands",
+            "South Canmore",
+            "Silvertip",
+            "Canyon Ridge",
+            "Cougar Creek",
+            "Riverstone",
+            "Hospital Hill",
+            "Elk Run",
+            "Spring Creek",
+            "Homesteads",
+            "Peaks of Grassi",
+            "Avens\/Canyon Close"
+        ],
+        "Canyon Creek": [
+            "NONE"
+        ],
+        "Carbon": [
+            "NONE"
+        ],
+        "Cardston": [
+            "NONE"
+        ],
+        "Carmangay": [
+            "NONE"
+        ],
+        "Caroline": [
+            "NONE"
+        ],
+        "Carseland": [
+            "NONE"
+        ],
+        "Carstairs": [
+            "NONE"
+        ],
+        "Castor": [
+            "NONE"
+        ],
+        "Cayley": [
+            "NONE"
+        ],
+        "Cereal": [
+            "NONE"
+        ],
+        "Champion": [
+            "NONE"
+        ],
+        "Chauvin": [
+            "Chauvin"
+        ],
+        "Chestermere": [
+            "Westmere",
+            "Dawson's Landing",
+            "Kinniburgh",
+            "Lakeview Landing",
+            "South Shores",
+            "West Creek",
+            "Chelsea_CH",
+            "East Chestermere",
+            "Rainbow Falls",
+            "The Cove",
+            "Lakeside Greens",
+            "Lakepointe",
+            "Chesterview Estates",
+            "The Beaches"
+        ],
+        "Chin": [
+            "NONE"
+        ],
+        "Clairmont": [
+            "NONE"
+        ],
+        "Clandonald": [
+            "Clandonald"
+        ],
+        "Claresholm": [
+            "NONE"
+        ],
+        "Clive": [
+            "NONE"
+        ],
+        "Cluny": [
+            "NONE"
+        ],
+        "Coaldale": [
+            "NONE"
+        ],
+        "Coalhurst": [
+            "NONE"
+        ],
+        "Cochrane": [
+            "Downtown",
+            "Heartland",
+            "Heritage Hills",
+            "Precedence",
+            "Fireside",
+            "Greystone",
+            "West Valley",
+            "GlenEagles",
+            "Sunset Ridge",
+            "Sunterra Ridge",
+            "River Song",
+            "Riviera",
+            "Industrial",
+            "Bow Ridge",
+            "Jumping Pound Ridge",
+            "River Heights",
+            "The Willows",
+            "West Terrace",
+            "Riverview",
+            "Bow Meadows",
+            "East End"
+        ],
+        "Cochrane Lake": [
+            "NONE"
+        ],
+        "Cold Lake": [
+            "Brady Heights",
+            "Cold Lake South"
+        ],
+        "Coleman": [
+            "NONE"
+        ],
+        "Colinton": [
+            "Colinton"
+        ],
+        "Condor": [
+            "NONE"
+        ],
+        "Conklin": [
+            "Conklin"
+        ],
+        "Conrich": [
+            "NONE"
+        ],
+        "Consort": [
+            "NONE"
+        ],
+        "Coronation": [
+            "NONE"
+        ],
+        "Coutts": [
+            "NONE"
+        ],
+        "Cowley": [
+            "NONE"
+        ],
+        "Craigmyle": [
+            "NONE"
+        ],
+        "Cremona": [
+            "NONE"
+        ],
+        "Crossfield": [
+            "NONE"
+        ],
+        "Crowsnest Pass": [
+            "NONE"
+        ],
+        "Cynthia": [
+            "Cynthia"
+        ],
+        "Czar": [
+            "Czar"
+        ],
+        "Daysland": [
+            "Daysland"
+        ],
+        "Dead Man's Flats": [
+            "NONE"
+        ],
+        "DeBolt": [
+            "NONE"
+        ],
+        "Delacour": [
+            "NONE"
+        ],
+        "Delburne": [
+            "Fawn Meadows"
+        ],
+        "Delia": [
+            "NONE"
+        ],
+        "Derwent": [
+            "Derwent"
+        ],
+        "Desert Blume": [
+            "NONE"
+        ],
+        "Dewberry": [
+            "Dewberry"
+        ],
+        "Diamond Valley": [
+            "Riverwood"
+        ],
+        "Dickson": [
+            "NONE"
+        ],
+        "Didsbury": [
+            "NONE"
+        ],
+        "Dimsdale": [
+            "Dimsdale Industrial Park"
+        ],
+        "Dixonville": [
+            "NONE"
+        ],
+        "Donalda": [
+            "NONE"
+        ],
+        "Donnelly": [
+            "NONE"
+        ],
+        "Drayton Valley": [
+            "Drayton Valley"
+        ],
+        "Drumheller": [
+            "Rosedale",
+            "Downtown Drumheller",
+            "Hygrade Industrial",
+            "North Drumheller",
+            "Downtown Retail",
+            "Midland",
+            "Nacmine",
+            "East Coulee",
+            "Cambria",
+            "Downtown",
+            "Bankview",
+            "Riverview Park",
+            "Newcastle",
+            "Huntington"
+        ],
+        "Duchess": [
+            "NONE"
+        ],
+        "Dunmore": [
+            "Dunmore Industrial"
+        ],
+        "Eckville": [
+            "NONE"
+        ],
+        "Edgerton": [
+            "Edgerton"
+        ],
+        "Edmonton": [
+            "Alberta Avenue",
+            "Dominion Industrial",
+            "Oliver",
+            "Davies Industrial East",
+            "Strathcona",
+            "Anthony Henday Big Lake",
+            "Gagnon Estate Industrial",
+            "Duggan",
+            "Downtown",
+            "Klarvatten",
+            "Westmount",
+            "Balwin",
+            "Garneau",
+            "Keswick Area",
+            "Boyle Street",
+            "Newton",
+            "Prince Rupert"
+        ],
+        "Edson": [
+            "Edson"
+        ],
+        "Elk Point": [
+            "Elk Point"
+        ],
+        "Elmworth": [
+            "NONE"
+        ],
+        "Elnora": [
+            "NONE"
+        ],
+        "Empress": [
+            "NONE"
+        ],
+        "Enchant": [
+            "NONE"
+        ],
+        "Enilda": [
+            "NONE"
+        ],
+        "Erskine": [
+            "NONE"
+        ],
+        "Evansburg": [
+            "Evansburg"
+        ],
+        "Exshaw": [
+            "NONE"
+        ],
+        "Fabyan": [
+            "Fabyan"
+        ],
+        "Fairview": [
+            "NONE"
+        ],
+        "Fairview (Hamlet)": [
+            "NONE"
+        ],
+        "Falher": [
+            "NONE"
+        ],
+        "Faust": [
+            "NONE"
+        ],
+        "Ferintosh": [
+            "Ferintosh"
+        ],
+        "Fleet": [
+            "NONE"
+        ],
+        "Foremost": [
+            "NONE"
+        ],
+        "Forestburg": [
+            "Forestburg"
+        ],
+        "Fort Macleod": [
+            "NONE"
+        ],
+        "Fort McMurray": [
+            "Henning Ridge",
+            "Mackenzie Park",
+            "Gregoire Park",
+            "Beacon Hill",
+            "Downtown",
+            "Parsons North",
+            "Abasand",
+            "Snow Eagle Aviation Park",
+            "Timberlea",
+            "Waterways",
+            "Thickwood",
+            "Stonecreek",
+            "Prairie Creek",
+            "Eagle Ridge",
+            "Dickinsfield",
+            "Wood Buffalo",
+            "Grayling Terrace",
+            "Taiga Nova Eco-Industrial Park"
+        ],
+        "Fort Saskatchewan": [
+            "South Fort"
+        ],
+        "Fort Vermilion": [
+            "NONE"
+        ],
+        "Fox Creek": [
+            "NONE"
+        ],
+        "Frank": [
+            "NONE"
+        ],
+        "Gadsby": [
+            "NONE"
+        ],
+        "Galahad": [
+            "Galahad"
+        ],
+        "Ghost Lake": [
+            "NONE"
+        ],
+        "Girouxville": [
+            "NONE"
+        ],
+        "Gleichen": [
+            "NONE"
+        ],
+        "Glenwood": [
+            "NONE"
+        ],
+        "Golden Days": [
+            "NONE"
+        ],
+        "Goodfare": [
+            "NONE"
+        ],
+        "Grande Cache": [
+            "NONE"
+        ],
+        "Grande Prairie": [
+            "Central Business District",
+            "Airport G.P.",
+            "Stone Ridge",
+            "Northridge",
+            "College Park",
+            "Centre West Business Park",
+            "Albinati Industrial",
+            "Richmond Industrial Park",
+            "Mission Heights",
+            "Royal Oaks",
+            "Crystal Landing",
+            "Westgate",
+            "Summerside",
+            "Northgate",
+            "Smith",
+            "Brochu Industrial",
+            "Mountview Business Park",
+            "VLA Montrose",
+            "Hillside",
+            "Patterson Place",
+            "Railtown",
+            "Westside Park",
+            "Riverstone",
+            "Lakeland",
+            "O'Brien Lake",
+            "Avondale",
+            "Cobblestone",
+            "Ivy Lake Estates",
+            "Copperwood",
+            "Pinnacle Ridge",
+            "Westpointe",
+            "Signature Falls",
+            "Arbour Hills",
+            "Bear Creek Highlands",
+            "Crystal Lake Estates",
+            "Crystal Ridge",
+            "Country Club Estates",
+            "Kensington",
+            "Countryside South",
+            "Fieldbrook",
+            "Swanavon",
+            "Gateway",
+            "MH - Creekside",
+            "Avondale South",
+            "Airport Industrial",
+            "Scenic Ridge",
+            "MH - Trumpeter Village",
+            "Trader Ridge",
+            "Highland Park",
+            "Mountview",
+            "Resources Industrial Park",
+            "Urban Rail Business Park",
+            "Countryside North",
+            "Vision West Business Park",
+            "MH - Country Estates",
+            "South Patterson Place",
+            "Crystal Heights",
+            "Easthaven",
+            "Fairway",
+            "Country Club West",
+            "Creekside",
+            "Southview",
+            "MH - Meadowview",
+            "MH - Coachman",
+            "MH - Southview",
+            "Summit"
+        ],
+        "Grandview": [
+            "NONE"
+        ],
+        "Granum": [
+            "NONE"
+        ],
+        "Grassland": [
+            "Grassland"
+        ],
+        "Grassy Lake": [
+            "NONE"
+        ],
+        "Green Court": [
+            "NONE"
+        ],
+        "Greenshields": [
+            "NONE"
+        ],
+        "Gregoire Lake Estates": [
+            "Gregoire Lake"
+        ],
+        "Grimshaw": [
+            "NONE"
+        ],
+        "Grouard": [
+            "NONE"
+        ],
+        "Grovedale": [
+            "NONE"
+        ],
+        "Gull Lake": [
+            "NONE"
+        ],
+        "Half Moon Bay": [
+            "NONE"
+        ],
+        "Hanna": [
+            "Hanna"
+        ],
+        "Hardisty": [
+            "Hardisty"
+        ],
+        "Harvie Heights": [
+            "NONE"
+        ],
+        "Hays": [
+            "NONE"
+        ],
+        "Hayter": [
+            "Hayter"
+        ],
+        "Heisler": [
+            "Heisler"
+        ],
+        "Heritage Pointe": [
+            "Artesia at Heritage Pointes"
+        ],
+        "Herronton": [
+            "NONE"
+        ],
+        "High Level": [
+            "NONE"
+        ],
+        "High Prairie": [
+            "NONE"
+        ],
+        "High River": [
+            "Industrial Park High River",
+            "Downtown High River",
+            "Highwood Village",
+            "Central High River",
+            "Highway Industrial Park High River",
+            "Southeast Central High River",
+            "Monteith",
+            "Montrose",
+            "McLaughlin Meadows",
+            "Lineham Acres",
+            "Sunshine Meadow",
+            "Hampton Hills",
+            "Sunrise Meadows",
+            "Highwood Lake",
+            "High River Golf Course"
+        ],
+        "Hill Spring": [
+            "NONE"
+        ],
+        "Hillcrest": [
+            "NONE"
+        ],
+        "Hines Creek": [
+            "NONE"
+        ],
+        "Hinton": [
+            "Mountain View",
+            "Hardisty",
+            "Hill",
+            "Terrace Heights",
+            "Valley",
+            "Thompson Lake",
+            "Hillcrest",
+            "Eaton"
+        ],
+        "Hoadley": [
+            "NONE"
+        ],
+        "Holden": [
+            "Holden"
+        ],
+        "Huallen": [
+            "NONE"
+        ],
+        "Hughenden": [
+            "Hughenden"
+        ],
+        "Hussar": [
+            "NONE"
+        ],
+        "Huxley": [
+            "NONE"
+        ],
+        "Hylo": [
+            "Hylo"
+        ],
+        "Hythe": [
+            "NONE"
+        ],
+        "Innisfail": [
+            "South Industrial",
+            "Downtown Innisfail",
+            "North Industrial",
+            "Dodds Lake",
+            "Hazelwood Estates",
+            "Margodt",
+            "Highway 2A",
+            "Central Innisfail",
+            "Southeast Innisfail",
+            "Napoleon Lake",
+            "Napoleon Lake West",
+            "South Innisfail",
+            "Southwest Innisfail",
+            "Bella Vista",
+            "Westpark Innisfail",
+            "Westwood",
+            "Madison Park"
+        ],
+        "Innisfree": [
+            "Innisfree"
+        ],
+        "Irma": [
+            "Irma"
+        ],
+        "Iron Springs": [
+            "NONE"
+        ],
+        "Irricana": [
+            "NONE"
+        ],
+        "Irvine": [
+            "NONE"
+        ],
+        "Island Lake": [
+            "NONE"
+        ],
+        "Islay": [
+            "Islay"
+        ],
+        "Jarvis Bay": [
+            "NONE"
+        ],
+        "Jasper": [
+            "Jasper"
+        ],
+        "Jenner": [
+            "NONE"
+        ],
+        "Joffre": [
+            "NONE"
+        ],
+        "Joussard": [
+            "NONE"
+        ],
+        "Killam": [
+            "Killam"
+        ],
+        "Kingman": [
+            "Kingman"
+        ],
+        "Kinsella": [
+            "Kinsella"
+        ],
+        "Kinuso": [
+            "NONE"
+        ],
+        "Kirkcaldy": [
+            "NONE"
+        ],
+        "Kitscoty": [
+            "Kitscoty"
+        ],
+        "La Crete": [
+            "NONE"
+        ],
+        "La Glace": [
+            "NONE"
+        ],
+        "Lac Des Arcs": [
+            "NONE"
+        ],
+        "Lac La Biche": [
+            "Lac La Biche"
+        ],
+        "Lacombe": [
+            "Downtown Lacombe",
+            "Wolf Creek Industrial Park",
+            "Wolf Creek Crossing",
+            "Mackenzie Ranch Estates",
+            "Shepherd Heights",
+            "Heritage Park",
+            "Fairway Heights",
+            "MacKenzie Ranch",
+            "Henner's Landing",
+            "Metcalf Ridge",
+            "C.U.C. Area",
+            "College Heights",
+            "None",
+            "Meadowview Village",
+            "Elizabeth Park",
+            "Nursery Grove",
+            "Woodlands",
+            "Bruns Park",
+            "English Estates",
+            "Fairway Heights Extension",
+            "Iron Wolf",
+            "Parkland Trailer Park",
+            "Hearthstone"
+        ],
+        "Lake Newell Resort": [
+            "NONE"
+        ],
+        "Langdon": [
+            "Boulder Creek Estates",
+            "Bridges of Langdon",
+            "Hanson Park"
+        ],
+        "Leduc": [
+            "Caledonia",
+            "Southfork"
+        ],
+        "Leslieville": [
+            "NONE"
+        ],
+        "Lethbridge": [
+            "Paradise Canyon",
+            "Fairmont",
+            "Southridge",
+            "Southgate",
+            "Discovery",
+            "Senator Buchanan",
+            "West Lethbridge Employment Centre - Commercial",
+            "London Road",
+            "Arbour Ridge",
+            "Riverstone",
+            "Agnes Davidson",
+            "Shackleford Industrial Park",
+            "Winston Churchill",
+            "Victoria Park",
+            "Ridgewood",
+            "The Crossings",
+            "Heritage Heights",
+            "The Canyons",
+            "Westminster",
+            "Country Meadows Estates",
+            "West Lethbridge Ph2 - South",
+            "Uplands",
+            "Tudor Estates",
+            "Bridge Villa Estates",
+            "Redwood",
+            "Blackwolf 2",
+            "Glendale",
+            "Indian Battle Heights",
+            "Garry Station",
+            "Downtown",
+            "Henderson Lake",
+            "Legacy Ridge \/ Hardieville",
+            "Lakeview",
+            "Fleetwood",
+            "Copperwood",
+            "Anderson Industrial Park",
+            "Varsity Village",
+            "Blackwolf 1",
+            "Churchill Industrial Park",
+            "Parkbridge Estates",
+            "Mountain Heights",
+            "Upper Eastside",
+            "Park Meadows",
+            "Stafford Manor",
+            "West Highlands",
+            "West Lethbridge Employment Centre - Industrial",
+            "St Edwards",
+            "Parkview",
+            "Staffordville",
+            "Scenic Heights",
+            "Sunridge",
+            "Chinook",
+            "Majestic Place"
+        ],
+        "Linden": [
+            "NONE"
+        ],
+        "Little Smoky": [
+            "NONE"
+        ],
+        "Lloydminster": [
+            "West Lloydminster City",
+            "Steele Heights",
+            "West Lloydminster",
+            "Hill Industrial",
+            "Archived - West",
+            "Lakeside",
+            "College Park",
+            "Parkview Estates",
+            "Southridge",
+            "Central Business District",
+            "Larsen Grove",
+            "North Lloydminster",
+            "Glen E. Neilsen Industrial Park",
+            "Aurora"
+        ],
+        "Lomond": [
+            "NONE"
+        ],
+        "Long Lake": [
+            "Long Lake"
+        ],
+        "Longview": [
+            "NONE"
+        ],
+        "Lougheed": [
+            "Lougheed"
+        ],
+        "Lundbreck": [
+            "NONE"
+        ],
+        "Lyalta": [
+            "Lakes of Muirfield"
+        ],
+        "Ma-Me-O Beach": [
+            "NONE"
+        ],
+        "Madden": [
+            "NONE"
+        ],
+        "Magrath": [
+            "NONE"
+        ],
+        "Mallaig": [
+            "NONE"
+        ],
+        "Manning": [
+            "NONE"
+        ],
+        "Mannville": [
+            "Mannville"
+        ],
+        "Manyberries": [
+            "NONE"
+        ],
+        "Markerville": [
+            "NONE"
+        ],
+        "Marlboro": [
+            "Marlboro"
+        ],
+        "Marten Beach": [
+            "NONE"
+        ],
+        "Marwayne": [
+            "Marwayne"
+        ],
+        "Mayerthorpe": [
+            "NONE"
+        ],
+        "McLaughlin": [
+            "McLaughlin"
+        ],
+        "McLennan": [
+            "NONE"
+        ],
+        "Medicine Hat": [
+            "SE Southridge",
+            "SW Southridge",
+            "River Flats",
+            "Brier Park Industrial",
+            "SE Hill",
+            "Ross Glen",
+            "SW Hill",
+            "Northwest Crescent Heights",
+            "Southland",
+            "Northeast Crescent Heights",
+            "Riverside",
+            "Ranchland",
+            "Southview-Park Meadows",
+            "Canyon Creek",
+            "Crestwood-Norwood",
+            "South West Industrial",
+            "Cottonwood",
+            "Connaught",
+            "Terrace",
+            "Park View"
+        ],
+        "Meeting Creek": [
+            "Meeting Creek"
+        ],
+        "Metiskow": [
+            "Metiskow"
+        ],
+        "Michichi": [
+            "NONE"
+        ],
+        "Milk River": [
+            "NONE"
+        ],
+        "Millet": [
+            "Millet"
+        ],
+        "Milo": [
+            "NONE"
+        ],
+        "Minburn": [
+            "Minburn"
+        ],
+        "Mirror": [
+            "NONE"
+        ],
+        "Moon River Estates": [
+            "NONE"
+        ],
+        "Morrin": [
+            "NONE"
+        ],
+        "Mossleigh": [
+            "NONE"
+        ],
+        "Mulhurst Bay": [
+            "NONE"
+        ],
+        "Munson": [
+            "NONE"
+        ],
+        "Myrnam": [
+            "NONE"
+        ],
+        "Nampa": [
+            "Northern Sunrise County"
+        ],
+        "Nanton": [
+            "NONE"
+        ],
+        "New Norway": [
+            "New Norway"
+        ],
+        "New Sarepta": [
+            "NONE"
+        ],
+        "Newbrook": [
+            "NONE"
+        ],
+        "Nisku": [
+            "Nisku"
+        ],
+        "Niton Junction": [
+            "Niton Junction"
+        ],
+        "Nobleford": [
+            "NONE"
+        ],
+        "Nordegg": [
+            "NONE"
+        ],
+        "Norglenwold": [
+            "NONE"
+        ],
+        "North Star": [
+            "NONE"
+        ],
+        "Notikewin": [
+            "NONE"
+        ],
+        "Ohaton": [
+            "NONE"
+        ],
+        "Okotoks": [
+            "Drake Landing",
+            "Westmount_OK",
+            "D'arcy Ranch",
+            "Wedderburn",
+            "Heritage Okotoks",
+            "Cimarron Estates",
+            "Sandstone",
+            "Air Ranch",
+            "North Gateway",
+            "Cimarron",
+            "Tower Hill",
+            "Cimarron Springs",
+            "Crystal Green",
+            "Mountainview",
+            "Westridge",
+            "Crystalridge",
+            "Cimarron Vista",
+            "Cimarron Grove",
+            "Sheep River Ridge",
+            "Cimarron Meadows",
+            "Crystal Shores",
+            "Business Park",
+            "Central Heights",
+            "Rosemont"
+        ],
+        "Olds": [
+            "NONE"
+        ],
+        "Orton": [
+            "NONE"
+        ],
+        "Out of Province_Alberta": [
+            "NONE"
+        ],
+        "Oyen": [
+            "NONE"
+        ],
+        "Paradise Valley": [
+            "Paradise Valley"
+        ],
+        "Parkland": [
+            "NONE"
+        ],
+        "Parkland Beach": [
+            "NONE"
+        ],
+        "Patricia": [
+            "NONE"
+        ],
+        "Peace River": [
+            "Upper West Peace",
+            "Rolling Hills",
+            "Downtown",
+            "West Hill Com\/Ind",
+            "Rosedale",
+            "Westbrook Estates",
+            "South End",
+            "Shaftesbury Estates",
+            "Lower West Peace",
+            "Shaftesbury Settlements",
+            "North End",
+            "Terrace MHP",
+            "Cheviot Heights MHP",
+            "Saddleback Ridge",
+            "Norglen",
+            "Industrial Area",
+            "Riverview",
+            "The Pines"
+        ],
+        "Peers": [
+            "Peers"
+        ],
+        "Pelican Point": [
+            "Pelican Point_CAMR"
+        ],
+        "Penhold": [
+            "Hawkridge Estates",
+            "Oxford Landing",
+            "Palisades",
+            "Park Place"
+        ],
+        "Perryvale": [
+            "NONE"
+        ],
+        "Picture Butte": [
+            "NONE"
+        ],
+        "Pincher Creek": [
+            "NONE"
+        ],
+        "Plamondon": [
+            "Plamondon"
+        ],
+        "Ponoka": [
+            "Riverside",
+            "Central Ponoka",
+            "Southwest Industrial Park",
+            "Lucas Heights",
+            "Co-op Subdivision",
+            "Poplar Grove Community",
+            "North End"
+        ],
+        "Poplar Ridge": [
+            "Poplar Ridge_BRAZ"
+        ],
+        "Priddis": [
+            "NONE"
+        ],
+        "Priddis Greens": [
+            "Hawks Landing"
+        ],
+        "Provost": [
+            "Provost"
+        ],
+        "Rainbow Lake": [
+            "NONE"
+        ],
+        "Raymond": [
+            "NONE"
+        ],
+        "Red Deer": [
+            "Edgar Indus. Pk.",
+            "Downtown Red Deer",
+            "Riverside Light Industrial Park",
+            "Timber Ridge",
+            "Northlands Industrial Park",
+            "Sunnybrook South",
+            "Parkvale",
+            "Bower",
+            "Waskasoo",
+            "Laredo",
+            "Riverside Meadows",
+            "Evergreen",
+            "Anders South",
+            "South Hill",
+            "Johnstone Crossing",
+            "Oriole Park",
+            "Woodlea",
+            "Rosedale Meadows",
+            "Deer Park Village",
+            "Chiles Industrial Park",
+            "Kentwood West",
+            "Lancaster Green",
+            "Capstone at Riverlands",
+            "Hazlett Lake",
+            "Edgar Industrial Park",
+            "Timberlands North",
+            "West Lloydminster City",
+            "Devonshire",
+            "Clearview Ridge",
+            "Davenport",
+            "Oriole Park West",
+            "Ironstone",
+            "Highland Green Estates",
+            "Highland Green",
+            "Johnstone Park",
+            "Queens Business Park",
+            "Normandeau",
+            "Capstone",
+            "Eastview Estates",
+            "Lancaster Meadows",
+            "Garden Heights",
+            "Vanier East",
+            "Clearview Meadows",
+            "Kentwood East",
+            "Westlake",
+            "Morrisroe",
+            "Glendale",
+            "Anders Park",
+            "McKenzie Trail Recreation Area",
+            "College Park",
+            "Anders Park East",
+            "West Park",
+            "Grandview",
+            "Vanier Woods",
+            "Mustang Acres",
+            "Mountview",
+            "Rosedale Estates",
+            "Eastview",
+            "Lonsdale",
+            "Northwood Estates",
+            "Inglewood West",
+            "Aspen Ridge",
+            "Timberstone",
+            "Sunnybrook",
+            "Timberlands",
+            "Deer Park Estates",
+            "Kingsgate",
+            "Railyards",
+            "Glendale Park Estates",
+            "Pines",
+            "Michener Hill",
+            "Morrisroe Extension"
+        ],
+        "Red Earth Creek": [
+            "NONE"
+        ],
+        "Red Willow": [
+            "NONE"
+        ],
+        "Redcliff": [
+            "Redcliff Industrial"
+        ],
+        "Ribstone": [
+            "Ribstone"
+        ],
+        "Ridgevalley": [
+            "NONE"
+        ],
+        "Rimbey": [
+            "NONE"
+        ],
+        "Robb": [
+            "NONE"
+        ],
+        "Rochon Sands": [
+            "NONE"
+        ],
+        "Rocky Mountain House": [
+            "Rocky Mtn House",
+            "Creekside",
+            "Southside Trailer Park",
+            "Creekside Mobile Home Park",
+            "McNutt Estates",
+            "East Side Industrial",
+            "Old Town",
+            "Rocky Mountain Estates",
+            "Kennedy",
+            "River Road"
+        ],
+        "Rockyford": [
+            "NONE"
+        ],
+        "Rolling Hills": [
+            "NONE"
+        ],
+        "Rosalind": [
+            "Rosalind"
+        ],
+        "Rosebud": [
+            "NONE"
+        ],
+        "Rosemary": [
+            "NONE"
+        ],
+        "Rural Athabasca County": [
+            "Mewatha",
+            "Century Estates_CATH",
+            "North Buck Lake",
+            "White Gull",
+            "Bondiss",
+            "Mewatha Beach"
+        ],
+        "Rural Barrhead No. 11, County of": [
+            "Lightning Bay Resort"
+        ],
+        "Rural Beaver County": [
+            "NONE"
+        ],
+        "Rural Big Lakes County": [
+            "Winnagami",
+            "Hilliard's Bay"
+        ],
+        "Rural Bighorn No. 8, M.D. of": [
+            "Kananaskis"
+        ],
+        "Rural Birch Hills County": [
+            "NONE"
+        ],
+        "Rural Bonnyville No. 87, M.D. of": [
+            "NONE"
+        ],
+        "Rural Brazeau County": [
+            "Poplar Ridge_MBRA",
+            "River Ridge Estate_BRAZ",
+            "Eastview Heights"
+        ],
+        "Rural Camrose County": [
+            "Ervick Industrial",
+            "McNary Hills Estates",
+            "Sunset Heights",
+            "Braseth Beach",
+            "Red Deer Lake",
+            "Pelican View Estates",
+            "Little Beaver Lake Estates",
+            "Meldal Beach",
+            "Lakeview Acres"
+        ],
+        "Rural Cardston County": [
+            "NONE"
+        ],
+        "Rural Clear Hills County": [
+            "NONE"
+        ],
+        "Rural Clearwater County": [
+            "Fox Run Estates",
+            "Metaldog Industrial Park",
+            "Meadow Ponds Estate",
+            "Gateway Industrial Park",
+            "West Country Estates",
+            "Cougar Ridge",
+            "Country Meadows Estates",
+            "Ridgeland Estates",
+            "Pine Ridge Estates",
+            "Boundary",
+            "Misty Valley",
+            "Nordegg - Hamlet - North",
+            "Beaver Creek Estates",
+            "James River Retreat",
+            "Everdell Estates",
+            "Tragondale",
+            "Echo Valley"
+        ],
+        "Rural Crowsnest Pass": [
+            "NONE"
+        ],
+        "Rural Cypress County": [
+            "Elkwater",
+            "Dunmore Industrial"
+        ],
+        "Rural Fairview No. 136, M.D. of": [
+            "NONE"
+        ],
+        "Rural Flagstaff County": [
+            "NONE"
+        ],
+        "Rural Foothills County": [
+            "Abilds Industrial Park",
+            "Green Haven Estates",
+            "DeWinton Heights",
+            "Square Butte",
+            "Gladys Ridge",
+            "Clear Mountain Estates",
+            "Aspen Creek Estates",
+            "Red Deer Lake",
+            "Estates 552",
+            "White Post Lane Est"
+        ],
+        "Rural Forty Mile No. 8, County of": [
+            "NONE"
+        ],
+        "Rural Grande Prairie No. 1, County of": [
+            "Whispering Ridge",
+            "Crossroads South",
+            "Dunes West",
+            "Highway 43 West Industrial Park",
+            "Highway 43 East Industrial Park",
+            "Spruce Villa Estates",
+            "Taylor Estates",
+            "Jersey Meadows",
+            "Minhas Industrial Park",
+            "Grandview",
+            "Carriage Lane Estates",
+            "Lakeview Estates",
+            "The Banks at Spring Creek",
+            "Canon Lake Estates",
+            "Arthur Lane",
+            "Flyingshot Lake",
+            "Tamarack Estates",
+            "Westlake Village",
+            "The Ranch",
+            "Catherine Estates",
+            "Dunes",
+            "JD Renton Estates",
+            "Maple Ridge Estates",
+            "Hawker Industrial Park",
+            "Westridge Estates",
+            "Goldenrod Estates",
+            "Sunrise Estates",
+            "Riverview Pine Estates",
+            "Crossroads 53 South",
+            "Heritage Pointe",
+            "Autumn Wood Estates",
+            "Wapiti Ridge",
+            "Lakeview Meadows",
+            "Dunes on 17",
+            "Mystic Ridge",
+            "Park Meadows",
+            "MH - Silver Pointe",
+            "Smallwood Estates",
+            "Emerson Trail Industrial Park",
+            "Mountain Side Estates",
+            "Sprucewood Park",
+            "Pine Valley Estates"
+        ],
+        "Rural Greenview No. 16, M.D. of": [
+            "NONE"
+        ],
+        "Rural Kneehill County": [
+            "NONE"
+        ],
+        "Rural Lac La Biche County": [
+            "Fork Lake Estates"
+        ],
+        "Rural Lac Ste. Anne County": [
+            "NONE"
+        ],
+        "Rural Lacombe County": [
+            "The Slopes",
+            "Iron Rail Business Park",
+            "Aspelund Industrial Park",
+            "Wilson\u2019s Beach Estates",
+            "Rosedale Valley",
+            "Burbank Heights",
+            "Sandy Point",
+            "Lacombe Lake Estates",
+            "DeGraff Resort",
+            "New Saratoga Beach",
+            "Burbank Industrial Park",
+            "Westside Country Estates",
+            "Birch Bay",
+            "Brighton Beach",
+            "Burbank",
+            "McLauren Beach",
+            "Wilson Beach",
+            "Silver Springs",
+            "Ebeling Beach",
+            "Lakeview Estates"
+        ],
+        "Rural Lamont County": [
+            "NONE"
+        ],
+        "Rural Leduc County": [
+            "Deer Crossing Estates"
+        ],
+        "Rural Lesser Slave River No. 124, M.D. of": [
+            "NONE"
+        ],
+        "Rural Lethbridge County": [
+            "NONE"
+        ],
+        "Rural Mackenzie County": [
+            "NONE"
+        ],
+        "Rural Minburn No. 27, County of": [
+            "NONE"
+        ],
+        "Rural Mountain View County": [
+            "Bergen Springs",
+            "Tall Timber",
+            "Watervalley",
+            "Coyote Creek",
+            "Ridgelands"
+        ],
+        "Rural Newell, County of": [
+            "West Land Acres",
+            "Lake Newell Bantry Bay",
+            "One Tree",
+            "Mortensen",
+            "Sagebrush Estates"
+        ],
+        "Rural Northern Lights, County of": [
+            "Keg River"
+        ],
+        "Rural Northern Sunrise County": [
+            "Northern Sunrise County"
+        ],
+        "Rural Paintearth No. 18, County of": [
+            "Federal"
+        ],
+        "Rural Parkland County": [
+            "Acheson Business Park",
+            "Alpine Acres",
+            "Tomahawk_CPAR"
+        ],
+        "Rural Peace No. 135, M.D. of": [
+            "NONE"
+        ],
+        "Rural Pincher Creek No. 9, M.D. of": [
+            "Castle Mountain Resort"
+        ],
+        "Rural Ponoka County": [
+            "Wolf Creek Village",
+            "Jada Development",
+            "Artist View",
+            "Meridian Beach",
+            "Sandhills",
+            "Raymond Shores",
+            "Pleasant Hill",
+            "Poulsens Pasture",
+            "Morning Meadows",
+            "Lone Tree Estates",
+            "Meridian Country Estates",
+            "Sunnyside",
+            "Grandview Estates",
+            "Country Ridge Estates",
+            "Red Deer Lake",
+            "Westlake Estates",
+            "Fox Fire Glen",
+            "Deer Run Estates"
+        ],
+        "Rural Provost No. 52, M.D. of": [
+            "NONE"
+        ],
+        "Rural Red Deer County": [
+            "Blindman Industrial Park",
+            "Gasoline Alley",
+            "Gleniffer Lake",
+            "Burnt Lake Indust. Park",
+            "Balmoral Heights",
+            "Whispering Pines",
+            "Sandy Cove",
+            "Spruce Bay Resort",
+            "Woodland Hills",
+            "Canyon Heights",
+            "Herder",
+            "Carefree Resorts",
+            "Blindman Ridge",
+            "Trueman",
+            "Melody Meadows",
+            "Oakwood Estates",
+            "Kayton Estates",
+            "Liberty Landing",
+            "Energy Business Park",
+            "Taunton",
+            "Poplar Ridge",
+            "Pine Lake West",
+            "Green Acres",
+            "Hillside Meadows",
+            "Red Lodge Estates",
+            "Edwards",
+            "Stone Ridge Estates",
+            "Spruce Lane",
+            "West Ridge",
+            "Country Lane Estates",
+            "Harvey Heights",
+            "McKenzie",
+            "Dancey Estates",
+            "Springvale Heights",
+            "Waskasoo Estates"
+        ],
+        "Rural Rocky View County": [
+            "Bearspaw_Calg",
+            "Wintergreen",
+            "Springbank",
+            "Bearspaw Meadows",
+            "Elbow Valley",
+            "Cottage Club at Ghost Lake",
+            "Harmony",
+            "Glendale Meadows",
+            "Cambridge Park",
+            "Sharp Hill",
+            "Monterra",
+            "Blueridge Estates",
+            "Watermark",
+            "Elbow Valley West",
+            "Redwood Meadows",
+            "Lansdowne Estates",
+            "Elbow River Estates",
+            "Alandale Estates",
+            "Pinebrook Estates",
+            "Artist View Park W",
+            "Equestrian Estates",
+            "Conrich Meadows",
+            "Silverhorn",
+            "Westridge Estates",
+            "Springbank Heights",
+            "Morgans Rise",
+            "Woodland Estates",
+            "Wild Rose Count Est",
+            "West Bluff Estates",
+            "West Ridge Park",
+            "Windhorse Manor",
+            "Cherry Valley Est",
+            "Glenmore Views",
+            "Stonepine",
+            "Toki Estates",
+            "Butte Hills",
+            "West View Estates",
+            "Church Ranches"
+        ],
+        "Rural Saddle Hills County": [
+            "NONE"
+        ],
+        "Rural Smoky Lake County": [
+            "Mons Lake Estate",
+            "Hillside Acres"
+        ],
+        "Rural Smoky River No. 130, M.D. of": [
+            "NONE"
+        ],
+        "Rural Special Areas No. 2": [
+            "NONE"
+        ],
+        "Rural Special Areas No. 3": [
+            "NONE"
+        ],
+        "Rural Special Areas No. 4": [
+            "NONE"
+        ],
+        "Rural Spirit River No. 133, M.D. of": [
+            "NONE"
+        ],
+        "Rural St. Paul No. 19, County of": [
+            "Laurier lake"
+        ],
+        "Rural Starland County": [
+            "NONE"
+        ],
+        "Rural Stettler No. 6, County of": [
+            "Buffalo Lake Area",
+            "Buffalo Sands",
+            "Carlisle Estates",
+            "Scenic Sands",
+            "Buffalo Lake Meadows"
+        ],
+        "Rural Strathcona County": [
+            "Barry Hill",
+            "Colchester Lane"
+        ],
+        "Rural Sturgeon County": [
+            "NONE"
+        ],
+        "Rural Taber, M.D. of": [
+            "NONE"
+        ],
+        "Rural Two Hills No. 21, County of": [
+            "NONE"
+        ],
+        "Rural Vermilion River, County of": [
+            "Devonian Business Park",
+            "Morning Gold Estates (SW)",
+            "Brennan Park",
+            "Clover View Acres",
+            "Hawkstone Estates",
+            "County Air Estates (NW)",
+            "Willow Creek"
+        ],
+        "Rural Vulcan County": [
+            "McGregor Lake",
+            "Little Bow"
+        ],
+        "Rural Wainwright No. 61, M.D. of": [
+            "NONE"
+        ],
+        "Rural Warner No. 5, County of": [
+            "NONE"
+        ],
+        "Rural Wetaskiwin No. 10, County of": [
+            "River Ridge Estates_CWET",
+            "Greystones on the Lake",
+            "Sunset Harbour",
+            "Landsdowne Park",
+            "Blue Bird Estates",
+            "Sunset Bay_CWET",
+            "Heritage Estates",
+            "Summerhaven"
+        ],
+        "Rural Wheatland County": [
+            "Dalum"
+        ],
+        "Rural Willow Creek No. 26, M.D. of": [
+            "NONE"
+        ],
+        "Rural Woodlands County": [
+            "NONE"
+        ],
+        "Rural Yellowhead County": [
+            "NONE"
+        ],
+        "Rycroft": [
+            "NONE"
+        ],
+        "Ryley": [
+            "Ryley"
+        ],
+        "Sandy Beach": [
+            "NONE"
+        ],
+        "Sandy Lake": [
+            "NONE"
+        ],
+        "Sangudo": [
+            "NONE"
+        ],
+        "Saprae Creek": [
+            "Saprae Creek Estates"
+        ],
+        "Sedgewick": [
+            "Sedgewick"
+        ],
+        "Seven Persons": [
+            "NONE"
+        ],
+        "Sexsmith": [
+            "NONE"
+        ],
+        "Shaughnessy": [
+            "NONE"
+        ],
+        "Slave Lake": [
+            "NONE"
+        ],
+        "Smith": [
+            "NONE"
+        ],
+        "South Baptiste": [
+            "NONE"
+        ],
+        "Spirit River": [
+            "NONE"
+        ],
+        "Springbrook": [
+            "NONE"
+        ],
+        "Spruce View": [
+            "NONE"
+        ],
+        "St. Isidore": [
+            "Northern Sunrise County"
+        ],
+        "St. Paul": [
+            "St. Paul Town"
+        ],
+        "Standard": [
+            "NONE"
+        ],
+        "Stavely": [
+            "NONE"
+        ],
+        "Stettler": [
+            "Meadowlands",
+            "Downtown East",
+            "Emmerson",
+            "Downtown West",
+            "Central",
+            "Tower",
+            "Rosedale",
+            "Grandview",
+            "East Industrial Park",
+            "Westgate",
+            "Parkdale"
+        ],
+        "Stirling": [
+            "NONE"
+        ],
+        "Stony Plain": [
+            "Genesis On The Lakes",
+            "Homesteads"
+        ],
+        "Strathmore": [
+            "Downtown_Strathmore",
+            "Strathmore Lakes Estates",
+            "Wildflower",
+            "Lakewood",
+            "Hillview Estates",
+            "Spruce Business Park",
+            "Westmount_Strathmore",
+            "Parkwood",
+            "Brentwood Business Park",
+            "Green Meadow",
+            "Cambridge Glen",
+            "Aspen Creek",
+            "The Ranch_Strathmore",
+            "Brentwood_Strathmore",
+            "Maplewood",
+            "Strathaven",
+            "Crystal Ridge"
+        ],
+        "Strome": [
+            "Strome"
+        ],
+        "Suffield": [
+            "NONE"
+        ],
+        "Sunbreaker Cove": [
+            "NONE"
+        ],
+        "Sundance Beach": [
+            "NONE"
+        ],
+        "Sundre": [
+            "NONE"
+        ],
+        "Sunnybrook": [
+            "NONE"
+        ],
+        "Sunnyslope": [
+            "NONE"
+        ],
+        "Sunset Beach": [
+            "NONE"
+        ],
+        "Swan Hills": [
+            "NONE"
+        ],
+        "Sylvan Lake": [
+            "Beju Industrial Park",
+            "Downtown",
+            "Highway 11A",
+            "Sixty West",
+            "Ryders Ridge",
+            "Cottage Area",
+            "Grayhawk",
+            "Hewlett Park",
+            "Marina Bay",
+            "Central Core",
+            "Points West",
+            "Iron Gate",
+            "Palo",
+            "Cuendet Industrial Park",
+            "Lakeway Landing",
+            "Vista",
+            "Fox Run",
+            "Westwood",
+            "Beacon Hill",
+            "Pierview",
+            "Crestview",
+            "Willow Springs",
+            "Lakeview Heights",
+            "Lighthouse Point",
+            "Newport"
+        ],
+        "Taber": [
+            "NONE"
+        ],
+        "Tangent": [
+            "NONE"
+        ],
+        "Teepee Creek": [
+            "NONE"
+        ],
+        "Tees": [
+            "NONE"
+        ],
+        "Telfordville": [
+            "Telfordville"
+        ],
+        "Thorsby": [
+            "NONE"
+        ],
+        "Three Hills": [
+            "NONE"
+        ],
+        "Tilley": [
+            "NONE"
+        ],
+        "Torrington": [
+            "NONE"
+        ],
+        "Trochu": [
+            "NONE"
+        ],
+        "Turin": [
+            "NONE"
+        ],
+        "Two Hills": [
+            "NONE"
+        ],
+        "Valleyview": [
+            "NONE"
+        ],
+        "Vauxhall": [
+            "NONE"
+        ],
+        "Vermilion": [
+            "Vermilion"
+        ],
+        "Veteran": [
+            "NONE"
+        ],
+        "Viking": [
+            "Viking"
+        ],
+        "Village at Pigeon Lake": [
+            "NONE"
+        ],
+        "Vulcan": [
+            "NONE"
+        ],
+        "Wabasca": [
+            "NONE"
+        ],
+        "Wagner": [
+            "NONE"
+        ],
+        "Wainwright": [
+            "Wainwright"
+        ],
+        "Walsh": [
+            "NONE"
+        ],
+        "Wandering River": [
+            "NONE"
+        ],
+        "Wanham": [
+            "NONE"
+        ],
+        "Warburg": [
+            "NONE"
+        ],
+        "Warner": [
+            "NONE"
+        ],
+        "Waterton Park": [
+            "NONE"
+        ],
+        "Watino": [
+            "NONE"
+        ],
+        "Wedgewood": [
+            "Wedgewood"
+        ],
+        "Welling": [
+            "NONE"
+        ],
+        "Wembley": [
+            "NONE"
+        ],
+        "Westlock": [
+            "NONE"
+        ],
+        "Wetaskiwin": [
+            "Lynalta",
+            "Wetaskiwin Common"
+        ],
+        "Whispering Hills": [
+            "NONE"
+        ],
+        "White Sands": [
+            "NONE"
+        ],
+        "Whitecourt": [
+            "NONE"
+        ],
+        "Whitelaw": [
+            "NONE"
+        ],
+        "Widewater": [
+            "NONE"
+        ],
+        "Wildwood": [
+            "Wildwood_YELL"
+        ],
+        "Willingdon": [
+            "NONE"
+        ],
+        "Wimborne": [
+            "NONE"
+        ],
+        "Winfield": [
+            "Winfield"
+        ],
+        "Withrow": [
+            "NONE"
+        ],
+        "Woking": [
+            "NONE"
+        ],
+        "Youngstown": [
+            "NONE"
+        ],
+        "Zama City": [
+            "NONE"
+        ]
+    },
+    "Saskatchewan": {
+        "Brightsand Lake": [
+            "NONE"
+        ],
+        "Greenstreet": [
+            "NONE"
+        ],
+        "Lac Des Iles": [
+            "NONE"
+        ],
+        "Lashburn": [
+            "NONE"
+        ],
+        "Lloydminster": [
+            "Aurora",
+            "Wallacefield",
+            "East Lloydminster",
+            "Central Business District",
+            "Larsen Grove",
+            "North Industrial",
+            "North Lloydminster",
+            "Sask Industrial",
+            "Wigfield Industrial"
+        ],
+        "Loon Lake": [
+            "NONE"
+        ],
+        "Maidstone": [
+            "NONE"
+        ],
+        "Marsden": [
+            "NONE"
+        ],
+        "Marshall": [
+            "NONE"
+        ],
+        "Neilburg": [
+            "NONE"
+        ],
+        "Out of Province_Alberta": [
+            "NONE"
+        ],
+        "Paradise Hill": [
+            "NONE"
+        ],
+        "Paynton": [
+            "NONE"
+        ],
+        "Perch Lake": [
+            "NONE"
+        ],
+        "Rural": [
+            "NONE"
+        ],
+        "Sandy Beach (Sask)": [
+            "NONE"
+        ],
+        "St. Walburg": [
+            "NONE"
+        ],
+        "Suffern Lake": [
+            "NONE"
+        ],
+        "Turtle Lake": [
+            "NONE"
+        ],
+        "Turtleford": [
+            "NONE"
+        ],
+        "Waseca": [
+            "NONE"
+        ]
+    },
+    "British Columbia": {
+        "Out of Province_Alberta": [
+            "NONE"
+        ]
+    }
+}
