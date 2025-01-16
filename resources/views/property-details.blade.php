@@ -683,7 +683,7 @@
                                                 </div>
                                             @elseif ($listing['featured'] == 1)
                                                 <div class="list-tag fz12">
-                                                    <i class="fa-thin fa-star me-2"></i>Featured
+                                                    <i class="fa-thin fa-star me-2"></i>Exclusive
                                                 </div>
                                             @endif
                             
@@ -737,9 +737,17 @@
                                                     <p><span class="flaticon-bed"></span>{{ $listing['BedroomsTotal'] }} bed</p>
                                                 @endif
                                             
-                                                @if($listing['BathroomsFull'])
-                                                    <p><span class="flaticon-shower"></span>{{ $listing['BathroomsFull'] }} bath</p>
-                                                @endif
+                                                @if($listing['BathroomsFull'] || $listing['BathroomsHalf'])
+    <p>
+        <span class="flaticon-shower"></span>
+        {{ $listing['BathroomsFull'] ?: 0 }} 
+        @if($listing['BathroomsHalf'] > 0)
+            .{{ $listing['BathroomsHalf'] }}
+        @endif
+        bath{{ ($listing['BathroomsFull'] + $listing['BathroomsHalf'] > 1) ? 's' : '' }}
+    </p>
+@endif
+
                                             
                                                 @if($listing['BuildingAreaTotalSF'])
                                                     <p><span class="flaticon-expand"></span>{{ floor($listing['BuildingAreaTotalSF']) }} sqft</p>
@@ -2296,7 +2304,18 @@ $('.heading').text(headingText);
 
             $('.bedroom').text("{{ $propertyDetails['BedroomsTotal'] }}" || '0');
 
-            $('.bathroom').text("{{ $propertyDetails['BathroomsFull'] }}" || '0');
+            $('.bathroom').text(function() {
+    var fullBathrooms = {{ $propertyDetails['BathroomsFull'] ?? 0 }};
+    var halfBathrooms = {{ $propertyDetails['BathroomsHalf'] ?? 0 }};
+    
+    var bathroomText = fullBathrooms;
+    
+    if (halfBathrooms > 0) {
+        bathroomText += '.' + halfBathrooms;
+    }
+    
+    return bathroomText + (fullBathrooms + halfBathrooms > 1 ? ' baths' : ' bath');
+});
 
             $('.years').text("{{ $propertyDetails['YearBuilt'] }}" || 'N/A');
 
@@ -2341,7 +2360,7 @@ $('.heading').text(headingText);
             if ("{{ $propertyDetails['diamond'] }}" == 1) {
                 $('.features').text('Diamond').css('background-color', '#10579f');
             } else if ("{{ $propertyDetails['featured'] }}" == 1) {
-                $('.features').text('Featured').css('background-color', '#10579f');
+                $('.features').text('Exclusive').css('background-color', '#10579f');
             } else {
                 $('.features').hide();
                 $('.features').css('background', 'transparent'); // Set background color to transparent

@@ -669,7 +669,7 @@ function displayProperties(property) {
               </div>` :
         property.featured == 1 ?
           `<div class="list-tag fz12">
-                  <i class="fa-thin fa-star me-2"></i>Featured
+                  <i class="fa-thin fa-star me-2"></i>Exclusive
               </div>` :
 
           ''}        
@@ -699,7 +699,11 @@ function displayProperties(property) {
             <p class="list-text">${property.PropertyType}</p>
             <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-                        ${property.BathroomsFull ? `<p><span class="flaticon-shower"></span>${property.BathroomsFull} bath</p>` : ''}
+                        ${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
+                          ? `<p><span class="flaticon-shower"></span>
+                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
+                             </p>` 
+                          : ''}
                         ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
             <span class="mlsNumber">MLS&#174; Number: ${property.ListingId}</span>

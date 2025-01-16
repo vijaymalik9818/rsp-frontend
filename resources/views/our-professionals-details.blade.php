@@ -192,13 +192,13 @@
                                 <li class="nav-item col-6" style="padding-right:2px;" role="presentation">
                                     <button class="nav-link  active btn-secondary ud-btn " id="pills-person-tab"
                                         data-bs-toggle="pill" data-bs-target="#pills-person" type="button" role="tab"
-                                        aria-controls="pills-person" aria-selected="true">Contact
+                                        aria-controls="pills-person" aria-selected="true" style="font-size: 10px;">Contact
                                         REALTOR <span>&#174;</span></button>
                                 </li>
                                 <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
                                     <button class="nav-link video-btn btn-secondary ud-btn " id="pills-profiles-tab"
                                         data-bs-toggle="pill" data-bs-target="#pills-profiles" type="button" role="tab"
-                                        aria-controls="pills-profiles" aria-selected="false">Contact
+                                        aria-controls="pills-profiles" aria-selected="false" style="font-size: small;">Contact
                                         Info</button>
                                 </li>
                             </ul>
@@ -510,6 +510,8 @@ fetch(apiReviews)
 
                     const contactSec = `
     <h6>Contact Info</h6>
+    <h5>${agentData.name}</h5>
+    <p><span>${agentData.position}</span> at Real Estate Professional Inc. </p>
     ${agentData.address ? `<p><i class="ri-map-pin-line"></i> ${agentData.address}</p>` : ''}
     <ul class="list-unstyled">
         <li>
@@ -996,7 +998,7 @@ $('#Textarea').val(dynamicMessage);
                               </div>` :
               property.featured == 1?
               `<div class="list-tag fz12">
-                                  <i class="fa-thin fa-star me-2"></i>Featured
+                                  <i class="fa-thin fa-star me-2"></i>Exclusive
                               </div>` :
               
               ''}   
@@ -1027,8 +1029,11 @@ $('#Textarea').val(dynamicMessage);
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-                        ${property.BathroomsFull ? `<p><span class="flaticon-shower"></span>${property.BathroomsFull} bath</p>` : ''}
-                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
+${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
+                          ? `<p><span class="flaticon-shower"></span>
+                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
+                             </p>` 
+                          : ''}                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
 
                     <span class="mlsNumber">MLS® Number:  ${property.ListingId}</span>

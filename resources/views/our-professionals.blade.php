@@ -28,7 +28,7 @@
                                     <div class="name-input email-input position-relative  res-h">
                                         <div class="px-0 col-12 col-sm-12 col-md-12">
                                             <input type=""
-                                                placeholder="REALTORS®️ Name - Search by first, last or full name"
+                                                placeholder="REALTORS&#174; Name - Search by first, last or full name"
                                                 id="searchInput" name="search" class="search">
                                             <ul id="suggestionsList"></ul>
                                         </div>
@@ -578,7 +578,7 @@
  
   <img src="${agent.profile_picture ? `${agent.profile_picture}` : '{{ asset('images/no_image.jpg') }}'}" alt="${agent.name}" onerror="this.src='{{ asset('images/no_image.jpg') }}';"> </a> </div> </div> <div class="col-12 col-sm-12 profile-delt mt-3 mt-sm-0"> <div class="profile-delt px-3"> <div class="d-flex align-items-start justify-content-between"> <a href="{{ url('') }}/our-professionals/details/${agent.slug_url}">
  
-  <h5>${agent.name} </h5> </a> <div class="d-flex gap-2"> <a href="mailto:${agent.email}"><i class="fa-light fa-envelope"></i></a> <a href="tel:${agent.phone}"><i class="fa-light fa-phone"></i></a> </div> </div> <p>${agent.position} </p> 
+  <h5>${agent.name} </h5> </a> <div class="d-flex gap-2"> <a href="mailto:${agent.email}"><i class="fa-light fa-envelope"></i></a> <a href="tel:${agent.phone}"><i class="fa-light fa-phone"></i></a> </div> </div> <p>${agent.position ? agent.position.toUpperCase() : ''} </p> 
  
   </div> </div> </div> </div> </div> </div>
  
@@ -639,8 +639,8 @@
                     paginationContainer.innerHTML = paginationHtml;
 
                     const paginationCountContainer = document.querySelector('.pagination_page_count');
-                    paginationCountContainer.textContent =
-                        `${startAgentIndex} - ${endAgentIndex} of ${totalAgents} REALTORS®️ available`;
+                    paginationCountContainer.innerHTML =
+                        `${startAgentIndex} - ${endAgentIndex} of ${totalAgents} REALTORS<span>&#174;</span> available`;
                 }
 
             }).catch(error => {
