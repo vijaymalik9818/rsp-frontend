@@ -47,7 +47,8 @@
                     </div>
                 </div>
                 <div class="right text-end">
-                    <div class="d-flex align-items-center justify-content-start justify-content-md-end  gap-2  right-icons" style="background-color:  #f7f7ff; ">
+                    <div class="d-flex align-items-center justify-content-start justify-content-md-end  gap-2  right-icons"
+                        style="background-color:  #f7f7ff; ">
                         <div class="icon mt-0" id="fav-icon" onclick='toggleFavorite()'>
                             <i class="ri-heart-line "></i>
                         </div>
@@ -291,7 +292,7 @@
                                 </div>
 
                             </div>
-                                   <div class="address mt-5 p-0" id="additionalDetails">
+                            <div class="address mt-5 p-0" id="additionalDetails">
                                 <div class="d-flex align-items-center justify-content-between my-3">
                                     <h4>Additional Details</h4>
 
@@ -316,21 +317,21 @@
                                         </div>
                                         <hr>
                                         @if ($propertyDetails['PropertyType'] == 'Residential')
-                                        <div class="align-items-center justify-content-between">
-                                            <h6 class="aircon"></h6>
-                                            <p class="text-start mb-2 aircond"></p>
-                                        </div>
-                                        <hr>
+                                            <div class="align-items-center justify-content-between">
+                                                <h6 class="aircon"></h6>
+                                                <p class="text-start mb-2 aircond"></p>
+                                            </div>
+                                            <hr>
                                         @endif
                                     </div>
 
                                     <div class="col-12 col-sm">
                                         @if ($propertyDetails['PropertyType'] == 'Residential')
-                                        <div class="align-items-center justify-content-between">
-                                            <h6 class="storey"></h6>
-                                            <p class="text-start mb-2 stories"></p>
-                                        </div>
-                                        <hr>
+                                            <div class="align-items-center justify-content-between">
+                                                <h6 class="storey"></h6>
+                                                <p class="text-start mb-2 stories"></p>
+                                            </div>
+                                            <hr>
                                         @endif
                                         <div class="align-items-center justify-content-between">
                                             <h6 class="additional"></h6>
@@ -347,7 +348,7 @@
                                             <p class="text-start mb-2 clubhouse"></p>
                                         </div>
                                         <hr>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +476,8 @@
                                     <h6>Loan Terms (Years)</h6>
                                     <div class="inp">
                                         <div class="icons"><i class="fa-light fa-calendar-days"></i></div>
-                                        <input type="text" id="loanTermYears" name="loanTermYears" min="1" max="99" maxlength="2" required
+                                        <input type="text" id="loanTermYears" name="loanTermYears" min="1"
+                                            max="99" maxlength="2" required
                                             value="{{ env('LOAN_TERM_YEARS', '20') }}">
                                     </div>
                                 </div>
@@ -568,7 +570,7 @@
                                 
                                 foreach ($categories as $alias => $category) {
                                     echo '<li class="nav-item" role="presentation">
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -583,7 +585,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -597,10 +599,10 @@
                                         '" role="tabpanel" aria-labelledby="pills-' .
                                         $alias .
                                         '-tab" tabindex="0">
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
                                         $alias .
                                         '"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
                                 }
                                 ?>
                             </div>
@@ -661,107 +663,118 @@
                             </div>
                         </div> --}}
                         @php
-                        $frontendUrl = env('FRONTEND_URL', 'https://repincbeta.site');
-                    @endphp
+                            $frontendUrl = env('FRONTEND_URL', 'https://repincbeta.site');
+                        @endphp
                         <div class='Similar-Listings my-5' id="section12">
                             <h4>Similar Listings</h4>
                             <hr class='mt-4 mb-3'>
                             <div class="row">
                                 <?php if (!empty($similarListings)): ?>
-                                 @foreach ($similarListings as $listing)
-                                 <!-- 14/10 -->
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <div class="listing-style5">
-                                        <div class="list-thumb">
-                                            <a href="{{ env('BASE_URL') }}/property-detail/{{ $listing['slug_url'] ?? $listing['ListingId'] }}">
-                                            <img src="{{ $listing['image_url'] }}"
-                                                alt="{{ $listing['ListingId'] }}"
-                                                onerror="this.src='{{ $frontendUrl }}/images/no_image.jpg';"></a>
-                                            @if ($listing['diamond'] == 1)
-                                                <div class="list-tag fz12">
-                                                    <i class="fa-thin fa-gem me-2"></i>Diamond
-                                                </div>
-                                            @elseif ($listing['featured'] == 1)
-                                                <div class="list-tag fz12">
-                                                    <i class="fa-thin fa-star me-2"></i>Exclusive
-                                                </div>
-                                            @endif
-                            
-                                            <div class="list-meta2">
-                                                <a href="javascript:void(0)" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Favourite" class="set-as-fav"
-                                                    onclick="toggleFavorites('<?php echo $listing['ListingId']; ?>')">
-                                                    <span class="flaticon-like"
-                                                        id="fav-icon-<?php echo $listing['ListingId']; ?>"></span>
-                                                </a>
-                                                
-                                            </div>
-                                        </div>
-                                        <a href="{{ env('BASE_URL') }}/property-detail/{{ $listing['slug_url'] ?? $listing['ListingId'] }}">
-                                        <div class="list-content">
-                                            @php
-                                                $isCommercial = $listing['PropertyType'] === 'Commercial';
-                                            @endphp
-                            
-                            <div class="list-price mb-2">
-                                @if ($isCommercial &&
-                                     !empty($listing['LeaseAmount']) &&
-                                     !empty($listing['LeaseAmountFrequency']))
-                                    ${{ number_format($listing['LeaseAmount']) }} / {{ $listing['LeaseAmountFrequency'] }}
-                                    @if (!empty($listing['LeaseMeasure']))
-                                        / {{ $listing['LeaseMeasure'] }}
-                                    @endif
-                                @else
-                                    {{-- Fallback to List Price --}}
-                                    ${{ number_format($listing['ListPrice']) }}
-                                @endif
-                            </div>
-                            
-                            
-                                             @if (empty($listing['StreetNumber']) && empty($listing['StreetName']))
-                                                <h6 class="list-title">
-                                                    {{ $listing['City'] }}, {{ $listing['StateOrProvince'] }}
-                                                </h6>
-                                            @else
-                                                <h6 class="list-title">
-                                                    
-                                                        {{ $listing['UnitNumber'] ? $listing['UnitNumber'] . ', ' : '' }}{{ $listing['StreetNumber'] }} {{ $listing['StreetName'] }} {{ $listing['StreetSuffix'] }} {{$listing['StreetDirSuffix']}}, {{ $listing['City'] }}, {{ $listing['StateOrProvince'] }}
-                                                    
-                                                </h6>
-                                            @endif
-                                            <p class="list-text">
-                                                {{ in_array($listing['PropertySubType'], ['Apartment', 'Row/Townhouse']) ? 'Condo' : $listing['PropertyType'] }}
-                                            </p>
-                                            <div class="list-meta d-flex align-items-center gap-3">
-                                                @if($listing['BedroomsTotal'])
-                                                    <p><span class="flaticon-bed"></span>{{ $listing['BedroomsTotal'] }} bed</p>
+                                @foreach ($similarListings as $listing)
+                                    <!-- 14/10 -->
+                                    <div class="col-12 col-md-6 col-lg-6">
+                                        <div class="listing-style5">
+                                            <div class="list-thumb">
+                                                <a
+                                                    href="{{ env('BASE_URL') }}/property-detail/{{ $listing['slug_url'] ?? $listing['ListingId'] }}">
+                                                    <img src="{{ $listing['image_url'] }}"
+                                                        alt="{{ $listing['ListingId'] }}"
+                                                        onerror="this.src='{{ $frontendUrl }}/images/no_image.jpg';"></a>
+                                                @if ($listing['diamond'] == 1)
+                                                    <div class="list-tag fz12">
+                                                        <i class="fa-thin fa-gem me-2"></i>Diamond
+                                                    </div>
+                                                @elseif ($listing['featured'] == 1)
+                                                    <div class="list-tag fz12">
+                                                        <i class="fa-thin fa-star me-2"></i>Exclusive
+                                                    </div>
                                                 @endif
-                                            
-                                                @if($listing['BathroomsFull'] || $listing['BathroomsHalf'])
-    <p>
-        <span class="flaticon-shower"></span>
-        {{ $listing['BathroomsFull'] ?: 0 }} 
-        @if($listing['BathroomsHalf'] > 0)
-            .{{ $listing['BathroomsHalf'] }}
-        @endif
-        bath{{ ($listing['BathroomsFull'] + $listing['BathroomsHalf'] > 1) ? 's' : '' }}
-    </p>
-@endif
 
-                                            
-                                                @if($listing['BuildingAreaTotalSF'])
-                                                    <p><span class="flaticon-expand"></span>{{ floor($listing['BuildingAreaTotalSF']) }} sqft</p>
-                                                @elseif($listing['LivingAreaSF'])
-                                                    <p><span class="flaticon-expand"></span>{{ floor($listing['LivingAreaSF']) }} sqft</p>
-                                                @endif
+                                                <div class="list-meta2">
+                                                    <a href="javascript:void(0)" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" title="Favourite" class="set-as-fav"
+                                                        onclick="toggleFavorites('<?php echo $listing['ListingId']; ?>')">
+                                                        <span class="flaticon-like"
+                                                            id="fav-icon-<?php echo $listing['ListingId']; ?>"></span>
+                                                    </a>
+
+                                                </div>
                                             </div>
+                                            <a
+                                                href="{{ env('BASE_URL') }}/property-detail/{{ $listing['slug_url'] ?? $listing['ListingId'] }}">
+                                                <div class="list-content">
+                                                    @php
+                                                        $isCommercial = $listing['PropertyType'] === 'Commercial';
+                                                    @endphp
 
-                                            <span class="mlsNumber">MLS® Number: {{ $listing['ListingId'] }}</span>
+                                                    <div class="list-price mb-2">
+                                                        @if ($isCommercial && !empty($listing['LeaseAmount']) && !empty($listing['LeaseAmountFrequency']))
+                                                            ${{ number_format($listing['LeaseAmount']) }} /
+                                                            {{ $listing['LeaseAmountFrequency'] }}
+                                                            @if (!empty($listing['LeaseMeasure']))
+                                                                / {{ $listing['LeaseMeasure'] }}
+                                                            @endif
+                                                        @else
+                                                            {{-- Fallback to List Price --}}
+                                                            ${{ number_format($listing['ListPrice']) }}
+                                                        @endif
+                                                    </div>
+
+
+                                                    @if (empty($listing['StreetNumber']) && empty($listing['StreetName']))
+                                                        <h6 class="list-title">
+                                                            {{ $listing['City'] }}, {{ $listing['StateOrProvince'] }}
+                                                        </h6>
+                                                    @else
+                                                        <h6 class="list-title">
+
+                                                            {{ $listing['UnitNumber'] ? $listing['UnitNumber'] . ', ' : '' }}{{ $listing['StreetNumber'] }}
+                                                            {{ $listing['StreetName'] }} {{ $listing['StreetSuffix'] }}
+                                                            {{ $listing['StreetDirSuffix'] }}, {{ $listing['City'] }},
+                                                            {{ $listing['StateOrProvince'] }}
+
+                                                        </h6>
+                                                    @endif
+                                                    <p class="list-text">
+                                                        {{ in_array($listing['PropertySubType'], ['Apartment', 'Row/Townhouse']) ? 'Condo' : $listing['PropertyType'] }}
+                                                    </p>
+                                                    <div class="list-meta d-flex align-items-center gap-3">
+                                                        @if ($listing['BedroomsTotal'])
+                                                            <p><span
+                                                                    class="flaticon-bed"></span>{{ $listing['BedroomsTotal'] }}
+                                                                bed</p>
+                                                        @endif
+
+                                                        @if ($listing['BathroomsFull'] || $listing['BathroomsHalf'])
+                                                            <p>
+                                                                <span class="flaticon-shower"></span>
+                                                                {{ $listing['BathroomsFull'] ?: 0 }}
+                                                                @if ($listing['BathroomsHalf'] > 0)
+                                                                    .{{ $listing['BathroomsHalf'] }}
+                                                                @endif
+                                                                bath{{ $listing['BathroomsFull'] + $listing['BathroomsHalf'] > 1 ? 's' : '' }}
+                                                            </p>
+                                                        @endif
+
+
+                                                        @if ($listing['BuildingAreaTotalSF'])
+                                                            <p><span
+                                                                    class="flaticon-expand"></span>{{ floor($listing['BuildingAreaTotalSF']) }}
+                                                                sqft</p>
+                                                        @elseif($listing['LivingAreaSF'])
+                                                            <p><span
+                                                                    class="flaticon-expand"></span>{{ floor($listing['LivingAreaSF']) }}
+                                                                sqft</p>
+                                                        @endif
+                                                    </div>
+
+                                                    <span class="mlsNumber">MLS® Number:
+                                                        {{ $listing['ListingId'] }}</span>
+                                                </div>
+                                            </a>
                                         </div>
-                                        </a>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
                                 <?php else: ?>
                                 <script>
                                     document.getElementById('section12').style.display = 'none';
@@ -803,117 +816,129 @@
                                             <!-- <h4>Schedule A Tour</h4> -->
 
                                             <div id="dateSlotsContainer"></div>
-                                            
+
                                             <div class="slider-container">
                                                 <button class="slider-button left-arr" onclick="prevDates()"><i
                                                         class="ri-arrow-left-s-line"></i></button>
                                                 <button class="slider-button right-arr" onclick="nextDates()"><i
                                                         class="ri-arrow-right-s-line"></i></button>
                                             </div>
-                                           
+
                                             <!-- <h6 class="fw-bold mt-4">Tour Type</h6>
-                                            <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                                <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                                    <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
-                                                        onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
-                                                        aria-selected="true">In Person</button>
-                                                </li>
-                                                <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                                    <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
-                                                        onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
-                                                        aria-selected="false">Video Chat</button>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content" id="pills-tabContent">
-                                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                                                    tabindex="0">
-                                              
-                                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                                        aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
+                                                    <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
+                                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
+                                                            <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
+                                                                onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
+                                                                aria-selected="true">In Person</button>
+                                                        </li>
+                                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                                            <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
+                                                                onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
+                                                                aria-selected="false">Video Chat</button>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content" id="pills-tabContent">
+                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                                                            tabindex="0">
+                                                      
+                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                                                aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
 
-                                                </div>
+                                                        </div>
 
-                                            </div> -->
+                                                    </div> -->
                                             <div>
-                                                        <form id="tourForm">
-                                                            @csrf
-                                                            {{-- <input type="hidden" name="tour_type" id="tourTypeInput" value=""> --}}
-                                        
-                                                            <input type="hidden" name="agent_name" value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
-                                                            <input type="hidden" name="agent_email" value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
+                                                <form id="tourForm">
+                                                    @csrf
+                                                    {{-- <input type="hidden" name="tour_type" id="tourTypeInput" value=""> --}}
 
-                                                            <input type="hidden" name="property_address" value="{{ $propertyDetails['PropertyType'] ?? '' }} {{ $propertyDetails['TransactionType'] ?? '' }} in {{ $propertyDetails['City'] ?? '' }}, {{ $propertyDetails['StateOrProvince'] ?? '' }}">
-                                                            
-                                                            <div class="input">
-                                                                <input type="text" id="timeInput" placeholder="Time*"
-                                                                    name="time">
-                                                                <i class="ri-expand-up-down-line opacity-50"></i>
-                                                            </div>
-                                                            <div id="timeInput-error" class="error"></div> 
-                                                            <div class="input mt-2">
-                                                                <input type="text" id="tourname" placeholder="First Name*" name="first_name">
-                                                            </div>
-                                                        
-                                                            <div class="input mt-2">
-                                                                <input type="text" id="lasttourname" placeholder="Last Name*" name="last_name">
-                                                            </div>
-                                                            <input type="hidden" id="tournames" name="name">
-                                                            <div class="input mt-2">
-                                                                <input type="text" id="tourphone"
-                                                                    placeholder="Phone*" name="phone">
-                                                            </div>
+                                                    <input type="hidden" name="agent_name"
+                                                        value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
+                                                    <input type="hidden" name="agent_email"
+                                                        value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
 
-                                                            <div class="input mt-2">
-                                                                <input type="email" placeholder="Email*" name="email">
-                                                            </div>
+                                                    <input type="hidden" name="property_address"
+                                                        value="{{ $propertyDetails['PropertyType'] ?? '' }} {{ $propertyDetails['TransactionType'] ?? '' }} in {{ $propertyDetails['City'] ?? '' }}, {{ $propertyDetails['StateOrProvince'] ?? '' }}">
 
-                                                            <div class="input mt-2">
-                                                                    <select name="role"
-                                                                        class="select-boxes-filter cursor-pointer">
-                                                                        <option value="" aria-placeholder="">I'm a*</option>
-                                                                        <option value="First time buyer">First time buyer</option>
-                                                                        <option value="Repeat buyer">Repeat buyer</option>
-                                                                        <option value="Seller">Seller</option>
-                                                                        <option value="Residential investor">Residential investor
-                                                                        </option>
-                                                                        <option value="Commercial investor">Commercial investor</option>
-                                                                        <option value="Commercial buyer/leaser">Commercial buyer/leaser
-                                                                        </option>
-                                                                        <option value="Land of development">Land of development</option>
-                                                                    </select>
-                                                           
-                                                            </div>
+                                                    <div class="input">
+                                                        <input type="text" id="timeInput" placeholder="Time*"
+                                                            name="time">
+                                                        <i class="ri-expand-up-down-line opacity-50"></i>
+                                                    </div>
+                                                    <div id="timeInput-error" class="error"></div>
+                                                    <div class="input mt-2">
+                                                        <input type="text" id="tourname" placeholder="First Name*"
+                                                            name="first_name">
+                                                    </div>
 
-                                                            <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message" id="messageTextarea" name="message"></textarea>
-                                                            <input type="hidden" id="selectedDateInput"
-                                                                name="selectedDate" value="">
-                                                            <div class="chkbox">
-                                                                <div class="mt-1 d-flex align-items-cente gap-2">
-                                                                    <input class="checkbox opacity-50" type="checkbox" name="terms" id="termsCheckbox"> <!-- Ensure the name attribute is set -->
-                                                                    <p class="mb-0 fw-bold">I agree to <a href="/terms-and-conditions" class='text-decoration-none'><span class='px-1 fs-6'>Terms of Use</span></a></p>
-                                                                </div>
-                                                            
-                                                                <!-- Error message placeholder for the terms checkbox -->
-                                                                <div id="termsCheckbox-error" class="error"></div> <!-- This div will hold the error message -->
-                                                            
-                                                                <div class="d-grid mt-2">
-                                                                    <button id="SubmitBtn"
-                                                                        class="ud-btn btn-primary border-0"
-                                                                        type="submit">Submit a
-                                                                        Tour
-                                                                        Request</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                    <div class="input mt-2">
+                                                        <input type="text" id="lasttourname" placeholder="Last Name*"
+                                                            name="last_name">
+                                                    </div>
+                                                    <input type="hidden" id="tournames" name="name">
+                                                    <div class="input mt-2">
+                                                        <input type="text" id="tourphone" placeholder="Phone*"
+                                                            name="phone">
+                                                    </div>
+
+                                                    <div class="input mt-2">
+                                                        <input type="email" placeholder="Email*" name="email">
+                                                    </div>
+
+                                                    <div class="input mt-2">
+                                                        <select name="role" class="select-boxes-filter cursor-pointer">
+                                                            <option value="" aria-placeholder="">I'm a*</option>
+                                                            <option value="First time buyer">First time buyer</option>
+                                                            <option value="Repeat buyer">Repeat buyer</option>
+                                                            <option value="Seller">Seller</option>
+                                                            <option value="Residential investor">Residential investor
+                                                            </option>
+                                                            <option value="Commercial investor">Commercial investor
+                                                            </option>
+                                                            <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                            </option>
+                                                            <option value="Land of development">Land of development
+                                                            </option>
+                                                        </select>
 
                                                     </div>
+
+                                                    <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message"
+                                                        id="messageTextarea" name="message"></textarea>
+                                                    <input type="hidden" id="selectedDateInput" name="selectedDate"
+                                                        value="">
+                                                    <div class="chkbox">
+                                                        <div class="mt-1 d-flex align-items-cente gap-2">
+                                                            <input class="checkbox opacity-50" type="checkbox"
+                                                                name="terms" id="termsCheckbox">
+                                                            <!-- Ensure the name attribute is set -->
+                                                            <p class="mb-0 fw-bold">I agree to <a
+                                                                    href="/terms-and-conditions"
+                                                                    class='text-decoration-none'><span
+                                                                        class='px-1 fs-6'>Terms of Use</span></a></p>
+                                                        </div>
+
+                                                        <!-- Error message placeholder for the terms checkbox -->
+                                                        <div id="termsCheckbox-error" class="error"></div>
+                                                        <!-- This div will hold the error message -->
+
+                                                        <div class="d-grid mt-2">
+                                                            <button id="SubmitBtn" class="ud-btn btn-primary border-0"
+                                                                type="submit">Submit a
+                                                                Tour
+                                                                Request</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="pills-contact" role="tabpanel"
                                             aria-labelledby="pills-contact-tab" tabindex="1">
                                             <div class="contact-info" id="section10">
-                          
-                                             
+
+
                                                 <div class=' sm-align-items-start gap-3   d-sm-flex '>
                                                     <div class="profile">
                                                         <img src="" alt="" class="agent-img">
@@ -942,16 +967,18 @@
                                                 <div class='d-flex align-items-center justify-content-between  w-100'>
                                                     <h4 class='mt-3'>Enquire About This Property</h4>
 
-                       <a id="viewListingsLink" class='' href="">View
-                                       Listings</a>
-                                                      </div>
+                                                    <a id="viewListingsLink" class='' href="">View
+                                                        Listings</a>
+                                                </div>
                                                 <hr class='mt-2 mb-0'>
                                                 <div class="leave-rev mb-0 mt-0">
                                                     <form id="contactForm">
                                                         @csrf
                                                         <div class="row mb-2">
-                                                            <input type="hidden" name="prorealtorname" value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
-                                                            <input type="hidden" name="prorealtoremail" value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
+                                                            <input type="hidden" name="prorealtorname"
+                                                                value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
+                                                            <input type="hidden" name="prorealtoremail"
+                                                                value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
                                                             <input type="hidden" name="property_type" value="">
 
                                                             <div class="col-12 ">
@@ -982,15 +1009,20 @@
                                                                     <select name="role"
                                                                         class="select-boxes-filter cursor-pointer">
                                                                         <option value="">I'm a*</option>
-                                                                        <option value="First time buyer">First time buyer</option>
+                                                                        <option value="First time buyer">First time buyer
+                                                                        </option>
                                                                         <option value="Repeat buyer">Repeat buyer</option>
                                                                         <option value="Seller">Seller</option>
-                                                                        <option value="Residential investor">Residential investor
+                                                                        <option value="Residential investor">Residential
+                                                                            investor
                                                                         </option>
-                                                                        <option value="Commercial investor">Commercial investor</option>
-                                                                        <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                                        <option value="Commercial investor">Commercial
+                                                                            investor</option>
+                                                                        <option value="Commercial buyer/leaser">Commercial
+                                                                            buyer/leaser
                                                                         </option>
-                                                                        <option value="Land of development">Land of development</option>
+                                                                        <option value="Land of development">Land of
+                                                                            development</option>
                                                                     </select>
                                                                 </div>
                                                                 <div id="roleerror"></div>
@@ -999,7 +1031,8 @@
 
                                                         <div>
                                                             <!-- <h5>Message<span style="color: red;">*</span></h5> -->
-                                                            <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message" cols="30" rows="3" maxlength="200"></textarea>
+                                                            <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message"
+                                                                cols="30" rows="3" maxlength="200"></textarea>
                                                         </div>
                                                         <div class="chkbox">
                                                             <div class="mt-1 d-flex align-items-cente gap-2"> <input
@@ -1011,7 +1044,7 @@
                                                                             class='px-1 fs-6'>Terms of
                                                                             Use</span></a></p>
                                                             </div>
-                                                            </div>
+                                                        </div>
                                                         <div id="checkbx"></div>
                                                         <button type="submit" id="contactsubmit"
                                                             class="ud-btn w-100 btn-primary mt-2 border-0">Request
@@ -1067,7 +1100,7 @@
                                             <input type="hidden" id="contactpopupname" name="name">
                                             <div class="col-md-6">
                                                 <h5>Phone<span style="color: red;">*</span></h5>
-                                                <input class="input-2" type="text" id="contactphones" 
+                                                <input class="input-2" type="text" id="contactphones"
                                                     placeholder="Enter your Phone" name="phone">
                                             </div>
                                             <div class="col-md-6">
@@ -1110,8 +1143,8 @@
                                                             class='text-decoration-none'><span class='px-1 fs-6'>Terms of
                                                                 Use</span></a></p>
                                                 </div>
-                                            <div id="popcheckbx"></div>
-                                                </div><br>
+                                                <div id="popcheckbx"></div>
+                                            </div><br>
                                             <div class="col-md-12 text-center">
                                                 <button type="submit" id="contactpopupbutton"
                                                     class="ud-btn btn-primary mt-3 border-0">
@@ -1150,13 +1183,15 @@
     border-radius: 8px;
     font-size: 10px;"
                                                 type="button" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">Contact REALTOR<span>&#174;</span></button>
+                                                data-bs-target="#staticBackdrop">Contact
+                                                REALTOR<span>&#174;</span></button>
                                         </div>
                                     </div>
-                                    <p  class='hover-elem mb-0'>
-                                    <i class="flaticon-like cursor-pointer hover-elem" id="fav-icon"
-                                        onclick='toggleFavorite()'></i>
-                                    Favorite</p>
+                                    <p class='hover-elem mb-0'>
+                                        <i class="flaticon-like cursor-pointer hover-elem" id="fav-icon"
+                                            onclick='toggleFavorite()'></i>
+                                        Favorite
+                                    </p>
 
                                     <div class="dropdown mt-1">
                                         <p class="ri-share-line icons hover-elem" id="shareimage"
@@ -1213,8 +1248,7 @@
                                     @if (count($images) > 0)
                                         @foreach ($images as $index => $image)
                                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                <img src="{{ $image }}"
-                                                    alt="Image {{ $index }}">
+                                                <img src="{{ $image }}" alt="Image {{ $index }}">
                                             </div>
                                         @endforeach
                                     @else
@@ -1327,7 +1361,7 @@
                     const section = document.getElementById(sectionId);
 
                     if (section) {
-                        const offset = -250; 
+                        const offset = -250;
                         $('#pills-contact-tab').click()
 
                         const scrollOptions = {
@@ -1491,184 +1525,195 @@
     </script>
 
     <script>
-      $(document).ready(function() {
-    getNearbyLocation();
+        $(document).ready(function() {
+            getNearbyLocation();
 
-    function getNearbyLocation() {
-        var latitude = "{{ $propertyDetails['Latitude'] }}";
-        var longitude = "{{ $propertyDetails['Longitude'] }}";
-  
-        if (longitude !== '' && latitude !== '') {
+            function getNearbyLocation() {
+                var latitude = "{{ $propertyDetails['Latitude'] }}";
+                var longitude = "{{ $propertyDetails['Longitude'] }}";
 
-            $.ajax({
-                url: "{{ route('get-location') }}",
-                type: 'GET',
-                data: {
-                    latitude: latitude,
-                    longitude: longitude
-                },
-                success: function(response) {
-                    
-                    if (response && response.data && response.data.businesses &&  Array.isArray(response.data.businesses)){
-                    
-                        updateNearbyLocations(response.data.businesses);
-                   
-                    } else {
-                        $('#section9').hide();
-                        $('.nearsby').hide();
-                        console.error('Empty or invalid response received');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error getting nearby locations:', error);
+                if (longitude !== '' && latitude !== '') {
+
+                    $.ajax({
+                        url: "{{ route('get-location') }}",
+                        type: 'GET',
+                        data: {
+                            latitude: latitude,
+                            longitude: longitude
+                        },
+                        success: function(response) {
+
+                            if (response && response.data && response.data.businesses && Array.isArray(
+                                    response.data.businesses)) {
+
+                                updateNearbyLocations(response.data.businesses);
+
+                            } else {
+                                $('#section9').hide();
+                                $('.nearsby').hide();
+                                console.error('Empty or invalid response received');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error getting nearby locations:', error);
+                        }
+                    });
+                } else {
+
+                    $('#section9').hide();
+                    $('.nearsby').hide();
                 }
-            });
-        } else {
-       
-            $('#section9').hide();
-            $('.nearsby').hide();
-        }
-    }
+            }
 
-    function updateNearbyLocations(nearbyData) {
-        
-        var categories = {};
+            function updateNearbyLocations(nearbyData) {
 
-        nearbyData.forEach(function(place) {
-            place.categories.forEach(function(category) {
-                var alias = category.alias;
-                if (!(alias in categories) && place.categories.length === 1 && category.title.toLowerCase().indexOf('bar') === -1 && category.title.toLowerCase().indexOf('pub') === -1) {
-                    categories[alias] = { title: category.title, count: 0 };
-                }
-            });
-        });
+                var categories = {};
 
-        nearbyData.forEach(function(place) {
-            place.categories.forEach(function(category) {
-                var alias = category.alias;
-                if (categories[alias]) {
-                    categories[alias].count++;
-                }
-            });
-        });
-
-        // Append new tabs and map containers
-        var $nav = $('#pills-tab');
-        var $tabContent = $('#pills-tabContent');
-
-        Object.keys(categories).forEach(function(alias) {
-            var category = categories[alias];
-            var navLink = '<li class="nav-item" role="presentation">' +
-                '<button class="nav-link' +
-                (alias === Object.keys(categories)[0] ? ' active' : '') +
-                '" id="pills-' + alias + '-tab" data-bs-toggle="pill" data-bs-target="#pills-' + alias +
-                '" type="button" role="tab" aria-controls="pills-' + alias +
-                '" aria-selected="' + (alias === Object.keys(categories)[0] ? 'true' : 'false') +
-                '">' + category.title + ' (' + category.count + ')' +
-                '</button>' +
-                '</li>';
-
-            var tabPane = '<div class="tab-pane fade' +
-                (alias === Object.keys(categories)[0] ? ' show active' : '') +
-                '" id="pills-' + alias + '" role="tabpanel" aria-labelledby="pills-' + alias +
-                '-tab" tabindex="0">' +
-                '<div class="map mt-0" id="map-' + alias + '"></div>' +
-                '</div>';
-
-            $nav.append(navLink);
-            $tabContent.append(tabPane);
-        });
-
-        // Initialize maps for each tab
-        Object.keys(categories).forEach(function(alias) {
-            initializeMapWithDelay(alias, nearbyData.filter(function(place) {
-                return place.categories.find(function(category) {
-                    return category.alias === alias;
+                nearbyData.forEach(function(place) {
+                    place.categories.forEach(function(category) {
+                        var alias = category.alias;
+                        if (!(alias in categories) && place.categories.length === 1 && category
+                            .title.toLowerCase().indexOf('bar') === -1 && category.title
+                            .toLowerCase().indexOf('pub') === -1) {
+                            categories[alias] = {
+                                title: category.title,
+                                count: 0
+                            };
+                        }
+                    });
                 });
-            }));
-        });
 
-        // Reattach event listener for tab change
-        $('.nav-link').on('shown.bs.tab', function(e) {
-            var alias = $(this).attr('id').split('-')[1];
-            var places = nearbyData.filter(place => place.categories.find(category => category.alias === alias));
-            setMapCanvasSize(alias, 671.989, 300);
-            initializeMapWithDelay(alias, places);
-        });
-    }
+                nearbyData.forEach(function(place) {
+                    place.categories.forEach(function(category) {
+                        var alias = category.alias;
+                        if (categories[alias]) {
+                            categories[alias].count++;
+                        }
+                    });
+                });
 
-    function initializeMapWithDelay(alias, places) {
-        setTimeout(function() {
-            initMap('map-' + alias, places);
-        }, 300);
-    }
+                // Append new tabs and map containers
+                var $nav = $('#pills-tab');
+                var $tabContent = $('#pills-tabContent');
 
-    function setMapCanvasSize(alias, width, height) {
-        var mapElement = document.getElementById('map-' + alias);
-        if (mapElement) {
-            var canvas = mapElement.querySelector('.mapboxgl-canvas');
-            if (canvas) {
-                canvas.style.width = width + 'px';
-                canvas.style.height = height + 'px';
-                canvas.setAttribute('width', width);
-                canvas.setAttribute('height', height);
-            } else {
-                console.error('Canvas element not found inside map element with ID: map-' + alias);
+                Object.keys(categories).forEach(function(alias) {
+                    var category = categories[alias];
+                    var navLink = '<li class="nav-item" role="presentation">' +
+                        '<button class="nav-link' +
+                        (alias === Object.keys(categories)[0] ? ' active' : '') +
+                        '" id="pills-' + alias + '-tab" data-bs-toggle="pill" data-bs-target="#pills-' +
+                        alias +
+                        '" type="button" role="tab" aria-controls="pills-' + alias +
+                        '" aria-selected="' + (alias === Object.keys(categories)[0] ? 'true' : 'false') +
+                        '">' + category.title + ' (' + category.count + ')' +
+                        '</button>' +
+                        '</li>';
+
+                    var tabPane = '<div class="tab-pane fade' +
+                        (alias === Object.keys(categories)[0] ? ' show active' : '') +
+                        '" id="pills-' + alias + '" role="tabpanel" aria-labelledby="pills-' + alias +
+                        '-tab" tabindex="0">' +
+                        '<div class="map mt-0" id="map-' + alias + '"></div>' +
+                        '</div>';
+
+                    $nav.append(navLink);
+                    $tabContent.append(tabPane);
+                });
+
+                // Initialize maps for each tab
+                Object.keys(categories).forEach(function(alias) {
+                    initializeMapWithDelay(alias, nearbyData.filter(function(place) {
+                        return place.categories.find(function(category) {
+                            return category.alias === alias;
+                        });
+                    }));
+                });
+
+                // Reattach event listener for tab change
+                $('.nav-link').on('shown.bs.tab', function(e) {
+                    var alias = $(this).attr('id').split('-')[1];
+                    var places = nearbyData.filter(place => place.categories.find(category => category
+                        .alias === alias));
+                    setMapCanvasSize(alias, 671.989, 300);
+                    initializeMapWithDelay(alias, places);
+                });
             }
-        } else {
-            console.error('Map element not found with ID: map-' + alias);
-        }
-    }
 
-    function initMap(containerId, places) {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGVlcGFra3VtYXIxMjMiLCJhIjoiY2x1NDNtajl4MGljODJybjR5NDB6d21xeiJ9._XKpljSkyJuCyjZG4735Wg';
+            function initializeMapWithDelay(alias, places) {
+                setTimeout(function() {
+                    initMap('map-' + alias, places);
+                }, 300);
+            }
 
-        var map = new mapboxgl.Map({
-            container: containerId,
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [places[0].coordinates.longitude, places[0].coordinates.latitude],
-            zoom: 10
-        });
+            function setMapCanvasSize(alias, width, height) {
+                var mapElement = document.getElementById('map-' + alias);
+                if (mapElement) {
+                    var canvas = mapElement.querySelector('.mapboxgl-canvas');
+                    if (canvas) {
+                        canvas.style.width = width + 'px';
+                        canvas.style.height = height + 'px';
+                        canvas.setAttribute('width', width);
+                        canvas.setAttribute('height', height);
+                    } else {
+                        console.error('Canvas element not found inside map element with ID: map-' + alias);
+                    }
+                } else {
+                    console.error('Map element not found with ID: map-' + alias);
+                }
+            }
 
-        var mainLocationLngLat = [{{ $propertyDetails['Longitude'] }}, {{ $propertyDetails['Latitude'] }}];
-        var mainaddress = "{{ $propertyDetails['UnparsedAddress'] }}";
+            function initMap(containerId, places) {
+                mapboxgl.accessToken =
+                    'pk.eyJ1IjoiZGVlcGFra3VtYXIxMjMiLCJhIjoiY2x1NDNtajl4MGljODJybjR5NDB6d21xeiJ9._XKpljSkyJuCyjZG4735Wg';
 
-        var mainLocationPopup = new mapboxgl.Popup({
-            offset: 25
-        }).setText(mainaddress);
+                var map = new mapboxgl.Map({
+                    container: containerId,
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [places[0].coordinates.longitude, places[0].coordinates.latitude],
+                    zoom: 10
+                });
 
-        new mapboxgl.Marker({
-            color: "#ff0000",
-            draggable: false
-        })
-        .setLngLat(mainLocationLngLat)
-        .setPopup(mainLocationPopup)
-        .addTo(map);
+                var mainLocationLngLat = [{{ $propertyDetails['Longitude'] }},
+                    {{ $propertyDetails['Latitude'] }}
+                ];
+                var mainaddress = "{{ $propertyDetails['UnparsedAddress'] }}";
 
-        places.forEach(function(place) {
-            if (place && place.coordinates && place.coordinates.longitude && place.coordinates.latitude) {
-                var popup = new mapboxgl.Popup({
+                var mainLocationPopup = new mapboxgl.Popup({
                     offset: 25
-                }).setText(place.name);
+                }).setText(mainaddress);
 
-                var el = document.createElement('div');
-                el.className = 'marker';
-                el.style.width = '19px';
-                el.style.height = '19px';
-                el.style.background = '#007bff';
-                el.style.borderRadius = '50%';
-                el.style.border = '2px solid #fff';
-                el.style.boxShadow = '0 0 5px rgba(0, 123, 255, 0.5)';
+                new mapboxgl.Marker({
+                        color: "#ff0000",
+                        draggable: false
+                    })
+                    .setLngLat(mainLocationLngLat)
+                    .setPopup(mainLocationPopup)
+                    .addTo(map);
 
-                new mapboxgl.Marker(el)
-                .setLngLat([place.coordinates.longitude, place.coordinates.latitude])
-                .setPopup(popup)
-                .addTo(map);
+                places.forEach(function(place) {
+                    if (place && place.coordinates && place.coordinates.longitude && place.coordinates
+                        .latitude) {
+                        var popup = new mapboxgl.Popup({
+                            offset: 25
+                        }).setText(place.name);
+
+                        var el = document.createElement('div');
+                        el.className = 'marker';
+                        el.style.width = '19px';
+                        el.style.height = '19px';
+                        el.style.background = '#007bff';
+                        el.style.borderRadius = '50%';
+                        el.style.border = '2px solid #fff';
+                        el.style.boxShadow = '0 0 5px rgba(0, 123, 255, 0.5)';
+
+                        new mapboxgl.Marker(el)
+                            .setLngLat([place.coordinates.longitude, place.coordinates.latitude])
+                            .setPopup(popup)
+                            .addTo(map);
+                    }
+                });
             }
         });
-    }
-});
-
     </script>
 
 
@@ -1748,7 +1793,7 @@
 
     <script>
         $(document).ready(function() {
-           
+
             toastr.options = {
                 'closeButton': true,
                 'debug': false,
@@ -1777,250 +1822,262 @@
                 }
             });
             $('#tourForm').validate({
-                
-        rules: {
-            first_name: "required",
-            last_name: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            phone: {
-                required: true,
-                minlength: 10
-            },
-            role: "required",
-            time: "required",
-            message: "required",
-            terms: "required"
-        },
-        messages: {
-            first_name: "Please enter your first name",
-            time: "Please choose a time",
-            last_name: "Please enter your last name",
-            email: "Please enter a valid email address",
-            phone: {
-                required: "Please enter your phone number",
-                minlength: "Phone number must be at least 10 digits long"
-            },
-            role: "Please select your role",
-            message: "Please enter your message",
-            terms: "Please agree to the Terms of Use"
-        }, errorPlacement: function(error, element) {
-            if (element.attr("name") == "time")
-                error.appendTo("#timeInput-error");
-            else if (element.attr("name") == "terms")
-                error.appendTo("#termsCheckbox-error");
-            else
-                error.insertAfter(element);
-        },
-        submitHandler: function(form) {
-            const date = document.querySelector('#tourForm input[name="selectedDate"]').value.trim();
-            if (date === '') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Validation Error',
-                        text: 'Please select the date!',
-                        confirmButtonText: 'Continue to Website'
-                    });
-                    return;
-                }
-            var firstName = $(form).find('input[name="first_name"]').val();
-        var lastName = $(form).find('input[name="last_name"]').val();
-        var fullName = firstName + ' ' + lastName;
-        $(form).find('input[name="name"]').val(fullName);
-            $.ajax({
-                url: '/tour/submit',
-                type: 'POST',
-                data: $(form).serialize(),
-                dataType: 'json',
-                success: function(response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: 'Tour form submitted successfully',
-                        confirmButtonText: 'Continue to Website'
-                    });
-                    form.reset();
-                    $('#messageTextarea').val("I would appreciate more information about " + $('.heading').text() + ".");
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'An error occurred while submitting the form. Please try again later.'
-                    });
-                }
-            });
-            return false; // Prevent form submission
-        }
-    });
 
-    $('#contactForm').validate({
-        rules: {
-            first_names: "required",
-            last_names: "required",
-            phone: {
-                required: true,
-                minlength: 10
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            role: "required",
-            message: "required",
-            term: "required"
-        },
-        messages: {
-            first_names: "Please enter your first name",
-            last_names: "Please enter your last name",
-            phone: {
-                required: "Please enter your phone number",
-                minlength: "Phone number must be at least 10 digits long"
-            },
-            email: "Please enter a valid email address",
-            role: "Please select your role",
-            message: "Please enter your message",
-            term: "Please agree to the Terms of Use"
-        },
-        errorPlacement: function(error, element) {
-            if (element.attr("name") == "term")
-                error.appendTo("#checkbx");
-            else if (element.attr("name") == "role")
-                error.appendTo("#roleerror");
-            else
-                error.insertAfter(element);
-        },
-        submitHandler: function(form) {
-            // If form is valid, submit using AJAX
-            var firstName = $(form).find('input[name="first_names"]').val();
-        var lastName = $(form).find('input[name="last_names"]').val();
-        var fullName = firstName + ' ' + lastName;
-        $(form).find('input[name="name"]').val(fullName);
-            var formData = $(form).serialize();
-            const headingText = $('.heading').text();
-            const dynamicMessage = "I would appreciate more information about " + headingText + ".";
-            
-            $.ajax({
-                url: '/contact/submit',
-                type: 'POST',
-                data: formData,
-                dataType: 'json',
-                success: function(response) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: 'Contact form submitted successfully',
-                        confirmButtonText: 'Continue to Website'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            form.reset();
-                            $('#contactmessageTextarea').val("I would like to get more information about this property " + $('.heading').text() + ".");
-                        }
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'An error occurred while submitting the form. Please try again later.'
-                    });
-                }
-            });
-        }
-    });
-           
-     $('#contactpopup').validate({
-        rules: {
-            first_names: "required",
-            last_names: "required",
-            phone: {
-                required: true,
-                minlength: 10
-            },
-            email: {
-                required: true,
-                email: true
-            },
-            role: "required",
-            message: "required",
-            term: "required"
-        },
-        messages: {
-            first_names: "Please enter your first name",
-            last_names: "Please enter your last name",
-            phone: {
-                required: "Please enter your phone number",
-                minlength: "Phone number must be at least 10 digits long"
-            },
-            email: "Please enter a valid email address",
-            role: "Please select your role",
-            message: "Please enter your message",
-            term: "Please agree to the Terms of Use"
-        },
-        errorPlacement: function(error, element) {
-            if (element.attr("name") == "term")
-                error.appendTo("#popcheckbx");
-            else if (element.attr("name") == "role")
-                error.appendTo("#poproleerror");
-            else
-                error.insertAfter(element);
-        },
-        submitHandler: function(form) {
-            // If form is valid, submit using AJAX
-            const submitButton = document.getElementById('contactsubmit');
-                submitButton.disabled = true;
-                var formData = $(form).serialize();
-                const headingText = $('.heading').text();
-            const dynamicMessage = "I would appreciate more information about " + headingText + ".";
-            
-                $.ajax({
-                    url: '/contact/submit',
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    success: function(response) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Success',
-                            text: 'Contact form submitted successfully',
-                            // showCancelButton: true,
-                            confirmButtonText: 'Continue to Website',
-
-                        }).then((result) => {
-                            if (result.isConfirmed) {
-                                form.reset();
-                                $('#contactpopupmessageTextarea').val("I would like to get more information about this property " + $('.heading').text() + ".");
-                       
-                                document.getElementById('staticBackdrop').classList
-                                    .remove('show');
-                                document.body.classList.remove('modal-open');
-                                document.querySelector('.modal-backdrop').remove();
-                                window.location.reload();
-                            }
-                        });
-                        // $('#contactpopup')[0].reset();
-                        // submitButton.disabled = false;
+                rules: {
+                    first_name: "required",
+                    last_name: "required",
+                    email: {
+                        required: true,
+                        email: true
                     },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
+                    phone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    role: "required",
+                    time: "required",
+                    message: "required",
+                    terms: "required"
+                },
+                messages: {
+                    first_name: "Please enter your first name",
+                    time: "Please choose a time",
+                    last_name: "Please enter your last name",
+                    email: "Please enter a valid email address",
+                    phone: {
+                        required: "Please enter your phone number",
+                        minlength: "Phone number must be at least 10 digits long"
+                    },
+                    role: "Please select your role",
+                    message: "Please enter your message",
+                    terms: "Please agree to the Terms of Use"
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") == "time")
+                        error.appendTo("#timeInput-error");
+                    else if (element.attr("name") == "terms")
+                        error.appendTo("#termsCheckbox-error");
+                    else
+                        error.insertAfter(element);
+                },
+                submitHandler: function(form) {
+                    const date = document.querySelector('#tourForm input[name="selectedDate"]').value
+                        .trim();
+                    if (date === '') {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Error',
-                            text: 'An error occurred while submitting the form. Please try again later.'
+                            title: 'Validation Error',
+                            text: 'Please select the date!',
+                            confirmButtonText: 'Continue to Website'
                         });
-
+                        return;
                     }
-                });
+                    var firstName = $(form).find('input[name="first_name"]').val();
+                    var lastName = $(form).find('input[name="last_name"]').val();
+                    var fullName = firstName + ' ' + lastName;
+                    $(form).find('input[name="name"]').val(fullName);
+                    $.ajax({
+                        url: '/tour/submit',
+                        type: 'POST',
+                        data: $(form).serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Tour form submitted successfully',
+                                confirmButtonText: 'Continue to Website'
+                            });
+                            form.reset();
+                            $('#messageTextarea').val(
+                                "I would appreciate more information about " + $(
+                                    '.heading').text() + ".");
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+                        }
+                    });
+                    return false; // Prevent form submission
+                }
+            });
 
-        }
-    });
+            $('#contactForm').validate({
+                rules: {
+                    first_names: "required",
+                    last_names: "required",
+                    phone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    role: "required",
+                    message: "required",
+                    term: "required"
+                },
+                messages: {
+                    first_names: "Please enter your first name",
+                    last_names: "Please enter your last name",
+                    phone: {
+                        required: "Please enter your phone number",
+                        minlength: "Phone number must be at least 10 digits long"
+                    },
+                    email: "Please enter a valid email address",
+                    role: "Please select your role",
+                    message: "Please enter your message",
+                    term: "Please agree to the Terms of Use"
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") == "term")
+                        error.appendTo("#checkbx");
+                    else if (element.attr("name") == "role")
+                        error.appendTo("#roleerror");
+                    else
+                        error.insertAfter(element);
+                },
+                submitHandler: function(form) {
+                    // If form is valid, submit using AJAX
+                    var firstName = $(form).find('input[name="first_names"]').val();
+                    var lastName = $(form).find('input[name="last_names"]').val();
+                    var fullName = firstName + ' ' + lastName;
+                    $(form).find('input[name="name"]').val(fullName);
+                    var formData = $(form).serialize();
+                    const headingText = $('.heading').text();
+                    const dynamicMessage = "I would appreciate more information about " + headingText +
+                        ".";
+
+                    $.ajax({
+                        url: '/contact/submit',
+                        type: 'POST',
+                        data: formData,
+                        dataType: 'json',
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Contact form submitted successfully',
+                                confirmButtonText: 'Continue to Website'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    form.reset();
+                                    $('#contactmessageTextarea').val(
+                                        "I would like to get more information about this property " +
+                                        $('.heading').text() + ".");
+                                }
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+                        }
+                    });
+                }
+            });
+
+            $('#contactpopup').validate({
+                rules: {
+                    first_names: "required",
+                    last_names: "required",
+                    phone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    role: "required",
+                    message: "required",
+                    term: "required"
+                },
+                messages: {
+                    first_names: "Please enter your first name",
+                    last_names: "Please enter your last name",
+                    phone: {
+                        required: "Please enter your phone number",
+                        minlength: "Phone number must be at least 10 digits long"
+                    },
+                    email: "Please enter a valid email address",
+                    role: "Please select your role",
+                    message: "Please enter your message",
+                    term: "Please agree to the Terms of Use"
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") == "term")
+                        error.appendTo("#popcheckbx");
+                    else if (element.attr("name") == "role")
+                        error.appendTo("#poproleerror");
+                    else
+                        error.insertAfter(element);
+                },
+                submitHandler: function(form) {
+                    // If form is valid, submit using AJAX
+                    const submitButton = document.getElementById('contactsubmit');
+                    submitButton.disabled = true;
+                    var formData = $(form).serialize();
+                    const headingText = $('.heading').text();
+                    const dynamicMessage = "I would appreciate more information about " + headingText +
+                        ".";
+
+                    $.ajax({
+                        url: '/contact/submit',
+                        type: 'POST',
+                        data: formData,
+                        dataType: 'json',
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Contact form submitted successfully',
+                                // showCancelButton: true,
+                                confirmButtonText: 'Continue to Website',
+
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    form.reset();
+                                    $('#contactpopupmessageTextarea').val(
+                                        "I would like to get more information about this property " +
+                                        $('.heading').text() + ".");
+
+                                    document.getElementById('staticBackdrop')
+                                        .classList
+                                        .remove('show');
+                                    document.body.classList.remove('modal-open');
+                                    document.querySelector('.modal-backdrop')
+                                        .remove();
+                                    window.location.reload();
+                                }
+                            });
+                            // $('#contactpopup')[0].reset();
+                            // submitButton.disabled = false;
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+
+                        }
+                    });
+
+                }
+            });
 
 
-    
+
             function validateAlphabets(event) {
                 const input = event.target;
                 const regex = /^[a-zA-Z\s]*$/;
@@ -2043,109 +2100,144 @@
                     event.target.value = phoneInput.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
                 });
             });
-               if ("{{ $propertyDetails['PropertyType'] }}" == 'Land') {
-                    var lotSize = "{{ $propertyDetails['LotSizeSquareFeet'] }}";
-                    var lotSizeText = lotSize % 1 !== 0 ? parseFloat(lotSize).toFixed(2) : parseInt(lotSize);
-                    $('.area').text(lotSizeText || '0');
-                    $('.propertysize').text(lotSizeText + (lotSize % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
-                    var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
-                    var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
-                    $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
-    
-                    var totalArea = lotSizeText;
-                    var pricePerSqft = totalPrice / totalArea;
-                    $('#pricepersqft').hide();
-                    $('.depo').html('<strong>Fencing :</strong>');
-                    $('.pool').html('<strong>Sewer :</strong>');
-                    $('.remodel').html('<strong>Water Front :</strong>');
-                    $('.amenitites').html('<strong>Lot Features :</strong>');
-                    $('.additional').html('<strong>Zoning :</strong>');
-                    $('.equip').html('<strong>Frontage :</strong>');
-                    var formattedfloor = ("{{ $propertyDetails['WaterfrontFeatures'] }}").replace(/,/g, ', ');
-                    $('.deposit').text("{{ $otherColumnsData['Fencing'] }}" || 'N/A');
-                    $('.poolsize').text("{{ $propertyDetails['Sewer'] }}" || 'N/A');
-                    $('.parking').text(formattedfloor || 'N/A');
-                    $('.clubhouse').text("{{ $propertyDetails['LotFeatures'] }}" || 'N/A');
-                    $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                    $('.equipment').text("{{ $otherColumnsData['FrontageLength'] }}" || 'N/A');
-                }
-    
-                    if ("{{ $propertyDetails['PropertyType'] }}" == 'Residential') {
-                    var livingAreaSF = "{{ $propertyDetails['LivingAreaSF'] }}";
-                    var livingAreaSFText = livingAreaSF % 1 !== 0 ? parseFloat(livingAreaSF).toFixed(2) : parseInt(
-                        livingAreaSF);
-                    $('.area').text(livingAreaSFText || '0');
-                    $('.propertysize').text(livingAreaSFText + (livingAreaSF % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
-                    var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
-                    var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
-                    $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
-    
-                    var totalArea = livingAreaSFText;
-                    var pricePerSqft = totalPrice / totalArea;
-                    $('#pricepersqft').hide();
-                    $('.depo').html('<strong>Flooring :</strong>');
-                    $('.pool').html('<strong>Construction :</strong>');
-                    $('.remodel').html('<strong>Parking :</strong>');
-                    $('.amenitites').html('<strong>Amenities :</strong>');
-                    $('.additional').html('<strong>Zoning :</strong>');
-                    $('.equip').html('<strong>Fireplace :</strong>');
-                    $('.aircon').html('<strong>Appliances :</strong>');
-                    $('.storey').html('<strong>Stories :</strong>');
-                    var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? str_replace(',', ', ', $otherColumnsData['Flooring']) : '' !!}";
-                    var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials']) ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials']) : '' !!}";
-                    var formattedparking = "{!! isset($propertyDetails['ParkingFeatures']) ? str_replace(',', ', ', $propertyDetails['ParkingFeatures']) : '' !!}";
-                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures']) ? str_replace(',', ', ', $propertyDetails['CommunityFeatures']) : '' !!}";
-                    var formattedfireplace = "{!! isset($propertyDetails['FireplaceFeatures']) ? str_replace(',', ', ', $propertyDetails['FireplaceFeatures']) : '' !!}";
-                    var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
-                    var formattedstorey = "{!! isset($otherColumnsData['StoriesTotal']) ? str_replace(',', ', ', $otherColumnsData['StoriesTotal']) : '' !!}";
+            if ("{{ $propertyDetails['PropertyType'] }}" == 'Land') {
+                var lotSize = "{{ $propertyDetails['LotSizeSquareFeet'] }}";
+                var lotSizeText = lotSize % 1 !== 0 ? parseFloat(lotSize).toFixed(2) : parseInt(lotSize);
+                $('.area').text(lotSizeText || '0');
+                $('.propertysize').text(lotSizeText + (lotSize % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
+                var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
+                var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
+                $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
 
-                    $('.deposit').text(formattedfloor || 'N/A');
-                    $('.poolsize').text(formattedMaterials || 'N/A');
-                    $('.parking').text(formattedparking || 'N/A');
-                    $('.aircond').text(formattedaircon || 'N/A');
-                    $('.stories').text(formattedstorey || 'N/A');
-                    $('.clubhouse').text(formattedammenties || 'N/A');
-                    $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                    $('.equipment').text(formattedfireplace || 'N/A');
-                }
-                if ("{{ $propertyDetails['PropertyType'] }}" == 'Multi-Family' || "{{ $propertyDetails['PropertyType'] }}" == 'Mobile' || "{{ $propertyDetails['PropertyType'] }}" == 'Agri-Business') {
-                    var livingAreaSF = "{{ $propertyDetails['LivingAreaSF'] }}";
-                    var livingAreaSFText = livingAreaSF % 1 !== 0 ? parseFloat(livingAreaSF).toFixed(2) : parseInt(
-                        livingAreaSF);
-                    $('.area').text(livingAreaSFText || '0');
-                    $('.propertysize').text(livingAreaSFText + (livingAreaSF % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
-                    var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
-                    var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
-                    $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
-    
-                    var totalArea = livingAreaSFText;
-                    var pricePerSqft = totalPrice / totalArea;
-                    $('#pricepersqft').hide();
-                    $('.depo').html('<strong>Flooring :</strong>');
-                    $('.pool').html('<strong>Construction :</strong>');
-                    $('.remodel').html('<strong>Parking :</strong>');
-                    $('.amenitites').html('<strong>Amenities :</strong>');
-                    $('.additional').html('<strong>Zoning :</strong>');
-                    $('.equip').html('<strong>Lot :</strong>');
-                    $('.aircon').html('<strong>Appliances :</strong>');
-                    $('.storey').html('<strong>Stories :</strong>');
-                    var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? str_replace(',', ', ', $otherColumnsData['Flooring']) : '' !!}";
-                    var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials']) ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials']) : '' !!}";
-                    var formattedparking = "{!! isset($propertyDetails['ParkingFeatures']) ? str_replace(',', ', ', $propertyDetails['ParkingFeatures']) : '' !!}";
-                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures']) ? str_replace(',', ', ', $propertyDetails['CommunityFeatures']) : '' !!}";
-                    var formattedfireplace = "{!! isset($propertyDetails['LotFeatures']) ? str_replace(',', ', ', $propertyDetails['LotFeatures']) : '' !!}";
-                    var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
-                    var formattedstorey = "{!! isset($otherColumnsData['StoriesTotal']) ? str_replace(',', ', ', $otherColumnsData['StoriesTotal']) : '' !!}";
-                    $('.deposit').text(formattedfloor || 'N/A');
-                    $('.poolsize').text(formattedMaterials || 'N/A');
-                    $('.parking').text(formattedparking || 'N/A');
-                    $('.aircond').text(formattedaircon || 'N/A');
-                    $('.stories').text(formattedstorey || 'N/A');
-                    $('.clubhouse').text(formattedammenties || 'N/A');
-                    $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                    $('.equipment').text(formattedfireplace || 'N/A');
-                }
-           
+                var totalArea = lotSizeText;
+                var pricePerSqft = totalPrice / totalArea;
+                $('#pricepersqft').hide();
+                $('.depo').html('<strong>Fencing :</strong>');
+                $('.pool').html('<strong>Sewer :</strong>');
+                $('.remodel').html('<strong>Water Front :</strong>');
+                $('.amenitites').html('<strong>Lot Features :</strong>');
+                $('.additional').html('<strong>Zoning :</strong>');
+                $('.equip').html('<strong>Frontage :</strong>');
+                var formattedfloor = ("{{ $propertyDetails['WaterfrontFeatures'] }}").replace(/,/g, ', ');
+                $('.deposit').text(
+                    {{ isset($otherColumnsData['Fencing']) ? json_encode($otherColumnsData['Fencing']) : 'null' }} ||
+                    'N/A'
+                );
+                $('.poolsize').text("{{ $propertyDetails['Sewer'] }}" || 'N/A');
+                $('.parking').text(formattedfloor || 'N/A');
+                $('.clubhouse').text("{{ $propertyDetails['LotFeatures'] }}" || 'N/A');
+                $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
+                $('.equipment').text(
+                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} ||
+                    'N/A'
+                );
+            }
+
+            if ("{{ $propertyDetails['PropertyType'] }}" == 'Residential') {
+                var livingAreaSF = "{{ $propertyDetails['LivingAreaSF'] }}";
+                var livingAreaSFText = livingAreaSF % 1 !== 0 ? parseFloat(livingAreaSF).toFixed(2) : parseInt(
+                    livingAreaSF);
+                $('.area').text(livingAreaSFText || '0');
+                $('.propertysize').text(livingAreaSFText + (livingAreaSF % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
+                var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
+                var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
+                $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
+
+                var totalArea = livingAreaSFText;
+                var pricePerSqft = totalPrice / totalArea;
+                $('#pricepersqft').hide();
+                $('.depo').html('<strong>Flooring :</strong>');
+                $('.pool').html('<strong>Construction :</strong>');
+                $('.remodel').html('<strong>Parking :</strong>');
+                $('.amenitites').html('<strong>Amenities :</strong>');
+                $('.additional').html('<strong>Zoning :</strong>');
+                $('.equip').html('<strong>Fireplace :</strong>');
+                $('.aircon').html('<strong>Appliances :</strong>');
+                $('.storey').html('<strong>Stories :</strong>');
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
+                    ? (is_array($otherColumnsData['Flooring'])
+                        ? implode(', ', array_map('htmlspecialchars', $otherColumnsData['Flooring']))
+                        : str_replace(',', ', ', e($otherColumnsData['Flooring'])))
+                    : '' !!}";
+
+                $('.equipment').text(
+                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} ||
+                    'N/A'
+                );
+                var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
+                    ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
+                    : '' !!}";
+                var formattedparking = "{!! isset($propertyDetails['ParkingFeatures'])
+                    ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
+                    : '' !!}";
+                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+                    ? str_replace(',', ', ', $propertyDetails['CommunityFeatures'])
+                    : '' !!}";
+                var formattedfireplace = "{!! isset($propertyDetails['FireplaceFeatures'])
+                    ? str_replace(',', ', ', $propertyDetails['FireplaceFeatures'])
+                    : '' !!}";
+                var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
+                var formattedstorey = "{!! isset($otherColumnsData['StoriesTotal']) ? str_replace(',', ', ', $otherColumnsData['StoriesTotal']) : '' !!}";
+
+                $('.deposit').text(formattedfloor || 'N/A');
+                $('.poolsize').text(formattedMaterials || 'N/A');
+                $('.parking').text(formattedparking || 'N/A');
+                $('.aircond').text(formattedaircon || 'N/A');
+                $('.stories').text(formattedstorey || 'N/A');
+                $('.clubhouse').text(formattedammenties || 'N/A');
+                $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
+                $('.equipment').text(formattedfireplace || 'N/A');
+            }
+            if ("{{ $propertyDetails['PropertyType'] }}" == 'Multi-Family' ||
+                "{{ $propertyDetails['PropertyType'] }}" == 'Mobile' ||
+                "{{ $propertyDetails['PropertyType'] }}" == 'Agri-Business') {
+                var livingAreaSF = "{{ $propertyDetails['LivingAreaSF'] }}";
+                var livingAreaSFText = livingAreaSF % 1 !== 0 ? parseFloat(livingAreaSF).toFixed(2) : parseInt(
+                    livingAreaSF);
+                $('.area').text(livingAreaSFText || '0');
+                $('.propertysize').text(livingAreaSFText + (livingAreaSF % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
+                var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
+                var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
+                $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
+
+                var totalArea = livingAreaSFText;
+                var pricePerSqft = totalPrice / totalArea;
+                $('#pricepersqft').hide();
+                $('.depo').html('<strong>Flooring :</strong>');
+                $('.pool').html('<strong>Construction :</strong>');
+                $('.remodel').html('<strong>Parking :</strong>');
+                $('.amenitites').html('<strong>Amenities :</strong>');
+                $('.additional').html('<strong>Zoning :</strong>');
+                $('.equip').html('<strong>Lot :</strong>');
+                $('.aircon').html('<strong>Appliances :</strong>');
+                $('.storey').html('<strong>Stories :</strong>');
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
+                    ? (is_array($otherColumnsData['Flooring'])
+                        ? implode(', ', array_map('htmlspecialchars', $otherColumnsData['Flooring']))
+                        : str_replace(',', ', ', e($otherColumnsData['Flooring'])))
+                    : '' !!}";
+                var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
+                    ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
+                    : '' !!}";
+                var formattedparking = "{!! isset($propertyDetails['ParkingFeatures'])
+                    ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
+                    : '' !!}";
+                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+                    ? str_replace(',', ', ', $propertyDetails['CommunityFeatures'])
+                    : '' !!}";
+                var formattedfireplace = "{!! isset($propertyDetails['LotFeatures']) ? str_replace(',', ', ', $propertyDetails['LotFeatures']) : '' !!}";
+                var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
+                var formattedstorey = "{!! isset($otherColumnsData['StoriesTotal']) ? str_replace(',', ', ', $otherColumnsData['StoriesTotal']) : '' !!}";
+                $('.deposit').text(formattedfloor || 'N/A');
+                $('.poolsize').text(formattedMaterials || 'N/A');
+                $('.parking').text(formattedparking || 'N/A');
+                $('.aircond').text(formattedaircon || 'N/A');
+                $('.stories').text(formattedstorey || 'N/A');
+                $('.clubhouse').text(formattedammenties || 'N/A');
+                $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
+                $('.equipment').text(formattedfireplace || 'N/A');
+            }
+
 
             if ("{{ $propertyDetails['PropertyType'] }}" == 'Commercial') {
                 var buildingAreaTotal = "{{ $propertyDetails['BuildingAreaTotal'] }}";
@@ -2162,24 +2254,24 @@
 
                 var pricePerYearPerSqft = pricePerSqft / 12;
 
-           
-var leaseAmount = parseFloat("{{ $propertyDetails['LeaseAmount'] ?? 0 }}");
-var leaseAmountFrequency = "{{ $propertyDetails['LeaseAmountFrequency'] ?? '' }}";
-var listPrice = parseFloat("{{ $propertyDetails['ListPrice'] ?? 0 }}");
-var leaseMeasure = "{{ $propertyDetails['LeaseMeasure'] ?? '' }}";
 
-var formattedLeaseAmount = leaseAmount.toLocaleString();
-var formattedListPrice = listPrice.toLocaleString();
+                var leaseAmount = parseFloat("{{ $propertyDetails['LeaseAmount'] ?? 0 }}");
+                var leaseAmountFrequency = "{{ $propertyDetails['LeaseAmountFrequency'] ?? '' }}";
+                var listPrice = parseFloat("{{ $propertyDetails['ListPrice'] ?? 0 }}");
+                var leaseMeasure = "{{ $propertyDetails['LeaseMeasure'] ?? '' }}";
 
-if (leaseAmount && leaseAmountFrequency) {
-    var leaseInfo = `$${formattedLeaseAmount} / ${leaseAmountFrequency}`;
-    if (leaseMeasure) {
-        leaseInfo += ` / ${leaseMeasure}`;
-    }
-    document.getElementById('lstprice').textContent = leaseInfo;
-} else {
-    document.querySelector('.price').textContent = `$${formattedListPrice}`;
-}
+                var formattedLeaseAmount = leaseAmount.toLocaleString();
+                var formattedListPrice = listPrice.toLocaleString();
+
+                if (leaseAmount && leaseAmountFrequency) {
+                    var leaseInfo = `$${formattedLeaseAmount} / ${leaseAmountFrequency}`;
+                    if (leaseMeasure) {
+                        leaseInfo += ` / ${leaseMeasure}`;
+                    }
+                    document.getElementById('lstprice').textContent = leaseInfo;
+                } else {
+                    document.querySelector('.price').textContent = `$${formattedListPrice}`;
+                }
 
 
 
@@ -2190,15 +2282,20 @@ if (leaseAmount && leaseAmountFrequency) {
                 $('.amenitites').html('<strong>Lot Features:</strong>');
                 $('.additional').html('<strong>Zoning:</strong>');
                 $('.equip').html('<strong>Frontage:</strong>');
-                var formattedfloor = ("{{ $otherColumnsData['AccesstoProperty'] }}").replace(/,/g, ', ');
+                var formattedfloor = "{!! isset($otherColumnsData['AccesstoProperty']) ? json_encode($otherColumnsData['AccesstoProperty']) : '' !!}".replace(/,/g, ', ');
                 var formattedMaterials = ("{{ $propertyDetails['ConstructionMaterials'] }}").replace(/,/g, ', ');
                 var formattedparking = ("{{ $propertyDetails['LotFeatures'] }}").replace(/,/g, ', ');
                 $('.deposit').text(formattedfloor || 'N/A');
                 $('.poolsize').text(formattedMaterials || 'N/A');
-                $('.parking').text("{{ $otherColumnsData['ParkingCommonSpaces'] }}" || 'N/A');
+                $('.parking').text(
+                    {{ isset($otherColumnsData['ParkingCommonSpaces']) ? json_encode($otherColumnsData['ParkingCommonSpaces']) : 'null' }} ||
+                    'N/A'
+                );
                 $('.clubhouse').text(formattedparking || 'N/A');
                 $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                $('.equipment').text("{{ $otherColumnsData['FrontageLength'] }}" || 'N/A');
+                $('.equipment').text(
+                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} || 'N/A'
+                );
             }
             var agentSlug = @json($agent_slug);
 
@@ -2211,23 +2308,22 @@ if (leaseAmount && leaseAmountFrequency) {
 
             }
 
-             
-             var headingText = '';
-             
+
+            var headingText = '';
+
             if ("{{ $propertyDetails['StreetNumber'] }}" !== '' || "{{ $propertyDetails['StreetName'] }}" !==
-                '' || "{{ $propertyDetails['StreetDirSuffix'] }}" ) {
-                if ("{{ $propertyDetails['StreetSuffix'] }}" !== '' &&  "{{ $propertyDetails['UnitNumber'] }}" !== '') {
+                '' || "{{ $propertyDetails['StreetDirSuffix'] }}") {
+                if ("{{ $propertyDetails['StreetSuffix'] }}" !== '' &&
+                    "{{ $propertyDetails['UnitNumber'] }}" !== '') {
                     headingText +=
                         "{{ $propertyDetails['UnitNumber'] }}, {{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }} {{ $propertyDetails['StreetSuffix'] }} {{ $propertyDetails['StreetDirSuffix'] }}";
-                }
-                else if("{{ $propertyDetails['StreetSuffix'] }}" !== ''){
+                } else if ("{{ $propertyDetails['StreetSuffix'] }}" !== '') {
                     headingText +=
                         "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }} {{ $propertyDetails['StreetSuffix'] }} {{ $propertyDetails['StreetDirSuffix'] }}";
 
-                }
-                
-                else {
-                    headingText += "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
+                } else {
+                    headingText +=
+                        "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
                 }
             }
 
@@ -2239,21 +2335,23 @@ if (leaseAmount && leaseAmountFrequency) {
             }
 
             if ("{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}" !== '') {
-    if (headingText !== '') {
-        headingText += ', ';
-    }
-    headingText += "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
-}
-function decodeHtmlEntities(text) {
-    var textArea = document.createElement('textarea');
-    textArea.innerHTML = text;
-    return textArea.value;
-}
+                if (headingText !== '') {
+                    headingText += ', ';
+                }
+                headingText +=
+                    "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
+            }
 
-// Decode HTML entities in headingText
-headingText = decodeHtmlEntities(headingText);
+            function decodeHtmlEntities(text) {
+                var textArea = document.createElement('textarea');
+                textArea.innerHTML = text;
+                return textArea.value;
+            }
 
-$('.heading').text(headingText);
+            // Decode HTML entities in headingText
+            headingText = decodeHtmlEntities(headingText);
+
+            $('.heading').text(headingText);
 
             const dynamicMessage = "I would appreciate more information about " + headingText + ".";
 
@@ -2272,32 +2370,35 @@ $('.heading').text(headingText);
             var city = "{{ $propertyDetails['City'] }}";
             var stateOrProvince = "{{ $propertyDetails['StateOrProvince'] }}";
             var streetSuffix = "{{ $propertyDetails['StreetSuffix'] }}";
-            var postalCode = "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
+            var postalCode =
+                "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
             var listingId = "{{ $propertyDetails['ListingId'] }}";
-        
+
             var addressText = '';
-        
+
             if (streetNumber === '' && streetName === '') {
                 addressText = city + ", " + stateOrProvince;
             } else {
-                addressText = streetNumber + " " + streetName + " " + streetSuffix + ", " + city + ", " + stateOrProvince + ", " + postalCode + " - " + listingId;
+                addressText = streetNumber + " " + streetName + " " + streetSuffix + ", " + city + ", " +
+                    stateOrProvince + ", " + postalCode + " - " + listingId;
             }
-        
+
             var decodedAddressText = $("<div/>").html(addressText).text();
             $('.titles').text(decodedAddressText);
 
-            
+
             var propertyType = "{{ $propertyDetails['PropertyType'] }}";
             var propertySubtype = "{{ $propertyDetails['PropertySubType'] }}";
 
             if (propertySubtype === 'Apartment' || propertySubtype === 'Row/Townhouse') {
-                propertyType = 'Condo'; 
+                propertyType = 'Condo';
             }
-            
+
             $('.addresses').html(
-                propertyType+" {{ $propertyDetails['TransactionType'] }} in {{ $propertyDetails['City'] }}, {{ $propertyDetails['StateOrProvince'] }}"
+                propertyType +
+                " {{ $propertyDetails['TransactionType'] }} in {{ $propertyDetails['City'] }}, {{ $propertyDetails['StateOrProvince'] }}"
             );
-            
+
             // $('.addresses').html(
             //     "{{ $propertyDetails['PropertyType'] }} {{ $propertyDetails['TransactionType'] }} in {{ $propertyDetails['City'] }}, {{ $propertyDetails['StateOrProvince'] }}"
             // );
@@ -2305,26 +2406,28 @@ $('.heading').text(headingText);
             $('.bedroom').text("{{ $propertyDetails['BedroomsTotal'] }}" || '0');
 
             $('.bathroom').text(function() {
-    var fullBathrooms = {{ $propertyDetails['BathroomsFull'] ?? 0 }};
-    var halfBathrooms = {{ $propertyDetails['BathroomsHalf'] ?? 0 }};
-    
-    var bathroomText = fullBathrooms;
-    
-    if (halfBathrooms > 0) {
-        bathroomText += '.' + halfBathrooms;
-    }
-    
-    return bathroomText + (fullBathrooms + halfBathrooms > 1 ? ' baths' : ' bath');
-});
+                var fullBathrooms = {{ $propertyDetails['BathroomsFull'] ?? 0 }};
+                var halfBathrooms = {{ $propertyDetails['BathroomsHalf'] ?? 0 }};
+
+                var bathroomText = fullBathrooms;
+
+                if (halfBathrooms > 0) {
+                    bathroomText += '.' + halfBathrooms;
+                }
+
+                return bathroomText + (fullBathrooms + halfBathrooms > 1 ? ' baths' : ' bath');
+            });
 
             $('.years').text("{{ $propertyDetails['YearBuilt'] }}" || 'N/A');
 
             $('.year').text("{{ $propertyDetails['YearBuilt'] }}" || 'N/A');
 
             // $('.propertytype').text("{{ $propertyDetails['PropertyType'] }}" || 'N/A');
-            
-            $('.propertytype').text(( "{{ $propertyDetails['PropertySubType'] }}" === 'Apartment' || "{{ $propertyDetails['PropertySubType'] }}" === 'Row/Townhouse' ) ? 'Condo' : "{{ $propertyDetails['PropertyType'] }}" || 'N/A');
-            
+
+            $('.propertytype').text(("{{ $propertyDetails['PropertySubType'] }}" === 'Apartment' ||
+                    "{{ $propertyDetails['PropertySubType'] }}" === 'Row/Townhouse') ? 'Condo' :
+                "{{ $propertyDetails['PropertyType'] }}" || 'N/A');
+
             $('.propertysubtype').text("{{ $propertyDetails['PropertySubType'] }}" || 'N/A');
 
             $('.buildingtype').text("{{ $propertyDetails['MlsStatus'] }}");
@@ -2345,8 +2448,11 @@ $('.heading').text(headingText);
 
             $('.address-state').text("{{ $propertyDetails['StateOrProvince'] }}" || 'N/A');
 
-            $('.address-zip').text("{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}" || 'N/A');
-            $('.address-area').text("{{ isset($propertyDetails['SubdivisionName']) ? $propertyDetails['SubdivisionName'] : '' }}" || 'N/A');
+            $('.address-zip').text(
+                "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}" || 'N/A');
+            $('.address-area').text(
+                "{{ isset($propertyDetails['SubdivisionName']) ? $propertyDetails['SubdivisionName'] : '' }}" ||
+                'N/A');
             $('.address-country').text('Canada');
             $('.listingid').text("{{ $propertyDetails['ListingId'] }}" || 'N/A');
 
@@ -2355,7 +2461,9 @@ $('.heading').text(headingText);
             $('.listprice').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0)
                 .toLocaleString() || 'N/A');
 
-            $('.garagesize').text("{{ $otherColumnsData['GarageYN'] }}" || 'N/A');
+            $('.garagesize').text(
+                {{ isset($otherColumnsData['GarageYN']) ? json_encode($otherColumnsData['GarageYN']) : 'null' }} || 'N/A'
+            );
 
             if ("{{ $propertyDetails['diamond'] }}" == 1) {
                 $('.features').text('Diamond').css('background-color', '#10579f');
@@ -2373,7 +2481,7 @@ $('.heading').text(headingText);
 
 
             // var videoUrl = "{{ $otherColumnsData['VirtualTourURLBranded'] }}";
-             var virtualTourImageUrl = "{{ trim($otherColumnsData['VirtualTourURLUnbranded']) }}"; 
+            var virtualTourImageUrl = "{!! isset($otherColumnsData['VirtualTourURLUnbranded']) ? trim(json_encode($otherColumnsData['VirtualTourURLUnbranded'], JSON_HEX_APOS | JSON_HEX_QUOT)) : '' !!}";
 
             // if (videoUrl) {
 
@@ -2626,22 +2734,22 @@ $('.heading').text(headingText);
             window.print();
         });
 
-    
+
 
 
         var features = []
-               features = [
-                // "PetsAllowed",
-                "{{ $propertyDetails['ExteriorFeatures'] }}",
-                "{{ $propertyDetails['InteriorFeatures'] }}",
-                "{{ $propertyDetails['AccessibilityFeatures'] }}",
-                "{{ $propertyDetails['WaterfrontFeatures'] }}",
-                "{{ $propertyDetails['CommunityFeatures'] }}",
-                "{{ $propertyDetails['FireplaceFeatures'] }}",
-                "{{ $propertyDetails['LotFeatures'] }}",
-                "{{ $propertyDetails['PatioAndPorchFeatures'] }}",
-                "{{ $propertyDetails['AssociationAmenities'] }}"
-            ].filter(feature => feature);
+        features = [
+            // "PetsAllowed",
+            "{{ $propertyDetails['ExteriorFeatures'] }}",
+            "{{ $propertyDetails['InteriorFeatures'] }}",
+            "{{ $propertyDetails['AccessibilityFeatures'] }}",
+            "{{ $propertyDetails['WaterfrontFeatures'] }}",
+            "{{ $propertyDetails['CommunityFeatures'] }}",
+            "{{ $propertyDetails['FireplaceFeatures'] }}",
+            "{{ $propertyDetails['LotFeatures'] }}",
+            "{{ $propertyDetails['PatioAndPorchFeatures'] }}",
+            "{{ $propertyDetails['AssociationAmenities'] }}"
+        ].filter(feature => feature);
 
         const featuresContainer = document.getElementById('featuresContainer');
 
@@ -2678,7 +2786,7 @@ $('.heading').text(headingText);
             document.getElementById("section4").style.display = "none";
             $('.feat').hide();
         }
-        
+
 
         // function fetchReviews(sortBy) {
         //     var baseUrl = "{{ env('BACKEND_URL') }}";
@@ -2915,54 +3023,54 @@ $('.heading').text(headingText);
                 });
             });
         });
-          const roomDataString = {!! json_encode($propertyRooms) !!};
-const roomData = JSON.parse(roomDataString);
-const floorPlansContainer = document.getElementById('section5');
+        const roomDataString = {!! json_encode($propertyRooms) !!};
+        const roomData = JSON.parse(roomDataString);
+        const floorPlansContainer = document.getElementById('section5');
 
-if (Array.isArray(roomData) && roomData.length > 0) {
-    const groupedRooms = roomData.reduce((acc, room) => {
-        acc[room.RoomLevel] = acc[room.RoomLevel] || [];
-        acc[room.RoomLevel].push(room);
-        return acc;
-    }, {});
+        if (Array.isArray(roomData) && roomData.length > 0) {
+            const groupedRooms = roomData.reduce((acc, room) => {
+                acc[room.RoomLevel] = acc[room.RoomLevel] || [];
+                acc[room.RoomLevel].push(room);
+                return acc;
+            }, {});
 
-    Object.keys(groupedRooms).forEach(level => {
-        const levelRooms = groupedRooms[level];
+            Object.keys(groupedRooms).forEach(level => {
+                const levelRooms = groupedRooms[level];
 
-        const levelTable = document.createElement('table');
-        levelTable.classList.add('level');
+                const levelTable = document.createElement('table');
+                levelTable.classList.add('level');
 
-        const levelCaption = document.createElement('caption');
-        levelCaption.textContent = `${level} Level`;
-        levelTable.appendChild(levelCaption);
+                const levelCaption = document.createElement('caption');
+                levelCaption.textContent = `${level} Level`;
+                levelTable.appendChild(levelCaption);
 
-        const tableBody = document.createElement('tbody');
+                const tableBody = document.createElement('tbody');
 
-        levelRooms.forEach(room => {
-            const row = tableBody.insertRow();
-            const cellRoomType = row.insertCell();
-            const cellDimensions = row.insertCell();
+                levelRooms.forEach(room => {
+                    const row = tableBody.insertRow();
+                    const cellRoomType = row.insertCell();
+                    const cellDimensions = row.insertCell();
 
-            cellRoomType.textContent = room.RoomType;
-            const dimensionsParts = room.RoomDimensions.split(' x ').map(part => {
-                return part.split('`').map(subpart => {
-                    return parseFloat(subpart.replace(/[^\d.]/g, ''));
-                }).join('.');
-            }).map(part => part + ' Ft');
+                    cellRoomType.textContent = room.RoomType;
+                    const dimensionsParts = room.RoomDimensions.split(' x ').map(part => {
+                        return part.split('`').map(subpart => {
+                        return parseFloat(subpart.replace(/[^\d.]/g, ''));
+                    }).join('.');
+                }).map(part => part + ' Ft');
 
-            cellDimensions.textContent = dimensionsParts.join(' x ');
+                cellDimensions.textContent = dimensionsParts.join(' x ');
+            });
+
+            levelTable.appendChild(tableBody);
+            floorPlansContainer.appendChild(levelTable);
         });
 
-        levelTable.appendChild(tableBody);
-        floorPlansContainer.appendChild(levelTable);
-    });
-
-    floorPlansContainer.style.display = 'block'; 
-    $('.floors').show(); 
-} else {
-    floorPlansContainer.style.display = 'none'; 
-    $('.floors').hide(); 
-}
+        floorPlansContainer.style.display = 'block';
+        $('.floors').show();
+    } else {
+        floorPlansContainer.style.display = 'none';
+        $('.floors').hide();
+    }
 
 
     function addToFavorites(propertyId, favoriteStatus) {
@@ -3135,7 +3243,5 @@ if (Array.isArray(roomData) && roomData.length > 0) {
         if (userId) {
             getmarkedlistings();
         }
-      
-       
     </script>
 @endsection
