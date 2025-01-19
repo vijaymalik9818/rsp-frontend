@@ -570,7 +570,7 @@
                                 
                                 foreach ($categories as $alias => $category) {
                                     echo '<li class="nav-item" role="presentation">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -585,7 +585,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -599,10 +599,10 @@
                                         '" role="tabpanel" aria-labelledby="pills-' .
                                         $alias .
                                         '-tab" tabindex="0">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
                                         $alias .
                                         '"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
                                 }
                                 ?>
                             </div>
@@ -825,28 +825,28 @@
                                             </div>
 
                                             <!-- <h6 class="fw-bold mt-4">Tour Type</h6>
-                                                    <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                                            <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
-                                                                onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
-                                                                aria-selected="true">In Person</button>
-                                                        </li>
-                                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                                            <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
-                                                                onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
-                                                                aria-selected="false">Video Chat</button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                                                            tabindex="0">
-                                                      
-                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                                                aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
+                                                <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
+                                                    <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
+                                                        <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
+                                                            onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
+                                                            aria-selected="true">In Person</button>
+                                                    </li>
+                                                    <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                                        <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
+                                                            onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
+                                                            aria-selected="false">Video Chat</button>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                                                        tabindex="0">
+                                                  
+                                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                                            aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
 
-                                                        </div>
+                                                    </div>
 
-                                                    </div> -->
+                                                </div> -->
                                             <div>
                                                 <form id="tourForm">
                                                     @csrf
@@ -1674,8 +1674,7 @@
                 });
 
                 var mainLocationLngLat = [{{ $propertyDetails['Longitude'] }},
-                    {{ $propertyDetails['Latitude'] }}
-                ];
+                {{ $propertyDetails['Latitude'] }}];
                 var mainaddress = "{{ $propertyDetails['UnparsedAddress'] }}";
 
                 var mainLocationPopup = new mapboxgl.Popup({
@@ -2100,14 +2099,15 @@
                     event.target.value = phoneInput.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
                 });
             });
-            if ("{{ $propertyDetails['PropertyType'] }}" == 'Land') {
-                var lotSize = "{{ $propertyDetails['LotSizeSquareFeet'] }}";
+            if ("{{ $propertyDetails['PropertyType'] ?? '' }}" === 'Land') {
+                var lotSize = "{{ $propertyDetails['LotSizeSquareFeet'] ?? '0' }}";
                 var lotSizeText = lotSize % 1 !== 0 ? parseFloat(lotSize).toFixed(2) : parseInt(lotSize);
                 $('.area').text(lotSizeText || '0');
-                $('.propertysize').text(lotSizeText + (lotSize % 1 !== 0 ? " Sq ft" : " Sq ft") || 'N/A');
-                var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] }}" || 0).toLocaleString();
+                $('.propertysize').text(lotSizeText + " Sq ft" || 'N/A');
+                var totalPriceStr = parseFloat("{{ $propertyDetails['ListPrice'] ?? '0' }}").toLocaleString();
                 var totalPrice = parseFloat(totalPriceStr.replace(/,/g, ''));
-                $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0).toLocaleString());
+                $('.price').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] ?? '0' }}") || 0)
+                    .toLocaleString());
 
                 var totalArea = lotSizeText;
                 var pricePerSqft = totalPrice / totalArea;
@@ -2118,20 +2118,16 @@
                 $('.amenitites').html('<strong>Lot Features :</strong>');
                 $('.additional').html('<strong>Zoning :</strong>');
                 $('.equip').html('<strong>Frontage :</strong>');
-                var formattedfloor = ("{{ $propertyDetails['WaterfrontFeatures'] }}").replace(/,/g, ', ');
-                $('.deposit').text(
-                    {{ isset($otherColumnsData['Fencing']) ? json_encode($otherColumnsData['Fencing']) : 'null' }} ||
-                    'N/A'
-                );
-                $('.poolsize').text("{{ $propertyDetails['Sewer'] }}" || 'N/A');
+
+                var formattedfloor = ("{{ $propertyDetails['WaterfrontFeatures'] ?? '' }}").replace(/,/g, ', ');
+                $('.deposit').text("{{ $otherColumnsData['Fencing'] ?? 'N/A' }}");
+                $('.poolsize').text("{{ $propertyDetails['Sewer'] ?? 'N/A' }}");
                 $('.parking').text(formattedfloor || 'N/A');
-                $('.clubhouse').text("{{ $propertyDetails['LotFeatures'] }}" || 'N/A');
-                $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                $('.equipment').text(
-                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} ||
-                    'N/A'
-                );
+                $('.clubhouse').text("{{ $propertyDetails['LotFeatures'] ?? 'N/A' }}");
+                $('.additionalroom').text("{{ $propertyDetails['Zoning'] ?? 'N/A' }}");
+                $('.equipment').text("{{ $otherColumnsData['FrontageLength'] ?? 'N/A' }}");
             }
+
 
             if ("{{ $propertyDetails['PropertyType'] }}" == 'Residential') {
                 var livingAreaSF = "{{ $propertyDetails['LivingAreaSF'] }}";
@@ -2154,16 +2150,7 @@
                 $('.equip').html('<strong>Fireplace :</strong>');
                 $('.aircon').html('<strong>Appliances :</strong>');
                 $('.storey').html('<strong>Stories :</strong>');
-                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
-                    ? (is_array($otherColumnsData['Flooring'])
-                        ? implode(', ', array_map('htmlspecialchars', $otherColumnsData['Flooring']))
-                        : str_replace(',', ', ', e($otherColumnsData['Flooring'])))
-                    : '' !!}";
-
-                $('.equipment').text(
-                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} ||
-                    'N/A'
-                );
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? (is_array($otherColumnsData['Flooring']) ? implode(', ', $otherColumnsData['Flooring']) : str_replace(',', ', ', $otherColumnsData['Flooring'])) : '' !!}";
                 var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
                     ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
                     : '' !!}";
@@ -2211,11 +2198,7 @@
                 $('.equip').html('<strong>Lot :</strong>');
                 $('.aircon').html('<strong>Appliances :</strong>');
                 $('.storey').html('<strong>Stories :</strong>');
-                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
-                    ? (is_array($otherColumnsData['Flooring'])
-                        ? implode(', ', array_map('htmlspecialchars', $otherColumnsData['Flooring']))
-                        : str_replace(',', ', ', e($otherColumnsData['Flooring'])))
-                    : '' !!}";
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? (is_array($otherColumnsData['Flooring']) ? implode(', ', $otherColumnsData['Flooring']) : str_replace(',', ', ', $otherColumnsData['Flooring'])) : '' !!}";
                 var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
                     ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
                     : '' !!}";
@@ -2282,20 +2265,15 @@
                 $('.amenitites').html('<strong>Lot Features:</strong>');
                 $('.additional').html('<strong>Zoning:</strong>');
                 $('.equip').html('<strong>Frontage:</strong>');
-                var formattedfloor = "{!! isset($otherColumnsData['AccesstoProperty']) ? json_encode($otherColumnsData['AccesstoProperty']) : '' !!}".replace(/,/g, ', ');
-                var formattedMaterials = ("{{ $propertyDetails['ConstructionMaterials'] }}").replace(/,/g, ', ');
-                var formattedparking = ("{{ $propertyDetails['LotFeatures'] }}").replace(/,/g, ', ');
+                var formattedfloor = ("{{ $otherColumnsData['AccesstoProperty'] ?? 'N/A' }}").replace(/,/g, ', ');
+                var formattedMaterials = ("{{ $propertyDetails['ConstructionMaterials'] ?? 'N/A' }}").replace(/,/g, ', ');
+                var formattedparking = ("{{ $propertyDetails['LotFeatures'] ?? 'N/A' }}").replace(/,/g, ', ');
                 $('.deposit').text(formattedfloor || 'N/A');
                 $('.poolsize').text(formattedMaterials || 'N/A');
-                $('.parking').text(
-                    {{ isset($otherColumnsData['ParkingCommonSpaces']) ? json_encode($otherColumnsData['ParkingCommonSpaces']) : 'null' }} ||
-                    'N/A'
-                );
+                $('.parking').text("{{ $otherColumnsData['ParkingCommonSpaces'] ?? 'N/A' }}" || 'N/A');
                 $('.clubhouse').text(formattedparking || 'N/A');
                 $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                $('.equipment').text(
-                    {{ isset($otherColumnsData['FrontageLength']) ? json_encode($otherColumnsData['FrontageLength']) : 'null' }} || 'N/A'
-                );
+                $('.equipment').text("{{ $otherColumnsData['FrontageLength']  ?? 'N/A'}}" || 'N/A');
             }
             var agentSlug = @json($agent_slug);
 
@@ -2323,7 +2301,7 @@
 
                 } else {
                     headingText +=
-                        "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
+                    "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
                 }
             }
 
@@ -2339,7 +2317,7 @@
                     headingText += ', ';
                 }
                 headingText +=
-                    "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
+                "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
             }
 
             function decodeHtmlEntities(text) {
@@ -2371,7 +2349,7 @@
             var stateOrProvince = "{{ $propertyDetails['StateOrProvince'] }}";
             var streetSuffix = "{{ $propertyDetails['StreetSuffix'] }}";
             var postalCode =
-                "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
+            "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
             var listingId = "{{ $propertyDetails['ListingId'] }}";
 
             var addressText = '';
@@ -2461,9 +2439,7 @@
             $('.listprice').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0)
                 .toLocaleString() || 'N/A');
 
-            $('.garagesize').text(
-                {{ isset($otherColumnsData['GarageYN']) ? json_encode($otherColumnsData['GarageYN']) : 'null' }} || 'N/A'
-            );
+            $('.garagesize').text("{{ $otherColumnsData['GarageYN']  ?? 'N/A' }}" || 'N/A');
 
             if ("{{ $propertyDetails['diamond'] }}" == 1) {
                 $('.features').text('Diamond').css('background-color', '#10579f');
@@ -2481,7 +2457,7 @@
 
 
             // var videoUrl = "{{ $otherColumnsData['VirtualTourURLBranded'] }}";
-            var virtualTourImageUrl = "{!! isset($otherColumnsData['VirtualTourURLUnbranded']) ? trim(json_encode($otherColumnsData['VirtualTourURLUnbranded'], JSON_HEX_APOS | JSON_HEX_QUOT)) : '' !!}";
+            var virtualTourImageUrl = "{{ trim($otherColumnsData['VirtualTourURLUnbranded'] ?? 'N/A') }}";
 
             // if (videoUrl) {
 
@@ -2590,7 +2566,7 @@
                 hour = hour ? hour : 12;
                 var formattedDate = month + ' ' + day + ', ' + year + ' at ' + hour + ':' + (minute < 10 ? '0' :
                     '') + minute + ' ' + ampm;
-                $('.updatedate').text('Updated time ' + formattedDate);
+                $('.updatedate').text('Listing Information Last Updated ' + formattedDate);
             }
 
             var description = {!! json_encode($propertyDetails['PublicRemarks'] ?? 'No description available') !!};
