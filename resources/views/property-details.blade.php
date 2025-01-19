@@ -570,7 +570,7 @@
                                 
                                 foreach ($categories as $alias => $category) {
                                     echo '<li class="nav-item" role="presentation">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -585,7 +585,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -599,10 +599,10 @@
                                         '" role="tabpanel" aria-labelledby="pills-' .
                                         $alias .
                                         '-tab" tabindex="0">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
                                         $alias .
                                         '"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
                                 }
                                 ?>
                             </div>
@@ -795,13 +795,13 @@
                                     <ul class="nav row nav-pills mb-1 mt-3 d-flex justify-content-between" id="pills-tab"
                                         role="tablist">
                                         <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                            <button class="nav-link active ud-btn " id="pills-tour-tab"
+                                            <button class="nav-link ud-btn btn-primary" id="pills-tour-tab"
                                                 data-bs-toggle="pill" data-bs-target="#pills-tour" type="button"
                                                 role="tab" aria-controls="pills-tour" aria-selected="true">Schedule a
                                                 Tour</button>
                                         </li>
                                         <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button class="nav-link ud-btn btn-primary" id="pills-contact-tab"
+                                            <button class="  nav-link active ud-btn  " id="pills-contact-tab"
                                                 data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
                                                 role="tab" aria-controls="pills-contact"
                                                 aria-selected="false">Contact Info
@@ -810,7 +810,7 @@
                                     </ul>
 
                                     <div class="tab-content" id="pills-tabContent">
-                                        <div class="tab-pane fade show active" id="pills-tour" role="tabpanel"
+                                        <div class="tab-pane fade" id="pills-tour" role="tabpanel"
                                             aria-labelledby="pills-tour-tab" tabindex="0">
 
                                             <!-- <h4>Schedule A Tour</h4> -->
@@ -825,28 +825,28 @@
                                             </div>
 
                                             <!-- <h6 class="fw-bold mt-4">Tour Type</h6>
-                                                <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                                    <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                                        <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
-                                                            onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
-                                                            aria-selected="true">In Person</button>
-                                                    </li>
-                                                    <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                                        <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
-                                                            onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
-                                                            aria-selected="false">Video Chat</button>
-                                                    </li>
-                                                </ul>
-                                                <div class="tab-content" id="pills-tabContent">
-                                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                                                        tabindex="0">
-                                                  
-                                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                                            aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
+                                                    <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
+                                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
+                                                            <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
+                                                                onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
+                                                                aria-selected="true">In Person</button>
+                                                        </li>
+                                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                                            <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
+                                                                onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
+                                                                aria-selected="false">Video Chat</button>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content" id="pills-tabContent">
+                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                                                            tabindex="0">
+                                                      
+                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                                                aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
 
-                                                    </div>
+                                                        </div>
 
-                                                </div> -->
+                                                    </div> -->
                                             <div>
                                                 <form id="tourForm">
                                                     @csrf
@@ -934,7 +934,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                        <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
                                             aria-labelledby="pills-contact-tab" tabindex="1">
                                             <div class="contact-info" id="section10">
 
@@ -1674,7 +1674,8 @@
                 });
 
                 var mainLocationLngLat = [{{ $propertyDetails['Longitude'] }},
-                {{ $propertyDetails['Latitude'] }}];
+                    {{ $propertyDetails['Latitude'] }}
+                ];
                 var mainaddress = "{{ $propertyDetails['UnparsedAddress'] }}";
 
                 var mainLocationPopup = new mapboxgl.Popup({
@@ -2150,7 +2151,11 @@
                 $('.equip').html('<strong>Fireplace :</strong>');
                 $('.aircon').html('<strong>Appliances :</strong>');
                 $('.storey').html('<strong>Stories :</strong>');
-                var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? (is_array($otherColumnsData['Flooring']) ? implode(', ', $otherColumnsData['Flooring']) : str_replace(',', ', ', $otherColumnsData['Flooring'])) : '' !!}";
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
+                    ? (is_array($otherColumnsData['Flooring'])
+                        ? implode(', ', $otherColumnsData['Flooring'])
+                        : str_replace(',', ', ', $otherColumnsData['Flooring']))
+                    : '' !!}";
                 var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
                     ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
                     : '' !!}";
@@ -2198,7 +2203,11 @@
                 $('.equip').html('<strong>Lot :</strong>');
                 $('.aircon').html('<strong>Appliances :</strong>');
                 $('.storey').html('<strong>Stories :</strong>');
-                var formattedfloor = "{!! isset($otherColumnsData['Flooring']) ? (is_array($otherColumnsData['Flooring']) ? implode(', ', $otherColumnsData['Flooring']) : str_replace(',', ', ', $otherColumnsData['Flooring'])) : '' !!}";
+                var formattedfloor = "{!! isset($otherColumnsData['Flooring'])
+                    ? (is_array($otherColumnsData['Flooring'])
+                        ? implode(', ', $otherColumnsData['Flooring'])
+                        : str_replace(',', ', ', $otherColumnsData['Flooring']))
+                    : '' !!}";
                 var formattedMaterials = "{!! isset($propertyDetails['ConstructionMaterials'])
                     ? str_replace(',', ', ', $propertyDetails['ConstructionMaterials'])
                     : '' !!}";
@@ -2266,14 +2275,15 @@
                 $('.additional').html('<strong>Zoning:</strong>');
                 $('.equip').html('<strong>Frontage:</strong>');
                 var formattedfloor = ("{{ $otherColumnsData['AccesstoProperty'] ?? 'N/A' }}").replace(/,/g, ', ');
-                var formattedMaterials = ("{{ $propertyDetails['ConstructionMaterials'] ?? 'N/A' }}").replace(/,/g, ', ');
+                var formattedMaterials = ("{{ $propertyDetails['ConstructionMaterials'] ?? 'N/A' }}").replace(
+                    /,/g, ', ');
                 var formattedparking = ("{{ $propertyDetails['LotFeatures'] ?? 'N/A' }}").replace(/,/g, ', ');
                 $('.deposit').text(formattedfloor || 'N/A');
                 $('.poolsize').text(formattedMaterials || 'N/A');
                 $('.parking').text("{{ $otherColumnsData['ParkingCommonSpaces'] ?? 'N/A' }}" || 'N/A');
                 $('.clubhouse').text(formattedparking || 'N/A');
                 $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
-                $('.equipment').text("{{ $otherColumnsData['FrontageLength']  ?? 'N/A'}}" || 'N/A');
+                $('.equipment').text("{{ $otherColumnsData['FrontageLength'] ?? 'N/A' }}" || 'N/A');
             }
             var agentSlug = @json($agent_slug);
 
@@ -2301,7 +2311,7 @@
 
                 } else {
                     headingText +=
-                    "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
+                        "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }}";
                 }
             }
 
@@ -2317,7 +2327,7 @@
                     headingText += ', ';
                 }
                 headingText +=
-                "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
+                    "{{ isset($propertyDetails['PostalCode']) ? $propertyDetails['PostalCode'] : '' }}";
             }
 
             function decodeHtmlEntities(text) {
@@ -2349,7 +2359,7 @@
             var stateOrProvince = "{{ $propertyDetails['StateOrProvince'] }}";
             var streetSuffix = "{{ $propertyDetails['StreetSuffix'] }}";
             var postalCode =
-            "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
+                "{{ isset($otherColumnsData['PostalCode']) ? $otherColumnsData['PostalCode'] : '' }}";
             var listingId = "{{ $propertyDetails['ListingId'] }}";
 
             var addressText = '';
@@ -2439,7 +2449,7 @@
             $('.listprice').text('$' + (parseFloat("{{ $propertyDetails['ListPrice'] }}") || 0)
                 .toLocaleString() || 'N/A');
 
-            $('.garagesize').text("{{ $otherColumnsData['GarageYN']  ?? 'N/A' }}" || 'N/A');
+            $('.garagesize').text("{{ $otherColumnsData['GarageYN'] ?? 'N/A' }}" || 'N/A');
 
             if ("{{ $propertyDetails['diamond'] }}" == 1) {
                 $('.features').text('Diamond').css('background-color', '#10579f');
@@ -2566,7 +2576,35 @@
                 hour = hour ? hour : 12;
                 var formattedDate = month + ' ' + day + ', ' + year + ' at ' + hour + ':' + (minute < 10 ? '0' :
                     '') + minute + ' ' + ampm;
-                $('.updatedate').text('Listing Information Last Updated ' + formattedDate);
+
+
+
+
+                // Get the current date
+                let currentDate = new Date();
+
+                // Convert to Central Time (CDT/CST based on Daylight Saving Time)
+                let options = {
+                    timeZone: 'America/Chicago', // Central Time Zone
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    timeZoneName: 'short' // Includes "CDT" or "CST"
+                };
+
+                // Format the date
+                let formatter = new Intl.DateTimeFormat('en-US', options);
+                let formattedDates = formatter.format(currentDate);
+
+                // Update the text
+                $('.updatedate').text('Listing Information Last Updated ' + formattedDates);
+
+
+
+
             }
 
             var description = {!! json_encode($propertyDetails['PublicRemarks'] ?? 'No description available') !!};
