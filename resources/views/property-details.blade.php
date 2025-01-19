@@ -957,9 +957,6 @@
                                                             <div><i class="ri-smartphone-line"></i>
                                                                 <span><a class="contactno" href="tel:"></a></span>
                                                             </div>
-                                                            <div><i class="ri-whatsapp-line whatsapp-icon"></i>
-                                                                <span class='fw-light'>WhatsApp</span>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
