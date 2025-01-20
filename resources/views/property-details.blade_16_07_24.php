@@ -681,7 +681,7 @@
                                                 </div>
                                             @elseif ($listing['featured'] == 1)
                                                 <div class="list-tag fz12">
-                                                    <i class="fa-thin fa-star me-2"></i>Featured
+                                                    <i class="fa-thin fa-star me-2"></i>Exclusive
                                                 </div>
                                             @endif
                             
@@ -2304,13 +2304,13 @@ $('.heading').text(headingText);
             if ("{{ $propertyDetails['diamond'] }}" == 1) {
                 $('.features').text('Diamond').css('background-color', '#10579f');
             } else if ("{{ $propertyDetails['featured'] }}" == 1) {
-                $('.features').text('Featured').css('background-color', '#10579f');
+                $('.features').text('Exclusive').css('background-color', '#10579f');
             } else {
                 $('.features').hide();
                 $('.features').css('background', 'transparent'); // Set background color to transparent
             }
             if ($('.features').text().trim() === 'Featured') {
-                $('input[name="property_type"]').val('features');
+                $('input[name="property_type"]').val('Exclusive');
             } else if ($('.features').text().trim() === 'Diamond') {
                 $('input[name="property_type"]').val('diamond');
             }

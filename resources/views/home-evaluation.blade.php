@@ -184,7 +184,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                 <div class="main-title2 mb-3 mb-sm-0">
                         <div class='d-flex  align-items-center'>
                             <i class="fa-thin fa-star star-icon me-2"></i>
-                            <h2 class="title mobile-fs">Featured Listings</h2>
+                            <h2 class="title mobile-fs">Exclusive Listings</h2>
                         </div>
                         <p class="paragraph">
                             Here’s an inside look at all our amazing active home listings currently posted on the MLS<span
@@ -197,8 +197,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                         class="dark-light-navtab style2 text-start text-lg-end mt-0 mt-lg-4 mb-4"
                     >
                         <div class="text-start text-lg-end mb-3">
-                            <a class="ud-btn btn-outline-rep bg-red" href="/search/featured"
-                            >See All Featured Listings</a>
+                            <a class="ud-btn btn-outline-rep bg-red" href="/search/exclusive"
+                            >See All Exclusive Listings</a>
                         </div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                                                         </div>                                                    
                                                 </div>
                                                 <div class="list-tag fz12">
-                                                    <i class="fa-thin fa-star me-2"></i>Featured
+                                                    <i class="fa-thin fa-star me-2"></i>Exclusive
                                                 </div>
                                                 <div class="list-meta2">
                                                     <a href="javascript:void(0)" 
@@ -321,28 +321,35 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                                                 
                                                 </h6>
                                                 <p class="list-text">{{ $singleListing['PropertyType'] }}</p>
-                                                <div
-                                                    class="list-meta d-flex align-items-center gap-3"
-                                                >
-                                                @if(isset($singleListing['BathroomsFull']) && $singleListing['BathroomsFull'] !== null && $singleListing['BathroomsFull'] !== '')
-                                                <p>
-                                                    <span class="flaticon-bed"></span>{{ $singleListing['BathroomsFull'] }} bed
-                                                </p>
-                                            @endif
-                                            
-                                            @if(isset($singleListing['BedroomsTotal']) && $singleListing['BedroomsTotal'] !== null && $singleListing['BedroomsTotal'] !== '')
-                                                <p>
-                                                    <span class="flaticon-shower"></span>{{ $singleListing['BedroomsTotal'] }} bath
-                                                </p>
-                                            @endif
-                                            
-                                                     @if($singleListing['BuildingAreaTotalSF'])
+                                                <div class="list-meta d-flex align-items-center gap-3">
+                                                    @if(isset($singleListing['BedroomsTotal']) && $singleListing['BedroomsTotal'] !== null && $singleListing['BedroomsTotal'] !== '')
+                                                        <p>
+                                                            <span class="flaticon-bed"></span>{{ $singleListing['BedroomsTotal'] }} bed
+                                                        </p>
+                                                    @endif
+                                                    @if(isset($singleListing['BathroomsFull']) || isset($singleListing['BathroomsHalf']))
+                                                        <p>
+                                                            <span class="flaticon-shower"></span>
+                                                            {{
+                                                                (isset($singleListing['BathroomsFull']) && $singleListing['BathroomsFull'] !== null && $singleListing['BathroomsFull'] !== ''
+                                                                    ? $singleListing['BathroomsFull']
+                                                                    : 0) .
+                                                                (isset($singleListing['BathroomsHalf']) && $singleListing['BathroomsHalf'] > 0
+                                                                    ? '.' . $singleListing['BathroomsHalf']
+                                                                    : '')
+                                                            }} bathroom{{ ((int)($singleListing['BathroomsFull'] ?? 0) + (int)($singleListing['BathroomsHalf'] ?? 0)) > 1 ? 's' : '' }}
+                                                        </p>
+                                                    @endif
+                                                
+                                                    
+                                                
+                                                    @if(isset($singleListing['BuildingAreaTotalSF']) && $singleListing['BuildingAreaTotalSF'] !== null)
                                                         <p><span class="flaticon-expand"></span>{{ floor($singleListing['BuildingAreaTotalSF']) }} sqft</p>
-                                                    @elseif($singleListing['LivingAreaSF'])
+                                                    @elseif(isset($singleListing['LivingAreaSF']) && $singleListing['LivingAreaSF'] !== null)
                                                         <p><span class="flaticon-expand"></span>{{ floor($singleListing['LivingAreaSF']) }} sqft</p>
                                                     @endif
-                                                    
                                                 </div>
+                                                
 
                                                 <span class="mlsNumber">MLS® Number: {{ $singleListing['ListingId'] }}</span>
                                             </div>

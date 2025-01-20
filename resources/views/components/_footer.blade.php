@@ -94,7 +94,8 @@
             <div class="col-sm-6">
                 <div class="text-center text-lg-start">
                     <p class="copyright-text text-gray ff-heading">
-                        © Real Estate Professionals Inc. - All rights reserved
+                        {{-- © Real Estate Professionals Inc. - All rights reserved --}}
+                        Copyright {{ now()->year }} by the REALTORS® Association of Edmonton. All Rights Reserved.
                     </p>
                 </div>
             </div>
@@ -120,8 +121,8 @@
                     provided by real estate professionals who are members of CREA.
                 </p>
                 <p class="text-white">
-                    The data included on this website is deemed to be reliable,
-                    but is not guaranteed to be accurate by the Real Estate Board.
+                    Data is deemed reliable but is not guaranteed accurate by the REALTORS®
+Association of Edmonton
                 </p>
             </div>
             <div class="col-md-3">

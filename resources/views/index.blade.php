@@ -605,7 +605,7 @@
                     <div class="main-title2 mb-3 mb-sm-0">
                         <div class='d-flex  align-items-center'>
                             <i class="fa-thin fa-star star-icon me-2"></i>
-                            <h2 class="title mobile-fs">Featured Listings</h2>
+                            <h2 class="title mobile-fs">Exclusive Listings</h2>
                         </div>
                         <p class="paragraph">
                             Here’s an inside look at all our amazing active home listings currently posted on the MLS<span
@@ -616,7 +616,7 @@
                 <div class="col-lg-3">
                     <div class="dark-light-navtab style2 text-start text-lg-end mt-0 mt-lg-4 mb-4">
                         <div class="text-start text-lg-end mb-3">
-                            <a class="ud-btn btn-outline-rep bg-red" target="_blank" href="/search/featured">See All Featured
+                            <a class="ud-btn btn-outline-rep bg-red" target="_blank" href="/search/exclusive">See All Exclusive
                                 Listings</a>
                         </div>
                     </div>
@@ -1599,9 +1599,12 @@
                         
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3">
-                        ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-                        ${property.BathroomsFull ? `<p><span class="flaticon-shower"></span>${property.BathroomsFull} bath</p>` : ''}
-                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
+                        ${property.BedroomsTotal ? `<p style="flex:none;"><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
+${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
+                          ? `<p ><span class="flaticon-shower"></span>
+                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
+                             </p>` 
+                          : ''}                        ${property.BuildingAreaTotalSF ? `<p style="flex:none;"><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
                     <span class="mlsNumber">MLS® Number: ${property.ListingId}</span>
                 </div>
@@ -1657,7 +1660,7 @@
                     <img src="${property.image_url ? `${property.image_url}` : '{{ asset('images/no_image.jpg') }}'}" alt="${property.ListingId}" onerror="this.src='{{ asset('images/no_image.jpg') }}';">
                    </a>
                     <div class="list-tag fz12">
-                        <i class="fa-thin fa-star me-2"></i>Featured
+                        <i class="fa-thin fa-star me-2"></i>Exclusive
                     </div>
                     <div class="list-meta2">
                         <a href="javascript:void(0)" 
@@ -1684,8 +1687,11 @@
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-                        ${property.BathroomsFull ? `<p><span class="flaticon-shower"></span>${property.BathroomsFull} bath</p>` : ''}
-                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
+${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
+                          ? `<p><span class="flaticon-shower"></span>
+                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
+                             </p>` 
+                          : ''}                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
                     <span class="mlsNumber">MLS® Number: ${property.ListingId}</span>
                 </div>
