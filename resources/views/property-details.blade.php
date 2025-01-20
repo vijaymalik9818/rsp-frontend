@@ -901,31 +901,6 @@
                                                             </option>
                                                         </select>
 
-                                                    <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message"
-                                                        id="messageTextarea" name="message"></textarea>
-                                                    <input type="hidden" id="selectedDateInput" name="selectedDate"
-                                                        value="">
-                                                    <div class="chkbox">
-                                                        <div class="mt-1 d-flex align-items-cente gap-2">
-                                                            <input class="checkbox opacity-50" type="checkbox"
-                                                                name="terms" id="termsCheckbox">
-                                                            <!-- Ensure the name attribute is set -->
-                                                            <p class="mb-0 fw-bold">I agree to <a
-                                                                    href="/terms-and-conditions"
-                                                                    class='text-decoration-none'><span
-                                                                        class='px-1 fs-6'>Terms of Use</span></a></p>
-                                                        </div>
-
-                                                        <!-- Error message placeholder for the terms checkbox -->
-                                                        <div id="termsCheckbox-error" class="error"></div>
-                                                        <!-- This div will hold the error message -->
-
-                                                        <div class="d-grid mt-2">
-                                                            <button id="SubmitBtn" class="ud-btn btn-primary border-0"
-                                                                type="submit">Submit a
-                                                                Tour
-                                                                Request</button>
-                                                        </div>
                                                     </div>
 
                                                     <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message"
