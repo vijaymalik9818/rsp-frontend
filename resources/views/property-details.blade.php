@@ -2614,10 +2614,8 @@
                 // Format the date
                 let formatter = new Intl.DateTimeFormat('en-US', options);
                 let formattedDates = formatter.format(currentDate);
-
                 // Update the text
                 $('.updatedate').text('Listing Information Last Updated ' + formattedDates);
-
             }
 
             var description = {!! json_encode($propertyDetails['PublicRemarks'] ?? 'No description available') !!};
