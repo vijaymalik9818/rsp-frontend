@@ -252,8 +252,13 @@
                                         </div>
                                         <hr>
                                         <div class="d-flex align-items-center justify-content-between">
-                                            <h6>Bathroom :</h6>
-                                            <p class="mb-2 bathroom"></p>
+                                            <h6>Bathrooms Full :</h6>
+                                            <p class="mb-2 bathroom-full"></p>
+                                        </div>
+
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h6>Bathrooms Half :</h6>
+                                            <p class="mb-2 bathroom-half"></p>
                                         </div>
                                         <hr>
                                     </div>
@@ -2389,6 +2394,8 @@
             // );
 
             $('.bedroom').text("{{ $propertyDetails['BedroomsTotal'] }}" || '0');
+            $('.bathroom-full').text("{{ $propertyDetails['BathroomsFull'] }}" || '0');
+            $('.bathroom-half').text("{{ $propertyDetails['BathroomsHalf'] }}" || '0');
 
             $('.bathroom').text(function() {
                 var fullBathrooms = {{ $propertyDetails['BathroomsFull'] ?? 0 }};
