@@ -2004,7 +2004,7 @@ canvas#mortgage-chart {
 }
 
 .mortgage-price {
-    font-size: 20px;
+    font-size: 20px !important;
     font-weight: bold;
     color: #333;
 }

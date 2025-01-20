@@ -947,7 +947,7 @@
                                                         <div class='pro-info mt-3 mt-sm-0'>
                                                             <div class='d-flex align-items-center gap-2'><i
                                                                     class="ri-user-line fw-bold"></i>
-                                                                <p class="agentname"></p>
+                                                                <p class="agentname mortgage-price "></p>
                                                             </div>
                                                         </div>
                                                         <div class=' '>
