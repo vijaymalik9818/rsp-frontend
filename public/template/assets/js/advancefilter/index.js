@@ -115,7 +115,9 @@ if (filtersFromUrl.max_list_price) {
     }
 
 
-var head = 'https://admin.repinc.ca/api/agents/get-advance-data';
+var head = header + '/api/agents/get-advance-data';
+
+
 var appliedFilters = {};
 
 function applyFilter(filterKeyOrFilters, filterValue) {
