@@ -256,10 +256,7 @@
                                             <p class="mb-2 bathroom-full"></p>
                                         </div>
 
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h6>Bathrooms Half :</h6>
-                                            <p class="mb-2 bathroom-half"></p>
-                                        </div>
+                                        
                                         <hr>
                                     </div>
                                     <div class="col-12 col-sm">
@@ -291,6 +288,12 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <h6>Property Status :</h6>
                                             <p class="mb-2 buildingtype"></p>
+                                        </div>
+                                        <hr>
+
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h6>Bathrooms Half :</h6>
+                                            <p class="mb-2 bathroom-half"></p>
                                         </div>
                                         <hr>
                                     </div>
