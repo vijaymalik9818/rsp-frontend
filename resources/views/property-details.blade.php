@@ -256,7 +256,7 @@
                                             <p class="mb-2 bathroom-full"></p>
                                         </div>
 
-                                        
+
                                         <hr>
                                     </div>
                                     <div class="col-12 col-sm">
@@ -578,7 +578,7 @@
                                 
                                 foreach ($categories as $alias => $category) {
                                     echo '<li class="nav-item" role="presentation">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -593,7 +593,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -607,15 +607,15 @@
                                         '" role="tabpanel" aria-labelledby="pills-' .
                                         $alias .
                                         '-tab" tabindex="0">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
                                         $alias .
                                         '"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
                                 }
                                 ?>
                             </div>
                         </div>
-                        <h4 class='data-text'>Data provided by: Pillar 9™</h4>
+                        <h4 class='data-text' id="data-providing-mls">Data provided by: Pillar 9™</h4>
 
                         {{-- <div class='lev-rev' id="section14">
                             <div class="leave-rev m-0">
@@ -756,13 +756,11 @@
                                                         @if ($listing['BathroomsFull'] || $listing['BathroomsHalf'])
                                                             <p>
                                                                 <span class="flaticon-shower"></span>
-                                                                {{ $listing['BathroomsFull'] ?: 0 }}
-                                                                @if ($listing['BathroomsHalf'] > 0)
-                                                                    .{{ $listing['BathroomsHalf'] }}
-                                                                @endif
-                                                                bath{{ $listing['BathroomsFull'] + $listing['BathroomsHalf'] > 1 ? 's' : '' }}
+                                                                {{ $listing['BathroomsFull'] + $listing['BathroomsHalf'] }}
+                                                                bathrooms
                                                             </p>
                                                         @endif
+
 
 
                                                         @if ($listing['BuildingAreaTotalSF'])
@@ -833,28 +831,28 @@
                                             </div>
 
                                             <!-- <h6 class="fw-bold mt-4">Tour Type</h6>
-                                                    <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                                            <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
-                                                                onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
-                                                                aria-selected="true">In Person</button>
-                                                        </li>
-                                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                                            <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
-                                                                onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
-                                                                aria-selected="false">Video Chat</button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                                                            tabindex="0">
-                                                      
-                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                                                aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
+                                                            <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
+                                                                <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
+                                                                    <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
+                                                                        onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
+                                                                        aria-selected="true">In Person</button>
+                                                                </li>
+                                                                <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                                                    <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
+                                                                        onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
+                                                                        aria-selected="false">Video Chat</button>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="tab-content" id="pills-tabContent">
+                                                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                                                                    tabindex="0">
+                                                              
+                                                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                                                        aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
 
-                                                        </div>
+                                                                </div>
 
-                                                    </div> -->
+                                                            </div> -->
                                             <div>
                                                 <form id="tourForm">
                                                     @csrf
@@ -2404,14 +2402,19 @@
                 var fullBathrooms = {{ $propertyDetails['BathroomsFull'] ?? 0 }};
                 var halfBathrooms = {{ $propertyDetails['BathroomsHalf'] ?? 0 }};
 
-                var bathroomText = fullBathrooms;
-
-                if (halfBathrooms > 0) {
-                    bathroomText += '.' + halfBathrooms;
-                }
-
-                return bathroomText + (fullBathrooms + halfBathrooms > 1 ? ' baths' : ' bath');
+                var totalBathrooms = fullBathrooms + halfBathrooms;
+    
+    return totalBathrooms + (totalBathrooms > 1 ? ' baths' : ' bath');
             });
+
+
+            var mls_type = {{ $propertyDetails['mls_type'] ?? 0 }};
+
+            if (mls_type == 1) {
+                $('#data-providing-mls').html(
+                    'Data provided by: <a href="https://realtorsofedmonton.com/" target="_blank">REALTORS® Association of Edmonton</a>'
+                    );
+            }
 
             $('.years').text("{{ $propertyDetails['YearBuilt'] }}" || 'N/A');
 
@@ -2567,22 +2570,19 @@
             }
             var baseUrl = "{{ env('BACKEND_URL') }}";
 
-            
+
             var list_agent_full_name = "{{ $propertyDetails['ListAgentFullName'] }}";
             var list_agent_full_phone = "{{ $propertyDetails['ListAgentDirectPhone'] }}";
             var list_agent_full_phone_office = "{{ $propertyDetails['ListOfficePhone'] }}";
-            if(list_agent_full_phone)
-            {
+            if (list_agent_full_phone) {
                 $('.phoneno').text(list_agent_full_phone);
             }
-            if(list_agent_full_phone_office)
-            {
+            if (list_agent_full_phone_office) {
                 $('.contactno').text(list_agent_full_phone_office);
             }
 
 
-            if(list_agent_full_name)
-            {
+            if (list_agent_full_name) {
                 $('.agentname').text(list_agent_full_name);
 
             }
@@ -2603,30 +2603,27 @@
                 var formattedDate = month + ' ' + day + ', ' + year + ' at ' + hour + ':' + (minute < 10 ? '0' :
                     '') + minute + ' ' + ampm;
 
-
-
-
-                // Get the current date
                 let currentDate = date;
 
-                // Convert to Central Time (CDT/CST based on Daylight Saving Time)
                 let options = {
-                    timeZone: 'America/Chicago', // Central Time Zone
+                    timeZone: 'America/Denver',
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit',
-                    timeZoneName: 'short' // Includes "CDT" or "CST"
+                    timeZoneName: 'short'
                 };
 
-                // Format the date
                 let formatter = new Intl.DateTimeFormat('en-US', options);
                 let formattedDates = formatter.format(currentDate);
-                // Update the text
+
                 $('.updatedate').text('Listing Information Last Updated ' + formattedDates);
             }
+
+
+
 
             var description = {!! json_encode($propertyDetails['PublicRemarks'] ?? 'No description available') !!};
             $('.about .description').text(description);

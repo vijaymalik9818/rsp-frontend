@@ -1029,11 +1029,16 @@ $('#Textarea').val(dynamicMessage);
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
-                          ? `<p><span class="flaticon-shower"></span>
-                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
-                             </p>` 
-                          : ''}                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
+
+
+ ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
+    ? `<p><span class="flaticon-shower"></span>
+         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+       </p>` 
+    : ''}               
+                          
+                          
+                          ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
 
                     <span class="mlsNumber">MLS® Number:  ${property.ListingId}</span>

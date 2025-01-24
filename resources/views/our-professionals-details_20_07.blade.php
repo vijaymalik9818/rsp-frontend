@@ -1025,11 +1025,15 @@ $('#Textarea').val(dynamicMessage);
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3 mt-1">
                         ${property.BedroomsTotal ? `<a href="javascript:void(0)"><span class="flaticon-bed"></span>${property.BedroomsTotal}</a>` : ''}
-${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
-                          ? `<p><span class="flaticon-shower"></span>
-                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
-                             </p>` 
-                          : ''}                ${property.BuildingAreaTotalSF ? `<a href="javascript:void(0)"><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)}</a>` : ''}
+
+
+ ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
+    ? `<p><span class="flaticon-shower"></span>
+         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+       </p>` 
+    : ''}     
+                          
+                          ${property.BuildingAreaTotalSF ? `<a href="javascript:void(0)"><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)}</a>` : ''}
             </div>
 
                     <span class="mlsNumber">MLS® Number:  ${property.ListingId}</span>

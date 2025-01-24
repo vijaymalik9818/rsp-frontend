@@ -701,11 +701,12 @@ function displayProperties(property) {
             <p class="list-text">${property.PropertyType}</p>
             <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-                        ${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
+                        ${(parseInt(property.BathroomsFull || 0) > 0 || parseInt(property.BathroomsHalf || 0) > 0) 
                           ? `<p><span class="flaticon-shower"></span>
-                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
+                               ${parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)} bathroom${(parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)) > 1 ? 's' : ''}
                              </p>` 
                           : ''}
+                      
                         ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
             <span class="mlsNumber">MLS&#174; Number: ${property.ListingId}</span>
