@@ -2165,9 +2165,11 @@
                 var formattedparking = "{!! isset($propertyDetails['ParkingFeatures'])
                     ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
                     : '' !!}";
-                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
-                    ? str_replace(',', ', ', $propertyDetails['CommunityFeatures'])
-                    : '' !!}";
+
+                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
+    : '' !!}";
+
                 var formattedfireplace = "{!! isset($propertyDetails['FireplaceFeatures'])
                     ? str_replace(',', ', ', $propertyDetails['FireplaceFeatures'])
                     : '' !!}";
@@ -2217,9 +2219,10 @@
                 var formattedparking = "{!! isset($propertyDetails['ParkingFeatures'])
                     ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
                     : '' !!}";
-                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
-                    ? str_replace(',', ', ', $propertyDetails['CommunityFeatures'])
-                    : '' !!}";
+                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
+    : '' !!}";
+
                 var formattedfireplace = "{!! isset($propertyDetails['LotFeatures']) ? str_replace(',', ', ', $propertyDetails['LotFeatures']) : '' !!}";
                 var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
                 var formattedstorey = "{!! isset($otherColumnsData['StoriesTotal']) ? str_replace(',', ', ', $otherColumnsData['StoriesTotal']) : '' !!}";
@@ -2521,6 +2524,7 @@
                 } else {
                     imgElements.src = Url + '/images/no_image.jpg';
                 }
+                alert('yes');
                 imgElements.alt = "Description of the image";
                 var agentPhoneNumber = agentPhono;
                 var phoneNumber = agentPhono || '403-547-4102';
