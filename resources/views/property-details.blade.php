@@ -776,7 +776,15 @@
 
                                                     <span class="mlsNumber">MLS® Number:
                                                         {{ $listing['ListingId'] }}</span>
+                                                        
                                                 </div>
+
+                                                <div class="brokerage-details">
+                                                    <hr style="color:black;">
+                                                        <h3 class="mlsNumber ml-3"><span class="flaticon-user"></span> <b>{{ $listing['ListAgentFullName'] ?? 'Real Estate Professionals Inc.' }}</b></h3>
+                                                    </a>
+                                                </div>
+                                                
                                             </a>
                                         </div>
                                     </div>
@@ -2524,7 +2532,6 @@
                 } else {
                     imgElements.src = Url + '/images/no_image.jpg';
                 }
-                alert('yes');
                 imgElements.alt = "Description of the image";
                 var agentPhoneNumber = agentPhono;
                 var phoneNumber = agentPhono || '403-547-4102';
@@ -2587,8 +2594,7 @@
 
 
             if (list_agent_full_name) {
-                $('.agentname').text(list_agent_full_name);
-
+                // $('.agentname').text(list_agent_full_name);
             }
             var rawDate = "{{ $propertyDetails['ModificationTimestamp'] }}";
             if (rawDate) {

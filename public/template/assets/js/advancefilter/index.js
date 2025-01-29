@@ -1,4 +1,26 @@
+
+
+function brokerage_check()
+{
+  if(localStorage.getItem('MapView') == 'Yes')
+    {
+      let brokerageDetails = document.getElementsByClassName("brokerage-details");
+  
+        for (let i = 0; i < brokerageDetails.length; i++) {
+            brokerageDetails[i].style.display = 'block';
+        }
+    }
+    else{
+      let brokerageDetails = document.getElementsByClassName("brokerage-details");
+  
+        for (let i = 0; i < brokerageDetails.length; i++) {
+            brokerageDetails[i].style.display = 'none';
+        }
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
+
+  localStorage.removeItem('MapView')
   
   // Call applyFiltersFromUrl() when your page loads
   //applyFiltersFromUrl();
@@ -296,6 +318,7 @@ function fetchDataFunction(apiHeader, dropdownOptions) {
         paginationCountContainerListing.textContent = `${labels}`;
       }
 
+      brokerage_check();
       replaceClassForView();
       displaymarkers(data);
 
@@ -711,7 +734,11 @@ function displayProperties(property) {
                     </div>
             <span class="mlsNumber">MLS&#174; Number: ${property.ListingId}</span>
         </div>
+        <div class="brokerage-details" style="position: relative!important;    top: -38px!important;    margin-bottom: -31px!important; display:none">
+        <hr style="color:black;">
+            <h3 class="mlsNumber ml-3"><span class="flaticon-user"></span> <b>${property.ListAgentFullName || 'Real Estate Professionals Inc.'}</b></h3>
         </a>
+        </div>
     </div>`;
 
 
@@ -1071,6 +1098,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const bedRoom = document.getElementById("bedRoom");
   const extra = document.getElementById("extra");
 
+ 
+
   const listingsDiving = document.getElementsByClassName("listings_div");
 
 
@@ -1079,6 +1108,16 @@ document.addEventListener("DOMContentLoaded", function () {
   gridViewIcon.disabled = true;
 
   gridViewIcon.addEventListener("click", function () {
+
+    // let brokerageDetails = document.getElementsByClassName("brokerage-details");
+
+    // for (let i = 0; i < brokerageDetails.length; i++) {
+    //     brokerageDetails[i].style.display = 'none';
+    // }
+
+    localStorage.setItem('MapView','No');
+    brokerage_check();
+
     half_map_area[0].style.display = "block";
 
     //console.log(listingsDiving, 'ruchit');
@@ -1100,6 +1139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (window.innerWidth < 800) {
+      
       searchBar.classList.remove("col-3");
       searchBar.classList.add("col-12","col-sm-3");
 
@@ -1119,6 +1159,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mapViewIcon.addEventListener("click", function () {
 
+    localStorage.setItem('MapView','Yes');
+    brokerage_check();
+
+
+
     half_map_area[0].style.display = "none";
     //console.log(listingsDiving,'r');
 
@@ -1135,6 +1180,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     if (window.innerWidth > 800) {
+
+      
+      
+      
       accordionExample.classList.remove("col-md-6");
       accordionExample.classList.add("col-md-3");
       searchBar.classList.remove("col-12");
@@ -1353,6 +1402,11 @@ document.addEventListener("DOMContentLoaded", function () {
       clearFilters();
     });
   }
+  
+
+
+
+
 
 
   

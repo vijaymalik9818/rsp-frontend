@@ -459,7 +459,7 @@ fetch(apiReviews)
 
                             <a href="javascript:void(0)" onclick="scrollToSection('section1')" >See all reviews</a>
                         </div>
-                        <p><span>${agentData.position}</span> at Real Estate Professional Inc. </p>
+                        <p><span>${agentData.position ? agentData.position.toUpperCase() : ''}</span> at Real Estate Professional Inc. </p>
                         <hr>
                         <div class="agent-profile-content">
                             <ul class="list-unstyled"></i>
@@ -511,7 +511,7 @@ fetch(apiReviews)
                     const contactSec = `
     <h6>Contact Info</h6>
     <h5>${agentData.name}</h5>
-    <p><span>${agentData.position}</span> at Real Estate Professional Inc. </p>
+    <p><span>${agentData.position ? agentData.position.toUpperCase() : ''}</span> at Real Estate Professional Inc. </p>
     ${agentData.address ? `<p><i class="ri-map-pin-line"></i> ${agentData.address}</p>` : ''}
     <ul class="list-unstyled">
         <li>
