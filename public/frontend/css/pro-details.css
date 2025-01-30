@@ -2059,6 +2059,15 @@ canvas#mortgage-chart {
     margin-bottom: 50px;
 }
 
+.text_style {
+    text-decoration: none;
+}
+
+.footer-text-style{
+    display: flex;
+    justify-content: space-between;
+}
+
 .room-level {
     min-width: 37%;
 }

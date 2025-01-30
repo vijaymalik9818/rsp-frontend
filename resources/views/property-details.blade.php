@@ -778,10 +778,17 @@
                                                         {{ $listing['ListingId'] }}</span>
                                                         
                                                 </div>
-
+                                                
                                                 <div class="brokerage-details">
                                                     <hr style="color:black;">
-                                                        <h3 class="mlsNumber ml-3"><span class="flaticon-user"></span> <b>{{ $listing['ListAgentFullName'] ?? 'Real Estate Professionals Inc.' }}</b></h3>
+                                                        <h3 class="mlsNumber footer-text-style p-2">
+                                                            <div>
+
+                                                                <span class="flaticon-user"></span> <b>{{ $listing['ListAgentFullName'] ?? 'Real Estate Professionals Inc.' }}</b>
+                                                            </div>
+                                                            <span class=""> {{$listing['ListOfficeName']}}</span>
+                                                        </h3>
+                                                        <br/>
                                                     </a>
                                                 </div>
                                                 
@@ -2421,7 +2428,7 @@
 
             if (mls_type == 1) {
                 $('#data-providing-mls').html(
-                    'Data provided by: <a href="https://realtorsofedmonton.com/" target="_blank">REALTORS® Association of Edmonton</a>'
+                    'Data provided by: <a class="text_style" href="https://realtorsofedmonton.com/" target="_blank">REALTORS® Association of Edmonton</a>'
                     );
             }
 

@@ -736,7 +736,12 @@ function displayProperties(property) {
         </div>
         <div class="brokerage-details" style="position: relative!important;    top: -38px!important;    margin-bottom: -31px!important; display:none">
         <hr style="color:black;">
-            <h3 class="mlsNumber ml-3"><span class="flaticon-user"></span> <b>${property.ListAgentFullName || 'Real Estate Professionals Inc.'}</b></h3>
+            <h3 class="mlsNumber p-2" style="display: flex; justify-content: space-between; ">
+              <div>
+                <span class="flaticon-user"></span> <b>${property.ListAgentFullName || 'Real Estate Professionals Inc.'} </b> 
+              </div>
+             <span class="mlsNumber"> ${property?.ListOfficeName}</span>
+             </h3>
         </a>
         </div>
     </div>`;
