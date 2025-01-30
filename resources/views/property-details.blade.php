@@ -788,32 +788,175 @@
 
                     <div class="col-12 col-md-8 col-lg-6 col-xl-4  sticky-wrapper">
                         <div class=" profile-sec sticky-tour">
-
                             <div class="sticky-div fixedElement">
-
                                 <div class="contact-tour">
-                                    <ul class="nav row nav-pills mb-1 mt-3 d-flex justify-content-between" id="pills-tab"
-                                        role="tablist">
+                                    <ul class="nav row nav-pills mb-1 d-flex justify-content-between" id="pills-tab" role="tablist">
                                         <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                            <button class="nav-link ud-btn btn-primary" id="pills-tour-tab"
-                                                data-bs-toggle="pill" data-bs-target="#pills-tour" type="button"
-                                                role="tab" aria-controls="pills-tour" aria-selected="true">Schedule a
-                                                Tour</button>
+                                            <button class="nav-link ud-btn btn-primary"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
                                         </li>
                                         <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button class="  nav-link active ud-btn  " id="pills-contact-tab"
-                                                data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
-                                                role="tab" aria-controls="pills-contact"
-                                                aria-selected="false">Contact Info
-                                            </button>
+                                            <button type="button" class="nav-link active ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Info</button>
                                         </li>
                                     </ul>
 
-                                    <div class="tab-content" id="pills-tabContent">
-                                        <div class="tab-pane fade" id="pills-tour" role="tabpanel"
-                                            aria-labelledby="pills-tour-tab" tabindex="0">
+                                    <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="1">
+                                            <div class="contact-info" id="section10">
+                                                <div class=' sm-align-items-start gap-3   d-sm-flex '>
+                                                    <div class="profile">
+                                                        <img src="" alt="" class="agent-img">
+                                                    </div>
+                                                    <div>
+                                                        <div class='pro-info mt-3 mt-sm-0'>
+                                                            <div class='d-flex align-items-center gap-2'>
+                                                                <i class="ri-user-line fw-bold"></i>
+                                                                <p class="agentname mortgage-price "></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class=' '>
+                                                            <div><i class="ri-phone-line"></i>
+                                                                <span><a class="phoneno" href="tel:"></a></span>
+                                                            </div>
+                                                            <div><i class="ri-smartphone-line"></i>
+                                                                <span><a class="contactno" href="tel:"></a></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='d-flex align-items-center justify-content-between  w-100'>
+                                                    <a id="viewListingsLink" class='' href="">View Listings</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="sticky-div mt-3 fixedElement">
+                                <div class="contact-tour card-shadow"> <!-- Added 'card-shadow' class -->
+                                    <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="1">
+                                        <div class="contact-info" id="section10">
+                                            <div class='sm-align-items-start gap-3 d-sm-flex'>
+                                                <div>
+                                                    <div class='pro-info mt-3 mt-sm-0'>
+                                                        <div class='d-flex align-items-center gap-2'>
+                                                            <h5 class=""> Royal Lepage Arteam Realt</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class=''>
+                                                        <div>
+                                                            <small> 203-14101 West Block Dr</small><br/>
+                                                            <small>Edmonton, Alberta T5N1L5</small>
+                                                        </div>
+                                                        <div>
+                                                            <i class="ri-phone-line"></i>
+                                                            <small>780-456-5656</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                            <!-- <h4>Schedule A Tour</h4> -->
+                    <!-- Query Info Modal -->
+                    <div class="modal " id="queryInfoModal" tabindex="-1" aria-labelledby="queryInfoModalLabel" >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h1 class="modal-title fs-5" id="queryInfoModalLabel">Enquire About This Property</h1>
+                                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="leave-rev mb-0 mt-0">
+                                        <form id="contactForm">
+                                            @csrf
+                                            <div class="row mb-2">
+                                                <input type="hidden" name="prorealtorname"
+                                                    value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
+                                                <input type="hidden" name="prorealtoremail"
+                                                    value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
+                                                <input type="hidden" name="property_type" value="">
+
+                                                <div class="col-12 ">
+                                                    <input type="text" id="contactfirstname"
+                                                        placeholder="First Name*" name="first_names">
+                                                </div>
+                                                <div class="col-12 ">
+                                                    <input type="text" id="contactlastname"
+                                                        placeholder="Last Name*" name="last_names">
+                                                </div><br><br>
+                                                <input type="hidden" id="contactname" name="name">
+                                                <div class="col-12">
+                                                    <input type="text" id="contactphone"
+                                                        placeholder="Phone*" name="phone">
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="text" placeholder="Email*"
+                                                        name="email">
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="input-2 ">
+                                                        <select name="role"
+                                                            class="select-boxes-filter cursor-pointer">
+                                                            <option value="">I'm a*</option>
+                                                            <option value="First time buyer">First time buyer
+                                                            </option>
+                                                            <option value="Repeat buyer">Repeat buyer</option>
+                                                            <option value="Seller">Seller</option>
+                                                            <option value="Residential investor">Residential
+                                                                investor
+                                                            </option>
+                                                            <option value="Commercial investor">Commercial
+                                                                investor</option>
+                                                            <option value="Commercial buyer/leaser">Commercial
+                                                                buyer/leaser
+                                                            </option>
+                                                            <option value="Land of development">Land of
+                                                                development</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="roleerror"></div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message" cols="30" rows="3" maxlength="200"></textarea>
+                                            </div>
+                                            <div class="chkbox">
+                                                <div class="mt-1 d-flex align-items-cente gap-2"> <input
+                                                        class="checkbox opacity-50" type="checkbox"
+                                                        name="term" id="termCheckbox">
+                                                    <p class="mb-0 fw-bold">I agree to <a
+                                                            href="/terms-and-conditions"
+                                                            class='text-decoration-none'><span
+                                                                class='px-1 fs-6'>Terms of
+                                                                Use</span></a></p>
+                                                </div>
+                                            </div>
+                                            <div id="checkbx"></div>
+                                            <button type="submit" id="contactsubmit" class="ud-btn w-100 btn-primary mt-2 border-0">Request Information</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tour -->
+                    <div class="modal " id="tourInfoModal" tabindex="-1" aria-labelledby="tourInfoModalLabel" >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h1 class="modal-title fs-5" id="tourInfoModalLabel">Schedule a Tour</h1>
+                                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                  <div class="tab-pane " id="pills-tour" role="tabpanel" aria-labelledby="pills-tour-tab" tabindex="0">
 
                                             <div id="dateSlotsContainer"></div>
 
@@ -824,29 +967,7 @@
                                                         class="ri-arrow-right-s-line"></i></button>
                                             </div>
 
-                                            <!-- <h6 class="fw-bold mt-4">Tour Type</h6>
-                                                    <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                                            <button class="nav-link active ud-btn btn-primary" id="pills-home-tab"
-                                                                onclick="setTourType('In Person')" type="button" role="tab" aria-controls="pills-home"
-                                                                aria-selected="true">In Person</button>
-                                                        </li>
-                                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                                            <button class="nav-link ud-btn btn-primary" id="pills-profile-tab"
-                                                                onclick="setTourType('Video Chat')" type="button" role="tab" aria-controls="pills-profile"
-                                                                aria-selected="false">Video Chat</button>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="tab-content" id="pills-tabContent">
-                                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                                                            tabindex="0">
-                                                      
-                                                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                                                aria-labelledby="pills-profile-tab" tabindex="0">...s</div>
-
-                                                        </div>
-
-                                                    </div> -->
+                                           
                                             <div>
                                                 <form id="tourForm">
                                                     @csrf
@@ -933,138 +1054,15 @@
 
                                             </div>
                                         </div>
-
-                                        <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
-                                            aria-labelledby="pills-contact-tab" tabindex="1">
-                                            <div class="contact-info" id="section10">
-
-
-                                                <div class=' sm-align-items-start gap-3   d-sm-flex '>
-                                                    <div class="profile">
-                                                        <img src="" alt="" class="agent-img">
-                                                    </div>
-                                                    <div>
-                                                        <div class='pro-info mt-3 mt-sm-0'>
-                                                            <div class='d-flex align-items-center gap-2'><i
-                                                                    class="ri-user-line fw-bold"></i>
-                                                                <p class="agentname mortgage-price "></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class=' '>
-                                                            <div><i class="ri-phone-line"></i>
-                                                                <span><a class="phoneno" href="tel:"></a></span>
-                                                            </div>
-                                                            <div><i class="ri-smartphone-line"></i>
-                                                                <span><a class="contactno" href="tel:"></a></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class='d-flex align-items-center justify-content-between  w-100'>
-                                                    <h4 class='mt-3'>Enquire About This Property</h4>
-
-                                                    <a id="viewListingsLink" class='' href="">View
-                                                        Listings</a>
-                                                </div>
-                                                <hr class='mt-2 mb-0'>
-                                                <div class="leave-rev mb-0 mt-0">
-                                                    <form id="contactForm">
-                                                        @csrf
-                                                        <div class="row mb-2">
-                                                            <input type="hidden" name="prorealtorname"
-                                                                value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
-                                                            <input type="hidden" name="prorealtoremail"
-                                                                value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
-                                                            <input type="hidden" name="property_type" value="">
-
-                                                            <div class="col-12 ">
-                                                                <!-- <h5>First Name<span style="color: red;">*</span></h5> -->
-                                                                <input type="text" id="contactfirstname"
-                                                                    placeholder="First Name*" name="first_names">
-                                                            </div>
-                                                            <div class="col-12 ">
-                                                                <!-- <h5>Last Name<span style="color: red;">*</span></h5> -->
-                                                                <input type="text" id="contactlastname"
-                                                                    placeholder="Last Name*" name="last_names">
-                                                            </div><br><br>
-                                                            <input type="hidden" id="contactname" name="name">
-                                                            <div class="col-12">
-                                                                <!-- <h5>Phone<span style="color: red;">*</span></h5> -->
-                                                                <input type="text" id="contactphone"
-                                                                    placeholder="Phone*" name="phone">
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <!-- <h5>Email<span style="color: red;">*</span></h5> -->
-                                                                <input type="text" placeholder="Email*"
-                                                                    name="email">
-                                                            </div>
-
-                                                            <div class="col-12">
-                                                                <!-- <h5>I'm a <span style="color: red;">*</span></h5> -->
-                                                                <div class="input-2 ">
-                                                                    <select name="role"
-                                                                        class="select-boxes-filter cursor-pointer">
-                                                                        <option value="">I'm a*</option>
-                                                                        <option value="First time buyer">First time buyer
-                                                                        </option>
-                                                                        <option value="Repeat buyer">Repeat buyer</option>
-                                                                        <option value="Seller">Seller</option>
-                                                                        <option value="Residential investor">Residential
-                                                                            investor
-                                                                        </option>
-                                                                        <option value="Commercial investor">Commercial
-                                                                            investor</option>
-                                                                        <option value="Commercial buyer/leaser">Commercial
-                                                                            buyer/leaser
-                                                                        </option>
-                                                                        <option value="Land of development">Land of
-                                                                            development</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div id="roleerror"></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div>
-                                                            <!-- <h5>Message<span style="color: red;">*</span></h5> -->
-                                                            <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message"
-                                                                cols="30" rows="3" maxlength="200"></textarea>
-                                                        </div>
-                                                        <div class="chkbox">
-                                                            <div class="mt-1 d-flex align-items-cente gap-2"> <input
-                                                                    class="checkbox opacity-50" type="checkbox"
-                                                                    name="term" id="termCheckbox">
-                                                                <p class="mb-0 fw-bold">I agree to <a
-                                                                        href="/terms-and-conditions"
-                                                                        class='text-decoration-none'><span
-                                                                            class='px-1 fs-6'>Terms of
-                                                                            Use</span></a></p>
-                                                            </div>
-                                                        </div>
-                                                        <div id="checkbx"></div>
-                                                        <button type="submit" id="contactsubmit"
-                                                            class="ud-btn w-100 btn-primary mt-2 border-0">Request
-                                                            Information</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
                                 </div>
-
-
-
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+
             </div>
+
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                 tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">

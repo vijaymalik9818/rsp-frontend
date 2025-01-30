@@ -936,6 +936,7 @@
     position: relative;
     padding: 20px;
     background-color: #fff;
+    box-shadow: 0px 0px 1px;
 }
 
 .overlayy {
@@ -1628,13 +1629,13 @@ hr {
 
 .left-arr {
     position: absolute;
-    top: 128px;
+    top: 55px;
     left: 10px;
 }
 
 .right-arr {
     position: absolute;
-    top: 128px;
+    top: 55px;
     right: 9px;
 }
 
@@ -1737,7 +1738,7 @@ hr {
 }
 
 #dateSlotsContainer {
-    padding: 0 13px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2054,7 +2055,7 @@ canvas#mortgage-chart {
 
 .sticky-tour {
     position: sticky;
-    top: 29px;
+    top: 63px;
     margin-bottom: 50px;
 }
 
