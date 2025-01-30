@@ -459,7 +459,7 @@ fetch(apiReviews)
 
                             <a href="javascript:void(0)" onclick="scrollToSection('section1')" >See all reviews</a>
                         </div>
-                        <p><span>${agentData.position}</span> at Real Estate Professional Inc. </p>
+                        <p><span>${agentData.position ? agentData.position.toUpperCase() : ''}</span> at Real Estate Professional Inc. </p>
                         <hr>
                         <div class="agent-profile-content">
                             <ul class="list-unstyled"></i>
@@ -511,7 +511,7 @@ fetch(apiReviews)
                     const contactSec = `
     <h6>Contact Info</h6>
     <h5>${agentData.name}</h5>
-    <p><span>${agentData.position}</span> at Real Estate Professional Inc. </p>
+    <p><span>${agentData.position ? agentData.position.toUpperCase() : ''}</span> at Real Estate Professional Inc. </p>
     ${agentData.address ? `<p><i class="ri-map-pin-line"></i> ${agentData.address}</p>` : ''}
     <ul class="list-unstyled">
         <li>
@@ -1029,11 +1029,16 @@ $('#Textarea').val(dynamicMessage);
                     <p class="list-text">${property.PropertyType}</p>
                     <div class="list-meta d-flex align-items-center gap-3">
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
-${property.BathroomsFull > 0 || property.BathroomsHalf > 0 
-                          ? `<p><span class="flaticon-shower"></span>
-                              ${property.BathroomsFull || 0}${property.BathroomsHalf > 0 ? `.${property.BathroomsHalf}` : ''} bathroom${property.BathroomsFull + property.BathroomsHalf > 1 ? 's' : ''}
-                             </p>` 
-                          : ''}                        ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
+
+
+ ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
+    ? `<p><span class="flaticon-shower"></span>
+         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+       </p>` 
+    : ''}               
+                          
+                          
+                          ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
                     </div>
 
                     <span class="mlsNumber">MLS® Number:  ${property.ListingId}</span>

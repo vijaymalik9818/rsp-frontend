@@ -328,18 +328,14 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                                                         </p>
                                                     @endif
                                                     @if(isset($singleListing['BathroomsFull']) || isset($singleListing['BathroomsHalf']))
-                                                        <p>
-                                                            <span class="flaticon-shower"></span>
-                                                            {{
-                                                                (isset($singleListing['BathroomsFull']) && $singleListing['BathroomsFull'] !== null && $singleListing['BathroomsFull'] !== ''
-                                                                    ? $singleListing['BathroomsFull']
-                                                                    : 0) .
-                                                                (isset($singleListing['BathroomsHalf']) && $singleListing['BathroomsHalf'] > 0
-                                                                    ? '.' . $singleListing['BathroomsHalf']
-                                                                    : '')
-                                                            }} bathroom{{ ((int)($singleListing['BathroomsFull'] ?? 0) + (int)($singleListing['BathroomsHalf'] ?? 0)) > 1 ? 's' : '' }}
-                                                        </p>
-                                                    @endif
+    <p>
+        <span class="flaticon-shower"></span>
+        {{
+            (int)($singleListing['BathroomsFull'] ?? 0) + (int)($singleListing['BathroomsHalf'] ?? 0)
+        }} bathroom{{ ((int)($singleListing['BathroomsFull'] ?? 0) + (int)($singleListing['BathroomsHalf'] ?? 0)) > 1 ? 's' : '' }}
+    </p>
+@endif
+
                                                 
                                                     
                                                 
