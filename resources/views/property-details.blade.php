@@ -2599,7 +2599,7 @@
 
 
             if (list_agent_full_name) {
-                // $('.agentname').text(list_agent_full_name);
+                $('.agentname').text(list_agent_full_name);
             }
             var rawDate = "{{ $propertyDetails['ModificationTimestamp'] }}";
             if (rawDate) {
