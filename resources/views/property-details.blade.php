@@ -577,8 +577,8 @@
                                 }
                                 
                                 foreach ($categories as $alias => $category) {
-                                    echo '<li class="nav-item" role="presentation">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <button class="nav-link' .
+                                    echo '<li class="nav-item" role="presentation">   
+                                     <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -593,7 +593,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </li>';
+                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -828,9 +828,9 @@
                                                     </div>
                                                     <div>
                                                         <div class='pro-info mt-3 mt-sm-0'>
-                                                            <div class='d-flex align-items-center gap-2'>
-                                                                <i class="ri-user-line fw-bold"></i>
-                                                                <p class="agentname mortgage-price "></p>
+                                                            <div class='d-flex  gap-2'>
+                                                                <i class="ri-user-line fw-bold mt-1"></i>
+                                                                <span class="agentname mortgage-price "></span>
                                                             </div>
                                                         </div>
                                                         <div class=' '>
@@ -858,7 +858,7 @@
                                                 <div>
                                                     <div class='pro-info mt-3 mt-sm-0'>
                                                         <div class='d-flex align-items-center gap-2'>
-                                                            <h5 class=""> Royal Lepage Arteam Realt</h5>
+                                                            <span class="mortgage-price">{{$listing['ListOfficeName']}}</span>
                                                         </div>
                                                     </div>
                                                     <div class=''>
@@ -2144,6 +2144,7 @@
                 $('.additionalroom').text("{{ $propertyDetails['Zoning'] ?? 'N/A' }}");
                 $('.equipment').text("{{ $otherColumnsData['FrontageLength'] ?? 'N/A' }}");
             }
+
 
 
             if ("{{ $propertyDetails['PropertyType'] }}" == 'Residential') {
