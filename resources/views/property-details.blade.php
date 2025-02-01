@@ -838,7 +838,7 @@
                                                                 <span><a class="phoneno" href="tel:"></a></span>
                                                             </div>
                                                             <div><i class="ri-smartphone-line"></i>
-                                                                <span><a class="contactno" href="tel:"></a></span>
+                                                                <span><a class="contactno ListOfficeMobile" href="tel:"></a></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -858,17 +858,21 @@
                                                 <div>
                                                     <div class='pro-info mt-3 mt-sm-0'>
                                                         <div class='d-flex align-items-center gap-2'>
-                                                            <span class="mortgage-price">{{$listing['ListOfficeName']}}</span>
+                                                            <span class="mortgage-price" id="ListOfficeName">Real Estate Professionals Inc.</span>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class=''>
                                                         <div>
-                                                            <small> 203-14101 West Block Dr</small><br/>
-                                                            <small>Edmonton, Alberta T5N1L5</small>
+                                                            <small id="ListAgentAddress"></small><br/>
                                                         </div>
                                                         <div>
                                                             <i class="ri-phone-line"></i>
-                                                            <small>780-456-5656</small>
+                                                            <small id="ListOfficePhone"></small>
+                                                        </div>
+                                                        <div>
+                                                            <i class="ri-smartphone-line"></i>
+                                                            <small class="ListOfficeMobile"></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2518,6 +2522,17 @@
                 return String(phoneNumber).replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
             }
 
+            $('#ListOfficeName').text("{{ $propertyDetails['ListOfficeName'] }}" || 'Myproagent');
+            $('#ListOfficePhone').text("{{ $propertyDetails['ListOfficePhone'] }}" || 'Myproagent');
+            $('.ListOfficeMobile').text("{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '403-547-6150' }}");
+
+
+            $('#ListAgentAddress').html(`{!! ($otherColumnsData['RAE_LO1_OrgAddressStreet'] ?? false) && ($otherColumnsData['RAE_LO1_OrgCity'] ?? false) && ($otherColumnsData['RAE_LO1_OrgZip'] ?? false) 
+    ? $otherColumnsData['RAE_LO1_OrgAddressStreet'] . '<br>' . $otherColumnsData['RAE_LO1_OrgCity'] . ', ' . $otherColumnsData['RAE_LO1_OrgZip'] 
+    : '202, 5403 CROWCHILD TRAIL N.W.<br>CALGARY, Alberta T3B4Z1' !!}`);
+
+            
+            
 
             var agentPhono = agentSlug.phone;
             var contacto = agentSlug.office_no;
@@ -2540,8 +2555,8 @@
                 }
                 imgElements.alt = "Description of the image";
                 var agentPhoneNumber = agentPhono;
-                var phoneNumber = agentPhono || '403-547-4102';
-                var contacts = contacto || '403-253-5305';
+                // var phoneNumber = agentPhono || '403-547-4102';
+                // var contacts = contacto || '403-253-5305';
 
                 $('.whatsapp-text').click(function() {
                     var whatsappURL = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(
@@ -2549,12 +2564,12 @@
 
                     window.open(whatsappURL, '_blank');
                 });
-                var phoneLink = document.querySelector('.phoneno');
-                var contact = document.querySelector('.contactno');
-                phoneLink.href = 'tel:' + phoneNumber;
-                contact.href = 'tel:' + contacts;
-                phoneLink.textContent = phoneNumber;
-                contact.textContent = contacts;
+                // var phoneLink = document.querySelector('.phoneno');
+                // var contact = document.querySelector('.contactno');
+                // phoneLink.href = 'tel:' + phoneNumber;
+                // contact.href = 'tel:' + contacts;
+                // phoneLink.textContent = phoneNumber;
+                // contact.textContent = contacts;
             } else {
                 var Url = "{{ env('Image_URL') }}";
                 $('.agentname').text('Real Estate Professionals Inc.');
@@ -2569,8 +2584,8 @@
                 imgElements.alt = "Description of the image";
                 imgElements.style.objectFit = 'contain';
                 var agentPhoneNumber = "";
-                var phoneNumber = '403-547-4102';
-                var contacts = '403-253-5305';
+                // var phoneNumber = '403-547-4102';
+                // var contacts = '403-253-5305';
 
                 $('.whatsapp-text').click(function() {
                     var whatsappURL = 'https://api.whatsapp.com/send?phone=' + encodeURIComponent(
@@ -2578,12 +2593,12 @@
 
                     window.open(whatsappURL, '_blank');
                 });
-                var phoneLink = document.querySelector('.phoneno');
-                var contact = document.querySelector('.contactno');
-                phoneLink.href = 'tel:' + phoneNumber;
-                contact.href = 'tel:' + contacts;
-                phoneLink.textContent = phoneNumber;
-                contact.textContent = contacts;
+                // var phoneLink = document.querySelector('.phoneno');
+                // var contact = document.querySelector('.contactno');
+                // phoneLink.href = 'tel:' + phoneNumber;
+                // contact.href = 'tel:' + contacts;
+                // phoneLink.textContent = phoneNumber;
+                // contact.textContent = contacts;
             }
             var baseUrl = "{{ env('BACKEND_URL') }}";
 
@@ -2594,9 +2609,9 @@
             if (list_agent_full_phone) {
                 $('.phoneno').text(list_agent_full_phone);
             }
-            if (list_agent_full_phone_office) {
-                $('.contactno').text(list_agent_full_phone_office);
-            }
+            // if (list_agent_full_phone_office) {
+            //     $('.contactno').text(list_agent_full_phone_office);
+            // }
 
 
             if (list_agent_full_name) {
