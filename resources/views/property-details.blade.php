@@ -757,7 +757,7 @@
                                                             <p>
                                                                 <span class="flaticon-shower"></span>
                                                                 {{ $listing['BathroomsFull'] + $listing['BathroomsHalf'] }}
-                                                                bathrooms
+                                                                bath
                                                             </p>
                                                         @endif
 
@@ -833,7 +833,7 @@
                                                                 <span class="agentname mortgage-price "></span>
                                                             </div>
                                                         </div>
-                                                        <div class=' '>
+                                                        <div class='mt-1 '>
                                                             <div><i class="ri-phone-line"></i>
                                                                 <span><a class="phoneno" href="tel:"></a></span>
                                                             </div>
@@ -2529,7 +2529,7 @@
 
             let phoneNumberAgent = "{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '' }}";
             if (phoneNumberAgent.trim() !== '') {
-                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <small class="ListOfficeMobile">' + phoneNumberAgent + '</small>');
+                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <span class="ListOfficeMobile font-style">' + phoneNumberAgent + '</span>');
             } else {
                 $('.ListOfficeMobile').html('');
             }
