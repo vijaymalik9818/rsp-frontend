@@ -837,8 +837,9 @@
                                                             <div><i class="ri-phone-line"></i>
                                                                 <span><a class="phoneno" href="tel:"></a></span>
                                                             </div>
-                                                            <div><i class="ri-smartphone-line"></i>
-                                                                <span><a class="contactno ListOfficeMobile" href="tel:"></a></span>
+                                                            <div class="ListOfficeMobile">
+                                                                {{-- <i class="ri-smartphone-line"></i>
+                                                                <span><a class="contactno ListOfficeMobile" href="tel:"></a></span> --}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -870,9 +871,9 @@
                                                             <i class="ri-phone-line"></i>
                                                             <small id="ListOfficePhone"></small>
                                                         </div>
-                                                        <div>
-                                                            <i class="ri-smartphone-line"></i>
-                                                            <small class="ListOfficeMobile"></small>
+                                                        <div class="ListOfficeMobile">
+                                                            {{-- <i class="ri-smartphone-line"></i>
+                                                            <small class="ListOfficeMobile"></small> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2524,7 +2525,17 @@
 
             $('#ListOfficeName').text("{{ $propertyDetails['ListOfficeName'] }}" || 'Myproagent');
             $('#ListOfficePhone').text("{{ $propertyDetails['ListOfficePhone'] }}" || 'Myproagent');
-            $('.ListOfficeMobile').text("{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '403-547-6150' }}");
+            // $('.ListOfficeMobile').text("{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '403-547-6150' }}");
+
+            let phoneNumberAgent = "{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '' }}";
+            if (phoneNumberAgent.trim() !== '') {
+                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <small class="ListOfficeMobile">' + phoneNumberAgent + '</small>');
+            } else {
+                $('.ListOfficeMobile').html('');
+            }
+
+
+            
 
 
             $('#ListAgentAddress').html(`{!! ($otherColumnsData['RAE_LO1_OrgAddressStreet'] ?? false) && ($otherColumnsData['RAE_LO1_OrgCity'] ?? false) && ($otherColumnsData['RAE_LO1_OrgZip'] ?? false) 
