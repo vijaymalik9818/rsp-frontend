@@ -127,7 +127,7 @@
 
 
 
-//     <script>
+    <script>
 //         document.addEventListener("keydown", function(event) {
 //             if (event.key === "Enter") {
 
@@ -557,11 +557,11 @@
                 return response.json();
             }).then(data => {
 
-                // const sortSelect = document.getElementById('scrolling');
-                // sortSelect.scrollIntoView({
-                //     behavior: 'smooth',
-                //     block: 'start'
-                // });
+                const sortSelect = document.getElementById('scrolling');
+                sortSelect.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
                 var sortSelects = document.getElementById('sortSelect');
                 var sortBys = sortSelects.value;

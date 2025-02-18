@@ -823,7 +823,7 @@
                                     <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="1">
                                             <div class="contact-info" id="section10">
                                                 <div class=' sm-align-items-start gap-3   d-sm-flex '>
-                                                    <div class="profile">
+                                                    <div class="profile" id="agent-profile">
                                                         <img src="" alt="" class="agent-img">
                                                     </div>
                                                     <div>
@@ -2316,8 +2316,7 @@
                 document.getElementById("viewListingsLink").href =
                     "{{ url('') }}/our-professionals/details/" + agentSlug.slug_url;
             } else {
-                document.getElementById("viewListingsLink").href =
-                    "{{ url('') }}/search";
+                document.getElementById("viewListingsLink").style.display = "none";
 
             }
 
@@ -2582,13 +2581,21 @@
                 // phoneLink.textContent = phoneNumber;
                 // contact.textContent = contacts;
             } else {
+
+                const mls_type = "{{ $propertyDetails['mls_type'] }}";
                 var Url = "{{ env('Image_URL') }}";
                 $('.agentname').text('Real Estate Professionals Inc.');
 
                 const agentimage = Url + "/images/logo.svg"
                 const imgElements = document.querySelector('.agent-img');
                 if (agentimage) {
-                    imgElements.src = agentimage;
+                    if(mls_type == 1)
+                    {
+                        document.getElementById('agent-profile').style.display='none';
+                    }
+                    else{
+                        imgElements.src = agentimage;
+                    }
                 } else {
                     imgElements.src = Url + '/images/no_image.jpg';
                 }

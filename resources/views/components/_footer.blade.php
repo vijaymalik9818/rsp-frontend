@@ -95,8 +95,8 @@
                 <div class="text-center text-lg-start">
                     <p class="copyright-text text-gray ff-heading">
                         {{-- © Real Estate Professionals Inc. - All rights reserved --}}
-                        Copyright {{ now()->year }} by the REALTORS® Association of Edmonton. All Rights Reserved.
-                    </p>
+                    The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
+                       
                 </div>
             </div>
             <div class="col-sm-6">
@@ -112,18 +112,10 @@
         <div class="row">
             <div class="col-md-9">
                 <p class="text-white">
-                    The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are
-                    controlled by The Canadian Real Estate Association (CREA) and
-                    identify real estate professionals who are members of CREA.
-                    The trademarks MLS®, Multiple Listing Service® and the
-                    associated logos are owned by The Canadian Real Estate
-                    Association (CREA) and identify the quality of services
-                    provided by real estate professionals who are members of CREA.
+                    Copyright 2025 by the REALTORS® Association of Edmonton. All Rights Reserved.Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.                    </p>
+
                 </p>
-                <p class="text-white">
-                    Data is deemed reliable but is not guaranteed accurate by the REALTORS®
-Association of Edmonton
-                </p>
+                
             </div>
             <div class="col-md-3">
                 <div class="d-flex align-items-center justify-content-end">
