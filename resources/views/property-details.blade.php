@@ -816,7 +816,7 @@
                                             <button class="nav-link ud-btn btn-primary"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
                                         </li>
                                         <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button type="button" class="nav-link active ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Info</button>
+                                            <button type="button" class="nav-link  ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Realtor&#174;</button>
                                         </li>
                                     </ul>
 
