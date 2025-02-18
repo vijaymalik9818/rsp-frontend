@@ -2303,3 +2303,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         height: 420px;
     }
 }
+
+
+.font-14-px
+{
+    font-size:14px !important;;
+}

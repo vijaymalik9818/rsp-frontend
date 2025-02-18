@@ -813,10 +813,10 @@
                                 <div class="contact-tour">
                                     <ul class="nav row nav-pills mb-1 d-flex justify-content-between" id="pills-tab" role="tablist">
                                         <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                            <button class="nav-link ud-btn btn-primary"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
+                                            <button class="nav-link ud-btn btn-primary font-14-px"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
                                         </li>
                                         <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button type="button" class="nav-link  ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Realtor&#174;</button>
+                                            <button type="button" class="nav-link  ud-btn font-14-px" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact REALTOR&#174;</button>
                                         </li>
                                     </ul>
 
