@@ -757,7 +757,7 @@
                                                             <p>
                                                                 <span class="flaticon-shower"></span>
                                                                 {{ $listing['BathroomsFull'] + $listing['BathroomsHalf'] }}
-                                                                bathrooms
+                                                                bath
                                                             </p>
                                                         @endif
 
@@ -816,7 +816,7 @@
                                             <button class="nav-link ud-btn btn-primary"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
                                         </li>
                                         <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button type="button" class="nav-link active ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Info</button>
+                                            <button type="button" class="nav-link  ud-btn" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact Realtor&#174;</button>
                                         </li>
                                     </ul>
 
@@ -833,7 +833,7 @@
                                                                 <span class="agentname mortgage-price "></span>
                                                             </div>
                                                         </div>
-                                                        <div class=' '>
+                                                        <div class='mt-1 '>
                                                             <div><i class="ri-phone-line"></i>
                                                                 <span><a class="phoneno" href="tel:"></a></span>
                                                             </div>
@@ -2528,7 +2528,7 @@
 
             let phoneNumberAgent = "{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '' }}";
             if (phoneNumberAgent.trim() !== '') {
-                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <small class="ListOfficeMobile">' + phoneNumberAgent + '</small>');
+                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <span class="ListOfficeMobile font-style">' + phoneNumberAgent + '</span>');
             } else {
                 $('.ListOfficeMobile').html('');
             }

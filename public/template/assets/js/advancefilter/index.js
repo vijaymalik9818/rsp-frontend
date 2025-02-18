@@ -726,7 +726,7 @@ function displayProperties(property) {
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
                         ${(parseInt(property.BathroomsFull || 0) > 0 || parseInt(property.BathroomsHalf || 0) > 0) 
                           ? `<p><span class="flaticon-shower"></span>
-                               ${parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)} bathroom${(parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)) > 1 ? 's' : ''}
+                               ${parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)} bath${(parseInt(property.BathroomsFull || 0) + parseInt(property.BathroomsHalf || 0)) > 1 ? ' ' : ''}
                              </p>` 
                           : ''}
                       

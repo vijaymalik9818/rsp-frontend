@@ -1940,11 +1940,15 @@ canvas#mortgage-chart {
     right: 0;
 }
 
+.font-style{
+    font-weight: 500;
+}
+
 .phoneno,
 .contactno {
     text-decoration: none;
     color: inherit;
-    font-weight: 100;
+    font-weight: 500;
 }
 
 #viewListingsLink {
