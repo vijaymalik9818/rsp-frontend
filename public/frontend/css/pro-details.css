@@ -2309,3 +2309,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 {
     font-size:14px !important;;
 }
+
+.phoneno
+{
+    font-weight: 500!important;
+}

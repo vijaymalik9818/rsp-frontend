@@ -869,7 +869,7 @@
                                                         </div>
                                                         <div>
                                                             <i class="ri-phone-line"></i>
-                                                            <small id="ListOfficePhone"></small>
+                                                            <span id="ListOfficePhone"></span>
                                                         </div>
                                                         <div class="ListOfficeMobile">
                                                             {{-- <i class="ri-smartphone-line"></i>
@@ -1989,7 +1989,7 @@
                                 if (result.isConfirmed) {
                                     form.reset();
                                     $('#contactmessageTextarea').val(
-                                        "I would like to get more information about this property " +
+                                        "I would appreciate more information about your services. " +
                                         $('.heading').text() + ".");
                                 }
                             });
@@ -2068,7 +2068,7 @@
                                 if (result.isConfirmed) {
                                     form.reset();
                                     $('#contactpopupmessageTextarea').val(
-                                        "I would like to get more information about this property " +
+                                        "I would appreciate more information about your services. " +
                                         $('.heading').text() + ".");
 
                                     document.getElementById('staticBackdrop')
@@ -2371,8 +2371,7 @@
 
             // $('.heading').text(headingText);
 
-            const dynamiccontactMessage = "I would like to get more information about this property " +
-                headingText + ".";
+            const dynamiccontactMessage = "I would appreciate more information about your services.";
 
             $('#contactmessageTextarea').val(dynamiccontactMessage);
             $('#contactpopupmessageTextarea').val(dynamiccontactMessage);
