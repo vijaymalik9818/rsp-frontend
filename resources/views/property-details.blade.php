@@ -1750,66 +1750,67 @@
 
         var baseUrl = "{{ env('BACKEND_URL') }}";
         document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel1');
-            const prevButton = document.getElementById('prev');
-            const nextButton = document.getElementById('next');
-            const bigImage = document.getElementById('bigImage');
-            const defaultImageUrl = "{{ asset('images/no_image.jpg') }}";
-            //let images = {!! json_encode($propertyDetails['images']) !!}.map(url => baseUrl + '/' + url);
-            let images = {!! json_encode($propertyDetails['images']) !!}.map(url => url);
-            if (images.length === 0) {
-                // If images array is empty, assign default image
-                images = [defaultImageUrl];
-            }
+    const carousel = document.querySelector('.carousel1');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const bigImage = document.getElementById('bigImage');
+    const defaultImageUrl = "{{ asset('images/no_image.jpg') }}";
+    let images = {!! json_encode($propertyDetails['images']) !!}.map(url => url);
 
-            let currentIndex = 0;
+    if (images.length === 0) {
+        images = [defaultImageUrl];
+    }
 
-            function showImage(index) {
-                carousel.style.transform = `translateX(-${index * 110}px)`;
-                bigImage.src = images[index];
-            }
+    let currentIndex = 0;
 
-            images.forEach((imageUrl, index) => {
-                const thumbnail = document.createElement('img');
-                thumbnail.classList.add('thumbnail1');
-                thumbnail.src = imageUrl;
-                thumbnail.alt = `Thumbnail ${index + 1}`;
-                thumbnail.setAttribute('data-index', index);
-                thumbnail.addEventListener('click', () => {
-                    currentIndex = index;
-                    showImage(currentIndex);
-                });
-                carousel.appendChild(thumbnail);
-            });
+    function showImage(index) {
+        carousel.style.transform = `translateX(-${index * 110}px)`;
+        bigImage.src = images[index];
+    }
 
+    images.forEach((imageUrl, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.classList.add('thumbnail1');
+        thumbnail.src = imageUrl;
+        thumbnail.alt = `Thumbnail ${index + 1}`;
+        thumbnail.setAttribute('data-index', index);
+        thumbnail.addEventListener('click', () => {
+            currentIndex = index;
             showImage(currentIndex);
-
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showImage(currentIndex);
-            });
-
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % images.length;
-                showImage(currentIndex);
-            });
-
-            function toggleArrows() {
-                if (currentIndex === 0) {
-                    prevButton.disabled = true;
-                } else {
-                    prevButton.disabled = false;
-                }
-
-                if (currentIndex === images.length - 1) {
-                    nextButton.disabled = true;
-                } else {
-                    nextButton.disabled = false;
-                }
-            }
-
-            toggleArrows();
         });
+        carousel.appendChild(thumbnail);
+    });
+
+    showImage(currentIndex);
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
+    bigImage.addEventListener('click', () => {
+        // Update the carousel's active slide based on the currentIndex
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        carouselItems.forEach((item, index) => {
+            item.classList.toggle('active', index === currentIndex);
+        });
+    });
+
+    // When the modal is shown, set the correct slide
+    var imageModal = document.getElementById('imageModal');
+    imageModal.addEventListener('shown.bs.modal', function () {
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        carouselItems.forEach((item, index) => {
+            item.classList.toggle('active', index === currentIndex);
+        });
+    });
+});
+
     </script>
 
     <script>
