@@ -35,6 +35,20 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="col-auto">
+                        <div class="link-style1 mb-3">
+                        <h6 class="text-white mb25"> &nbsp;</h6>
+
+                            <ul class="ps-0">
+                                <li><a href="/search/edmonton">Edmonton</a></li>
+                                <li><a href="/search/st.-albert">St. Albert</a></li>
+                                <li><a href="/search/sherwood-park">Sherwood Park</a></li>
+                                <li><a href="/search/leduc">Leduc</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
                     <div class="col-auto">
                         <div class="link-style1 mb-3">
                             <h6 class="text-white mb25">Quick Links</h6>
@@ -51,6 +65,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 offset-lg-2" > 
@@ -91,15 +106,15 @@
     </div>
     <div class="container white-bdrt1 py-4">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-9">
                 <div class="text-center text-lg-start">
-                    <p class="copyright-text text-gray ff-heading">
+                    <p class="copyright-text text-white ff-heading">
                         {{-- © Real Estate Professionals Inc. - All rights reserved --}}
                     The trademarks REALTOR®, REALTORS®, and the REALTOR® logo are controlled by The Canadian Real Estate Association (CREA) and identify real estate professionals who are members of CREA. The trademarks MLS®, Multiple Listing Service® and the associated logos are owned by The Canadian Real Estate Association (CREA) and identify the quality of services provided by real estate professionals who are members of CREA.
                        
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="text-center text-lg-end">
                     <p class="footer-menu ff-heading text-gray">
                         <a class="text-gray" href="{{ route('privacy') }}">Privacy</a> ·
@@ -112,7 +127,7 @@
         <div class="row">
             <div class="col-md-9">
                 <p class="text-white">
-                    Copyright 2025 by the REALTORS® Association of Edmonton. All Rights Reserved.Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.                    </p>
+                    Copyright 2025 by the REALTORS® Association of Edmonton. All Rights Reserved. Data is deemed reliable but is not guaranteed accurate by the REALTORS® Association of Edmonton.                    </p>
 
                 </p>
                 

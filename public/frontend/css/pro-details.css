@@ -1940,15 +1940,11 @@ canvas#mortgage-chart {
     right: 0;
 }
 
-.font-style{
-    font-weight: 500;
-}
-
 .phoneno,
 .contactno {
     text-decoration: none;
     color: inherit;
-    font-weight: 500;
+    font-weight: 100;
 }
 
 #viewListingsLink {
@@ -2153,7 +2149,7 @@ tbody tr {
     display: none;
 }
 .listing-style5 {
-    height: 440px ;
+    height: 460px ;
 }
 
 .Awesome-Interior .left{
@@ -2304,13 +2300,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     }
 }
 
-
 .font-14-px
 {
-    font-size:14px !important;;
+    font-size:14px !important;
 }
-
 .phoneno
 {
-    font-weight: 500!important;
+    font-weight: 400!important;
+}
+.flaticon-user
+{ 
+    margin-right: 4px;
+}
+.user-details-card
+{
+    align-items: center;
+    display: flex;
 }

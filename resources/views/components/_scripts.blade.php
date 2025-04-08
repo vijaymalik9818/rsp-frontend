@@ -11,7 +11,6 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.6.4.min.js"></script>
-<script src="js/map-script.js"></script>
 <script src="js/jquery-migrate-3.0.0.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
@@ -22,7 +21,8 @@
 <script src="js/wow.min.js"></script>
 
 <!-- Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&amp;callback=initMap"></script>
+{{-- <script src="js/map-script.js"></script> --}}
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&amp;callback=initMap"></script> --}}
 <script src="js/infobox.min.js"></script>
 <script src="js/markerclusterer.js"></script>
 <script src="js/maps.js?ref={{ rand(1111,9999) }}"></script>

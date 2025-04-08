@@ -63,8 +63,9 @@ class WebsiteController extends Controller
 
     // Fetch featured property data
     $featuredPropertyData = $this->getFeaturedPropertyData();
+    $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY');
 
-    return view('index', compact('listings', 'featuredListings', 'featuredPropertyData'));
+    return view('index', compact('listings', 'featuredListings', 'featuredPropertyData','recaptchaSiteKey'));
 }
 
     public function listings()
@@ -213,8 +214,9 @@ public function register(Request $request)
         $featuredListings = $staffData['featured_properties'] ?? [];
         // dd($featuredListings);
 
-             
-        return view(' home-evaluation', compact('featuredListings'));
+        $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY');
+        //return view(' home-evaluation', compact('featuredListings'));
+        return view(' home-evaluation', compact('featuredListings','recaptchaSiteKey'));
     }
 
     public function whyRep()
@@ -224,7 +226,8 @@ public function register(Request $request)
 
     public function joinRep()
     {
-        return view(' join-rep');
+        $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY');
+        return view('join-rep', compact('recaptchaSiteKey'));
     }
 
     public function listingResults(Request $request)
@@ -403,7 +406,8 @@ public function register(Request $request)
     public function professionalDetails($id)
     {
         // $professional = OurProfessional::with(['properties'])->find($id);
-        return view(' our-professionals-details');
+        $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY');
+        return view('our-professionals-details', compact('recaptchaSiteKey'));
     }
 
     public function saveHomeEvalutaion(Request $request)
@@ -425,6 +429,8 @@ public function register(Request $request)
         $propertyDetailsUrl = $baseUrl . '/api/get-property-details/' . $slugurl;
         $propertyDetailUrl = $baseUrl . '/api/agents/property-details/' . $slugurl;
         $token = session('token');
+        $recaptchaSiteKey = env('RECAPTCHA_SITE_KEY');
+
       
         $client = new Client();
        
@@ -483,7 +489,7 @@ public function register(Request $request)
                 'propertyRooms' => $propertyDetails['property_rooms'],
                 'business'=> $businesses,
                 'total' => $total
-            ]);
+            ],compact('recaptchaSiteKey'));
         } catch (\Exception $e) {
             return view('404');
             // return response()->json(['error' => $e->getMessage()], 500);
@@ -651,8 +657,9 @@ public function register(Request $request)
         try {
             $client = new Client();
          
-          $baseUrl = 'https://admin.repinc.ca/';
-            $apiEndpoint = $baseUrl . 'getfeaturedproperty';            
+        //   $baseUrl = 'https://admin.repinc.ca/';
+          $baseUrl = env('BACKEND_URL');
+            $apiEndpoint = $baseUrl . '/getfeaturedproperty';            
             $response = $client->request('GET', $apiEndpoint);
             // dd($response);
             if ($response->getStatusCode() === 200) {

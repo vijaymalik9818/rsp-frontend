@@ -474,7 +474,7 @@
                     <div class="cta-style3">
                         <h2 class="cta-title">Become A REALTOR<span>&#174;</span> at Real Estate Professionals Inc.</h2>
                         <p class="cta-text mb25">
-                        Everyday more REALTORS<span class='r-icon'>®️</span> choose to work at Real Estate Professionals Inc. because of our REALTO<span>&#174;</span>-first approach to business support and development, our low fee structures, and our commitment to industry excellence. Interested in becoming a Pro?
+                        Everyday more REALTORS® choose to work at Real Estate Professionals Inc. because of our REALTOR<span>&#174;</span>-first approach to business support and development, our low fee structures, and our commitment to industry excellence. Interested in becoming a Pro?
 
                         </p>
                         <a href="{{ route('join-rep') }}" class="ud-btn btn-thm"

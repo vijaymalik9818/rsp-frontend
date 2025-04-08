@@ -131,6 +131,7 @@ if (filtersFromUrl.max_list_price) {
     }
     if (filtersFromUrl.search) {
           const searchValue = filtersFromUrl.search.charAt(0).toUpperCase() + filtersFromUrl.search.slice(1);
+          
           document.getElementById('autocomplete').value = searchValue;
       }
     // document.getElementById('ba/throom').value = formattedPrice;
@@ -184,7 +185,9 @@ function fetchDataFunction(apiHeader, dropdownOptions) {
     if (cityName !== 'diamond' && cityName !== 'featured') {
       const cityLabel = document.getElementById('autocomplete');
       payload.search = cityName;
-      cityLabel.value = cityName.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+      if (cityName !== "exclusive") {
+        cityLabel.value = cityName.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+      }
     } else {
       payload.search = cityName; // Only set payload.search for "diamond" or "featured"
     }

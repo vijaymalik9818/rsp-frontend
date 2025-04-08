@@ -760,6 +760,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="{{ asset('template/assets/js/advancefilter/index.js') }}"></script>
+    <script src="js/map-script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&amp;callback=initMap"></script>
     <script>
         var user_id = document.getElementById('user_id').value;
         console.log('user:', user_id);

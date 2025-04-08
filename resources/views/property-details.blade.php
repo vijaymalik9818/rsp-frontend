@@ -1,6 +1,6 @@
 @extends('layouts.pages')
 @section('content')
-    <link href="{{ asset('frontend/css/pro-details.css') }}" rel="stylesheet" />
+    <link href="{{ asset('frontend/css/pro-details.css?v=2.2.2') }}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -254,6 +254,11 @@
                                         <div class="d-flex align-items-center justify-content-between">
                                             <h6>Bathrooms Full :</h6>
                                             <p class="mb-2 bathroom-full"></p>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h6>Listed On :</h6>
+                                            <p class="mb-2 listed-date"></p>
                                         </div>
 
 
@@ -578,7 +583,7 @@
                                 
                                 foreach ($categories as $alias => $category) {
                                     echo '<li class="nav-item" role="presentation">   
-                                     <button class="nav-link' .
+                                                                                                     <button class="nav-link' .
                                         ($alias === key($categories) ? ' active' : '') .
                                         '" id="pills-' .
                                         $alias .
@@ -593,7 +598,7 @@
                                         ' (' .
                                         $category['count'] .
                                         ')</button>
-                                        </li>';
+                                                                                                        </li>';
                                 }
                                 ?>
                             </ul>
@@ -607,10 +612,10 @@
                                         '" role="tabpanel" aria-labelledby="pills-' .
                                         $alias .
                                         '-tab" tabindex="0">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="map mt-0" id="map-' .
                                         $alias .
                                         '"></div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>';
                                 }
                                 ?>
                             </div>
@@ -736,7 +741,7 @@
                                                     @else
                                                         <h6 class="list-title">
 
-                                                            {{ $listing['UnitNumber'] ? $listing['UnitNumber'] . ', ' : '' }}{{ $listing['StreetNumber'] }}
+                                                            #{{ $listing['UnitNumber'] ? $listing['UnitNumber'] . ', ' : '' }}{{ $listing['StreetNumber'] }}
                                                             {{ $listing['StreetName'] }} {{ $listing['StreetSuffix'] }}
                                                             {{ $listing['StreetDirSuffix'] }}, {{ $listing['City'] }},
                                                             {{ $listing['StateOrProvince'] }}
@@ -776,422 +781,439 @@
 
                                                     <span class="mlsNumber">MLS® Number:
                                                         {{ $listing['ListingId'] }}</span>
-                                                        
+
                                                 </div>
-                                                
+
                                                 <div class="brokerage-details">
                                                     <hr style="color:black;">
-                                                        <h3 class="mlsNumber footer-text-style p-2">
-                                                            <div>
+                                                    <h3 class="mlsNumber footer-text-style p-2 ">
+                                                        <div class="user-details-card">
 
-                                                                <span class="flaticon-user"></span> <b>{{ $listing['ListAgentFullName'] ?? 'Real Estate Professionals Inc.' }}</b>
-                                                            </div>
-                                                            <span class=""> {{$listing['ListOfficeName']}}</span>
-                                                        </h3>
-                                                        <br/>
-                                                    </a>
-                                                </div>
-                                                
+                                                            <span class="flaticon-user"></span>
+                                                            <b>{{ $listing['ListAgentFullName'] ?? 'Real Estate Professionals Inc.' }}</b>
+                                                        </div>
+                                                        <span class=""> {{ $listing['ListOfficeName'] }}</span>
+                                                    </h3>
+                                                    <br />
                                             </a>
                                         </div>
-                                    </div>
-                                @endforeach
-                                <?php else: ?>
-                                <script>
-                                    document.getElementById('section12').style.display = 'none';
-                                    $('.similerlisting').hide();
-                                </script>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
 
-
-                    <div class="col-12 col-md-8 col-lg-6 col-xl-4  sticky-wrapper">
-                        <div class=" profile-sec sticky-tour">
-                            <div class="sticky-div fixedElement">
-                                <div class="contact-tour">
-                                    <ul class="nav row nav-pills mb-1 d-flex justify-content-between" id="pills-tab" role="tablist">
-                                        <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
-                                            <button class="nav-link ud-btn btn-primary font-14-px"  data-bs-toggle="modal" data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
-                                        </li>
-                                        <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                            <button type="button" class="nav-link  ud-btn font-14-px" data-bs-toggle="modal" data-bs-target="#queryInfoModal">Contact REALTOR&#174;</button>
-                                        </li>
-                                    </ul>
-
-                                    <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="1">
-                                            <div class="contact-info" id="section10">
-                                                <div class=' sm-align-items-start gap-3   d-sm-flex '>
-                                                    <div class="profile" id="agent-profile">
-                                                        <img src="" alt="" class="agent-img">
-                                                    </div>
-                                                    <div>
-                                                        <div class='pro-info mt-3 mt-sm-0'>
-                                                            <div class='d-flex  gap-2'>
-                                                                <i class="ri-user-line fw-bold mt-1"></i>
-                                                                <span class="agentname mortgage-price "></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class='mt-1 '>
-                                                            <div><i class="ri-phone-line"></i>
-                                                                <span><a class="phoneno" href="tel:"></a></span>
-                                                            </div>
-                                                            <div class="ListOfficeMobile">
-                                                                {{-- <i class="ri-smartphone-line"></i>
-                                                                <span><a class="contactno ListOfficeMobile" href="tel:"></a></span> --}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class='d-flex align-items-center justify-content-between  w-100'>
-                                                    <a id="viewListingsLink" class='' href="">View Listings</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                             </div>
-                            <div class="sticky-div mt-3 fixedElement">
-                                <div class="contact-tour card-shadow"> <!-- Added 'card-shadow' class -->
-                                    <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="1">
-                                        <div class="contact-info" id="section10">
-                                            <div class='sm-align-items-start gap-3 d-sm-flex'>
-                                                <div>
-                                                    <div class='pro-info mt-3 mt-sm-0'>
-                                                        <div class='d-flex align-items-center gap-2'>
-                                                            <span class="mortgage-price" id="ListOfficeName">Real Estate Professionals Inc.</span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class=''>
-                                                        <div>
-                                                            <small id="ListAgentAddress"></small><br/>
-                                                        </div>
-                                                        <div>
-                                                            <i class="ri-phone-line"></i>
-                                                            <span id="ListOfficePhone"></span>
-                                                        </div>
-                                                        <div class="ListOfficeMobile">
-                                                            {{-- <i class="ri-smartphone-line"></i>
-                                                            <small class="ListOfficeMobile"></small> --}}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            <?php else: ?>
+                            <script>
+                                document.getElementById('section12').style.display = 'none';
+                                $('.similerlisting').hide();
+                            </script>
+                            <?php endif; ?>
                         </div>
                     </div>
-
-                    <!-- Query Info Modal -->
-                    <div class="modal " id="queryInfoModal" tabindex="-1" aria-labelledby="queryInfoModalLabel" >
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                <div class="modal-header ">
-                                    <h1 class="modal-title fs-5" id="queryInfoModalLabel">Enquire About This Property</h1>
-                                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <div class="leave-rev mb-0 mt-0">
-                                        <form id="contactForm">
-                                            @csrf
-                                            <div class="row mb-2">
-                                                <input type="hidden" name="prorealtorname"
-                                                    value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
-                                                <input type="hidden" name="prorealtoremail"
-                                                    value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
-                                                <input type="hidden" name="property_type" value="">
-
-                                                <div class="col-12 ">
-                                                    <input type="text" id="contactfirstname"
-                                                        placeholder="First Name*" name="first_names">
-                                                </div>
-                                                <div class="col-12 ">
-                                                    <input type="text" id="contactlastname"
-                                                        placeholder="Last Name*" name="last_names">
-                                                </div><br><br>
-                                                <input type="hidden" id="contactname" name="name">
-                                                <div class="col-12">
-                                                    <input type="text" id="contactphone"
-                                                        placeholder="Phone*" name="phone">
-                                                </div>
-                                                <div class="col-12">
-                                                    <input type="text" placeholder="Email*"
-                                                        name="email">
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <div class="input-2 ">
-                                                        <select name="role"
-                                                            class="select-boxes-filter cursor-pointer">
-                                                            <option value="">I'm a*</option>
-                                                            <option value="First time buyer">First time buyer
-                                                            </option>
-                                                            <option value="Repeat buyer">Repeat buyer</option>
-                                                            <option value="Seller">Seller</option>
-                                                            <option value="Residential investor">Residential
-                                                                investor
-                                                            </option>
-                                                            <option value="Commercial investor">Commercial
-                                                                investor</option>
-                                                            <option value="Commercial buyer/leaser">Commercial
-                                                                buyer/leaser
-                                                            </option>
-                                                            <option value="Land of development">Land of
-                                                                development</option>
-                                                        </select>
-                                                    </div>
-                                                    <div id="roleerror"></div>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message" cols="30" rows="3" maxlength="200"></textarea>
-                                            </div>
-                                            <div class="chkbox">
-                                                <div class="mt-1 d-flex align-items-cente gap-2"> <input
-                                                        class="checkbox opacity-50" type="checkbox"
-                                                        name="term" id="termCheckbox">
-                                                    <p class="mb-0 fw-bold">I agree to <a
-                                                            href="/terms-and-conditions"
-                                                            class='text-decoration-none'><span
-                                                                class='px-1 fs-6'>Terms of
-                                                                Use</span></a></p>
-                                                </div>
-                                            </div>
-                                            <div id="checkbx"></div>
-                                            <button type="submit" id="contactsubmit" class="ud-btn w-100 btn-primary mt-2 border-0">Request Information</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tour -->
-                    <div class="modal " id="tourInfoModal" tabindex="-1" aria-labelledby="tourInfoModalLabel" >
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                <div class="modal-header ">
-                                    <h1 class="modal-title fs-5" id="tourInfoModalLabel">Schedule a Tour</h1>
-                                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <div class="modal-body">
-
-                                  <div class="tab-pane " id="pills-tour" role="tabpanel" aria-labelledby="pills-tour-tab" tabindex="0">
-
-                                            <div id="dateSlotsContainer"></div>
-
-                                            <div class="slider-container">
-                                                <button class="slider-button left-arr" onclick="prevDates()"><i
-                                                        class="ri-arrow-left-s-line"></i></button>
-                                                <button class="slider-button right-arr" onclick="nextDates()"><i
-                                                        class="ri-arrow-right-s-line"></i></button>
-                                            </div>
-
-                                           
-                                            <div>
-                                                <form id="tourForm">
-                                                    @csrf
-                                                    {{-- <input type="hidden" name="tour_type" id="tourTypeInput" value=""> --}}
-
-                                                    <input type="hidden" name="agent_name"
-                                                        value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
-                                                    <input type="hidden" name="agent_email"
-                                                        value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
-
-                                                    <input type="hidden" name="property_address"
-                                                        value="{{ $propertyDetails['PropertyType'] ?? '' }} {{ $propertyDetails['TransactionType'] ?? '' }} in {{ $propertyDetails['City'] ?? '' }}, {{ $propertyDetails['StateOrProvince'] ?? '' }}">
-
-                                                    <div class="input">
-                                                        <input type="text" id="timeInput" placeholder="Time*"
-                                                            name="time">
-                                                        <i class="ri-expand-up-down-line opacity-50"></i>
-                                                    </div>
-                                                    <div id="timeInput-error" class="error"></div>
-                                                    <div class="input mt-2">
-                                                        <input type="text" id="tourname" placeholder="First Name*"
-                                                            name="first_name">
-                                                    </div>
-
-                                                    <div class="input mt-2">
-                                                        <input type="text" id="lasttourname" placeholder="Last Name*"
-                                                            name="last_name">
-                                                    </div>
-                                                    <input type="hidden" id="tournames" name="name">
-                                                    <div class="input mt-2">
-                                                        <input type="text" id="tourphone" placeholder="Phone*"
-                                                            name="phone">
-                                                    </div>
-
-                                                    <div class="input mt-2">
-                                                        <input type="email" placeholder="Email*" name="email">
-                                                    </div>
-
-                                                    <div class="input mt-2">
-                                                        <select name="role" class="select-boxes-filter cursor-pointer">
-                                                            <option value="" aria-placeholder="">I'm a*</option>
-                                                            <option value="First time buyer">First time buyer</option>
-                                                            <option value="Repeat buyer">Repeat buyer</option>
-                                                            <option value="Seller">Seller</option>
-                                                            <option value="Residential investor">Residential investor
-                                                            </option>
-                                                            <option value="Commercial investor">Commercial investor
-                                                            </option>
-                                                            <option value="Commercial buyer/leaser">Commercial buyer/leaser
-                                                            </option>
-                                                            <option value="Land of development">Land of development
-                                                            </option>
-                                                        </select>
-
-                                                    </div>
-
-                                                    <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message"
-                                                        id="messageTextarea" name="message"></textarea>
-                                                    <input type="hidden" id="selectedDateInput" name="selectedDate"
-                                                        value="">
-                                                    <div class="chkbox">
-                                                        <div class="mt-1 d-flex align-items-cente gap-2">
-                                                            <input class="checkbox opacity-50" type="checkbox"
-                                                                name="terms" id="termsCheckbox">
-                                                            <!-- Ensure the name attribute is set -->
-                                                            <p class="mb-0 fw-bold">I agree to <a
-                                                                    href="/terms-and-conditions"
-                                                                    class='text-decoration-none'><span
-                                                                        class='px-1 fs-6'>Terms of Use</span></a></p>
-                                                        </div>
-
-                                                        <!-- Error message placeholder for the terms checkbox -->
-                                                        <div id="termsCheckbox-error" class="error"></div>
-                                                        <!-- This div will hold the error message -->
-
-                                                        <div class="d-grid mt-2">
-                                                            <button id="SubmitBtn" class="ud-btn btn-primary border-0"
-                                                                type="submit">Submit a
-                                                                Tour
-                                                                Request</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-            </div>
 
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Enquire About This Property</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                <div class="col-12 col-md-8 col-lg-6 col-xl-4  sticky-wrapper">
+                    <div class=" profile-sec sticky-tour">
+                        <div class="sticky-div fixedElement">
+                            <div class="contact-tour">
+                                <ul class="nav row nav-pills mb-1 d-flex justify-content-between" id="pills-tab"
+                                    role="tablist">
+                                    <li class="nav-item col-6 " style="padding-right: 2px;" role="presentation">
+                                        <button class="nav-link ud-btn btn-primary font-14-px" data-bs-toggle="modal"
+                                            data-bs-target="#tourInfoModal" type="button">Schedule a Tour</button>
+                                    </li>
+                                    <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                        <button type="button" class="nav-link  ud-btn font-14-px" data-bs-toggle="modal"
+                                            data-bs-target="#queryInfoModal">Contact REALTOR&#174;</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab" tabindex="1">
+                                    <div class="contact-info" id="section10">
+                                        <div class=' sm-align-items-start gap-3   d-sm-flex '>
+                                            <div class="profile" id="agent-profile">
+                                                <img src="" alt="" class="agent-img">
+                                            </div>
+                                            <div>
+                                                <div class='pro-info mt-3 mt-sm-0'>
+                                                    <div class='d-flex  gap-2'>
+                                                        <i class="ri-user-line fw-bold mt-1"></i>
+                                                        <span class="agentname mortgage-price "></span>
+                                                    </div>
+                                                </div>
+                                                <div class='mt-1 '>
+                                                    <div><i class="ri-phone-line"></i>
+                                                        <span><a class="phoneno" href="tel:"></a></span>
+                                                    </div>
+                                                    <div class="ListOfficeMobile">
+                                                        {{-- <i class="ri-smartphone-line"></i>
+                                                                <span><a class="contactno ListOfficeMobile" href="tel:"></a></span> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='d-flex align-items-center justify-content-between  w-100'>
+                                            <a id="viewListingsLink" class='' href="">View Listings</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body ">
-                            <div class="card">
-                                <div class="card-body">
-                                    <form id="contactpopup">
-                                        <div class="row row-gap-3">
+                        <div class="sticky-div mt-3 fixedElement">
+                            <div class="contact-tour card-shadow"> <!-- Added 'card-shadow' class -->
+                                <div class="tab-pane fade show active" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab" tabindex="1">
+                                    <div class="contact-info" id="section10">
+                                        <div class='sm-align-items-start gap-3 d-sm-flex'>
+                                            <div>
+                                                <div class='pro-info mt-3 mt-sm-0'>
+                                                    <div class='d-flex align-items-center gap-2'>
+                                                        <span class="mortgage-price" id="ListOfficeName">Real Estate
+                                                            Professionals Inc.</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class=''>
+                                                    <div>
+                                                        <small id="ListAgentAddress"></small><br />
+                                                    </div>
+                                                    <div>
+                                                        <i class="ri-phone-line"></i>
+                                                        <span id="ListOfficePhone"></span>
+                                                    </div>
+                                                    <div class="ListOfficeMobile">
+                                                        {{-- <i class="ri-smartphone-line"></i>
+                                                            <small class="ListOfficeMobile"></small> --}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Query Info Modal -->
+                <div class="modal " id="queryInfoModal" tabindex="-1" aria-labelledby="queryInfoModalLabel">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h1 class="modal-title fs-5" id="queryInfoModalLabel">Enquire About This Property</h1>
+                                <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="leave-rev mb-0 mt-0">
+                                    <form id="contactForm">
+                                        @csrf
+                                        <div class="row mb-2">
                                             <input type="hidden" name="prorealtorname"
                                                 value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
                                             <input type="hidden" name="prorealtoremail"
                                                 value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
                                             <input type="hidden" name="property_type" value="">
-                                            <div class="col-md-6">
-                                                <h5>First Name<span style="color: red;">*</span></h5>
-                                                <input class="input-2" type="text" id="contactfirstnames"
-                                                    placeholder="First Name" name="first_names">
+
+                                            <div class="col-12 ">
+                                                <input type="text" id="contactfirstname" placeholder="First Name*"
+                                                    name="first_names">
                                             </div>
-                                            <div class="col-md-6">
-                                                <h5>Last Name<span style="color: red;">*</span></h5>
-                                                <input class="input-2" type="text" id="contactlastnames"
-                                                    placeholder="Last Name" name="last_names">
+                                            <div class="col-12 ">
+                                                <input type="text" id="contactlastname" placeholder="Last Name*"
+                                                    name="last_names">
+                                            </div><br><br>
+                                            <input type="hidden" id="contactname" name="name">
+                                            <div class="col-12">
+                                                <input type="text" id="contactphone" placeholder="Phone*"
+                                                    name="phone">
                                             </div>
-                                            <input type="hidden" id="contactpopupname" name="name">
-                                            <div class="col-md-6">
-                                                <h5>Phone<span style="color: red;">*</span></h5>
-                                                <input class="input-2" type="text" id="contactphones"
-                                                    placeholder="Enter your Phone" name="phone">
+                                            <div class="col-12">
+                                                <input type="text" placeholder="Email*" name="email">
                                             </div>
-                                            <div class="col-md-6">
-                                                <h5>I'm a <span style="color: red;">*</span></h5>
+
+                                            <div class="col-12">
                                                 <div class="input-2 ">
                                                     <select name="role" class="select-boxes-filter cursor-pointer">
-                                                        <option value="">Select</option>
-                                                        <option value="First time buyer">First time buyer</option>
+                                                        <option value="">I'm a*</option>
+                                                        <option value="First time buyer">First time buyer
+                                                        </option>
                                                         <option value="Repeat buyer">Repeat buyer</option>
                                                         <option value="Seller">Seller</option>
-                                                        <option value="Residential investor">Residential investor
+                                                        <option value="Residential investor">Residential
+                                                            investor
                                                         </option>
-                                                        <option value="Commercial investor">Commercial investor</option>
-                                                        <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                        <option value="Commercial investor">Commercial
+                                                            investor</option>
+                                                        <option value="Commercial buyer/leaser">Commercial
+                                                            buyer/leaser
                                                         </option>
-                                                        <option value="Land of development">Land of development</option>
+                                                        <option value="Land of development">Land of
+                                                            development</option>
                                                     </select>
                                                 </div>
-                                                <div id="poproleerror"></div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <h5>Email<span style="color: red;">*</span></h5>
-
-                                                <input class="input-2" type="text" placeholder="Enter your Email"
-                                                    name="email">
-
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <h5>Message<span style="color: red;">*</span></h5>
-                                                <textarea placeholder="Enter your message" id="contactpopupmessageTextarea" name="message" cols="30"
-                                                    rows="3" maxlength="200"></textarea>
-
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-1 d-flex align-items-cente gap-2"> <input
-                                                        class="checkbox opacity-50" type="checkbox" name="term"
-                                                        id="">
-                                                    <p class="mb-0 fw-bold">I agree to <a href="/terms-and-conditions"
-                                                            class='text-decoration-none'><span class='px-1 fs-6'>Terms of
-                                                                Use</span></a></p>
-                                                </div>
-                                                <div id="popcheckbx"></div>
-                                            </div><br>
-                                            <div class="col-md-12 text-center">
-                                                <button type="submit" id="contactpopupbutton"
-                                                    class="ud-btn btn-primary mt-3 border-0">
-                                                    Request Information
-                                                </button>
+                                                <div id="roleerror"></div>
                                             </div>
                                         </div>
+
+                                        <div>
+                                            <textarea placeholder="Enter your message*" class='mt-0' id="contactmessageTextarea" name="message"
+                                                cols="30" rows="3" maxlength="200"></textarea>
+                                        </div>
+                                        <div class="chkbox">
+                                            <div class="mt-1 d-flex align-items-cente gap-2"> <input
+                                                    class="checkbox opacity-50" type="checkbox" name="term"
+                                                    id="termCheckbox">
+                                                <p class="mb-0 fw-bold">I agree to <a href="/terms-and-conditions"
+                                                        class='text-decoration-none'><span class='px-1 fs-6'>Terms of
+                                                            Use</span></a></p>
+                                            </div>
+                                        </div>
+                                        <div id="checkbx"></div>
+
+                                        <div class="mt-3 mx-0">
+                                            <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                        </div>
+                                        <button type="submit" id="contactsubmit"
+                                            class="ud-btn w-100 btn-primary mt-2 border-0">Request Information</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+
+                <!-- Tour -->
+                <div class="modal " id="tourInfoModal" tabindex="-1" aria-labelledby="tourInfoModalLabel">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header ">
+                                <h1 class="modal-title fs-5" id="tourInfoModalLabel">Schedule a Tour</h1>
+                                <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <div class="tab-pane " id="pills-tour" role="tabpanel" aria-labelledby="pills-tour-tab"
+                                    tabindex="0">
+
+                                    <div id="dateSlotsContainer"></div>
+
+                                    <div class="slider-container">
+                                        <button class="slider-button left-arr" onclick="prevDates()"><i
+                                                class="ri-arrow-left-s-line"></i></button>
+                                        <button class="slider-button right-arr" onclick="nextDates()"><i
+                                                class="ri-arrow-right-s-line"></i></button>
+                                    </div>
+
+
+                                    <div>
+                                        <form id="tourForm">
+                                            @csrf
+                                            {{-- <input type="hidden" name="tour_type" id="tourTypeInput" value=""> --}}
+
+                                            <input type="hidden" name="agent_name"
+                                                value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
+                                            <input type="hidden" name="agent_email"
+                                                value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
+
+                                            <input type="hidden" name="property_address"
+                                                value="{{ $propertyDetails['PropertyType'] ?? '' }} {{ $propertyDetails['TransactionType'] ?? '' }} in {{ $propertyDetails['City'] ?? '' }}, {{ $propertyDetails['StateOrProvince'] ?? '' }}">
+
+                                            <div class="input">
+                                                <input type="text" id="timeInput" placeholder="Time*" name="time">
+                                                <i class="ri-expand-up-down-line opacity-50"></i>
+                                            </div>
+                                            <div id="timeInput-error" class="error"></div>
+                                            <div class="input mt-2">
+                                                <input type="text" id="tourname" placeholder="First Name*"
+                                                    name="first_name">
+                                            </div>
+
+                                            <div class="input mt-2">
+                                                <input type="text" id="lasttourname" placeholder="Last Name*"
+                                                    name="last_name">
+                                            </div>
+                                            <input type="hidden" id="tournames" name="name">
+                                            <div class="input mt-2">
+                                                <input type="text" id="tourphone" placeholder="Phone*"
+                                                    name="phone">
+                                            </div>
+
+                                            <div class="input mt-2">
+                                                <input type="email" placeholder="Email*" name="email">
+                                            </div>
+
+                                            <div class="input mt-2">
+                                                <select name="role" class="select-boxes-filter cursor-pointer">
+                                                    <option value="" aria-placeholder="">I'm a*</option>
+                                                    <option value="First time buyer">First time buyer</option>
+                                                    <option value="Repeat buyer">Repeat buyer</option>
+                                                    <option value="Seller">Seller</option>
+                                                    <option value="Residential investor">Residential investor
+                                                    </option>
+                                                    <option value="Commercial investor">Commercial investor
+                                                    </option>
+                                                    <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                    </option>
+                                                    <option value="Land of development">Land of development
+                                                    </option>
+                                                </select>
+
+                                            </div>
+
+                                            <textarea class="mt-2 txt-area " cols="42" rows="3" placeholder="Enter your Message"
+                                                id="messageTextarea" name="message"></textarea>
+                                            <input type="hidden" id="selectedDateInput" name="selectedDate"
+                                                value="">
+                                            <div class="chkbox">
+                                                <div class="mt-1 d-flex align-items-cente gap-2">
+                                                    <input class="checkbox opacity-50" type="checkbox" name="terms"
+                                                        id="termsCheckbox">
+                                                    <!-- Ensure the name attribute is set -->
+                                                    <p class="mb-0 fw-bold">I agree to <a href="/terms-and-conditions"
+                                                            class='text-decoration-none'><span class='px-1 fs-6'>Terms of
+                                                                Use</span></a></p>
+                                                </div>
+
+                                                <!-- Error message placeholder for the terms checkbox -->
+                                                <div id="termsCheckbox-error" class="error"></div>
+                                                <!-- This div will hold the error message -->
+
+                                                <div class="mt-3 mx-0">
+                                                    <div class="g-recaptcha" id="tourFormCaptcha"
+                                                        data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                                </div>
+                                                <div class="d-grid mt-2">
+                                                    <button id="SubmitBtn" class="ud-btn btn-primary border-0"
+                                                        type="submit">Submit a
+                                                        Tour
+                                                        Request</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class='d-flex align-items-center justify-content-between w-100 mb-1 px-2 px-sm-3'>
-                                <img class='logo' src="{{ asset('images/logo.svg') }}" alt="">
-                                <div class='d-flex gap-2 align-items-center justify-content-between'>
-                                    <div class="submitBoxWidth dektop">
-                                        <div class="d-flex align-items-center justify-content-end mt-2 mt-md-0 me-2">
-                                            <button class="ud-btn btn-thm"
-                                                style="
+
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Enquire About This Property</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="card">
+                            <div class="card-body">
+                                <form id="contactpopup">
+                                    @csrf
+                                    <div class="row row-gap-3">
+                                        <input type="hidden" name="prorealtorname"
+                                            value="{{ isset($propertyDetails['ListAgentFullName']) ? $propertyDetails['ListAgentFullName'] : 'Myproagent' }}">
+                                        <input type="hidden" name="prorealtoremail"
+                                            value="{{ isset($propertyDetails['ListAgentEmail']) ? $propertyDetails['ListAgentEmail'] : 'Myproagent' }}">
+                                        <input type="hidden" name="property_type" value="">
+                                        <div class="col-md-6">
+                                            <h5>First Name<span style="color: red;">*</span></h5>
+                                            <input class="input-2" type="text" id="contactfirstnames"
+                                                placeholder="First Name" name="first_names">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5>Last Name<span style="color: red;">*</span></h5>
+                                            <input class="input-2" type="text" id="contactlastnames"
+                                                placeholder="Last Name" name="last_names">
+                                        </div>
+                                        <input type="hidden" id="contactpopupname" name="name">
+                                        <div class="col-md-6">
+                                            <h5>Phone<span style="color: red;">*</span></h5>
+                                            <input class="input-2" type="text" id="contactphones"
+                                                placeholder="Enter your Phone" name="phone">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5>I'm a <span style="color: red;">*</span></h5>
+                                            <div class="input-2 ">
+                                                <select name="role" class="select-boxes-filter cursor-pointer">
+                                                    <option value="">Select</option>
+                                                    <option value="First time buyer">First time buyer</option>
+                                                    <option value="Repeat buyer">Repeat buyer</option>
+                                                    <option value="Seller">Seller</option>
+                                                    <option value="Residential investor">Residential investor
+                                                    </option>
+                                                    <option value="Commercial investor">Commercial investor</option>
+                                                    <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                    </option>
+                                                    <option value="Land of development">Land of development</option>
+                                                </select>
+                                            </div>
+                                            <div id="poproleerror"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h5>Email<span style="color: red;">*</span></h5>
+
+                                            <input class="input-2" type="text" placeholder="Enter your Email"
+                                                name="email">
+
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <h5>Message<span style="color: red;">*</span></h5>
+                                            <textarea placeholder="Enter your message" id="contactpopupmessageTextarea" name="message" cols="30"
+                                                rows="3" maxlength="200"></textarea>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-1 d-flex align-items-cente gap-2"> <input
+                                                    class="checkbox opacity-50" type="checkbox" name="term"
+                                                    id="">
+                                                <p class="mb-0 fw-bold">I agree to <a href="/terms-and-conditions"
+                                                        class='text-decoration-none'><span class='px-1 fs-6'>Terms of
+                                                            Use</span></a></p>
+                                            </div>
+                                            <div id="popcheckbx"></div>
+                                        </div><br>
+                                        <div class="mt-3 mx-0">
+                                            <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" id="contactpopupbutton"
+                                                class="ud-btn btn-primary mt-3 border-0">
+                                                Request Information
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class='d-flex align-items-center justify-content-between w-100 mb-1 px-2 px-sm-3'>
+                            <img class='logo' src="{{ asset('images/logo.svg') }}" alt="">
+                            <div class='d-flex gap-2 align-items-center justify-content-between'>
+                                <div class="submitBoxWidth dektop">
+                                    <div class="d-flex align-items-center justify-content-end mt-2 mt-md-0 me-2">
+                                        <button class="ud-btn btn-thm"
+                                            style="
                                               width: 301px;
     display: flex;
     justify-content: center;
@@ -1203,46 +1225,46 @@
     border: none;
     border-radius: 8px;
     font-size: 10px;"
-                                                type="button" data-bs-toggle="modal"
-                                                data-bs-target="#staticBackdrop">Contact
-                                                REALTOR<span>&#174;</span></button>
-                                        </div>
+                                            type="button" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">Contact
+                                            REALTOR<span>&#174;</span></button>
                                     </div>
-                                    <p class='hover-elem mb-0'>
-                                        <i class="flaticon-like cursor-pointer hover-elem" id="fav-icon"
-                                            onclick='toggleFavorite()'></i>
-                                        Favorite
+                                </div>
+                                <p class='hover-elem mb-0'>
+                                    <i class="flaticon-like cursor-pointer hover-elem" id="fav-icon"
+                                        onclick='toggleFavorite()'></i>
+                                    Favorite
+                                </p>
+
+                                <div class="dropdown mt-1">
+                                    <p class="ri-share-line icons hover-elem" id="shareimage"
+                                        onclick="toggleDropdown('shareimageDropdown')">
+
+                                        Share
                                     </p>
-
-                                    <div class="dropdown mt-1">
-                                        <p class="ri-share-line icons hover-elem" id="shareimage"
-                                            onclick="toggleDropdown('shareimageDropdown')">
-
-                                            Share
-                                        </p>
-                                        <div class="dropdown-menu" id="shareimageDropdown" style="display: none;">
-                                            <a onclick="share('facebook')"><i class="ri-facebook-fill"></i> Share on
-                                                Facebook</a>
-                                            <a onclick="share('whatsapp')"><i class="ri-whatsapp-fill"></i> Share on
-                                                WhatsApp</a>
-                                            <a onclick="share('email')"><i class="ri-mail-fill"></i> Share via Email</a>
-                                            <a onclick="share('linkedin')"><i class="ri-linkedin-fill"></i> Share on
-                                                LinkedIn</a>
-                                            <a onclick="share('twitter')"><i class="ri-twitter-fill"></i> Share on
-                                                Twitter</a>
-                                        </div>
-
+                                    <div class="dropdown-menu" id="shareimageDropdown" style="display: none;">
+                                        <a onclick="share('facebook')"><i class="ri-facebook-fill"></i> Share on
+                                            Facebook</a>
+                                        <a onclick="share('whatsapp')"><i class="ri-whatsapp-fill"></i> Share on
+                                            WhatsApp</a>
+                                        <a onclick="share('email')"><i class="ri-mail-fill"></i> Share via Email</a>
+                                        <a onclick="share('linkedin')"><i class="ri-linkedin-fill"></i> Share on
+                                            LinkedIn</a>
+                                        <a onclick="share('twitter')"><i class="ri-twitter-fill"></i> Share on
+                                            Twitter</a>
                                     </div>
 
                                 </div>
+
                             </div>
-                            <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
                         </div>
-                        <div class='mbl_btn'>
-                            <div class='d-flex justify-content-end px-3 mt-2'>
-                                <button class="ud-btn btn-thm"
-                                    style="
+                        <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class='mbl_btn'>
+                        <div class='d-flex justify-content-end px-3 mt-2'>
+                            <button class="ud-btn btn-thm"
+                                style="
                                             width: 137px;
                                             display: flex;
                                             justify-content: center;
@@ -1254,215 +1276,215 @@
                                             border: none;
                                             border-radius: 4px;
                                             font-size: 10px;"
-                                    type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact
-                                    REALTOR<span>&#174;</span></button>
-                            </div>
+                                type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Contact
+                                REALTOR<span>&#174;</span></button>
                         </div>
-                        <div class="modal-body overflow-hidden">
-                            <div id="carouselExample" class="carousel h-100 slide">
-                                <div class="carousel-inner h-100">
-                                    @php
-                                        $baseUrl = env('BACKEND_URL');
-                                        $images = $propertyDetails['images'] ?? [];
-                                    @endphp
-
-                                    @if (count($images) > 0)
-                                        @foreach ($images as $index => $image)
-                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                <img src="{{ $image }}" alt="Image {{ $index }}">
-                                            </div>
-                                        @endforeach
-                                    @else
-                                        <div class="carousel-item active">
-                                            <img src="{{ asset('images/no_image.jpg') }}" alt="Default Image">
-                                        </div>
-                                    @endif
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                            </div>
-                        </div>
-
-
                     </div>
+                    <div class="modal-body overflow-hidden">
+                        <div id="carouselExample" class="carousel h-100 slide">
+                            <div class="carousel-inner h-100">
+                                @php
+                                    $baseUrl = env('BACKEND_URL');
+                                    $images = $propertyDetails['images'] ?? [];
+                                @endphp
+
+                                @if (count($images) > 0)
+                                    @foreach ($images as $index => $image)
+                                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                            <img src="{{ $image }}" alt="Image {{ $index }}">
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="carousel-item active">
+                                        <img src="{{ asset('images/no_image.jpg') }}" alt="Default Image">
+                                    </div>
+                                @endif
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
+        </div>
 
-            <script>
-                var listingId = "{{ $propertyDetails['ListingId'] }}";
-                var favIcon = document.getElementById(`fav-icon`);
-                var session = "{{ session('username') }}";
-                if (session) {
+        <script>
+            var listingId = "{{ $propertyDetails['ListingId'] }}";
+            var favIcon = document.getElementById(`fav-icon`);
+            var session = "{{ session('username') }}";
+            if (session) {
 
-                    var isfav = "{{ $propertyDetails['is_favorite'] }}";
-                    // console.log(isfav);
-                    if (isfav == true) {
-                        favIcon.querySelector("i").classList.remove("ri-heart-line");
-                        favIcon.querySelector("i").classList.add("fa-solid", "fa-heart", "red-background");
-                    }
+                var isfav = "{{ $propertyDetails['is_favorite'] }}";
+                // console.log(isfav);
+                if (isfav == true) {
+                    favIcon.querySelector("i").classList.remove("ri-heart-line");
+                    favIcon.querySelector("i").classList.add("fa-solid", "fa-heart", "red-background");
+                }
+            }
+
+            // function setTourType(type) {
+            //     document.getElementById('tourTypeInput').value = type;
+            // }
+
+            function toggleDropdown(dropdownId) {
+                var dropdown = document.getElementById(dropdownId);
+                if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+                    dropdown.style.display = 'block';
+                } else {
+                    dropdown.style.display = 'none';
+                }
+            }
+            window.addEventListener('click', function(event) {
+                if (!event.target.matches('.icons')) {
+                    var dropdown = document.getElementById('shareimageDropdown');
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            function share(platform) {
+                const propertyUrl = window.location.href;
+                const imageUrl = document.querySelector('.carousel-item.active img').getAttribute('src');
+                var shareUrl = '';
+                var message = '';
+                const emailBody = 'I thought you might be interested in this link: ' + propertyUrl;
+                switch (platform) {
+                    case 'facebook':
+                        shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(propertyUrl);
+                        break;
+                    case 'whatsapp':
+                        message = 'Check out this image: ' + imageUrl + '\n\nProperty URL: ' + propertyUrl;
+                        shareUrl = 'whatsapp://send?text=' + encodeURIComponent(message);
+                        break;
+                    case 'email':
+                        var subject = 'Check out this image';
+                        var body = 'Hi,\n\nI thought you might like this image: ' + imageUrl + '\n\nProperty URL: ' +
+                            propertyUrl;
+                        shareUrl = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+                        break;
+                    case 'linkedin':
+                        shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(propertyUrl) +
+                            '&summary=' + encodeURIComponent(emailBody);
+                        break;
+                    case 'twitter':
+                        shareUrl = 'https://twitter.com/share?url=' + encodeURIComponent(propertyUrl) + '&text=' +
+                            encodeURIComponent(emailBody);
+                        break;
+                    default:
+                        return;
                 }
 
-                // function setTourType(type) {
-                //     document.getElementById('tourTypeInput').value = type;
-                // }
+                window.open(shareUrl, '_blank');
+            }
 
-                function toggleDropdown(dropdownId) {
-                    var dropdown = document.getElementById(dropdownId);
-                    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-                        dropdown.style.display = 'block';
-                    } else {
-                        dropdown.style.display = 'none';
-                    }
-                }
-                window.addEventListener('click', function(event) {
-                    if (!event.target.matches('.icons')) {
-                        var dropdown = document.getElementById('shareimageDropdown');
-                        dropdown.style.display = 'none';
-                    }
-                });
+            document.addEventListener("DOMContentLoaded", function() {
+                const img = document.querySelector('.image-container img');
+                const arrowButtons = document.querySelectorAll('.left-arr');
 
-                function share(platform) {
-                    const propertyUrl = window.location.href;
-                    const imageUrl = document.querySelector('.carousel-item.active img').getAttribute('src');
-                    var shareUrl = '';
-                    var message = '';
-                    const emailBody = 'I thought you might be interested in this link: ' + propertyUrl;
-                    switch (platform) {
-                        case 'facebook':
-                            shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(propertyUrl);
-                            break;
-                        case 'whatsapp':
-                            message = 'Check out this image: ' + imageUrl + '\n\nProperty URL: ' + propertyUrl;
-                            shareUrl = 'whatsapp://send?text=' + encodeURIComponent(message);
-                            break;
-                        case 'email':
-                            var subject = 'Check out this image';
-                            var body = 'Hi,\n\nI thought you might like this image: ' + imageUrl + '\n\nProperty URL: ' +
-                                propertyUrl;
-                            shareUrl = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                            break;
-                        case 'linkedin':
-                            shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(propertyUrl) +
-                                '&summary=' + encodeURIComponent(emailBody);
-                            break;
-                        case 'twitter':
-                            shareUrl = 'https://twitter.com/share?url=' + encodeURIComponent(propertyUrl) + '&text=' +
-                                encodeURIComponent(emailBody);
-                            break;
-                        default:
-                            return;
-                    }
-
-                    window.open(shareUrl, '_blank');
+                if (!img || !img.complete || img.naturalWidth === 0) {
+                    arrowButtons.forEach(button => button.classList.add('no-image'));
                 }
 
-                document.addEventListener("DOMContentLoaded", function() {
-                    const img = document.querySelector('.image-container img');
-                    const arrowButtons = document.querySelectorAll('.left-arr');
-
-                    if (!img || !img.complete || img.naturalWidth === 0) {
-                        arrowButtons.forEach(button => button.classList.add('no-image'));
-                    }
-
-                    if (currentIndex <= 0) {
-                        arrowButtons.forEach(button => button.style.opacity = '0.5');
-                    }
-                });
-
-
-                function scrollToSection(sectionId) {
-                    const section = document.getElementById(sectionId);
-
-                    if (section) {
-                        const offset = -250;
-                        $('#pills-contact-tab').click()
-
-                        const scrollOptions = {
-                            behavior: 'smooth',
-                            block: 'start',
-                            inline: 'nearest'
-                        };
-
-                        window.scrollTo({
-                            top: section.offsetTop - offset,
-                            ...scrollOptions
-                        });
-                    }
+                if (currentIndex <= 0) {
+                    arrowButtons.forEach(button => button.style.opacity = '0.5');
                 }
+            });
 
-                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
-                    "October", "November", "December"
-                ];
-                const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                const dateSlots = [];
-                let currentIndex = 0;
 
-                function daysInThisMonth(now) {
-                    return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            function scrollToSection(sectionId) {
+                const section = document.getElementById(sectionId);
+
+                if (section) {
+                    const offset = -250;
+                    $('#pills-contact-tab').click()
+
+                    const scrollOptions = {
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: 'nearest'
+                    };
+
+                    window.scrollTo({
+                        top: section.offsetTop - offset,
+                        ...scrollOptions
+                    });
                 }
+            }
 
-                function setDates() {
-                    const currentDate = new Date();
-                    const totalDays = 365;
+            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December"
+            ];
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const dateSlots = [];
+            let currentIndex = 0;
 
-                    for (let index = 0; index <= totalDays; index++) {
-                        const today = addDayToCurrentDate(index);
-                        const year = today.getFullYear();
-                        const dayNames = today.getDay();
-                        const month = today.getMonth();
-                        const day = String(today.getDate()).padStart(2, '0');
-                        const dayName = days[dayNames];
-                        const months = monthNames[month];
-                        let obj = {
-                            "day": day,
-                            "dayName": dayName,
-                            "month": months,
-                            "year": year,
-                            "monthNum": String(month + 1).padStart(2, '0'),
-                        };
-                        dateSlots.push(obj);
-                    }
+            function daysInThisMonth(now) {
+                return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            }
+
+            function setDates() {
+                const currentDate = new Date();
+                const totalDays = 365;
+
+                for (let index = 0; index <= totalDays; index++) {
+                    const today = addDayToCurrentDate(index);
+                    const year = today.getFullYear();
+                    const dayNames = today.getDay();
+                    const month = today.getMonth();
+                    const day = String(today.getDate()).padStart(2, '0');
+                    const dayName = days[dayNames];
+                    const months = monthNames[month];
+                    let obj = {
+                        "day": day,
+                        "dayName": dayName,
+                        "month": months,
+                        "year": year,
+                        "monthNum": String(month + 1).padStart(2, '0'),
+                    };
+                    dateSlots.push(obj);
                 }
+            }
 
-                function addDayToCurrentDate(days) {
-                    let currentDate = new Date();
-                    return new Date(currentDate.setDate(currentDate.getDate() + days));
-                }
+            function addDayToCurrentDate(days) {
+                let currentDate = new Date();
+                return new Date(currentDate.setDate(currentDate.getDate() + days));
+            }
 
-                function date_active(element) {
-                    $('.date_block').removeClass('active');
+            function date_active(element) {
+                $('.date_block').removeClass('active');
 
-                    $(element).addClass('active');
-                    var day = $(element).find('.digit p').text().trim();
-                    var monthText = $(element).find('.months').text().trim();
-                    var month = ('0' + (new Date(Date.parse(monthText + ' 1, 2000')).getMonth() + 1)).slice(-2);
+                $(element).addClass('active');
+                var day = $(element).find('.digit p').text().trim();
+                var monthText = $(element).find('.months').text().trim();
+                var month = ('0' + (new Date(Date.parse(monthText + ' 1, 2000')).getMonth() + 1)).slice(-2);
 
-                    var year = new Date().getFullYear().toString().substr(-2);
-                    selectedDate = day + '-' + month + '-' + year;
-                    $('#selectedDateInput').val(selectedDate);
-                }
+                var year = new Date().getFullYear().toString().substr(-2);
+                selectedDate = day + '-' + month + '-' + year;
+                $('#selectedDateInput').val(selectedDate);
+            }
 
-                function renderDates(startIndex) {
-                    const dateSlotsContainer = document.getElementById('dateSlotsContainer');
-                    dateSlotsContainer.innerHTML = '';
+            function renderDates(startIndex) {
+                const dateSlotsContainer = document.getElementById('dateSlotsContainer');
+                dateSlotsContainer.innerHTML = '';
 
 
 
-                    for (let i = startIndex; i < startIndex + 3; i++) {
-                        if (dateSlots[i]) {
-                            const item = dateSlots[i];
-                            const dateBlock = document.createElement('div');
-                            dateBlock.className = 'date_block';
-                            dateBlock.setAttribute('onclick', "date_active(this)")
-                            dateBlock.innerHTML = `
+                for (let i = startIndex; i < startIndex + 3; i++) {
+                    if (dateSlots[i]) {
+                        const item = dateSlots[i];
+                        const dateBlock = document.createElement('div');
+                        dateBlock.className = 'date_block';
+                        dateBlock.setAttribute('onclick', "date_active(this)")
+                        dateBlock.innerHTML = `
                         <span class="days">${item.dayName}</span>
                         <div class="digit ${isSlotsSelected === i ? "slotsActive" : ""}">
                             <p>${item.day}</p>
@@ -1470,43 +1492,43 @@
                         <span class="months">${item.month}</span>
                     `;
 
-                            dateSlotsContainer.appendChild(dateBlock);
-                        }
+                        dateSlotsContainer.appendChild(dateBlock);
                     }
                 }
+            }
 
-                function prevDates() {
-                    const arrowButtons = document.querySelectorAll('.left-arr');
-                    if (currentIndex > 0) {
-                        currentIndex -= 3;
-                        renderDates(currentIndex);
-                    }
-                    if (currentIndex <= 0) {
-                        arrowButtons.forEach(button => button.style.opacity = '0.5');
-                    }
-                }
-
-                function nextDates() {
-                    const arrowButtons = document.querySelectorAll('.left-arr');
-                    if (currentIndex + 3 < dateSlots.length) {
-                        currentIndex += 3;
-                        renderDates(currentIndex);
-                    }
-                    arrowButtons.forEach(button => button.style.opacity = '1');
-                }
-
-                let isSlotsSelected = 0;
-
-                function selectedSlot(item, index) {
-
-                    console.log("Selected Slot:", item);
-                    isSlotsSelected = index;
+            function prevDates() {
+                const arrowButtons = document.querySelectorAll('.left-arr');
+                if (currentIndex > 0) {
+                    currentIndex -= 3;
                     renderDates(currentIndex);
                 }
+                if (currentIndex <= 0) {
+                    arrowButtons.forEach(button => button.style.opacity = '0.5');
+                }
+            }
 
-                setDates();
+            function nextDates() {
+                const arrowButtons = document.querySelectorAll('.left-arr');
+                if (currentIndex + 3 < dateSlots.length) {
+                    currentIndex += 3;
+                    renderDates(currentIndex);
+                }
+                arrowButtons.forEach(button => button.style.opacity = '1');
+            }
+
+            let isSlotsSelected = 0;
+
+            function selectedSlot(item, index) {
+
+                console.log("Selected Slot:", item);
+                isSlotsSelected = index;
                 renderDates(currentIndex);
-            </script>
+            }
+
+            setDates();
+            renderDates(currentIndex);
+        </script>
 
 
 
@@ -1522,6 +1544,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script type='text/javascript'>
         var ws_wsid = "{{ env('API_KEY') }}";
@@ -1750,67 +1773,76 @@
 
         var baseUrl = "{{ env('BACKEND_URL') }}";
         document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel1');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-    const bigImage = document.getElementById('bigImage');
-    const defaultImageUrl = "{{ asset('images/no_image.jpg') }}";
-    let images = {!! json_encode($propertyDetails['images']) !!}.map(url => url);
+            const carousel = document.querySelector('.carousel1');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const bigImage = document.getElementById('bigImage');
+            const defaultImageUrl = "{{ asset('images/no_image.jpg') }}";
+            let images = {!! json_encode($propertyDetails['images']) !!}.map(url => url);
 
-    if (images.length === 0) {
-        images = [defaultImageUrl];
-    }
+            if (images.length === 0) {
+                images = [defaultImageUrl];
+            }
 
-    let currentIndex = 0;
+            let currentIndex = 0;
 
-    function showImage(index) {
-        carousel.style.transform = `translateX(-${index * 110}px)`;
-        bigImage.src = images[index];
-    }
+            function showImage(index) {
+                const carouselWidth = document.querySelector('.carousel-container1').offsetWidth;
+                const totalThumbnailsWidth = images.length * 110; // Assuming 110px per thumbnail
+                const maxTranslateX = Math.max(0, totalThumbnailsWidth - carouselWidth);
 
-    images.forEach((imageUrl, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.classList.add('thumbnail1');
-        thumbnail.src = imageUrl;
-        thumbnail.alt = `Thumbnail ${index + 1}`;
-        thumbnail.setAttribute('data-index', index);
-        thumbnail.addEventListener('click', () => {
-            currentIndex = index;
+                let translateX = index * 110;
+                if (translateX > maxTranslateX) {
+                    translateX = maxTranslateX; // Prevents shifting too far
+                }
+
+                carousel.style.transform = `translateX(-${translateX}px)`;
+                bigImage.src = images[index];
+            }
+
+
+            images.forEach((imageUrl, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.classList.add('thumbnail1');
+                thumbnail.src = imageUrl;
+                thumbnail.alt = `Thumbnail ${index + 1}`;
+                thumbnail.setAttribute('data-index', index);
+                thumbnail.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage(currentIndex);
+                });
+                carousel.appendChild(thumbnail);
+            });
+
             showImage(currentIndex);
+
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            bigImage.addEventListener('click', () => {
+                // Update the carousel's active slide based on the currentIndex
+                const carouselItems = document.querySelectorAll('.carousel-item');
+                carouselItems.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            });
+
+            // When the modal is shown, set the correct slide
+            var imageModal = document.getElementById('imageModal');
+            imageModal.addEventListener('shown.bs.modal', function() {
+                const carouselItems = document.querySelectorAll('.carousel-item');
+                carouselItems.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            });
         });
-        carousel.appendChild(thumbnail);
-    });
-
-    showImage(currentIndex);
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    });
-
-    bigImage.addEventListener('click', () => {
-        // Update the carousel's active slide based on the currentIndex
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        carouselItems.forEach((item, index) => {
-            item.classList.toggle('active', index === currentIndex);
-        });
-    });
-
-    // When the modal is shown, set the correct slide
-    var imageModal = document.getElementById('imageModal');
-    imageModal.addEventListener('shown.bs.modal', function () {
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        carouselItems.forEach((item, index) => {
-            item.classList.toggle('active', index === currentIndex);
-        });
-    });
-});
-
     </script>
 
     <script>
@@ -1843,95 +1875,10 @@
                     document.getElementById("map-btn").disabled = true;
                 }
             });
-            $('#tourForm').validate({
-
-                rules: {
-                    first_name: "required",
-                    last_name: "required",
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    phone: {
-                        required: true,
-                        minlength: 10
-                    },
-                    role: "required",
-                    time: "required",
-                    message: "required",
-                    terms: "required"
-                },
-                messages: {
-                    first_name: "Please enter your first name",
-                    time: "Please choose a time",
-                    last_name: "Please enter your last name",
-                    email: "Please enter a valid email address",
-                    phone: {
-                        required: "Please enter your phone number",
-                        minlength: "Phone number must be at least 10 digits long"
-                    },
-                    role: "Please select your role",
-                    message: "Please enter your message",
-                    terms: "Please agree to the Terms of Use"
-                },
-                errorPlacement: function(error, element) {
-                    if (element.attr("name") == "time")
-                        error.appendTo("#timeInput-error");
-                    else if (element.attr("name") == "terms")
-                        error.appendTo("#termsCheckbox-error");
-                    else
-                        error.insertAfter(element);
-                },
-                submitHandler: function(form) {
-                    const date = document.querySelector('#tourForm input[name="selectedDate"]').value
-                        .trim();
-                    if (date === '') {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Validation Error',
-                            text: 'Please select the date!',
-                            confirmButtonText: 'Continue to Website'
-                        });
-                        return;
-                    }
-                    var firstName = $(form).find('input[name="first_name"]').val();
-                    var lastName = $(form).find('input[name="last_name"]').val();
-                    var fullName = firstName + ' ' + lastName;
-                    $(form).find('input[name="name"]').val(fullName);
-                    $.ajax({
-                        url: '/tour/submit',
-                        type: 'POST',
-                        data: $(form).serialize(),
-                        dataType: 'json',
-                        success: function(response) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: 'Tour form submitted successfully',
-                                confirmButtonText: 'Continue to Website'
-                            });
-                            form.reset();
-                            $('#messageTextarea').val(
-                                "I would appreciate more information about " + $(
-                                    '.heading').text() + ".");
-                        },
-                        error: function(xhr, status, error) {
-                            console.error(xhr.responseText);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: 'An error occurred while submitting the form. Please try again later.'
-                            });
-                        }
-                    });
-                    return false; // Prevent form submission
-                }
-            });
-
             $('#contactForm').validate({
                 rules: {
-                    first_names: "required",
-                    last_names: "required",
+                    first_names: 'required',
+                    last_names: 'required',
                     phone: {
                         required: true,
                         minlength: 10
@@ -1940,37 +1887,47 @@
                         required: true,
                         email: true
                     },
-                    role: "required",
-                    message: "required",
-                    term: "required"
+                    role: 'required',
+                    message: 'required',
+                    term: 'required'
                 },
                 messages: {
-                    first_names: "Please enter your first name",
-                    last_names: "Please enter your last name",
+                    first_names: 'Please enter your first name',
+                    last_names: 'Please enter your last name',
                     phone: {
-                        required: "Please enter your phone number",
-                        minlength: "Phone number must be at least 10 digits long"
+                        required: 'Please enter your phone number',
+                        minlength: 'Phone number must be at least 10 digits long'
                     },
-                    email: "Please enter a valid email address",
-                    role: "Please select your role",
-                    message: "Please enter your message",
-                    term: "Please agree to the Terms of Use"
+                    email: 'Please enter a valid email address',
+                    role: 'Please select your role',
+                    message: 'Please enter your message',
+                    term: 'Please agree to the Terms of Use'
                 },
                 errorPlacement: function(error, element) {
-                    if (element.attr("name") == "term")
-                        error.appendTo("#checkbx");
-                    else if (element.attr("name") == "role")
-                        error.appendTo("#roleerror");
-                    else
+                    if (element.attr('name') == 'term') {
+                        error.appendTo('#checkbx');
+                    } else if (element.attr('name') == 'role') {
+                        error.appendTo('#roleerror');
+                    } else {
                         error.insertAfter(element);
+                    }
                 },
                 submitHandler: function(form) {
-                    // If form is valid, submit using AJAX
                     var firstName = $(form).find('input[name="first_names"]').val();
                     var lastName = $(form).find('input[name="last_names"]').val();
                     var fullName = firstName + ' ' + lastName;
                     $(form).find('input[name="name"]').val(fullName);
+                    var gresponse = grecaptcha.getResponse(0);
+                    if (gresponse.length == 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Please complete the reCAPTCHA.',
+                        });
+                        return false;
+                    }
                     var formData = $(form).serialize();
+                    formData += '&g-recaptcha-response=' + encodeURIComponent(gresponse);
                     const headingText = $('.heading').text();
                     const dynamicMessage = "I would appreciate more information about " + headingText +
                         ".";
@@ -1989,9 +1946,9 @@
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     form.reset();
+                                    grecaptcha.reset();
                                     $('#contactmessageTextarea').val(
-                                        "I would appreciate more information about your services. " +
-                                        $('.heading').text() + ".");
+                                        dynamicMessage);
                                 }
                             });
                         },
@@ -2004,6 +1961,113 @@
                             });
                         }
                     });
+                }
+            });
+
+            // Validate Tour Form
+            $('#tourForm').validate({
+                rules: {
+                    first_name: 'required',
+                    last_name: 'required',
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    phone: {
+                        required: true,
+                        minlength: 10
+                    },
+                    role: 'required',
+                    time: 'required',
+                    message: 'required',
+                    terms: 'required'
+                },
+                messages: {
+                    first_name: 'Please enter your first name',
+                    time: 'Please choose a time',
+                    last_name: 'Please enter your last name',
+                    email: 'Please enter a valid email address',
+                    phone: {
+                        required: 'Please enter your phone number',
+                        minlength: 'Phone number must be at least 10 digits long'
+                    },
+                    role: 'Please select your role',
+                    message: 'Please enter your message',
+                    terms: 'Please agree to the Terms of Use'
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr('name') == 'time') {
+                        error.appendTo('#timeInput-error');
+                    } else if (element.attr('name') == 'terms') {
+                        error.appendTo('#termsCheckbox-error');
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                submitHandler: function(form) {
+                    const date = document.querySelector('#tourForm input[name="selectedDate"]').value
+                        .trim();
+                    if (date === '') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Validation Error',
+                            text: 'Please select the date!',
+                            confirmButtonText: 'Continue to Website'
+                        });
+                        return;
+                    }
+
+                    var gresponse = grecaptcha.getResponse(1);
+                    if (gresponse.length === 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Please complete the reCAPTCHA.',
+                        });
+                        return false;
+                    }
+
+
+                    var firstName = $(form).find('input[name="first_name"]').val();
+                    var lastName = $(form).find('input[name="last_name"]').val();
+                    var fullName = firstName + ' ' + lastName;
+                    $(form).find('input[name="name"]').val(fullName);
+
+                    var formData = new FormData(form);
+                    formData.append('g-recaptcha-response', gresponse);
+
+                    $.ajax({
+                        url: '/tour/submit',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        dataType: 'json',
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Tour form submitted successfully',
+                                confirmButtonText: 'Continue to Website'
+                            });
+                            form.reset();
+                            grecaptcha.reset(1);
+
+
+                            $('#messageTextarea').val(
+                                "I would appreciate more information about " + $(
+                                    '.heading').text() + ".");
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+                        }
+                    });
+                    return false;
                 }
             });
 
@@ -2043,14 +2107,22 @@
                     else
                         error.insertAfter(element);
                 },
-                submitHandler: function(form) {
-                    // If form is valid, submit using AJAX
-                    const submitButton = document.getElementById('contactsubmit');
-                    submitButton.disabled = true;
+
+                submitHandler: function(form, event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    var gresponse = grecaptcha.getResponse(2);
+                    if (gresponse.length == 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Please complete the reCAPTCHA.',
+                        });
+                        return false;
+                    }
+
                     var formData = $(form).serialize();
-                    const headingText = $('.heading').text();
-                    const dynamicMessage = "I would appreciate more information about " + headingText +
-                        ".";
+                    formData += '&g-recaptcha-response=' + encodeURIComponent(gresponse);
 
                     $.ajax({
                         url: '/contact/submit',
@@ -2062,27 +2134,13 @@
                                 icon: 'success',
                                 title: 'Success',
                                 text: 'Contact form submitted successfully',
-                                // showCancelButton: true,
-                                confirmButtonText: 'Continue to Website',
-
+                                confirmButtonText: 'Continue to Website'
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     form.reset();
-                                    $('#contactpopupmessageTextarea').val(
-                                        "I would appreciate more information about your services. " +
-                                        $('.heading').text() + ".");
-
-                                    document.getElementById('staticBackdrop')
-                                        .classList
-                                        .remove('show');
-                                    document.body.classList.remove('modal-open');
-                                    document.querySelector('.modal-backdrop')
-                                        .remove();
-                                    window.location.reload();
+                                    grecaptcha.reset(2);
                                 }
                             });
-                            // $('#contactpopup')[0].reset();
-                            // submitButton.disabled = false;
                         },
                         error: function(xhr, status, error) {
                             console.error(xhr.responseText);
@@ -2091,11 +2149,12 @@
                                 title: 'Error',
                                 text: 'An error occurred while submitting the form. Please try again later.'
                             });
-
                         }
                     });
 
+                    return false; // Ensure the form doesn't submit normally
                 }
+
             });
 
 
@@ -2186,9 +2245,9 @@
                     ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
                     : '' !!}";
 
-                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
-    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
-    : '' !!}";
+                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+                    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
+                    : '' !!}";
 
                 var formattedfireplace = "{!! isset($propertyDetails['FireplaceFeatures'])
                     ? str_replace(',', ', ', $propertyDetails['FireplaceFeatures'])
@@ -2239,9 +2298,9 @@
                 var formattedparking = "{!! isset($propertyDetails['ParkingFeatures'])
                     ? str_replace(',', ', ', $propertyDetails['ParkingFeatures'])
                     : '' !!}";
-                    var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
-    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
-    : '' !!}";
+                var formattedammenties = "{!! isset($propertyDetails['CommunityFeatures'])
+                    ? addslashes(str_replace(',', ', ', $propertyDetails['CommunityFeatures']))
+                    : '' !!}";
 
                 var formattedfireplace = "{!! isset($propertyDetails['LotFeatures']) ? str_replace(',', ', ', $propertyDetails['LotFeatures']) : '' !!}";
                 var formattedaircon = "{!! isset($propertyDetails['Appliances']) ? str_replace(',', ', ', $propertyDetails['Appliances']) : '' !!}";
@@ -2273,25 +2332,6 @@
                 var pricePerYearPerSqft = pricePerSqft / 12;
 
 
-                var leaseAmount = parseFloat("{{ $propertyDetails['LeaseAmount'] ?? 0 }}");
-                var leaseAmountFrequency = "{{ $propertyDetails['LeaseAmountFrequency'] ?? '' }}";
-                var listPrice = parseFloat("{{ $propertyDetails['ListPrice'] ?? 0 }}");
-                var leaseMeasure = "{{ $propertyDetails['LeaseMeasure'] ?? '' }}";
-
-                var formattedLeaseAmount = leaseAmount.toLocaleString();
-                var formattedListPrice = listPrice.toLocaleString();
-
-                if (leaseAmount && leaseAmountFrequency) {
-                    var leaseInfo = `$${formattedLeaseAmount} / ${leaseAmountFrequency}`;
-                    if (leaseMeasure) {
-                        leaseInfo += ` / ${leaseMeasure}`;
-                    }
-                    document.getElementById('lstprice').textContent = leaseInfo;
-                } else {
-                    document.querySelector('.price').textContent = `$${formattedListPrice}`;
-                }
-
-
 
 
                 $('.depo').html('<strong>Property Freature:</strong>');
@@ -2311,6 +2351,44 @@
                 $('.additionalroom').text("{{ $propertyDetails['Zoning'] }}" || 'N/A');
                 $('.equipment').text("{{ $otherColumnsData['FrontageLength'] ?? 'N/A' }}" || 'N/A');
             }
+
+
+
+            var leaseAmount = parseFloat("{{ $propertyDetails['LeaseAmount'] ?? 0 }}");
+            var leaseAmountFrequency = "{{ $propertyDetails['LeaseAmountFrequency'] ?? '' }}";
+            var listPrice = parseFloat("{{ $propertyDetails['ListPrice'] ?? 0 }}");
+            var leaseMeasure = "{{ $propertyDetails['LeaseMeasure'] ?? '' }}";
+
+            var formattedLeaseAmount = leaseAmount.toLocaleString();
+            var formattedListPrice = listPrice.toLocaleString();
+            var leaseInfo = "";
+
+            // If ListPrice is 0 and LeaseAmount exists, show LeaseAmount
+            if (listPrice === 0 && leaseAmount) {
+                leaseInfo = `$${formattedLeaseAmount}`;
+                if (leaseAmountFrequency) {
+                    leaseInfo += ` / ${leaseAmountFrequency}`;
+                }
+                if (leaseMeasure) {
+                    leaseInfo += ` / ${leaseMeasure}`;
+                }
+            } else if (leaseAmount && leaseAmountFrequency && listPrice) {
+                leaseInfo = `$${formattedListPrice} or $${formattedLeaseAmount} / ${leaseAmountFrequency}`;
+                if (leaseMeasure) {
+                    leaseInfo += ` / ${leaseMeasure}`;
+                }
+            } else if (leaseAmount && leaseAmountFrequency) {
+                leaseInfo = `$${formattedLeaseAmount} / ${leaseAmountFrequency}`;
+                if (leaseMeasure) {
+                    leaseInfo += ` / ${leaseMeasure}`;
+                }
+            } else {
+                leaseInfo = `$${formattedListPrice}`;
+            }
+
+            document.getElementById('lstprice').textContent = leaseInfo;
+
+
             var agentSlug = @json($agent_slug);
 
             if (agentSlug.slug_url) {
@@ -2329,7 +2407,7 @@
                 if ("{{ $propertyDetails['StreetSuffix'] }}" !== '' &&
                     "{{ $propertyDetails['UnitNumber'] }}" !== '') {
                     headingText +=
-                        "{{ $propertyDetails['UnitNumber'] }}, {{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }} {{ $propertyDetails['StreetSuffix'] }} {{ $propertyDetails['StreetDirSuffix'] }}";
+                        "#{{ $propertyDetails['UnitNumber'] }}, {{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }} {{ $propertyDetails['StreetSuffix'] }} {{ $propertyDetails['StreetDirSuffix'] }}";
                 } else if ("{{ $propertyDetails['StreetSuffix'] }}" !== '') {
                     headingText +=
                         "{{ $propertyDetails['StreetNumber'] }} {{ $propertyDetails['StreetName'] }} {{ $propertyDetails['StreetSuffix'] }} {{ $propertyDetails['StreetDirSuffix'] }}";
@@ -2372,7 +2450,8 @@
 
             // $('.heading').text(headingText);
 
-            const dynamiccontactMessage = "I would appreciate more information about your services.";
+            const dynamiccontactMessage = "I would appreciate more information about your services. ";
+            //+headingText + ".";
 
             $('#contactmessageTextarea').val(dynamiccontactMessage);
             $('#contactpopupmessageTextarea').val(dynamiccontactMessage);
@@ -2424,8 +2503,8 @@
                 var halfBathrooms = {{ $propertyDetails['BathroomsHalf'] ?? 0 }};
 
                 var totalBathrooms = fullBathrooms + halfBathrooms;
-    
-    return totalBathrooms + (totalBathrooms > 1 ? ' baths' : ' bath');
+
+                return totalBathrooms + (totalBathrooms > 1 ? ' baths' : ' bath');
             });
 
 
@@ -2434,7 +2513,7 @@
             if (mls_type == 1) {
                 $('#data-providing-mls').html(
                     'Data provided by: <a class="text_style" href="https://realtorsofedmonton.com/" target="_blank">REALTORS® Association of Edmonton</a>'
-                    );
+                );
             }
 
             $('.years').text("{{ $propertyDetails['YearBuilt'] }}" || 'N/A');
@@ -2508,9 +2587,19 @@
             //     $('.video').hide();
             //     $('.vidtab').hide();
             // }
-            // console.log(virtualTourImageUrl);
-            if (virtualTourImageUrl != '') {
+            //console.log('virtual_vijay'+virtualTourImageUrl);
+            function decodeHtmlEntities(str) {
+                const txt = document.createElement('textarea');
+                txt.innerHTML = str;
+                return txt.value;
+            }
+            if (virtualTourImageUrl != '' && virtualTourImageUrl !== 'N/A') {
                 $('.Virtual').show();
+                if (virtualTourImageUrl.includes("youtu.be")) {
+                    let videoId = virtualTourImageUrl.split('/').pop().split('?')[0];
+                    virtualTourImageUrl = "https://www.youtube.com/embed/" + videoId;
+                }
+
                 $('#virtualTourContainer').html('<iframe src="' + virtualTourImageUrl +
                     '" width="100%"  frameborder="0" allowfullscreen></iframe>');
             } else {
@@ -2522,33 +2611,46 @@
                 return String(phoneNumber).replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
             }
 
-            $('#ListOfficeName').text("{{ $propertyDetails['ListOfficeName'] }}" || 'Myproagent');
+            //$('#ListOfficeName').text("{{ $propertyDetails['ListOfficeName'] }}" || 'Myproagent');
+            const officeName = decodeHtmlEntities("{{ $propertyDetails['ListOfficeName'] }}" ||
+                'Real Estate Professionals Inc.');
+            $('#ListOfficeName').text(officeName);
             $('#ListOfficePhone').text("{{ $propertyDetails['ListOfficePhone'] }}" || 'Myproagent');
             // $('.ListOfficeMobile').text("{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '403-547-6150' }}");
 
             let phoneNumberAgent = "{{ $otherColumnsData['RAE_LA1_PhoneNumber3'] ?? '' }}";
             if (phoneNumberAgent.trim() !== '') {
-                $('.ListOfficeMobile').html('<i class="ri-smartphone-line"></i> <span class="ListOfficeMobile font-style">' + phoneNumberAgent + '</span>');
+                $('.ListOfficeMobile').html(
+                    '<i class="ri-smartphone-line"></i> <span class="ListOfficeMobile font-style">' +
+                    phoneNumberAgent + '</span>');
             } else {
                 $('.ListOfficeMobile').html('');
             }
 
 
-            
 
 
-            $('#ListAgentAddress').html(`{!! ($otherColumnsData['RAE_LO1_OrgAddressStreet'] ?? false) && ($otherColumnsData['RAE_LO1_OrgCity'] ?? false) && ($otherColumnsData['RAE_LO1_OrgZip'] ?? false) 
-    ? $otherColumnsData['RAE_LO1_OrgAddressStreet'] . '<br>' . $otherColumnsData['RAE_LO1_OrgCity'] . ', ' . $otherColumnsData['RAE_LO1_OrgZip'] 
-    : '202, 5403 CROWCHILD TRAIL N.W.<br>CALGARY, Alberta T3B4Z1' !!}`);
 
-            
-            
+            $('#ListAgentAddress').html(`{!! ($otherColumnsData['RAE_LO1_OrgAddressStreet'] ?? false) &&
+            ($otherColumnsData['RAE_LO1_OrgCity'] ?? false) &&
+            ($otherColumnsData['RAE_LO1_OrgZip'] ?? false)
+                ? $otherColumnsData['RAE_LO1_OrgAddressStreet'] .
+                    '<br>' .
+                    $otherColumnsData['RAE_LO1_OrgCity'] .
+                    ', ' .
+                    $otherColumnsData['RAE_LO1_OrgZip']
+                : htmlspecialchars_decode($propertyDetails['ListOfficeAddress'] ?? '') !!}`);
+
+
+
+
 
             var agentPhono = agentSlug.phone;
             var contacto = agentSlug.office_no;
 
             var formattedAgentPhono = formatPhoneNumber(agentPhono);
             var formattedContacto = formatPhoneNumber(contacto);
+
             if (agentSlug.slug_url) {
                 $('.agentname').text("{{ $propertyDetails['ListAgentFullName'] }}" || 'Myproagent');
 
@@ -2559,7 +2661,9 @@
                 var agentPhono = formattedAgentPhono;
                 var contacto = formattedContacto;
                 if (agentimage) {
-                    imgElements.src = agentimage;
+                    imgElements.src = agentimage.startsWith('http') ?
+                        agentimage :
+                        `${baseUrl}/${agentimage}`;
                 } else {
                     imgElements.src = Url + '/images/no_image.jpg';
                 }
@@ -2589,13 +2693,12 @@
                 const agentimage = Url + "/images/logo.svg"
                 const imgElements = document.querySelector('.agent-img');
                 if (agentimage) {
-                    if(mls_type == 1)
-                    {
-                        document.getElementById('agent-profile').style.display='none';
-                    }
-                    else{
+                    /*if(mls_type == 1)
+                    {*/
+                    document.getElementById('agent-profile').style.display = 'none';
+                    /*} else{
                         imgElements.src = agentimage;
-                    }
+                    }*/
                 } else {
                     imgElements.src = Url + '/images/no_image.jpg';
                 }
@@ -2634,6 +2737,17 @@
 
             if (list_agent_full_name) {
                 $('.agentname').text(list_agent_full_name);
+            }
+            var listingDate = "{{ $propertyDetails['ListingContractDate'] }}";
+            if (listingDate) {
+                var formattedDate = new Date(listingDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                });
+                document.querySelector('.listed-date').textContent = formattedDate;
+            } else {
+                document.querySelector('.listed-date').textContent = 'N/A';
             }
             var rawDate = "{{ $propertyDetails['ModificationTimestamp'] }}";
             if (rawDate) {

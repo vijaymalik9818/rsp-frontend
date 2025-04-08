@@ -187,8 +187,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                             <h2 class="title mobile-fs">Exclusive Listings</h2>
                         </div>
                         <p class="paragraph">
-                            Here’s an inside look at all our amazing active home listings currently posted on the MLS<span
-                                class='r'>®️</span> System.
+                            Here’s an inside look at all our amazing active home listings currently posted on the MLS® System.
                         </p>
                     </div>
                 </div>
@@ -542,6 +541,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                                             name="additional_information" />
 
                                     </div>
+                                    <div class="col-lg-12">
+                                        <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                    </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="ud-btn btn-primary w-100">
                                             Get Appointment
@@ -560,6 +562,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initMaps"
         async defer></script>
@@ -696,7 +699,18 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
             }
         },
         submitHandler: function(form) {
+            var gresponse = grecaptcha.getResponse();
+            if (gresponse.length == 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Please complete the reCAPTCHA.',
+                });
+                return false; 
+            }
             var formData = new FormData(form);
+            formData.append('g-recaptcha-response', grecaptcha.getResponse());
+
 
             fetch(apiUrl, {
                 method: 'POST',
@@ -717,6 +731,8 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
         confirmButtonText: 'Continue to Website'
         })
     form.reset();
+    grecaptcha.reset();  
+
 })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);

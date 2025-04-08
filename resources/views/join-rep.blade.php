@@ -409,7 +409,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 
 
 <div class=' bgc-gray py-5'>
-    <h6 class='text-center  hero-title animate-up-1 testi-heading fw-medium '>What REALTORS<span>&#174;</span>️ say about Real Estate
+    <h6 class='text-center  hero-title animate-up-1 testi-heading fw-medium '>What REALTORS️® say about Real Estate
         Professionals Inc.</h6>
     <div id="carouselExampleAutoplaying" class="testimonials carousel slide ">
         <div class="carousel-inner">
@@ -716,7 +716,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
             <div class="col-lg-10 col-xl-9 m-auto wow fadeInUp" data-wow-delay="300ms">
                 <div class="main-title text-center">
                     <h2 class="title text-capitalize text-white">
-                        REALTOR<span>&#174;</span>️ Intake form
+                        REALTOR® Intake form
                     </h2>
                     <!-- <p class="text text-white">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -911,7 +911,9 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                                     </label>
                                     <input type="text" class="form-control" name="about" placeholder=" " />
                                 </div>
-
+                                <div class="col-lg-12">
+                                    <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                </div>
 
                                 <div class="col-md-6 m-auto mt20">
                                     <button type="submit" class="ud-btn btn-primary w-100"> Submit </button>
@@ -936,6 +938,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"></script>
 <!-- Include this script in your HTML file -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
 $(document).ready(function() {
 
@@ -1048,7 +1051,17 @@ var apiUrl = header + '/api/agents/join-rep-form';
             }
         },
         submitHandler: function(form) {
+            var gresponse = grecaptcha.getResponse();
+            if (gresponse.length == 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Please complete the reCAPTCHA.',
+                });
+                return false; 
+            }
             var formData = new FormData(form);
+            formData.append('g-recaptcha-response', grecaptcha.getResponse());
             var practiceAreas = formData.getAll('practice_areas[]').join(', ');
             formData.set('practice_areas', practiceAreas);
 
@@ -1072,6 +1085,7 @@ var apiUrl = header + '/api/agents/join-rep-form';
                         confirmButtonText: 'Continue to Website'
                     }).then(() => {
                         form.reset();
+                        grecaptcha.reset();
                     });
                 })
                 .catch(error => {

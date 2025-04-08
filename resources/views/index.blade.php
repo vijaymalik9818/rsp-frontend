@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <style>
-       #loader {
+        #loader {
             z-index: 999;
             background-color: #fff;
             border: 5px solid #f3f3f3;
@@ -33,7 +33,7 @@
         .blur {
             filter: blur(5px);
         }
-    
+
         #suggestion-list {
             position: fixed;
             /* Position the suggestion list */
@@ -126,6 +126,7 @@
         .listing-style5 .list-content {
             height: 193px;
         }
+
         div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
             border: 0;
             border-radius: .25em;
@@ -134,7 +135,11 @@
             color: #fff;
             font-size: 1em;
         }
-.pac-container {z-index: 99999999999 !important;}
+
+        .pac-container {
+            z-index: 99999999999 !important;
+        }
+
         @media (max-width: 600px) {
             .profileImg {
                 max-width: 100%;
@@ -163,12 +168,12 @@
 
 
             .listing-sec .navi_pagi_top_right.owl-theme .owl-nav {
-        right: -113px !important;
-    }
+                right: -113px !important;
+            }
 
             .listing-sec .navi_pagi_top_right.owl-theme .owl-dots {
-        left: 36% !important;
-    }
+                left: 36% !important;
+            }
 
             #ui-id-1 {
                 width: 85% !important;
@@ -176,8 +181,8 @@
         }
 
 
-        .white{
-            color: #fff  !important;
+        .white {
+            color: #fff !important;
         }
     </style>
     <!-- Home Banner Style V1 -->
@@ -189,10 +194,12 @@
                     <div class="col-xl-8 advance-style3 inner-banner-style3">
                         <div class="d-flex flex-column justify-content-center p-3">
                             <h2 class="hero-title animate-up-1 text-shadow text-white">
-                                REAL ESTATE PROFESSIONALS <br />you can count on - Go With The Pros<span class='white'>&#x2122;</span> !
+                                REAL ESTATE PROFESSIONALS <br />you can count on - Go With The Pros<span
+                                    class='white'>&#x2122;</span> !
                             </h2>
-                             <p class="text-white text-shadow fs-6 home-p">
-                                Since 2002, we’ve made home buying and selling throughout Alberta <span class='fw-bold'> <br>SIMPLE, STRESS FREE and STRAIGHT FORWARD 
+                            <p class="text-white text-shadow fs-6 home-p">
+                                Since 2002, we’ve made home buying and selling throughout Alberta <span class='fw-bold'>
+                                    <br>SIMPLE, STRESS FREE and STRAIGHT FORWARD
                                 </span> for our clients.
                             </p>
                         </div>
@@ -239,7 +246,7 @@
                                                     <a class="ud-btn btn-primary" href="/search" type="submit"
                                                         id="searchButton">Search
                                                         <!-- <span class="flaticon-search"></span> -->
-                                                </a>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -303,12 +310,13 @@
             <div class="modal-content">
                 <div class="modal-header d-flex align-items-center justify-content-center text-center">
                     <h1 class="modal-title fs-5" id="staticBackdropLabel">Get a Listing Appointment</h1>
-                    <button type="button" class="btn-close m-0  close-button" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close m-0  close-button" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body ">
                     <div class="card p-3 mt-2">
                         <div class="card-body">
-                              <form action="" class="form-style1" id="form-style1">
+                            <form action="" class="form-style1" id="form-style1">
                                 <div class="row row-gap-3">
                                     <div class="col-md-6">
                                         <label class="heading-color ff-heading fw600 mb10">First Name<span
@@ -341,12 +349,14 @@
                                         <!-- Check if $address is set -->
                                         @if (isset($address))
                                             <!-- If address is pre-filled, populate the input field -->
-                                            <input type="text" class="form-control address-inputs" placeholder="Property Address"
-                                                required name="property_address" value="{{ $address }}">
+                                            <input type="text" class="form-control address-inputs"
+                                                placeholder="Property Address" required name="property_address"
+                                                value="{{ $address }}">
                                         @else
                                             <!-- If address is not pre-filled, load Google Places Autocomplete -->
-                                            <input type="text" id="property_address" class="form-control address-inputs"
-                                                placeholder="Property Address" required name="property_address">
+                                            <input type="text" id="property_address"
+                                                class="form-control address-inputs" placeholder="Property Address"
+                                                required name="property_address">
                                         @endif
                                     </div>
 
@@ -477,6 +487,11 @@
                                             name="additional_information" />
 
                                     </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"></div>
+                                    </div>
+
                                     <div class="col-md-12">
                                         <button type="submit" class="ud-btn btn-primary w-100">
                                             Get Appointment
@@ -500,8 +515,7 @@
                     <div class="main-title2 mb-3">
                         <h2 class="title mobile-fs"><i class="fa-thin fa-gem"></i> Diamond Listings</h2>
                         <p class="paragraph">
-                            Here’s an inside look into our amazing luxury home listings currently posted on the MLS<span
-                                class='r'>®️</span> System.
+                            Here’s an inside look into our amazing luxury home listings currently posted on the MLS® System.
                         </p>
                     </div>
                 </div>
@@ -564,10 +578,12 @@
                                     We’re Well Connected!
                                 </h6>
                                 <p class="text mb-0 fz15">
-                                    We're one of the largest INDEPENDENTLY OWNED real estate brokerages in Alberta, with over 370 REALTORS<span>&#174;</span>, and have an internal network with trusted third-party vendors like 
-                                        property inspectors, lawyers, and mortgage brokers, all working together to help you 
-                                        market, sell, or purchase your dream home.
-                                        
+                                    We're one of the largest INDEPENDENTLY OWNED real estate brokerages in Alberta, with
+                                    over 370 REALTORS<span>&#174;</span>, and have an internal network with trusted
+                                    third-party vendors like
+                                    property inspectors, lawyers, and mortgage brokers, all working together to help you
+                                    market, sell, or purchase your dream home.
+
                                 </p>
                             </div>
                         </div>
@@ -583,7 +599,9 @@
                                 </h6>
                                 <p class="text mb-0 fz15">
                                     Leverage our extensive network of over 370 REALTORS<span>&#174;</span>,
-                                    across Alberta. We employ a proactive, tech-savvy strategy to showcase your home on both our expanding brokerage platform and the MLS<span>&#174;</span> system, ensuring global visibility.
+                                    across Alberta. We employ a proactive, tech-savvy strategy to showcase your home on both
+                                    our expanding brokerage platform and the MLS<span>&#174;</span> system, ensuring global
+                                    visibility.
                                 </p>
                             </div>
                         </div>
@@ -608,15 +626,16 @@
                             <h2 class="title mobile-fs">Exclusive Listings</h2>
                         </div>
                         <p class="paragraph">
-                            Here’s an inside look at all our amazing active home listings currently posted on the MLS<span
-                                class='r'>®️</span> System.
+                            Here’s an inside look at all our amazing active home listings currently posted on the MLS®
+                            System.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="dark-light-navtab style2 text-start text-lg-end mt-0 mt-lg-4 mb-4">
                         <div class="text-start text-lg-end mb-3">
-                            <a class="ud-btn btn-outline-rep bg-red" target="_blank" href="/search/exclusive">See All Exclusive
+                            <a class="ud-btn btn-outline-rep bg-red" target="_blank" href="/search/exclusive">See All
+                                Exclusive
                                 Listings</a>
                         </div>
                     </div>
@@ -655,8 +674,9 @@
                     <img src="/frontend/images/home/lucrative.webp" class="whyrepIcons mb20" />
                     <!-- <h3 class="text-BlueA400">01.</h3> -->
                     <h4 class="text-white">Instant Savings at REP!</h4>
-                         <p class="text-white">
-                    We take pride in offering one of the lowest brokerage fees and monthly administrative charges for our
+                    <p class="text-white">
+                        We take pride in offering one of the lowest brokerage fees and monthly administrative charges for
+                        our
                         associates in Alberta, alongside our class-leading in-house commissions advance program, which
                         ensures more money stays in your pockets – where it belongs!
                     </p>
@@ -679,7 +699,7 @@
                     <p class="text-white">
                         We’re focused on investing in your growth. Our brokerage offers educational courses, presentations
                         from industry experts and a class leading 1:1 mentorship program. Throughout the year, we also host
-                        various social events for our REALTORS<span>&#174;</span>️ and their family, like our Winter Holiday Celebration!
+                        various social events for our REALTORS️® and their family, like our Winter Holiday Celebration!
 
                     </p>
                 </div>
@@ -698,7 +718,7 @@
                     <div class="main-title wow fadeInUp mb-4" data-wow-delay="100ms">
                         <h2 class="title">Search by Popular Municipalities</h2>
                         <p class="paragraph">
-                              Explore various properties throughout the gorgeous cities and towns spread across Alberta.
+                            Explore various properties throughout the gorgeous cities and towns spread across Alberta.
                         </p>
                     </div>
                 </div>
@@ -895,15 +915,16 @@
                         target="_blank"><img class="mapCard img-fluid" src="images/mapcontact.webp" />
                     </a>
                     <!-- <iframe
-                                              src="https://www.google.com/maps/d/embed?mid=1eSieTU-u5qa5XnUXhKjEyegQ5vwQni4&hl=en&ehbc=2E312F"
-                                              width="640"
-                                              height="480"
-                                              class="mapCard"
-                                            ></iframe> -->
+                                                  src="https://www.google.com/maps/d/embed?mid=1eSieTU-u5qa5XnUXhKjEyegQ5vwQni4&hl=en&ehbc=2E312F"
+                                                  width="640"
+                                                  height="480"
+                                                  class="mapCard"
+                                                ></iframe> -->
                 </div>
             </div>
             <div class="row justify-content-center align-items-start cnct  h-0">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5  position-relative position-md-absolute top-left-300 office-north">
+                <div
+                    class="col-12 col-md-8 col-lg-6 col-xl-5  position-relative position-md-absolute top-left-300 office-north">
                     <!--<div class="home8-contact-form default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-thm ">-->
                     <!--    <div class="inquiry-form">-->
                     <!--        <h4 class="text-white">North Office</h4>-->
@@ -957,12 +978,120 @@
         async defer></script>
 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
         // var markerIconPath = "{{ asset('images/map.png') }}";
         // Assuming you have jQuery included in your project
-        
+        function initMap() {
 
+            var blueMarker = {
+                url: markerIconPath,
+                scaledSize: new google.maps.Size(60, 60) // Adjust the size as needed
+            };
+
+            var sacramento = {
+                info: '<strong>Corporate Office</strong><br>\r\
+      202, 5403 Crowchild Trail NW ,  <br> Calgary, AB T3B 4Z1<br>\r\
+      <a href="https://maps.app.goo.gl/bCRtQMKE5yK4Gdek9" target="_blank">Get Directions</a>',
+                lat: 51.1038044,
+                long: -114.1655494,
+            };
+
+            var locations = [
+                [sacramento.info, sacramento.lat, sacramento.long, 1],
+                // You can add more locations here if needed
+            ];
+
+            try {
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 11,
+                    center: new google.maps.LatLng(51.0642845, -114.1395738),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                });
+            } catch (e) {
+                console.error('Error initializing map: ', e);
+            }
+
+            var infowindow = new google.maps.InfoWindow({});
+            var marker;
+
+            // Add markers to the map
+            for (var i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map,
+                    icon: blueMarker, // Set the marker icon to blue
+                });
+
+                google.maps.event.addListener(
+                    marker,
+                    "click",
+                    (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(locations[i][0]);
+                            infowindow.open(map, marker);
+                        };
+                    })(marker, i)
+                );
+            }
+
+            // Once the map is loaded, append the card to the map container
+            google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+                // Card HTML content
+                var cardHTML = `
+    <div class="corporate-office-card">
+      <div class="home8-contact-form default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-thm">
+        <div class="inquiry-form">
+          <h4 class="text-white">Corporate Office</h4>
+          <div class="d-flex flex-column gap-2 addressSection">
+            <p class="mb-0 d-flex gap-2">
+              <i class="fa-light fa-envelope"></i>
+              <a href="mailto:office@repinc.ca">office@repinc.ca</a>
+            </p>
+            <p class="mb-0 d-flex gap-2">
+              <i class="fa-light fa-phone"></i>
+              <a href="tel:403.547.4102">403.547.4102</a>
+            </p>
+            <p class="mb-0 d-flex gap-2">
+              <i class="fa-sharp fa-light fa-location-dot"></i>
+              202, 5403 Crowchild Trail NW Calgary, AB T3B 4Z1
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+                // Append the card to the map container
+                var mapContainer = document.getElementById('map');
+                mapContainer.insertAdjacentHTML('beforeend', cardHTML);
+
+                // Now style the card, center it, and make it appear above the map
+                var card = document.querySelector('.corporate-office-card');
+                card.style.position = 'absolute';
+                card.style.top = '52%';
+                card.style.left = '67%';
+                card.style.transform = 'translate(-50%, -50%)';
+                card.style.zIndex = '10';
+            });
+            // initMaps();
+        }
+
+        const switchSpace = document.getElementById('switch-space');
+        const map = document.getElementById('map');
+        const officeNorth = document.querySelector('.office-north');
+
+        officeNorth.classList.add('blur');
+
+        setTimeout(function() {
+            switchSpace.style.display = 'none';
+            map.style.display = 'block';
+
+            officeNorth.classList.remove('blur');
+        }, 3000);
 
         $(document).ready(function() {
             $('.ud-btn.btn-thm').click(function() {
@@ -980,110 +1109,111 @@
 
         var apiUrl = header + '/api/agents/listing-appointment-form';
         document.addEventListener('DOMContentLoaded', function() {
-            
+
             //Loader
-            const switchSpace = document.getElementById('switch-space');
-            const map = document.getElementById('map');
-            const officeNorth = document.querySelector('.office-north');
 
-            officeNorth.classList.add('blur');
 
-            setTimeout(function() {
-                switchSpace.style.display = 'none'; 
-                map.style.display = 'block'; 
 
-                officeNorth.classList.remove('blur');
-            }, 3000); 
-            
-            
             // Function to reset form fields
             function resetFormFields() {
                 document.getElementById('form-style1').reset();
             }
 
             // Add event listener to form submission
-                      $('#form-style1').validate({
-        rules: {
-            first_name: {
-                required: true
-            },
-            last_name: {
-                required: true
-            },
-            // phone: {
-            //     required: true,
-            
-            // },
-            email: {
-                required: true,
-                email: true
-            },
-            property_address: {
-                required: true
-            },
-            community: {
-                required: true
-            },
-            approx_age_of_property: {
-                required: true
-            },
-            approx_size_of_property: {
-                required: true
-            },
-            style_of_property: {
-                required: true
-            },
-            no_of_bedrooms: {
-                required: true
-            },
-            no_of_bathrooms: {
-                required: true
-            },
-            parking: {
-                required: true
-            },
-            interest: {
-                required: true
-            },
-            additional_information: {
-                required: true
-            }
-        },
-        submitHandler: function(form) {
-            var formData = new FormData(form);
+            $('#form-style1').validate({
+                rules: {
+                    first_name: {
+                        required: true
+                    },
+                    last_name: {
+                        required: true
+                    },
+                    // phone: {
+                    //     required: true,
 
-            fetch(apiUrl, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    // },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    property_address: {
+                        required: true
+                    },
+                    community: {
+                        required: true
+                    },
+                    approx_age_of_property: {
+                        required: true
+                    },
+                    approx_size_of_property: {
+                        required: true
+                    },
+                    style_of_property: {
+                        required: true
+                    },
+                    no_of_bedrooms: {
+                        required: true
+                    },
+                    no_of_bathrooms: {
+                        required: true
+                    },
+                    parking: {
+                        required: true
+                    },
+                    interest: {
+                        required: true
+                    },
+                    additional_information: {
+                        required: true
+                    }
+                },
+                submitHandler: function(form) {
+
+                    var gresponse = grecaptcha.getResponse();
+                    if (gresponse.length == 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Please complete the reCAPTCHA.',
+                        });
+                        return false;
+                    }
+                    var formData = new FormData(form);
+                    formData.append('g-recaptcha-response', grecaptcha.getResponse());
+
+                    fetch(apiUrl, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log(data);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Form submitted successfully',
+                                confirmButtonText: 'Continue to Website'
+                            }).then(() => {
+                                window.location.href = '/home-evaluation';
+                            });
+                            form.reset();
+                            grecaptcha.reset();
+                        })
+                        .catch(error => {
+                            console.error('There was a problem with the fetch operation:', error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+                        });
                 }
-                return response.json();
-            })
-          .then(data => {
-    console.log(data);
-    Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: 'Form submitted successfully',
-        confirmButtonText: 'Continue to Website'
-    }).then(() => {
-        window.location.href = '/home-evaluation';
-    });
-    // form.reset();
-})
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'An error occurred while submitting the form. Please try again later.'
-                });
             });
-        }
-    });
 
             // Reset form fields on page refresh
             window.addEventListener('beforeunload', function() {
@@ -1125,59 +1255,62 @@
             });
         });
 
-    function initMaps() {
-    const inputs = document.querySelectorAll('.address-inputs');
-    const options = {
-        types: ['geocode'],
-        componentRestrictions: {
-        country: 'ca'
-        },
-        strictBounds: true,
-        bounds: {
-        north: 60.0000, // Adjust these coordinates as needed to cover Alberta
-        south: 48.9993,
-        east: -110.0000,
-        west: -120.0000
+        function initMaps() {
+            initMap();
+
+            const inputs = document.querySelectorAll('.address-inputs');
+            const options = {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'ca'
+                },
+                strictBounds: true,
+                bounds: {
+                    north: 60.0000, // Adjust these coordinates as needed to cover Alberta
+                    south: 48.9993,
+                    east: -110.0000,
+                    west: -120.0000
+                }
+            };
+
+            inputs.forEach(input => {
+                const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+                autocomplete.addListener('place_changed', function() {
+                    const place = autocomplete.getPlace();
+                    if (!place.geometry) {
+                        console.log("Place details not found for the input: ", input.value);
+                        return;
+                    }
+
+                    if (place.address_components.some(component =>
+                            component.types.includes('country') && component.short_name === 'CA'
+                        )) {
+                        const province = place.address_components.find(component =>
+                            component.types.includes('administrative_area_level_1') && component
+                            .short_name === 'AB'
+                        );
+
+                        if (province) {
+                            const address = place.formatted_address;
+                            console.log("Address from the Province of Alberta in Canada: ", address);
+                            // Proceed with the address from Alberta
+                        } else {
+                            console.log("Address is not from the Province of Alberta in Canada.");
+                            // Handle addresses not from Alberta
+                        }
+                    } else {
+                        console.log("Address is not from Canada.");
+                        // Handle addresses not from Canada
+                    }
+                });
+            });
         }
-    };
-
-    inputs.forEach(input => {
-        const autocomplete = new google.maps.places.Autocomplete(input, options);
-
-        autocomplete.addListener('place_changed', function() {
-        const place = autocomplete.getPlace();
-        if (!place.geometry) {
-            console.log("Place details not found for the input: ", input.value);
-            return;
-        }
-
-        if (place.address_components.some(component =>
-            component.types.includes('country') && component.short_name === 'CA'
-        )) {
-            const province = place.address_components.find(component =>
-            component.types.includes('administrative_area_level_1') && component.short_name === 'AB'
-            );
-
-            if (province) {
-            const address = place.formatted_address;
-            console.log("Address from the Province of Alberta in Canada: ", address);
-            // Proceed with the address from Alberta
-            } else {
-            console.log("Address is not from the Province of Alberta in Canada.");
-            // Handle addresses not from Alberta
-            }
-        } else {
-            console.log("Address is not from Canada.");
-            // Handle addresses not from Canada
-        }
-        });
-    });
-    }
 
         document.addEventListener('DOMContentLoaded', function() {
             var searchButton = document.getElementById('searchButton');
             var autocompleteInput = document.getElementById('autocomplete');
-        
+
             searchButton.addEventListener('click', function() {
                 var inputValue = autocompleteInput.value.trim();
                 if (inputValue === '') {
@@ -1204,296 +1337,325 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
-    var autocompleteInput = document.getElementById('autocomplete');
-    var suggestionList = document.getElementById('suggestion-list');
-    var selectedIndex = -1;
-    var localSuggestions = {};
+            var autocompleteInput = document.getElementById('autocomplete');
+            var suggestionList = document.getElementById('suggestion-list');
+            var selectedIndex = -1;
+            var localSuggestions = {};
 
-    function handleSearch() {
-        var searchQuery = autocompleteInput.value.trim().toLowerCase();
-        var found = false;
-        var newHref = '/search?search=' + encodeURIComponent(searchQuery) + '&address=1';
+            function handleSearch() {
+                var searchQuery = autocompleteInput.value.trim().toLowerCase();
+                var found = false;
+                var newHref = '/search?search=' + encodeURIComponent(searchQuery) + '&address=1';
 
-        for (var state in localSuggestions) {
-            for (var city in localSuggestions[state]) {
-                if (city.toLowerCase() === searchQuery) {
-                    newHref = '/search/' + encodeURIComponent(city);
-                    found = true;
-                    break;
-                }
+                for (var state in localSuggestions) {
+                    for (var city in localSuggestions[state]) {
+                        if (city.toLowerCase() === searchQuery) {
+                            newHref = '/search/' + encodeURIComponent(city);
+                            found = true;
+                            break;
+                        }
 
-                for (var neighborhood of localSuggestions[state][city]) {
-                    if (neighborhood.toLowerCase() === searchQuery) {
-                        newHref = '/search/' + encodeURIComponent(city) + '/' + encodeURIComponent(neighborhood);
-                        found = true;
-                        break;
+                        for (var neighborhood of localSuggestions[state][city]) {
+                            if (neighborhood.toLowerCase() === searchQuery) {
+                                newHref = '/search/' + encodeURIComponent(city) + '/' + encodeURIComponent(
+                                    neighborhood);
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (found) break;
                     }
+
+                    if (found) break;
                 }
 
-                if (found) break;
+                document.getElementById('searchButton').setAttribute('href', newHref);
             }
 
-            if (found) break;
-        }
+            // Load local JSON file
+            fetch('/cities_with_subdivisions.json')
+                .then(response => response.json())
+                .then(data => {
+                    localSuggestions = data;
 
-        document.getElementById('searchButton').setAttribute('href', newHref);
-    }
+                    autocompleteInput.addEventListener('input', function() {
+                        var query = this.value;
+                        if (query.length >= 3) {
+                            var localResults = searchLocalSuggestions(query);
 
-    // Load local JSON file
-    fetch('/cities_with_subdivisions.json')
-        .then(response => response.json())
-        .then(data => {
-            localSuggestions = data;
-
-            autocompleteInput.addEventListener('input', function() {
-                var query = this.value;
-                if (query.length >= 3) {
-                    var localResults = searchLocalSuggestions(query);
-
-                    if (localResults.length > 0) {
-                        displayLocalSuggestions(localResults, query);
-                    } else {
-                        fetchSuggestionsFromAPI(query);
-                    }
-                } else {
-                    suggestionList.innerHTML = ''; // Clear suggestion list if query length is less than three
-                }
-            });
-
-            autocompleteInput.addEventListener('keydown', function(event) {
-                var suggestions = suggestionList.getElementsByClassName('suggestion');
-                if (suggestions.length > 0) {
-                    if (event.key === 'ArrowDown') {
-                        event.preventDefault();
-                        if (selectedIndex < suggestions.length - 1) {
-                            selectedIndex++;
+                            if (localResults.length > 0) {
+                                displayLocalSuggestions(localResults, query);
+                            } else {
+                                fetchSuggestionsFromAPI(query);
+                            }
                         } else {
-                            selectedIndex = 0; // Loop back to the first suggestion
+                            suggestionList.innerHTML =
+                            ''; // Clear suggestion list if query length is less than three
                         }
-                        highlightSuggestion(suggestions, selectedIndex);
-                    } else if (event.key === 'ArrowUp') {
-                        event.preventDefault();
-                        if (selectedIndex > 0) {
-                            selectedIndex--;
-                        } else {
-                            selectedIndex = suggestions.length - 1; // Loop back to the last suggestion
-                        }
-                        highlightSuggestion(suggestions, selectedIndex);
-                    } else if (event.key === 'Enter') {
-                        event.preventDefault();
-                        if (selectedIndex >= 0 && selectedIndex < suggestions.length) {
-                            var suggestionElement = suggestions[selectedIndex];
-                            var suggestionText = suggestionElement.textContent.split(',')[0].trim(); // Get the city name only
-                            autocompleteInput.value = suggestionText;
-                            suggestionList.innerHTML = '';
-                            suggestionElement.click(); // Trigger click event on the suggestion
-                        } else {
+                    });
+
+                    autocompleteInput.addEventListener('keydown', function(event) {
+                        var suggestions = suggestionList.getElementsByClassName('suggestion');
+                        if (suggestions.length > 0) {
+                            if (event.key === 'ArrowDown') {
+                                event.preventDefault();
+                                if (selectedIndex < suggestions.length - 1) {
+                                    selectedIndex++;
+                                } else {
+                                    selectedIndex = 0; // Loop back to the first suggestion
+                                }
+                                highlightSuggestion(suggestions, selectedIndex);
+                            } else if (event.key === 'ArrowUp') {
+                                event.preventDefault();
+                                if (selectedIndex > 0) {
+                                    selectedIndex--;
+                                } else {
+                                    selectedIndex = suggestions.length -
+                                    1; // Loop back to the last suggestion
+                                }
+                                highlightSuggestion(suggestions, selectedIndex);
+                            } else if (event.key === 'Enter') {
+                                event.preventDefault();
+                                if (selectedIndex >= 0 && selectedIndex < suggestions.length) {
+                                    var suggestionElement = suggestions[selectedIndex];
+                                    var suggestionText = suggestionElement.textContent.split(',')[0]
+                                        .trim(); // Get the city name only
+                                    autocompleteInput.value = suggestionText;
+                                    suggestionList.innerHTML = '';
+                                    suggestionElement.click(); // Trigger click event on the suggestion
+                                } else {
+                                    // alert('yes');
+                                    handleSearch();
+                                    document.getElementById('searchButton').click();
+                                }
+                            }
+                        } else if (event.key === 'Enter') {
                             // alert('yes');
+                            event.preventDefault();
                             handleSearch();
                             document.getElementById('searchButton').click();
                         }
+                    });
+
+                    document.getElementById('searchButton').addEventListener('click', function(event) {
+                        handleSearch();
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading local JSON:', error);
+                });
+
+            // Search local suggestions
+            function searchLocalSuggestions(query) {
+                var results = [];
+                Object.keys(localSuggestions).forEach(function(state) {
+                    if (state.toLowerCase().includes(query.toLowerCase())) {
+                        Object.keys(localSuggestions[state]).forEach(function(city) {
+                            results.push({
+                                city: city,
+                                subdivision: '',
+                                state: state
+                            });
+                            localSuggestions[state][city].forEach(function(subdivision) {
+                                results.push({
+                                    city: city,
+                                    subdivision: subdivision,
+                                    state: state
+                                });
+                            });
+                        });
+                    } else {
+                        Object.keys(localSuggestions[state]).forEach(function(city) {
+                            if (city.toLowerCase().includes(query.toLowerCase())) {
+                                results.push({
+                                    city: city,
+                                    subdivision: '',
+                                    state: state
+                                });
+                            }
+                            localSuggestions[state][city].forEach(function(subdivision) {
+                                if (subdivision.toLowerCase().includes(query
+                                .toLowerCase())) {
+                                    results.push({
+                                        city: city,
+                                        subdivision: subdivision,
+                                        state: state
+                                    });
+                                }
+                            });
+                        });
                     }
-                } else if (event.key === 'Enter') {
-                    // alert('yes');
-                    event.preventDefault(); 
-                    handleSearch();
-                    document.getElementById('searchButton').click();
+                });
+                return results;
+            }
+
+            // Fetch suggestions from API
+            function fetchSuggestionsFromAPI(query) {
+                fetch(header + '/api/agents/listing-autosuggestion-map', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            key: query
+                        })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        var suggestedAgents = data.suggested_agents;
+                        displaySuggestions(suggestedAgents, query);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        suggestionList.innerHTML = '';
+                    });
+            }
+
+            // Display local suggestions
+            function displayLocalSuggestions(suggestions, query) {
+                suggestionList.innerHTML = '';
+                selectedIndex = -1; // Reset the selectedIndex when new suggestions are loaded
+
+                if (suggestions.length > 0) {
+                    var cityCategoryElement = document.createElement('div');
+                    cityCategoryElement.textContent = 'Cities';
+                    cityCategoryElement.className = 'category';
+                    suggestionList.appendChild(cityCategoryElement);
+
+                    var citySuggestions = suggestions.filter(suggestion => !suggestion.subdivision);
+                    citySuggestions.forEach(function(suggestion) {
+                        var suggestionElement = document.createElement('div');
+                        var boldSuggestion = `${suggestion.city}, ${suggestion.state}`;
+                        boldSuggestion = boldSuggestion.replace(new RegExp(query, 'gi'), '<b>$&</b>');
+                        suggestionElement.innerHTML = boldSuggestion;
+                        suggestionElement.className = 'suggestion';
+                        suggestionElement.addEventListener('click', function() {
+                            window.location.href = '/search/' + suggestion.city.toLowerCase()
+                                .replace(/\s+/g, '-');
+                        });
+                        suggestionList.appendChild(suggestionElement);
+                    });
+
+                    var neighborhoodCategoryElement = document.createElement('div');
+                    neighborhoodCategoryElement.textContent = 'Neighborhoods';
+                    neighborhoodCategoryElement.className = 'category';
+                    suggestionList.appendChild(neighborhoodCategoryElement);
+
+                    var subdivisionSuggestions = suggestions.filter(suggestion => suggestion.subdivision);
+                    subdivisionSuggestions.forEach(function(suggestion) {
+                        var suggestionElement = document.createElement('div');
+                        var boldSuggestion =
+                            `${suggestion.subdivision}, ${suggestion.city}, ${suggestion.state}`;
+                        boldSuggestion = boldSuggestion.replace(new RegExp(query, 'gi'), '<b>$&</b>');
+                        suggestionElement.innerHTML = boldSuggestion;
+                        suggestionElement.className = 'suggestion';
+                        suggestionElement.addEventListener('click', function() {
+                            window.location.href = '/search/' + suggestion.city.toLowerCase()
+                                .replace(/\s+/g, '-') +
+                                '/' + suggestion.subdivision.toLowerCase().replace(/\s+/g, '-');
+                        });
+                        suggestionList.appendChild(suggestionElement);
+                    });
+                }
+            }
+
+            // Display suggestions from API
+            function displaySuggestions(suggestedAgents, query) {
+                suggestionList.innerHTML = '';
+                selectedIndex = -1; // Reset the selectedIndex when new suggestions are loaded
+
+                // Object to categorize suggestions
+                var categories = {
+                    'Address': suggestedAgents.fullAddress,
+                    'MLS® Number': suggestedAgents.mls_ids
+                };
+
+                Object.keys(categories).forEach(function(category) {
+                    if (categories[category].length > 0) {
+                        var categoryElement = document.createElement('div');
+                        categoryElement.textContent = category;
+                        categoryElement.className = 'category';
+                        suggestionList.appendChild(categoryElement);
+
+                        categories[category].forEach(function(suggestion, index) {
+                            var suggestionElement = document.createElement('div');
+                            var boldSuggestion = suggestion.replace(new RegExp(query, 'gi'),
+                                '<b>$&</b>');
+                            suggestionElement.innerHTML = boldSuggestion;
+                            suggestionElement.className = 'suggestion';
+
+                            if (category === 'MLS® Number') {
+                                suggestionElement.addEventListener('click', function() {
+                                    var mlsId = suggestion.split(' - ')[
+                                    0]; // Take the part before "-"
+                                    window.location.href = '/property-detail/' + mlsId;
+                                });
+                            } else {
+                                suggestionElement.addEventListener('click', function() {
+                                    var slugUrl = suggestedAgents.slug_urls[index];
+                                    var listingId = suggestedAgents.listingIds[index];
+                                    if (slugUrl) {
+                                        window.location.href = '/property-detail/' +
+                                        slugUrl;
+                                    } else if (listingId) {
+                                        window.location.href = '/property-detail/' +
+                                            listingId;
+                                    }
+                                });
+                            }
+
+                            suggestionList.appendChild(suggestionElement);
+                        });
+                    }
+                });
+            }
+
+            // Handle suggestion list clicks
+            suggestionList.addEventListener('click', function(event) {
+                if (event.target.classList.contains('suggestion')) {
+                    var suggestionText = event.target.textContent.split(',')[0]
+                .trim(); // Get the city name only
+                    autocompleteInput.value = suggestionText;
+                    suggestionList.innerHTML = '';
+                    applyFilter('search', suggestionText); // Apply filter with city only
+                    autocompleteInput.dispatchEvent(new Event('change'));
                 }
             });
 
-            document.getElementById('searchButton').addEventListener('click', function(event) {
-                handleSearch();
-            });
-        })
-        .catch(error => {
-            console.error('Error loading local JSON:', error);
-        });
-
-    // Search local suggestions
-    function searchLocalSuggestions(query) {
-        var results = [];
-        Object.keys(localSuggestions).forEach(function(state) {
-            if (state.toLowerCase().includes(query.toLowerCase())) {
-                Object.keys(localSuggestions[state]).forEach(function(city) {
-                    results.push({ city: city, subdivision: '', state: state });
-                    localSuggestions[state][city].forEach(function(subdivision) {
-                        results.push({ city: city, subdivision: subdivision, state: state });
-                    });
-                });
-            } else {
-                Object.keys(localSuggestions[state]).forEach(function(city) {
-                    if (city.toLowerCase().includes(query.toLowerCase())) {
-                        results.push({ city: city, subdivision: '', state: state });
-                    }
-                    localSuggestions[state][city].forEach(function(subdivision) {
-                        if (subdivision.toLowerCase().includes(query.toLowerCase())) {
-                            results.push({ city: city, subdivision: subdivision, state: state });
-                        }
-                    });
-                });
-            }
-        });
-        return results;
-    }
-
-    // Fetch suggestions from API
-    function fetchSuggestionsFromAPI(query) {
-        fetch(header + '/api/agents/listing-autosuggestion-map', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                key: query
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            var suggestedAgents = data.suggested_agents;
-            displaySuggestions(suggestedAgents, query);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            suggestionList.innerHTML = '';
-        });
-    }
-
-    // Display local suggestions
-    function displayLocalSuggestions(suggestions, query) {
-        suggestionList.innerHTML = '';
-        selectedIndex = -1; // Reset the selectedIndex when new suggestions are loaded
-
-        if (suggestions.length > 0) {
-            var cityCategoryElement = document.createElement('div');
-            cityCategoryElement.textContent = 'Cities';
-            cityCategoryElement.className = 'category';
-            suggestionList.appendChild(cityCategoryElement);
-
-            var citySuggestions = suggestions.filter(suggestion => !suggestion.subdivision);
-            citySuggestions.forEach(function(suggestion) {
-                var suggestionElement = document.createElement('div');
-                var boldSuggestion = `${suggestion.city}, ${suggestion.state}`;
-                boldSuggestion = boldSuggestion.replace(new RegExp(query, 'gi'), '<b>$&</b>');
-                suggestionElement.innerHTML = boldSuggestion;
-                suggestionElement.className = 'suggestion';
-                suggestionElement.addEventListener('click', function() {
-                    window.location.href = '/search/' + suggestion.city.toLowerCase().replace(/\s+/g, '-');
-                });
-                suggestionList.appendChild(suggestionElement);
-            });
-
-            var neighborhoodCategoryElement = document.createElement('div');
-            neighborhoodCategoryElement.textContent = 'Neighborhoods';
-            neighborhoodCategoryElement.className = 'category';
-            suggestionList.appendChild(neighborhoodCategoryElement);
-
-            var subdivisionSuggestions = suggestions.filter(suggestion => suggestion.subdivision);
-            subdivisionSuggestions.forEach(function(suggestion) {
-                var suggestionElement = document.createElement('div');
-                var boldSuggestion = `${suggestion.subdivision}, ${suggestion.city}, ${suggestion.state}`;
-                boldSuggestion = boldSuggestion.replace(new RegExp(query, 'gi'), '<b>$&</b>');
-                suggestionElement.innerHTML = boldSuggestion;
-                suggestionElement.className = 'suggestion';
-                suggestionElement.addEventListener('click', function() {
-                    window.location.href = '/search/' + suggestion.city.toLowerCase().replace(/\s+/g, '-') + 
-                                            '/' + suggestion.subdivision.toLowerCase().replace(/\s+/g, '-');
-                });
-                suggestionList.appendChild(suggestionElement);
-            });
-        }
-    }
-
-    // Display suggestions from API
-    function displaySuggestions(suggestedAgents, query) {
-        suggestionList.innerHTML = '';
-        selectedIndex = -1; // Reset the selectedIndex when new suggestions are loaded
-
-        // Object to categorize suggestions
-        var categories = {
-            'Address': suggestedAgents.fullAddress,
-            'MLS® Number': suggestedAgents.mls_ids
-        };
-
-        Object.keys(categories).forEach(function(category) {
-            if (categories[category].length > 0) {
-                var categoryElement = document.createElement('div');
-                categoryElement.textContent = category;
-                categoryElement.className = 'category';
-                suggestionList.appendChild(categoryElement);
-
-                categories[category].forEach(function(suggestion, index) {
-                    var suggestionElement = document.createElement('div');
-                    var boldSuggestion = suggestion.replace(new RegExp(query, 'gi'), '<b>$&</b>');
-                    suggestionElement.innerHTML = boldSuggestion;
-                    suggestionElement.className = 'suggestion';
-
-                    if (category === 'MLS® Number') {
-                        suggestionElement.addEventListener('click', function() {
-                            var mlsId = suggestion.split(' - ')[0]; // Take the part before "-"
-                            window.location.href = '/property-detail/' + mlsId;
-                        });
+            function highlightSuggestion(suggestions, index) {
+                for (var i = 0; i < suggestions.length; i++) {
+                    if (i === index) {
+                        suggestions[i].classList.add('highlighted');
+                        ensureSuggestionInView(suggestions[i]);
                     } else {
-                        suggestionElement.addEventListener('click', function() {
-                            var slugUrl = suggestedAgents.slug_urls[index];
-                            var listingId = suggestedAgents.listingIds[index];
-                            if (slugUrl) {
-                                window.location.href = '/property-detail/' + slugUrl;
-                            } else if (listingId) {
-                                window.location.href = '/property-detail/' + listingId;
-                            }
-                        });
+                        suggestions[i].classList.remove('highlighted');
                     }
-
-                    suggestionList.appendChild(suggestionElement);
-                });
+                }
             }
+
+            function ensureSuggestionInView(suggestion) {
+                var suggestionListRect = suggestionList.getBoundingClientRect();
+                var suggestionRect = suggestion.getBoundingClientRect();
+
+                if (suggestionRect.bottom > suggestionListRect.bottom) {
+                    suggestionList.scrollTop += suggestionRect.bottom - suggestionListRect.bottom;
+                } else if (suggestionRect.top < suggestionListRect.top) {
+                    suggestionList.scrollTop -= suggestionListRect.top - suggestionRect.top;
+                }
+            }
+
+            window.addEventListener('click', function(event) {
+                if (!event.target.closest('#suggestion-list') && !event.target.closest('#autocomplete')) {
+                    suggestionList.innerHTML = '';
+                }
+            });
         });
-    }
-
-    // Handle suggestion list clicks
-    suggestionList.addEventListener('click', function(event) {
-        if (event.target.classList.contains('suggestion')) {
-            var suggestionText = event.target.textContent.split(',')[0].trim(); // Get the city name only
-            autocompleteInput.value = suggestionText;
-            suggestionList.innerHTML = '';
-            applyFilter('search', suggestionText); // Apply filter with city only
-            autocompleteInput.dispatchEvent(new Event('change'));
-        }
-    });
-
-    function highlightSuggestion(suggestions, index) {
-        for (var i = 0; i < suggestions.length; i++) {
-            if (i === index) {
-                suggestions[i].classList.add('highlighted');
-                ensureSuggestionInView(suggestions[i]);
-            } else {
-                suggestions[i].classList.remove('highlighted');
-            }
-        }
-    }
-
-    function ensureSuggestionInView(suggestion) {
-        var suggestionListRect = suggestionList.getBoundingClientRect();
-        var suggestionRect = suggestion.getBoundingClientRect();
-
-        if (suggestionRect.bottom > suggestionListRect.bottom) {
-            suggestionList.scrollTop += suggestionRect.bottom - suggestionListRect.bottom;
-        } else if (suggestionRect.top < suggestionListRect.top) {
-            suggestionList.scrollTop -= suggestionListRect.top - suggestionRect.top;
-        }
-    }
-
-    window.addEventListener('click', function(event) {
-        if (!event.target.closest('#suggestion-list') && !event.target.closest('#autocomplete')) {
-            suggestionList.innerHTML = '';
-        }
-    });
-});
 
 
 
@@ -1506,7 +1668,7 @@
         var apiHeader = header + '/api/agents/get-properties-index';
         fetchProperties(apiHeader);
 
-        initMaps();
+        // initMaps();
 
         function fetchProperties(apiHeader) {
             fetch(apiHeader)
@@ -1602,8 +1764,8 @@
                         ${property.BedroomsTotal ? `<p><span class="flaticon-bed"></span>${property.BedroomsTotal} bed</p>` : ''}
                     ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
     ? `<p><span class="flaticon-shower"></span>
-         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
-       </p>` 
+             ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+           </p>` 
     : ''}
 
 
@@ -1694,8 +1856,8 @@
 
  ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
     ? `<p><span class="flaticon-shower"></span>
-         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
-       </p>` 
+             ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+           </p>` 
     : ''}  
                           
                           ${property.BuildingAreaTotalSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.BuildingAreaTotalSF)} sqft</p>` : (property.LivingAreaSF ? `<p><span class="flaticon-expand"></span>${Math.floor(property.LivingAreaSF)} sqft</p>` : '')}
@@ -1780,27 +1942,27 @@
 
         function getmarkedlistings() {
             var userId = "{{ session('user_id') }}";
-            if(userId){
+            if (userId) {
                 $.ajax({
-                url: "{{ route('get-listings') }}",
-                type: 'get',
-                data: {
-                    user_id: userId
-                },
-                success: function(response) {
-                    var favoriteProperties = response.favorite_properties;
-                    favoriteProperties.forEach(function(propertyId) {
-                        var favIcon = document.getElementById(`fav-icon-${propertyId}`);
-                        if (favIcon) {
-                            favIcon.classList.add('filled');
-                            favIcon.classList.add('white-background');
-                        }
-                    });
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error getting marked listings');
-                }
-            });
+                    url: "{{ route('get-listings') }}",
+                    type: 'get',
+                    data: {
+                        user_id: userId
+                    },
+                    success: function(response) {
+                        var favoriteProperties = response.favorite_properties;
+                        favoriteProperties.forEach(function(propertyId) {
+                            var favIcon = document.getElementById(`fav-icon-${propertyId}`);
+                            if (favIcon) {
+                                favIcon.classList.add('filled');
+                                favIcon.classList.add('white-background');
+                            }
+                        });
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error getting marked listings');
+                    }
+                });
             }
         }
 

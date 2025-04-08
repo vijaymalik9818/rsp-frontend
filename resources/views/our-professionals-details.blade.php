@@ -101,10 +101,11 @@
                                     aria-labelledby="pills-profile-tab" tabindex="0">
                                     <div>
                                         <div class="review mt-5 d-flex  justify-content-between">
-                                            <div class="d-flex align-items-center gap-2 rev px-4 px-sm-0" id="reviews-rating">
+                                            <div class="d-flex align-items-center gap-2 rev px-4 px-sm-0"
+                                                id="reviews-rating">
 
                                             </div>
-                                        <div class="sort d-flex align-items-center gap-2  px-4 px-sm-0">
+                                            <div class="sort d-flex align-items-center gap-2  px-4 px-sm-0">
                                                 <h6>
                                                     Sort by:
                                                 </h6>
@@ -117,12 +118,13 @@
 
 
                                                 <button class="leave-btn ud-btn  blue-btn"
-                                                    onclick="scrollToSection('section14')" id='desk-btn'>Leave a Review</button>
+                                                    onclick="scrollToSection('section14')" id='desk-btn'>Leave a
+                                                    Review</button>
                                             </div>
                                         </div>
-                                        
-                                        <div class='text-end mt-3 mob-sort'>   <button class="leave-btn ud-btn  blue-btn"
-                                                    onclick="scrollToSection('section14')">Leave a Review</button></div>
+
+                                        <div class='text-end mt-3 mob-sort'> <button class="leave-btn ud-btn  blue-btn"
+                                                onclick="scrollToSection('section14')">Leave a Review</button></div>
 
                                         <div id="reviews"></div>
                                         <div>
@@ -135,21 +137,24 @@
                                     <div class="leave-rev" id="section14">
                                         <h6>Leave A Review</h6>
                                         <hr>
-                                          <form id="reviewForm">
+                                        <form id="reviewForm">
                                             <div class="row my-3">
                                                 <div class="col-6">
                                                     <h5>First Name<span style="color: red;">*</span></h5>
-                                                    <input type="text" placeholder="First name" name="firsttitle" id="firstnameInput">
+                                                    <input type="text" placeholder="First name" name="firsttitle"
+                                                        id="firstnameInput">
                                                 </div>
                                                 <div class="col-6">
                                                     <h5>Last Name<span style="color: red;">*</span></h5>
-                                                    <input type="text" placeholder="Last name" name="lasttitle" id="lastnameInput">
+                                                    <input type="text" placeholder="Last name" name="lasttitle"
+                                                        id="lastnameInput">
                                                 </div>
                                             </div>
                                             <div class="row my-3">
                                                 <div class="col-6">
                                                     <h5>Email<span style="color: red;">*</span></h5>
-                                                    <input type="email" placeholder="Enter your email" name="review_from">
+                                                    <input type="email" placeholder="Enter your email"
+                                                        name="review_from">
                                                 </div>
                                                 <div class="col-6">
                                                     <h5>Rating <span style="color: red;">*</span></h5>
@@ -169,7 +174,12 @@
                                             <div>
                                                 <h5>Review<span style="color: red;">*</span></h5>
                                                 <textarea placeholder="Write a review" name="review" cols="30" rows="10" maxlength="200"></textarea>
-                                               
+
+                                            </div>
+
+                                            <div class="mb-1 mt-1">
+                                                <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"
+                                                    name="g_recaptcha_response" id="g_recaptcha_response"></div>
                                             </div>
                                             <button type="submit" class="ud-btn  blue-btn">Submit Review</button>
                                         </form>
@@ -184,46 +194,53 @@
                     <div class="col-12 col-sm-12 col-lg-5 col-xl-3 mt-lg-5 p-0">
 
 
-                             <div class="find-agent">
-                        <div>
+                        <div class="find-agent">
+                            <div>
 
-                            <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab"
-                                role="tablist">
-                                <li class="nav-item col-6" style="padding-right:2px;" role="presentation">
-                                    <button class="nav-link  active btn-secondary ud-btn " id="pills-person-tab"
-                                        data-bs-toggle="pill" data-bs-target="#pills-person" type="button" role="tab"
-                                        aria-controls="pills-person" aria-selected="true" style="font-size: 10px;">Contact
-                                        REALTOR <span>&#174;</span></button>
-                                </li>
-                                <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
-                                    <button class="nav-link video-btn btn-secondary ud-btn " id="pills-profiles-tab"
-                                        data-bs-toggle="pill" data-bs-target="#pills-profiles" type="button" role="tab"
-                                        aria-controls="pills-profiles" aria-selected="false" style="font-size: small;">Contact
-                                        Info</button>
-                                </li>
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show  active" id="pills-person" role="tabpanel"
-                                    aria-labelledby="pills-person-tab" tabindex="0">
-                                    <form class="form-style1" id="form-style1">
+                                <ul class="nav row nav-pills mb-3 mt-3 d-flex justify-content-between" id="pills-tab"
+                                    role="tablist">
+                                    <li class="nav-item col-6" style="padding-right:2px;" role="presentation">
+                                        <button class="nav-link  active btn-secondary ud-btn " id="pills-person-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-person" type="button"
+                                            role="tab" aria-controls="pills-person" aria-selected="true"
+                                            style="font-size: 10px;">Contact
+                                            REALTOR <span>&#174;</span></button>
+                                    </li>
+                                    <li class="nav-item tabs col-6" style="padding-left: 2px;" role="presentation">
+                                        <button class="nav-link video-btn btn-secondary ud-btn " id="pills-profiles-tab"
+                                            data-bs-toggle="pill" data-bs-target="#pills-profiles" type="button"
+                                            role="tab" aria-controls="pills-profiles" aria-selected="false">Contact
+                                            Info</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show  active" id="pills-person" role="tabpanel"
+                                        aria-labelledby="pills-person-tab" tabindex="0">
+                                        <form class="form-style1" id="form-style1">
                                             <input type="hidden" id="realtor_name" name="realtorname">
                                             <input type="hidden" id="realtor_email" name="realtoremail">
-                                            
+
                                             <div>
                                                 <div class="input mt-3">
-                                                    <input type="text" placeholder="First Name*" name="first_name" maxlength="40">
-                                                    <div class="error-message"></div> <!-- Container for first name error -->
+                                                    <input type="text" placeholder="First Name*" name="first_name"
+                                                        maxlength="40">
+                                                    <div class="error-message"></div>
+                                                    <!-- Container for first name error -->
                                                 </div>
                                                 <div class="input mt-3">
-                                                    <input type="text" placeholder="Last Name*" name="last_name" maxlength="40">
-                                                    <div class="error-message"></div> <!-- Container for last name error -->
+                                                    <input type="text" placeholder="Last Name*" name="last_name"
+                                                        maxlength="40">
+                                                    <div class="error-message"></div>
+                                                    <!-- Container for last name error -->
                                                 </div>
                                                 <div class="input mt-3">
-                                                    <input type="text" placeholder="Phone*" id="contactnumber" name="phone">
+                                                    <input type="text" placeholder="Phone*" id="contactnumber"
+                                                        name="phone">
                                                     <div class="error-message"></div> <!-- Container for phone error -->
                                                 </div>
                                                 <div class="input mt-3">
-                                                    <input type="email" placeholder="Email*" name="email" maxlength="40">
+                                                    <input type="email" placeholder="Email*" name="email"
+                                                        maxlength="40">
                                                     <div class="error-message"></div> <!-- Container for email error -->
                                                 </div>
                                                 <h5></h5>
@@ -235,40 +252,50 @@
                                                         <option value="Seller">Seller</option>
                                                         <option value="Residential investor">Residential investor</option>
                                                         <option value="Commercial investor">Commercial investor</option>
-                                                        <option value="Commercial buyer/leaser">Commercial buyer/leaser</option>
+                                                        <option value="Commercial buyer/leaser">Commercial buyer/leaser
+                                                        </option>
                                                         <option value="Land of development">Land of development</option>
                                                     </select>
                                                     <div class="error-message" id="role-error"></div>
                                                 </div>
-                                                <textarea class="mt-3 txt-area" cols="42" rows="3" placeholder="Enter your Message*" id="Textarea" name="comment"></textarea>
+                                                <textarea class="mt-3 txt-area" cols="42" rows="3" placeholder="Enter your Message*" id="Textarea"
+                                                    name="comment"></textarea>
                                                 <div class="error-message"></div> <!-- Container for comment error -->
                                                 <div class="chkbox">
                                                     <div class="mt-1 d-flex align-items-cente gap-2">
-                                                        <input class="checkbox opacity-50" type="checkbox" name="terms_agreement" id="terms_agreement">
-                                                        <p class="mb-0 fw-medium fs-6">By submitting this form I agree to</p>
+                                                        <input class="checkbox opacity-50" type="checkbox"
+                                                            name="terms_agreement" id="terms_agreement">
+                                                        <p class="mb-0 fw-medium fs-6">By submitting this form I agree to
+                                                        </p>
                                                     </div>
                                                     <span><a href="{{ route('terms') }}">Terms of Use</a></span>
-                                                    <div class="error-message" id="terms-agreement-error"></div> <!-- Container for terms agreement error -->
+                                                    <div class="error-message" id="terms-agreement-error"></div>
+                                                    <!-- Container for terms agreement error -->
+                                                </div>
+                                                <div class="mt-3">
+                                                    <div class="g-recaptcha" data-sitekey="{{ $recaptchaSiteKey }}"
+                                                        name="g_recaptcha_response" id="g_recaptcha_response"></div>
                                                 </div>
                                                 <div class="d-grid schedule mt-2">
-                                                    <button class="btn btn-secondary ud-btn  blue-btn" type="submit">Submit</button>
+                                                    <button class="btn btn-secondary ud-btn  blue-btn"
+                                                        type="submit">Submit</button>
                                                 </div>
                                             </div>
                                         </form>
+                                    </div>
+
+                                    <div class="tab-pane fade  show" id="pills-profiles" role="tabpanel"
+                                        aria-labelledby="pills-profiles-tab" tabindex="0">
+                                        <div class="contact-sec" id="contact-sec"> </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="tab-pane fade  show" id="pills-profiles" role="tabpanel"
-                                    aria-labelledby="pills-profiles-tab" tabindex="0">
-                                    <div class="contact-sec" id="contact-sec"> </div>
-                                </div>
+
 
                             </div>
 
-
-
                         </div>
-
-                    </div>
 
                     </div>
                 </div>
@@ -289,6 +316,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
@@ -316,28 +344,28 @@
 
         function fetchReviewDetails(apiReviews) {
 
-fetch(apiReviews)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
+            fetch(apiReviews)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
 
-        totalReviews = data.total_count;
-        const agentData = data.reviews.data;
+                    totalReviews = data.total_count;
+                    const agentData = data.reviews.data;
 
-        const reviewContainer = document.getElementById('reviews');
-        reviewContainer.innerHTML = '';
+                    const reviewContainer = document.getElementById('reviews');
+                    reviewContainer.innerHTML = '';
 
-        agentData.forEach(agent => {
-            const timeAgoString = timeAgo(agent.created_at);
-            let starsHtml = '';
-            for (let i = 0; i < agent.rating; i++) {
-                starsHtml += `<i class="ri-star-fill"></i>`;
-            }
-            const reviewDetails = `
+                    agentData.forEach(agent => {
+                        const timeAgoString = timeAgo(agent.created_at);
+                        let starsHtml = '';
+                        for (let i = 0; i < agent.rating; i++) {
+                            starsHtml += `<i class="ri-star-fill"></i>`;
+                        }
+                        const reviewDetails = `
 <div class="rev-sec mt-5">
     <div class="user">
         <i class="ri-user-fill"></i>
@@ -359,55 +387,55 @@ fetch(apiReviews)
 
 `;
 
-            // Create a new div element
-            const reviewDiv = document.createElement('div');
-            reviewDiv.classList.add('review');
+                        // Create a new div element
+                        const reviewDiv = document.createElement('div');
+                        reviewDiv.classList.add('review');
 
-            // Set the HTML content of the new div
-            reviewDiv.innerHTML = reviewDetails;
+                        // Set the HTML content of the new div
+                        reviewDiv.innerHTML = reviewDetails;
 
-            // Append the new div to the review container
-            reviewContainer.appendChild(reviewDiv);
-        });
+                        // Append the new div to the review container
+                        reviewContainer.appendChild(reviewDiv);
+                    });
 
 
-        function timeAgo(timestamp) {
-            const now = new Date();
-            const previous = new Date(timestamp);
-            const seconds = Math.floor((now - previous) / 1000);
+                    function timeAgo(timestamp) {
+                        const now = new Date();
+                        const previous = new Date(timestamp);
+                        const seconds = Math.floor((now - previous) / 1000);
 
-            let interval = Math.floor(seconds / 31536000);
-            if (interval > 1) {
-                return `${interval} years ago`;
-            }
-            interval = Math.floor(seconds / 2592000);
-            if (interval > 1) {
-                return `${interval} months ago`;
-            }
-            interval = Math.floor(seconds / 86400);
-            if (interval > 1) {
-                return `${interval} days ago`;
-            }
-            interval = Math.floor(seconds / 3600);
-            if (interval > 1) {
-                return `${interval} hours ago`;
-            }
-            interval = Math.floor(seconds / 60);
-            if (interval > 1) {
-                return `${interval} minutes ago`;
-            }
-            return 'just now';
+                        let interval = Math.floor(seconds / 31536000);
+                        if (interval > 1) {
+                            return `${interval} years ago`;
+                        }
+                        interval = Math.floor(seconds / 2592000);
+                        if (interval > 1) {
+                            return `${interval} months ago`;
+                        }
+                        interval = Math.floor(seconds / 86400);
+                        if (interval > 1) {
+                            return `${interval} days ago`;
+                        }
+                        interval = Math.floor(seconds / 3600);
+                        if (interval > 1) {
+                            return `${interval} hours ago`;
+                        }
+                        interval = Math.floor(seconds / 60);
+                        if (interval > 1) {
+                            return `${interval} minutes ago`;
+                        }
+                        return 'just now';
+                    }
+
+
+
+
+                })
+
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
         }
-
-
-
-
-    })
-
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-}
         var header = '{{ env('BACKEND_URL') }}';
 
         var apiUrl = header + '/api/agents/detail/' + id;
@@ -425,20 +453,20 @@ fetch(apiReviews)
 
                     const agentData = data.data;
                     document.getElementById('realtor_name').value = agentData.name;
-            document.getElementById('realtor_email').value = agentData.email;
+                    document.getElementById('realtor_email').value = agentData.email;
                     const avgRating = agentData.avg_rating !== null ? agentData.avg_rating : 0; // Corrected typo
                     let wholeStars = Math.floor(avgRating); // Get the number of whole stars
                     let halfStar = avgRating % 1 !== 0; // Check if there's a decimal (half star)
-                    
+
                     let starsHtml = '';
                     for (let i = 0; i < wholeStars; i++) {
-                      starsHtml += '<i class="fa-solid fa-star"></i>'; // Use a full star for whole numbers
+                        starsHtml += '<i class="fa-solid fa-star"></i>'; // Use a full star for whole numbers
                     }
-                    
+
                     if (halfStar) {
-                      starsHtml += '<i class="fa-solid fa-star-half"></i>'; // Add a half star if needed
+                        starsHtml += '<i class="fa-solid fa-star-half"></i>'; // Add a half star if needed
                     }
-                    
+
                     console.log(starsHtml);
                     const reviewsDetails = `<h6>${totalReviews} Reviews</h6>
                                            ${starsHtml}
@@ -530,8 +558,8 @@ fetch(apiReviews)
        
     </ul>
     ${agentData.facebook || agentData.twitter || agentData.instagram || agentData.linkedin || agentData.youtube ? `
-                      
-                      ` : ''}
+                          
+                          ` : ''}
 `;
 
 
@@ -620,128 +648,141 @@ fetch(apiReviews)
         var apiUrl = header + '/api/agents/contact-us-form';
         var isSubmitting = false;
 
-            document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
             $('#form-style1').validate({
-        rules: {
-            first_name: {
-                required: true,
-                maxlength: 40
-            },
-            last_name: {
-                required: true,
-                maxlength: 40
-            },
-            phone: {
-                required: true
-            },
-            email: {
-                required: true,
-                email: true,
-                maxlength: 40
-            },
-            role: {
-                required: true
-            },
-            comment: {
-                required: true
-            },
-            terms_agreement: {
-                required: true
-            }
-        },
-        messages: {
-            first_name: {
-                required: "Please enter your first name",
-                maxlength: "Maximum 40 characters allowed"
-            },
-            last_name: {
-                required: "Please enter your last name",
-                maxlength: "Maximum 40 characters allowed"
-            },
-            phone: {
-                required: "Please enter your phone number"
-            },
-            email: {
-                required: "Please enter your email address",
-                email: "Please enter a valid email address",
-                maxlength: "Maximum 40 characters allowed"
-            },
-            role: {
-                required: "Please select your role"
-            },
-            comment: {
-                required: "Please enter your message"
-            },
-            terms_agreement: {
-                required: "Please agree to the terms"
-            }
-        },
-        errorPlacement: function(error, element) {
-        if (element.attr("name") === "role") {
-            error.appendTo("#role-error");
-        } else if (element.attr("name") === "terms_agreement") {
-            error.appendTo("#terms-agreement-error");
-        } else {
-            error.appendTo(element.closest(".input").find(".error-message"));
-        }
-    },
-        submitHandler: function(form) {
-            var formData = $(form).serialize();
-            const dynamicMessage = "I would appreciate more information about your services.";
-            formData += '&page_name=details_page';
-
-            $.ajax({
-                type: 'POST',
-                url: apiUrl,
-                data: formData,
-                success: function(data) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: 'Form submitted successfully',
-                        confirmButtonText: 'Continue to Website',
-                    });
-                    form.reset();
-                    $('#Textarea').val(dynamicMessage);
+                rules: {
+                    first_name: {
+                        required: true,
+                        maxlength: 40
+                    },
+                    last_name: {
+                        required: true,
+                        maxlength: 40
+                    },
+                    phone: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                        maxlength: 40
+                    },
+                    role: {
+                        required: true
+                    },
+                    comment: {
+                        required: true
+                    },
+                    terms_agreement: {
+                        required: true
+                    }
                 },
-                error: function(xhr, status, error) {
-                    console.error('There was a problem with the AJAX request:', error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'An error occurred while submitting the form. Please try again later.'
+                messages: {
+                    first_name: {
+                        required: "Please enter your first name",
+                        maxlength: "Maximum 40 characters allowed"
+                    },
+                    last_name: {
+                        required: "Please enter your last name",
+                        maxlength: "Maximum 40 characters allowed"
+                    },
+                    phone: {
+                        required: "Please enter your phone number"
+                    },
+                    email: {
+                        required: "Please enter your email address",
+                        email: "Please enter a valid email address",
+                        maxlength: "Maximum 40 characters allowed"
+                    },
+                    role: {
+                        required: "Please select your role"
+                    },
+                    comment: {
+                        required: "Please enter your message"
+                    },
+                    terms_agreement: {
+                        required: "Please agree to the terms"
+                    }
+                },
+                errorPlacement: function(error, element) {
+                    if (element.attr("name") === "role") {
+                        error.appendTo("#role-error");
+                    } else if (element.attr("name") === "terms_agreement") {
+                        error.appendTo("#terms-agreement-error");
+                    } else {
+                        error.appendTo(element.closest(".input").find(".error-message"));
+                    }
+                },
+                submitHandler: function(form) {
+
+                    var gresponse = grecaptcha.getResponse();
+                    if (gresponse.length == 0) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Please complete the reCAPTCHA.',
+                        });
+                        return false;
+                    }
+                    var formData = $(form).serialize();
+                    formData.append('g-recaptcha-response', grecaptcha.getResponse());
+                    const dynamicMessage = "I would appreciate more information about your services.";
+                    formData += '&page_name=details_page';
+
+                    $.ajax({
+                        type: 'POST',
+                        url: apiUrl,
+                        data: formData,
+                        success: function(data) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: 'Form submitted successfully',
+                                confirmButtonText: 'Continue to Website',
+                            });
+                            form.reset();
+                            grecaptcha.reset();
+                            $('#Textarea').val(dynamicMessage);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('There was a problem with the AJAX request:',
+                                error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'An error occurred while submitting the form. Please try again later.'
+                            });
+                        }
                     });
                 }
             });
-        }
-    });
-});
-  
+        });
+
 
 
 
 
         document.addEventListener("DOMContentLoaded", function() {
-    var firstNameInput = document.querySelector('input[name="first_name"]');
-    var lastNameInput = document.querySelector('input[name="last_name"]');
-    var lettersOnlyWithSpace = /^[A-Za-z\s]+$/;
+            var firstNameInput = document.querySelector('input[name="first_name"]');
+            var lastNameInput = document.querySelector('input[name="last_name"]');
+            var lettersOnlyWithSpace = /^[A-Za-z\s]+$/;
 
-    // Event listener for the first name input
-    firstNameInput.addEventListener("input", function() {
-        var firstName = firstNameInput.value.trim();
-        if (!firstName.match(lettersOnlyWithSpace) || firstName.length > 40) {
-            firstNameInput.value = firstName.replace(/[^A-Za-z\s]/g, "").substring(0, 40);
-        }
-    });
+            // Event listener for the first name input
+            firstNameInput.addEventListener("input", function() {
+                var firstName = firstNameInput.value.trim();
+                if (!firstName.match(lettersOnlyWithSpace) || firstName.length > 40) {
+                    firstNameInput.value = firstName.replace(/[^A-Za-z\s]/g, "").substring(0, 40);
+                }
+            });
 
-    // Event listener for the last name input
-    lastNameInput.addEventListener("input", function() {
-        var lastName = lastNameInput.value.trim();
-        if (!lastName.match(lettersOnlyWithSpace) || lastName.length > 40) {
-            lastNameInput.value = lastName.replace(/[^A-Za-z\s]/g, "").substring(0, 40);
-        }
-    });
-});
+            // Event listener for the last name input
+            lastNameInput.addEventListener("input", function() {
+                var lastName = lastNameInput.value.trim();
+                if (!lastName.match(lettersOnlyWithSpace) || lastName.length > 40) {
+                    lastNameInput.value = lastName.replace(/[^A-Za-z\s]/g, "").substring(0, 40);
+                }
+            });
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -764,112 +805,125 @@ fetch(apiReviews)
 
             const dynamicMessage = "I would appreciate more information about your services.";
 
-$('#Textarea').val(dynamicMessage);
+            $('#Textarea').val(dynamicMessage);
             // var session = "{{ session('username') }}";
-        
-       $(document).ready(function() {
-    $('#reviewForm').validate({
-        rules: {
-            firsttitle: {
-                required: true
-            },
-            lasttitle: {
-                required: true
-            },
-            review_from: {
-                required: true,
-                email: true
-            },
-            rating: {
-                required: true
-            },
-            review: {
-                required: true,
-                maxlength: 200
-            }
-        },
-        messages: {
-            firsttitle: "Please enter your first name",
-            lasttitle: "Please enter your last name",
-            review_from: {
-                required: "Please enter your email address",
-                email: "Please enter a valid email address"
-            },
-            rating: "Please select a rating",
-            review: {
-                required: "Please enter your review",
-                maxlength: "Maximum 200 characters allowed for review"
-            }
-        },
-        errorPlacement: function(error, element) {
-            if (element.attr("name") == "rating") {
-                error.appendTo(element.parent().next('.error'));
-            } else {
-                error.insertAfter(element);
-            }
-        },
-        submitHandler: function(form) {
-            var session = "{{ session('username') }}";
-            if (!session) {
-                $('#exampleModalToggle').modal('show');
-                return;
-            }
-            
-            var submitButton = $(form).find('button[type="submit"]');
-            submitButton.prop('disabled', true).css('backgroundColor', 'grey');
 
-            var formData = new FormData(form);
+            $(document).ready(function() {
+                $('#reviewForm').validate({
+                    rules: {
+                        firsttitle: {
+                            required: true
+                        },
+                        lasttitle: {
+                            required: true
+                        },
+                        review_from: {
+                            required: true,
+                            email: true
+                        },
+                        rating: {
+                            required: true
+                        },
+                        review: {
+                            required: true,
+                            maxlength: 200
+                        }
+                    },
+                    messages: {
+                        firsttitle: "Please enter your first name",
+                        lasttitle: "Please enter your last name",
+                        review_from: {
+                            required: "Please enter your email address",
+                            email: "Please enter a valid email address"
+                        },
+                        rating: "Please select a rating",
+                        review: {
+                            required: "Please enter your review",
+                            maxlength: "Maximum 200 characters allowed for review"
+                        }
+                    },
+                    errorPlacement: function(error, element) {
+                        if (element.attr("name") == "rating") {
+                            error.appendTo(element.parent().next('.error'));
+                        } else {
+                            error.insertAfter(element);
+                        }
+                    },
+                    submitHandler: function(form) {
+                        var session = "{{ session('username') }}";
+                        if (!session) {
+                            $('#exampleModalToggle').modal('show');
+                            return;
+                        }
 
-            var firstName = $('#firstnameInput').val().trim();
-            var lastName = $('#lastnameInput').val().trim();
-            var fullName = firstName + ' ' + lastName;
-            formData.set('title', fullName);
-            formData.set('firsttitle', firstName);
-            formData.set('lasttitle', lastName);
-            formData.delete('email');
-            formData.set('review_feedback', formData.get('review'));
-            formData.delete('review');
-            formData.set('review_to', id);
+                        var submitButton = $(form).find('button[type="submit"]');
+                        submitButton.prop('disabled', true).css('backgroundColor', 'grey');
 
-            fetch(header + '/api/agents/store-review', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'Form submitted successfully',
-                    confirmButtonText: 'Continue to Website'
+                        var gresponse = grecaptcha.getResponse();
+                        if (gresponse.length == 0) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Please complete the reCAPTCHA.',
+                            });
+                            submitButton.prop('disabled', false).css('backgroundColor', '');                            
+                            return false;
+                        }
+                        var formData = new FormData(form);
+                        formData.append('g-recaptcha-response', grecaptcha.getResponse());
+                        var firstName = $('#firstnameInput').val().trim();
+                        var lastName = $('#lastnameInput').val().trim();
+                        var fullName = firstName + ' ' + lastName;
+                        formData.set('title', fullName);
+                        formData.set('firsttitle', firstName);
+                        formData.set('lasttitle', lastName);
+                        formData.delete('email');
+                        formData.set('review_feedback', formData.get('review'));
+                        formData.delete('review');
+                        formData.set('review_to', id);
+
+                        fetch(header + '/api/agents/store-review', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Success',
+                                    text: 'Form submitted successfully',
+                                    confirmButtonText: 'Continue to Website'
+                                });
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                submitButton.prop('disabled', false).css('backgroundColor', '');                            
+                                grecaptcha.reset();
+                                return response.json();
+                            })
+                            .then(data => {
+                                console.log(data);
+                                showSuccessPopover(form);
+                            })
+                            .catch(error => {
+                                console.error('There was a problem submitting the review:',
+                                    error);
+                                showErrorPopover(error.message);
+                            });
+                    }
                 });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data);
-                showSuccessPopover(form);
-            })
-            .catch(error => {
-                console.error('There was a problem submitting the review:', error);
-                showErrorPopover(error.message);
             });
-        }
-    });
-});
 
-            
+
 
 
             function showSuccessPopover(form) {
                 var submitButton = $(form).find('button[type="submit"]');
                 // setTimeout(() => {
-                    form.reset();
-                    fetchReviewDetails(apiReviews);
-                    submitButton.disabled = false;
-                    // submitButton.style.backgroundColor = '';
-                    fetchAgentDetails(header + '/api/agents/detail/' + id);
+                form.reset();
+                fetchReviewDetails(apiReviews);
+                submitButton.disabled = false;
+                // submitButton.style.backgroundColor = '';
+                fetchAgentDetails(header + '/api/agents/detail/' + id);
                 // }, 3000);
 
 
@@ -877,10 +931,10 @@ $('#Textarea').val(dynamicMessage);
 
             function showErrorPopover(errorMessage) {
                 Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Invalid Email'
-                        });
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Invalid Email'
+                });
             }
 
         });
@@ -959,7 +1013,7 @@ $('#Textarea').val(dynamicMessage);
                     minimumFractionDigits: 0,
                 });
                 const card = document.createElement('div');
-                card.classList.add('col-sm-6','col-xl-4', 'mt-3', 'col-12');
+                card.classList.add('col-sm-6', 'col-xl-4', 'mt-3', 'col-12');
                 console.log(property);
                 const tima = property.DOMDate ? timeAgo(property.DOMDate) : '3 months ago';
 
@@ -994,12 +1048,12 @@ $('#Textarea').val(dynamicMessage);
 
                 ${property.diamond == 1 ?
               `<div class="list-tag fz12">
-                                  <i class="fa-thin fa-gem me-2"></i>Diamond
-                              </div>` :
+                                      <i class="fa-thin fa-gem me-2"></i>Diamond
+                                  </div>` :
               property.featured == 1?
               `<div class="list-tag fz12">
-                                  <i class="fa-thin fa-star me-2"></i>Exclusive
-                              </div>` :
+                                      <i class="fa-thin fa-star me-2"></i>Exclusive
+                                  </div>` :
               
               ''}   
                     <div class="list-meta2">
@@ -1033,8 +1087,8 @@ $('#Textarea').val(dynamicMessage);
 
  ${(Number(property.BathroomsFull || 0) > 0 || Number(property.BathroomsHalf || 0) > 0) 
     ? `<p><span class="flaticon-shower"></span>
-         ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
-       </p>` 
+             ${Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)} bath${(Number(property.BathroomsFull || 0) + Number(property.BathroomsHalf || 0)) > 1 ? '' : ''}
+           </p>` 
     : ''}               
                           
                           
@@ -1166,17 +1220,17 @@ $('#Textarea').val(dynamicMessage);
 
 
         function validateAlphabets(event) {
-                const input = event.target;
-                const regex = /^[a-zA-Z\s]*$/;
-                const key = event.key;
+            const input = event.target;
+            const regex = /^[a-zA-Z\s]*$/;
+            const key = event.key;
 
-                if (!regex.test(key) && key !== 'Backspace' || input.value.length >= 40) {
-                    event.preventDefault();
-                }
+            if (!regex.test(key) && key !== 'Backspace' || input.value.length >= 40) {
+                event.preventDefault();
             }
-            ['firstnameInput','lastnameInput'].forEach(function(id) {
-                document.getElementById(id).addEventListener("keypress", validateAlphabets);
-            });
+        }
+        ['firstnameInput', 'lastnameInput'].forEach(function(id) {
+            document.getElementById(id).addEventListener("keypress", validateAlphabets);
+        });
 
         function addToFavorites(propertyId, favoriteStatus) {
 

@@ -534,7 +534,7 @@
                 <p class="text-white">
                     We’re focused on investing in your growth. Our brokerage offers educational courses, presentations
                     from industry experts and a class leading 1:1 mentorship program. Throughout the year, we also host
-                    various social events for our REALTORS<span>&#174;</span>️ and their family, like our Winter Holiday Celebration!
+                    various social events for our REALTORS® and their family, like our Winter Holiday Celebration!
 
                 </p>
             </div>
