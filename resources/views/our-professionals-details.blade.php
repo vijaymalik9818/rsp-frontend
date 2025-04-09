@@ -648,115 +648,116 @@
         var apiUrl = header + '/api/agents/contact-us-form';
         var isSubmitting = false;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            $('#form-style1').validate({
-                rules: {
-                    first_name: {
-                        required: true,
-                        maxlength: 40
-                    },
-                    last_name: {
-                        required: true,
-                        maxlength: 40
-                    },
-                    phone: {
-                        required: true
-                    },
-                    email: {
-                        required: true,
-                        email: true,
-                        maxlength: 40
-                    },
-                    role: {
-                        required: true
-                    },
-                    comment: {
-                        required: true
-                    },
-                    terms_agreement: {
-                        required: true
-                    }
-                },
-                messages: {
-                    first_name: {
-                        required: "Please enter your first name",
-                        maxlength: "Maximum 40 characters allowed"
-                    },
-                    last_name: {
-                        required: "Please enter your last name",
-                        maxlength: "Maximum 40 characters allowed"
-                    },
-                    phone: {
-                        required: "Please enter your phone number"
-                    },
-                    email: {
-                        required: "Please enter your email address",
-                        email: "Please enter a valid email address",
-                        maxlength: "Maximum 40 characters allowed"
-                    },
-                    role: {
-                        required: "Please select your role"
-                    },
-                    comment: {
-                        required: "Please enter your message"
-                    },
-                    terms_agreement: {
-                        required: "Please agree to the terms"
-                    }
-                },
-                errorPlacement: function(error, element) {
-                    if (element.attr("name") === "role") {
-                        error.appendTo("#role-error");
-                    } else if (element.attr("name") === "terms_agreement") {
-                        error.appendTo("#terms-agreement-error");
-                    } else {
-                        error.appendTo(element.closest(".input").find(".error-message"));
-                    }
-                },
-                submitHandler: function(form) {
+        document.addEventListener('DOMContentLoaded', function () {
+    $('#form-style1').validate({
+        rules: {
+            first_name: {
+                required: true,
+                maxlength: 40
+            },
+            last_name: {
+                required: true,
+                maxlength: 40
+            },
+            phone: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true,
+                maxlength: 40
+            },
+            role: {
+                required: true
+            },
+            comment: {
+                required: true
+            },
+            terms_agreement: {
+                required: true
+            }
+        },
+        messages: {
+            first_name: {
+                required: "Please enter your first name",
+                maxlength: "Maximum 40 characters allowed"
+            },
+            last_name: {
+                required: "Please enter your last name",
+                maxlength: "Maximum 40 characters allowed"
+            },
+            phone: {
+                required: "Please enter your phone number"
+            },
+            email: {
+                required: "Please enter your email address",
+                email: "Please enter a valid email address",
+                maxlength: "Maximum 40 characters allowed"
+            },
+            role: {
+                required: "Please select your role"
+            },
+            comment: {
+                required: "Please enter your message"
+            },
+            terms_agreement: {
+                required: "Please agree to the terms"
+            }
+        },
+        errorPlacement: function (error, element) {
+            if (element.attr("name") === "role") {
+                error.appendTo("#role-error");
+            } else if (element.attr("name") === "terms_agreement") {
+                error.appendTo("#terms-agreement-error");
+            } else {
+                error.appendTo(element.closest(".input").find(".error-message"));
+            }
+        },
+        submitHandler: function (form) {
+            var gresponse = grecaptcha.getResponse(1); // Get response from reCAPTCHA widget with index 1
 
-                    var gresponse = grecaptcha.getResponse();
-                    if (gresponse.length == 0) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: 'Please complete the reCAPTCHA.',
-                        });
-                        return false;
-                    }
-                    var formData = $(form).serialize();
-                    formData.append('g-recaptcha-response', grecaptcha.getResponse());
-                    const dynamicMessage = "I would appreciate more information about your services.";
-                    formData += '&page_name=details_page';
+            if (gresponse.length === 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Please complete the reCAPTCHA.',
+                });
+                return false;
+            }
 
-                    $.ajax({
-                        type: 'POST',
-                        url: apiUrl,
-                        data: formData,
-                        success: function(data) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: 'Form submitted successfully',
-                                confirmButtonText: 'Continue to Website',
-                            });
-                            form.reset();
-                            grecaptcha.reset();
-                            $('#Textarea').val(dynamicMessage);
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('There was a problem with the AJAX request:',
-                                error);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: 'An error occurred while submitting the form. Please try again later.'
-                            });
-                        }
+            var formData = new FormData(form);
+            formData.append('g-recaptcha-response', gresponse);
+            formData.append('page_name', 'details_page');
+
+            $.ajax({
+                type: 'POST',
+                url: apiUrl,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Form submitted successfully',
+                        confirmButtonText: 'Continue to Website',
+                    });
+                    form.reset();
+                    grecaptcha.reset(1); // Reset reCAPTCHA widget at index 1
+                    $('#Textarea').val("I would appreciate more information about your services.");
+                },
+                error: function (xhr, status, error) {
+                    console.error('There was a problem with the AJAX request:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'An error occurred while submitting the form. Please try again later.'
                     });
                 }
             });
-        });
+        }
+    });
+});
 
 
 
