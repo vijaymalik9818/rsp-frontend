@@ -577,7 +577,7 @@
 
                     tempDiv.innerHTML = `<div class="col-12 col-sm-6 col-lg-3"> <div class="agent-in mt-4"> <div class="container profile-sec position-relative p-0"> <div class="row"> <div class="col-12 col-sm-12 profile-img position-relative"> <div class="agent-pics"> <a href="{{ url('') }}/our-professionals/details/${agent.slug_url}">
  
-  <img src="${agent.profile_picture ? `${agent.profile_picture}` : '{{ asset('images/no_image.jpg') }}'}" alt="${agent.name}" onerror="this.src='{{ asset('images/no_image.jpg') }}';"> </a> </div> </div> <div class="col-12 col-sm-12 profile-delt mt-3 mt-sm-0"> <div class="profile-delt px-3"> <div class="d-flex align-items-start justify-content-between"> <a href="{{ url('') }}/our-professionals/details/${agent.slug_url}">
+  <img src="${agent.profile_picture ? `${agent.profile_picture}` : '{{ asset('images/rsp_default.jpeg') }}'}" alt="${agent.name}" onerror="this.src='{{ asset('images/rsp_default.jpeg') }}';"> </a> </div> </div> <div class="col-12 col-sm-12 profile-delt mt-3 mt-sm-0"> <div class="profile-delt px-3"> <div class="d-flex align-items-start justify-content-between"> <a href="{{ url('') }}/our-professionals/details/${agent.slug_url}">
  
   <h5>${agent.name} </h5> </a> <div class="d-flex gap-2"> <a href="mailto:${agent.email}"><i class="fa-light fa-envelope"></i></a> <a href="tel:${agent.phone}"><i class="fa-light fa-phone"></i></a> </div> </div> <p>${agent.position ? agent.position.toUpperCase() : ''} </p> 
  

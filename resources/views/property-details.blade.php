@@ -1,6 +1,6 @@
 @extends('layouts.pages')
 @section('content')
-    <link href="{{ asset('frontend/css/pro-details.css?v=2.2.2') }}" rel="stylesheet" />
+    <link href="{{ asset('frontend/css/pro-details.css?v=2.3') }}" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
