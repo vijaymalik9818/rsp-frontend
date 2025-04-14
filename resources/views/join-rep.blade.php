@@ -611,7 +611,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
                     <div class="testi-img">
                            <img src="/images/Kristina.jpeg" alt="">
                     </div>
-                    <h5>Kristina Lozic, REALTOR<span>&#174;</span>></h5>
+                    <h5>Kristina Lozic, REALTOR<span>&#174;</span></h5>
                     <p>The brokerage model at Real Estate Professionals offers many wonderful components such as
                         incredible value, flexibility with branding, multiple locations for deposit drop offs and
                         brokerage meetings that offer learning opportunities. However, my favorite aspect of this
